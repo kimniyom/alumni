@@ -4,55 +4,99 @@
 /* @var $form CActiveForm */
 ?>
 
-<div class="form">
 
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'admin-form',
-	// Please note: When you enable ajax validation, make sure the corresponding
-	// controller action is handling ajax validation correctly.
-	// There is a call to performAjaxValidation() commented in generated controller code.
-	// See class documentation of CActiveForm for details on this.
-	'enableAjaxValidation'=>false,
-)); ?>
+<?php
+$form = $this->beginWidget('CActiveForm', array(
+    'id' => 'admin-form',
+    // Please note: When you enable ajax validation, make sure the corresponding
+    // controller action is handling ajax validation correctly.
+    // There is a call to performAjaxValidation() commented in generated controller code.
+    // See class documentation of CActiveForm for details on this.
+    'enableAjaxValidation' => false,
+        ));
+?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <i class="fa fa-edit"></i> แก้ไขข้อมูล
+    </div>
+    <div class="panel-body">
+        <?php echo $form->errorSummary($model); ?>
 
-	<?php echo $form->errorSummary($model); ?>
+        <div class="row">
+            <div class="col-sm-3">
+                <?php echo $form->labelEx($model, 'ชื่อ :'); ?>
+            </div>
+            <div class="col-sm-9">
+                <?php echo $form->textField($model, 'admin_name', array('size' => 60, 'maxlength' => 100, 'class' => 'form-control')); ?>
+                <?php echo $form->error($model, 'admin_name'); ?>
+            </div>
+        </div>
+        <br/>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'admin_name'); ?>
-		<?php echo $form->textField($model,'admin_name',array('size'=>60,'maxlength'=>100)); ?>
-		<?php echo $form->error($model,'admin_name'); ?>
-	</div>
+        <div class="row">
+            <div class="col-sm-3">
+                <?php echo $form->labelEx($model, 'นามสกุล :'); ?>
+            </div>
+            <div class="col-sm-9">
+                <?php echo $form->textField($model, 'admin_lname', array('size' => 60, 'maxlength' => 100, 'class' => 'form-control')); ?>
+                <?php echo $form->error($model, 'admin_lname'); ?>
+            </div>
+        </div>
+        <br/>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'admin_lname'); ?>
-		<?php echo $form->textField($model,'admin_lname',array('size'=>60,'maxlength'=>100)); ?>
-		<?php echo $form->error($model,'admin_lname'); ?>
-	</div>
+        <div class="row">
+            <div class="col-sm-3">
+                <?php echo $form->labelEx($model, 'ชื่อผู้ใช้งาน :'); ?>
+            </div>
+            <div class="col-sm-9">
+                <?php echo $form->textField($model, 'username', array('size' => 60, 'maxlength' => 100, 'class' => 'form-control')); ?>
+                <?php echo $form->error($model, 'username'); ?>
+            </div>
+        </div>
+        <br/>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'username'); ?>
-		<?php echo $form->textField($model,'username',array('size'=>60,'maxlength'=>100)); ?>
-		<?php echo $form->error($model,'username'); ?>
-	</div>
+        <div class="row">
+            <div class="col-sm-3">
+                <?php echo $form->labelEx($model, 'รหัสผ่าน :'); ?>
+            </div>
+            <div class="col-sm-9">
+                <?php echo $form->passwordField($model, 'password', array('size' => 60, 'maxlength' => 100, 'class' => 'form-control')); ?>
+                <?php echo $form->error($model, 'password'); ?>
+            </div>
+        </div>
+        <br/>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'password'); ?>
-		<?php echo $form->passwordField($model,'password',array('size'=>60,'maxlength'=>100)); ?>
-		<?php echo $form->error($model,'password'); ?>
-	</div>
+        <div class="row">
+            <div class="col-sm-3">
+                <?php echo $form->labelEx($model, 'เบอร์โทรศัพท์ :'); ?>
+            </div>
+            <div class="col-sm-9">
+                <?php echo $form->textField($model, 'tel', array('size' => 10, 'maxlength' => 10, 'class' => 'form-control')); ?>
+                <?php echo $form->error($model, 'tel'); ?>
+            </div>
+        </div>
+        <br/>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'status'); ?>
-		<?php echo $form->textField($model,'status',array('size'=>1,'maxlength'=>1)); ?>
-		<?php echo $form->error($model,'status'); ?>
-	</div>
+        <div class="row">
+            <div class="col-sm-3">
+                <?php echo $form->labelEx($model, 'อีเมลล์ :'); ?>
+            </div>
+            <div class="col-sm-9">
+                <?php echo $form->textField($model, 'email', array('size' => 60, 'maxlength' => 100, 'class' => 'form-control')); ?>
+                <?php echo $form->error($model, 'email'); ?>
+            </div>
+        </div>
+        <br/>
+        
+        <div class="row" style=" text-align: center;">
+            <div class="col-lg-12">
+            <?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'แก้ไขข้อมูล', 
+                    array('class' => 'btn btn-success')); ?>
+            </div>
+        </div>
+        <br/>
 
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
-	</div>
-
-<?php $this->endWidget(); ?>
-
+        <?php $this->endWidget(); ?>
+    </div>
 </div><!-- form -->

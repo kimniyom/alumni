@@ -36,6 +36,16 @@
 		<?php echo $form->textField($model,'status',array('size'=>1,'maxlength'=>1)); ?>
 	</div>
 
+	<div class="row">
+		<?php echo $form->label($model,'tel'); ?>
+		<?php echo $form->textField($model,'tel',array('size'=>10,'maxlength'=>10)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'email'); ?>
+		<?php echo $form->textField($model,'email',array('size'=>60,'maxlength'=>100)); ?>
+	</div>
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Search'); ?>
 	</div>

@@ -2,30 +2,51 @@
 /* @var $this AdminController */
 /* @var $model Admin */
 
-$this->breadcrumbs=array(
-	'Admins'=>array('index'),
-	$model->id,
-);
-
-$this->menu=array(
-	array('label'=>'List Admin', 'url'=>array('index')),
-	array('label'=>'Create Admin', 'url'=>array('create')),
-	array('label'=>'Update Admin', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Admin', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Admin', 'url'=>array('admin')),
+$this->breadcrumbs = array(
+    'ข้อมูลของ '.$model->admin_name,
 );
 ?>
 
-<h1>View Admin #<?php echo $model->id; ?></h1>
+<div class="panel panel-default">
+    <div class="panel-heading" style=" text-align: right;">
+        <a href="<?php echo Yii::app()->createUrl('admin/update&id=' . $model->id); ?>">
+            <div class="btn btn-info btn-sm"><i class="fa fa-edit"></i> แก้ไขข้อมูล</div>
+        </a>
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th colspan="2">ข้อมูลส่วนตัว</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>ชื่อ</td>
+                    <td><?php echo $model->admin_name; ?></td>
+                </tr>
+                <tr>
+                    <td>นามสกุล</td>
+                    <td><?php echo $model->admin_lname; ?></td>
+                </tr>
+                <tr>
+                    <td>อีเมลล์</td>
+                    <td><?php echo $model->email; ?></td>
+                </tr>
+                <tr>
+                    <td>เบอร์โทรศัพท์</td>
+                    <td><?php echo $model->tel; ?></td>
+                </tr>
+                <tr>
+                    <td>ชื่อเข้าใช้งาน</td>
+                    <td><?php echo $model->username; ?></td>
+                </tr>
+                <tr>
+                    <td>รหัสผ่าน</td>
+                    <td><?php echo $model->password; ?></td>
+                </tr>
+            <tbody>
+        </table>
 
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'id',
-		'admin_name',
-		'admin_lname',
-		'username',
-		'password',
-		'status',
-	),
-)); ?>
+    </div>
+</div>
