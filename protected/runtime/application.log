@@ -1363,3 +1363,57 @@ Stack trace:
 REQUEST_URI=/git/alumni/index.php?r=Generation/Index
 in D:\WebServer\xampp\htdocs\git\alumni\protected\controllers\GenerationController.php (18)
 in D:\WebServer\xampp\htdocs\git\alumni\index.php (13)
+2015/04/29 19:49:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "news".' in /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController('news')
+#1 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/alumni/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/alumni/index.php?r=news
+HTTP_REFERER=http://localhost/alumni/index.php?r=masmenu
+---
+2015/04/29 19:49:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "news".' in /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController('news')
+#1 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/alumni/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/alumni/index.php?r=news
+HTTP_REFERER=http://localhost/alumni/index.php?r=masmenu
+---
+2015/04/29 19:49:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "news".' in /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController('news')
+#1 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/alumni/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/alumni/index.php?r=news
+HTTP_REFERER=http://localhost/alumni/index.php?r=news
+---
+2015/04/29 20:01:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "news".' in /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController('news')
+#1 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/alumni/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/alumni/index.php?r=news
+HTTP_REFERER=http://localhost/alumni/index.php?r=masmenu
+---
+2015/04/29 20:03:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "news".' in /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController('news')
+#1 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/alumni/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/alumni/index.php?r=news
+HTTP_REFERER=http://localhost/alumni/index.php?r=news
+---
+2015/04/29 20:04:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "news".' in /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController('news')
+#1 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/alumni/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/alumni/index.php?r=news
+HTTP_REFERER=http://localhost/alumni/index.php?r=Generation/Index
+---
