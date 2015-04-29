@@ -21,10 +21,10 @@ class GenerationController extends Controller{
     }
     
     public function actionSavegen(){
-        $year = "2551";
-        $num = "2";
+        //$year = $_POST['genyear'];
+       // $num = $_POST['gennum'];
         $sql = "insert into generation (GenYear, GenNumber) values (:genyear, :gennum)";
-        $parameters = array(":genyear"=>$year, ':gennum' => $num);
+        $parameters = array(":genyear"=>$_POST['genyear'], ':gennum' => $_POST['gennum']);
         Yii::app()->db->createCommand($sql)->execute($parameters);
         //$columns = array(
         //    "GenYear" => $_POST['genyear'],
