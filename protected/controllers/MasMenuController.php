@@ -36,7 +36,7 @@ class MasMenuController extends Controller {
         $columns = array(
             "menu_name" => $_POST['menu_name'],
             "menu_url" => $_POST['menu_url'],
-            "create_by" => "1",
+            "create_by" => Yii::app()->session['admin_id'],
             "d_update" => date("Y-m-d H:i:s")
         );
 
