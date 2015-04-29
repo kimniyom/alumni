@@ -181,10 +181,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <!-- Menu Footer-->
                                     <li class="user-footer">
                                         <div class="pull-left">
-                                            <a href="#" class="btn btn-default btn-flat">ข้อมูลส่วนตัว</a>
+                                            <a href="<?PHP echo Yii::app()->createUrl('admin/view&id=' . Yii::app()->session['admin_id']); ?>" class="btn btn-default btn-flat">ข้อมูลส่วนตัว</a>
                                         </div>
                                         <div class="pull-right">
-                                            <a href="<?php echo Yii::app()->createUrl('site/logout');?>" class="btn btn-default btn-flat">ออกจากระบบ</a>
+                                            <a href="<?php echo Yii::app()->createUrl('site/logout'); ?>" class="btn btn-default btn-flat">ออกจากระบบ</a>
                                         </div>
                                     </li>
                                 </ul>
@@ -207,7 +207,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <img src="<?php echo $link; ?>dist/img/avatar04.png" class="img-circle" alt="User Image" />
                         </div>
                         <div class="pull-left info">
-                            <p><?php echo Yii::app()->session['admin_name'];?></p>
+                            <p><?php echo Yii::app()->session['admin_name']; ?></p>
                             <!-- Status -->
                             <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                         </div>
@@ -270,6 +270,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <?php if (isset($this->breadcrumbs)): ?>
                             <?php
                             $this->widget('zii.widgets.CBreadcrumbs', array(
+                                'homeLink'=>'<i class="fa fa-home"></i>',
                                 'links' => $this->breadcrumbs,
                             ));
                             ?><!-- breadcrumbs -->
