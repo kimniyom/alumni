@@ -10,6 +10,8 @@
  * @property string $username
  * @property string $password
  * @property string $status
+ * @property string $tel
+ * @property string $email
  */
 class Admin extends CActiveRecord
 {
@@ -29,11 +31,12 @@ class Admin extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('admin_name, admin_lname, username, password', 'length', 'max'=>100),
+			array('admin_name, admin_lname, username, password, email', 'length', 'max'=>100),
 			array('status', 'length', 'max'=>1),
+			array('tel', 'length', 'max'=>10),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, admin_name, admin_lname, username, password, status', 'safe', 'on'=>'search'),
+			array('id, admin_name, admin_lname, username, password, status, tel, email', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -60,6 +63,8 @@ class Admin extends CActiveRecord
 			'username' => 'Username',
 			'password' => 'Password',
 			'status' => 'Status',
+			'tel' => 'Tel',
+			'email' => 'Email',
 		);
 	}
 
@@ -87,6 +92,8 @@ class Admin extends CActiveRecord
 		$criteria->compare('username',$this->username,true);
 		$criteria->compare('password',$this->password,true);
 		$criteria->compare('status',$this->status,true);
+		$criteria->compare('tel',$this->tel,true);
+		$criteria->compare('email',$this->email,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
