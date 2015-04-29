@@ -1296,3 +1296,70 @@ Stack trace:
 #17 {main}
 REQUEST_URI=/git/alumni/index.php?r=masmenu
 ---
+2015/04/29 15:51:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "user".' in D:\WebServer\xampp\htdocs\git\alumni\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\WebServer\xampp\htdocs\git\alumni\framework\web\CWebApplication.php(141): CWebApplication->runController('user')
+#1 D:\WebServer\xampp\htdocs\git\alumni\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\WebServer\xampp\htdocs\git\alumni\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/git/alumni/index.php?r=user
+HTTP_REFERER=http://localhost:81/git/alumni/index.php?r=masmenu
+---
+2015/04/29 15:51:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "news".' in D:\WebServer\xampp\htdocs\git\alumni\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\WebServer\xampp\htdocs\git\alumni\framework\web\CWebApplication.php(141): CWebApplication->runController('news')
+#1 D:\WebServer\xampp\htdocs\git\alumni\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\WebServer\xampp\htdocs\git\alumni\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/git/alumni/index.php?r=news
+HTTP_REFERER=http://localhost:81/git/alumni/index.php?r=user
+---
+2015/04/29 15:51:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "user".' in D:\WebServer\xampp\htdocs\git\alumni\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\WebServer\xampp\htdocs\git\alumni\framework\web\CWebApplication.php(141): CWebApplication->runController('user')
+#1 D:\WebServer\xampp\htdocs\git\alumni\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\WebServer\xampp\htdocs\git\alumni\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/git/alumni/index.php?r=user
+HTTP_REFERER=http://localhost:81/git/alumni/index.php?r=news
+---
+2015/04/29 16:13:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Generation/Index".' in D:\WebServer\xampp\htdocs\git\alumni\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\WebServer\xampp\htdocs\git\alumni\framework\web\CWebApplication.php(141): CWebApplication->runController('Generation/Inde...')
+#1 D:\WebServer\xampp\htdocs\git\alumni\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 D:\WebServer\xampp\htdocs\git\alumni\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/git/alumni/index.php?r=Generation/Index
+HTTP_REFERER=http://localhost:81/git/alumni/index.php?r=masmenu
+---
+2015/04/29 16:20:55 [error] [php] Invalid argument supplied for foreach() (D:\WebServer\xampp\htdocs\git\alumni\protected\views\gen\index.php:19)
+Stack trace:
+#0 D:\WebServer\xampp\htdocs\git\alumni\framework\web\CController.php(869): GenerationController->renderFile()
+#1 D:\WebServer\xampp\htdocs\git\alumni\framework\web\CController.php(782): GenerationController->renderPartial()
+#2 D:\WebServer\xampp\htdocs\git\alumni\protected\controllers\GenerationController.php(19): GenerationController->render()
+#3 D:\WebServer\xampp\htdocs\git\alumni\framework\web\actions\CInlineAction.php(49): GenerationController->actionIndex()
+#4 D:\WebServer\xampp\htdocs\git\alumni\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 D:\WebServer\xampp\htdocs\git\alumni\framework\web\CController.php(286): GenerationController->runAction()
+#6 D:\WebServer\xampp\htdocs\git\alumni\framework\web\CController.php(265): GenerationController->runActionWithFilters()
+#7 D:\WebServer\xampp\htdocs\git\alumni\framework\web\CWebApplication.php(282): GenerationController->run()
+#8 D:\WebServer\xampp\htdocs\git\alumni\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\WebServer\xampp\htdocs\git\alumni\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 D:\WebServer\xampp\htdocs\git\alumni\index.php(13): CWebApplication->run()
+REQUEST_URI=/git/alumni/index.php?r=Generation/Index
+in D:\WebServer\xampp\htdocs\git\alumni\protected\views\gen\index.php (19)
+in D:\WebServer\xampp\htdocs\git\alumni\protected\controllers\GenerationController.php (19)
+in D:\WebServer\xampp\htdocs\git\alumni\index.php (13)
+2015/04/29 16:30:41 [error] [php] include(GenerationModel.php): failed to open stream: No such file or directory (D:\WebServer\xampp\htdocs\git\alumni\framework\YiiBase.php:432)
+Stack trace:
+#0 D:\WebServer\xampp\htdocs\git\alumni\protected\controllers\GenerationController.php(18): spl_autoload_call()
+#1 D:\WebServer\xampp\htdocs\git\alumni\framework\web\actions\CInlineAction.php(49): GenerationController->actionIndex()
+#2 D:\WebServer\xampp\htdocs\git\alumni\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 D:\WebServer\xampp\htdocs\git\alumni\framework\web\CController.php(286): GenerationController->runAction()
+#4 D:\WebServer\xampp\htdocs\git\alumni\framework\web\CController.php(265): GenerationController->runActionWithFilters()
+#5 D:\WebServer\xampp\htdocs\git\alumni\framework\web\CWebApplication.php(282): GenerationController->run()
+#6 D:\WebServer\xampp\htdocs\git\alumni\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 D:\WebServer\xampp\htdocs\git\alumni\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#8 D:\WebServer\xampp\htdocs\git\alumni\index.php(13): CWebApplication->run()
+REQUEST_URI=/git/alumni/index.php?r=Generation/Index
+in D:\WebServer\xampp\htdocs\git\alumni\protected\controllers\GenerationController.php (18)
+in D:\WebServer\xampp\htdocs\git\alumni\index.php (13)

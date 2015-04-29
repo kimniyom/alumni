@@ -174,7 +174,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <li class="user-header">
                                         <img src="<?php echo $link; ?>dist/img/avatar04.png" class="img-circle" alt="User Image" />
                                         <p>
-                                            สวัสดีคุณ <?php echo Yii::app()->session['use_name'] . ' ' . Yii::app()->session['use_lname']; ?>
+                                            สวัสดีคุณ <?php echo Yii::app()->session['admin_name']; ?>
                                         </p>
                                     </li>
                                     <!-- Menu Body -->
@@ -184,7 +184,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <a href="#" class="btn btn-default btn-flat">ข้อมูลส่วนตัว</a>
                                         </div>
                                         <div class="pull-right">
-                                            <a href="#" class="btn btn-default btn-flat">ออกจากระบบ</a>
+                                            <a href="<?php echo Yii::app()->createUrl('site/logout');?>" class="btn btn-default btn-flat">ออกจากระบบ</a>
                                         </div>
                                     </li>
                                 </ul>
@@ -207,7 +207,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <img src="<?php echo $link; ?>dist/img/avatar04.png" class="img-circle" alt="User Image" />
                         </div>
                         <div class="pull-left info">
-                            <p><?php echo Yii::app()->session['use_name'] . ' ' . Yii::app()->session['use_lname']; ?></p>
+                            <p><?php echo Yii::app()->session['admin_name'];?></p>
                             <!-- Status -->
                             <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                         </div>
@@ -267,9 +267,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <?php echo isset($header) ? $header : "Admin"; ?>
                     </h1>
                     <ol class="breadcrumb">
-                        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-                        <li class="active">Here</li>
+                        <?php if (isset($this->breadcrumbs)): ?>
+                            <?php
+                            $this->widget('zii.widgets.CBreadcrumbs', array(
+                                'links' => $this->breadcrumbs,
+                            ));
+                            ?><!-- breadcrumbs -->
+                        <?php endif ?>
                     </ol>
+
+
+
                 </section>
 
                 <!-- Main content -->

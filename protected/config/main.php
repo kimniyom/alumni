@@ -30,6 +30,31 @@ return array(
             // enable cookie-based authentication
             'allowAutoLogin' => true,
         ),
+        
+        //SET GridView Bootstrap
+        'widgetFactory' => array(
+            'widgets' => array(
+                'CLinkPager' => array(
+                    'htmlOptions' => array(
+                        'class' => 'pagination'
+                    ),
+                    'header' => false,
+                    'maxButtonCount' => 5,
+                    'cssFile' => false,
+                ),
+                'CGridView' => array(
+                    'htmlOptions' => array(
+                        'class' => 'table table-striped table-responsive'
+                    ),
+                    'pagerCssClass' => 'dataTables_paginate paging_bootstrap',
+                    'itemsCssClass' => 'table table-striped table-hover',
+                    'cssFile' => false,
+                    'summaryCssClass' => 'dataTables_info',
+                    'summaryText' => 'Showing {start} to {end} of {count} entries',
+                    'template' => '{items}<div class="row" style="margin:0px;><div class="col-md-5 col-sm-12">{summary}</div><div class="col-md-7 col-sm-12">{pager}</div></div><br />',
+                ),
+            ),
+        ),
         // uncomment the following to enable URLs in path-format
         /*
           'urlManager'=>array(

@@ -29,7 +29,9 @@ class SiteController extends Controller {
     public function actionIndex() {
         // renders the view file 'protected/views/site/index.php'
         // using the default layout 'protected/views/layouts/main.php'
-        $this->render('index');
+        //$this->render('index');
+        //
+         $this->redirect(array('main_admin/index'));
     }
 
     /**

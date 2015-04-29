@@ -38,8 +38,8 @@
             menu_name: $("#e_menu_name").val(),
             menu_url: $("#e_menu_url").val()
         };
-        
-        
+
+
         $.post(url, data, function (success) {
             window.location.reload();
         });
@@ -123,14 +123,18 @@
                         <td><?php echo $menus['menu_id']; ?></td>
                         <td><?php echo $menus['menu_name']; ?></td>
                         <td><?php echo $menus['menu_url']; ?></td>
-                        <td><?php echo $menus['use_name'] . ' ' . $menus['use_lname']; ?></td>
+                        <td><?php echo $menus['admin_name'] . ' ' . $menus['admin_lname']; ?></td>
                         <td style=" text-align: center;">
-                            <div class="btn-group" role="group" aria-label="...">
-                                <button type="button" class="btn btn-info" 
-                                        onclick="popup_dialog_edit('<?php echo $menus['menu_id']; ?>', '<?php echo $menus['menu_name']; ?>', '<?php echo $menus['menu_url']; ?>');">
-                                    <i class="fa fa-edit"></i> แก้ไข</button>
-                                <button type="button" class="btn btn-danger" onclick="delete_menu('<?php echo $menus['menu_id']; ?>');"><i class="fa fa-trash"></i> ลบ</button>
-                            </div>
+                            <?php if (Yii::app()->session['admin_id'] == $menus['create_by']) { ?>
+                                <div class="btn-group" role="group" aria-label="...">
+                                    <button type="button" class="btn btn-info" 
+                                            onclick="popup_dialog_edit('<?php echo $menus['menu_id']; ?>', '<?php echo $menus['menu_name']; ?>', '<?php echo $menus['menu_url']; ?>');">
+                                        <i class="fa fa-edit"></i> แก้ไข</button>
+                                    <button type="button" class="btn btn-danger" onclick="delete_menu('<?php echo $menus['menu_id']; ?>');"><i class="fa fa-trash"></i> ลบ</button>
+                                </div>
+                            <?php } else { ?>
+                                No Action
+                            <?php } ?>
                         </td>
                     </tr>
                 <?php endforeach; ?>
