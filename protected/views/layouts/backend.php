@@ -43,7 +43,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
             }
 
             function popup_dialog_add() {
-
                 $("#dialog_add").modal();
             }
 

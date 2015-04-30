@@ -23,6 +23,7 @@ class GenerationModel extends CActiveRecord{
     
     public function attributeLabels() {
         return array(
+            'GenID' => 'ID',
             'GenYear' => 'ปีที่สำเร็จการศึกษา',
             'GenNumber' => 'รุ่น' 
         );
