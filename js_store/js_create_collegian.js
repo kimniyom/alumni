@@ -1,5 +1,5 @@
 function save_collegian() {
-    var url = '/alumni/index.php?r=Collegian/Save_collegian';
+    var url = 'index.php?r=Collegian/Save_collegian';
     //alert(url);
     var collegian_code = $('#collegian_code').val();
     var shot_name = $('#shot_name').val();
