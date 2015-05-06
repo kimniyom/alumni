@@ -5,100 +5,75 @@
 ?>
 
 <div class="form">
+
+    <?php
+    $form = $this->beginWidget('CActiveForm', array(
+        'id' => 'collegian-form',
+        // Please note: When you enable ajax validation, make sure the corresponding
+        // controller action is handling ajax validation correctly.
+        // There is a call to performAjaxValidation() commented in generated controller code.
+        // See class documentation of CActiveForm for details on this.
+        'enableAjaxValidation' => false,
+    ));
+    ?>
+
+    <p class="note">Fields with <span class="required">*</span> are required.</p>
+
+    <?php echo $form->errorSummary($model); ?>
+
     <div class="row">
-        <div class="col-sm-5">
-            <label>รหัสนักศึกษา(13 หลัก)</label>
-        </div>
-        <div class="col-sm-7">
-            <input type="text" id="collegian_code" name="collegian_code" max="13" required="required" class="form-control"/>
-        </div>
+        <?php echo $form->labelEx($model, 'collegian_code'); ?>
+        <input type="text" id="collegian_code" name="collegian_code"/>
+        <?php echo $form->textField($model, 'collegian_code', array('size' => 13, 'maxlength' => 13)); ?>
+        <?php echo $form->error($model, 'collegian_code'); ?>
     </div>
 
     <div class="row">
-        <div class="col-sm-5">
-            <label>คำนำหน้า</label>
-        </div>
-        <div class="col-sm-7">
-            <select id="prefix" name="prefix" class="form-control">
-                <?php foreach ($perfix as $pr): ?>
-                    <option value="<?php echo $pr['id']; ?>"><?php echo $pr['shot_name']; ?></option>
-                <?php endforeach; ?>
-            </select>
-        </div>
+        <?php echo $form->labelEx($model, 'shot_name'); ?>
+        <?php
+        echo $form->dropDownList(
+                $model, 'shot_name', CHtml::listData(Prefix::model()->findAll(), 'id', 'shot_name'), array('class' => 'form-control', 'maxlength' => 20,
+            'options' => array($model->id => array('selected' => true)),
+                )
+        );
+        ?>
+        <?php echo $form->error($model, 'shot_name'); ?>
     </div>
 
     <div class="row">
-        <div class="col-sm-5">
-            <label>ชื่อ</label>
-        </div>
-        <div class="col-sm-7">
-            <input type="text" id="collegian_name" name="collegian_name" class="form-control" required="required"/>
-        </div>
+        <?php echo $form->labelEx($model, 'collegian_name'); ?>
+        <?php echo $form->textField($model, 'collegian_name', array('size' => 60, 'maxlength' => 100)); ?>
+        <?php echo $form->error($model, 'collegian_name'); ?>
     </div>
 
     <div class="row">
-        <div class="col-sm-5">
-            <label>นามสกุล</label>
-        </div>
-        <div class="col-sm-7">
-            <input type="text" id="collegian_lname" name="collegian_lname" class="form-control" required="required"/>
-        </div>
+        <?php echo $form->labelEx($model, 'collegian_lname'); ?>
+        <?php echo $form->textField($model, 'collegian_lname', array('size' => 60, 'maxlength' => 100)); ?>
+        <?php echo $form->error($model, 'collegian_lname'); ?>
     </div>
 
     <div class="row">
-        <div class="col-sm-5">
-            <label>ชื่อเข้าใช้งาน</label>
-        </div>
-        <div class="col-sm-7">
-            <input type="text" id="collegian_username" name="collegian_username" class="form-control" required="required"/>
-        </div>
+        <?php echo $form->labelEx($model, 'collegian_username'); ?>
+        <?php echo $form->textField($model, 'collegian_username', array('size' => 50, 'maxlength' => 50)); ?>
+        <?php echo $form->error($model, 'collegian_username'); ?>
     </div>
 
     <div class="row">
-        <div class="col-sm-5">
-            <label>รหัสผ่าน</label>
-        </div>
-        <div class="col-sm-7">
-            <input type="password" id="collegian_password" name="collegian_password" class="form-control" required="required"/>
-        </div>
+        <?php echo $form->labelEx($model, 'collegian_password'); ?>
+        <?php echo $form->textField($model, 'collegian_password', array('size' => 50, 'maxlength' => 50)); ?>
+        <?php echo $form->error($model, 'collegian_password'); ?>
     </div>
 
     <div class="row">
-        <div class="col-sm-5">
-            <label>บัตรประชาชน</label>
-        </div>
-        <div class="col-sm-7">
-            <input type="text" id="collegian_card" name="collegian_card" class="form-control" required="required" max="13"/>
-        </div>
+        <?php echo $form->labelEx($model, 'collegian_card'); ?>
+        <?php echo $form->textField($model, 'collegian_card', array('size' => 13, 'maxlength' => 13)); ?>
+        <?php echo $form->error($model, 'collegian_card'); ?>
     </div>
 
     <div class="row">
-        <?php $lib = new Lib();?>
-        <div class="col-sm-5">
-            <label>วันเกิด</label>
-        </div>
-        <div class="col-sm-7">
-            <select id="day">
-                <?php for($i=1;$i<=31;$i++){ ?>
-                <option value="<?php echo $i;?>"><?php echo $i;?></option>
-                <?php } ?>
-            </select>
-            
-            <select id="month">
-                <?php for($i=0;$i<=11;$i++){ ?>
-                <option value="<?php echo $lib->Monthval[$i];?>"><?php echo $lib->MonthFull[$i];?></option>
-                <?php } ?>
-            </select>
-            
-            <select id="year">
-                <?php 
-                $yearnow = date("Y");
-                for($i=$yearnow;$i>=$yearnow-50;$i){ ?>
-                <option value="<?php echo $i;?>"><?php echo $i;?></option>
-                <?php } ?>
-            </select>
-            
-        </div>
+        <?php echo $form->labelEx($model, 'collegian_birth'); ?>
+        <?php echo $form->textField($model, 'collegian_birth'); ?>
+        <?php echo $form->error($model, 'collegian_birth'); ?>
     </div>
 
     <div class="row">
@@ -132,17 +107,18 @@
     <div class="row">
         <?php echo $form->labelEx($model, 'ampur_code'); ?>
         <?php
-        echo CHtml::dropDownList('ampur_code', array(), array(
-            'class' => 'form-control',
-            'maxlength' => 20,
-            'options' => array($model->ampur_code => array('selected' => true)),
-            'ajax' => array(
-                'type' => 'POST', //request type
-                'url' => Yii::app()->createUrl('current/ampur'), //url to call.
-                'update' => '#tambon_code', //selector to update
-            //'data' => array('ampur_id' => 'js:this.value'),
-            )
+        echo $form->dropDownList($model->ampur_code,'ampur_code',array(),
+            array(
+                'class' => 'form-control',
+                'maxlength' => 20,
+                'options' => array($model->ampur_code => array('selected' => true)),
+                'ajax' => array(
+                    'type' => 'POST', //request type
+                    'url' => Yii::app()->createUrl('current/ampur'), //url to call.
+                    'update' => '#tambon_code', //selector to update
+                    //'data' => array('ampur_id' => 'js:this.value'),
                 )
+            )
         );
         ?>
 
