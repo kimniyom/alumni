@@ -2880,6 +2880,7 @@ REQUEST_URI=/alumni/index.php?r=Generation/Deletegen
 in /Applications/MAMP/htdocs/alumni/protected/views/gen/index.php (70)
 in /Applications/MAMP/htdocs/alumni/protected/controllers/GenerationController.php (44)
 in /Applications/MAMP/htdocs/alumni/index.php (13)
+<<<<<<< HEAD
 2015/04/30 09:37:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Generation/Index".' in /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php:286
 Stack trace:
 #0 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController('Generation/Inde...')
@@ -3773,12 +3774,16 @@ Stack trace:
 REQUEST_URI=/alumni/index.php?r=collegian/create
 ---
 2015/05/06 04:15:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "news".' in /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php:286
+=======
+2015/04/30 17:11:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "news".' in /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php:286
+>>>>>>> origin/master
 Stack trace:
 #0 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController('news')
 #1 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
 #2 /Applications/MAMP/htdocs/alumni/index.php(13): CApplication->run()
 #3 {main}
 REQUEST_URI=/alumni/index.php?r=news
+<<<<<<< HEAD
 HTTP_REFERER=http://localhost/alumni/index.php?r=masmenu
 ---
 2015/05/06 04:15:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Education/Index".' in /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php:286
@@ -4148,4 +4153,7 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/alumni/index.php?r=Education/Index
 HTTP_REFERER=http://localhost/alumni/index.php?r=Generation/Index
+=======
+HTTP_REFERER=http://localhost/alumni/index.php?r=news
+>>>>>>> origin/master
 ---
