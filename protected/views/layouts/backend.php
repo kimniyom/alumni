@@ -59,6 +59,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 });
             }
 
+            function CheckNum() {
+                if (event.keyCode < 48 || event.keyCode > 57) {
+                    event.returnValue = false;
+                }
+            }
+
         </script>
 
     </head>
@@ -269,7 +275,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <?php if (isset($this->breadcrumbs)): ?>
                             <?php
                             $this->widget('zii.widgets.CBreadcrumbs', array(
-                                'homeLink'=>'<i class="fa fa-home"></i>',
+                                'homeLink' => '<i class="fa fa-home"></i>',
                                 'links' => $this->breadcrumbs,
                             ));
                             ?><!-- breadcrumbs -->
