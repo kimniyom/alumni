@@ -152,4 +152,13 @@ class Collegian extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+        
+        public function Get_Collegian_InNumber($GenId = ''){
+            $query = "SELECT c.*,p.shot_name AS prename
+                        FROM collegian c 
+                        INNER JOIN prefix p ON c.shot_name = p.id 
+                        WHERE c.GenNumber = '$GenId' ";
+            $result = Yii::app()->db->createCommand($query)->queryAll();
+            return $result;
+        }
 }
