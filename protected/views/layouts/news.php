@@ -30,7 +30,7 @@
                             <li><a href="#stories"><i class="glyphicon glyphicon-list"></i> จัดการข่าวสาร</a></li>
                             <li><a href="#stories"><i class="glyphicon glyphicon-list"></i> จัดการหมวดข่าวสาร</a></li>
                             <li><a href="#stories"><i class="glyphicon glyphicon-list"></i> จัดการประเภทผู้รับข่าว</a></li>
-                            <li><a href="MasMenu/index"><i class="glyphicon glyphicon-home"></i> กลับหน้าหลัก</a></li>
+                            <li><a href="<?php echo Yii::app()->createUrl("MasMenu"); ?>"><i class="glyphicon glyphicon-home"></i> กลับหน้าหลัก</a></li>
                             <li><a href="#"><i class="glyphicon glyphicon-refresh"></i> Refresh</a></li>
                         </ul>
                         
