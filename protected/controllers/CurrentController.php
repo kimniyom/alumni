@@ -17,5 +17,9 @@ class CurrentController extends Controller {
             echo CHtml::tag('option', array('value' => $value), CHtml::encode($name), true);
         }
     }
+    
+    public function actionAmpur(){
+        
+    }
 
 }
