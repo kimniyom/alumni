@@ -4157,6 +4157,7 @@ HTTP_REFERER=http://localhost/alumni/index.php?r=Generation/Index
 HTTP_REFERER=http://localhost/alumni/index.php?r=news
 >>>>>>> origin/master
 ---
+<<<<<<< HEAD
 2015/05/06 13:12:59 [error] [exception.CException] exception 'CException' with message 'EducationController cannot find the requested view "index".' in /Applications/MAMP/htdocs/alumni/framework/web/CController.php:878
 Stack trace:
 #0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(782): CController->renderPartial('index', 'Hello Education...', true)
@@ -4624,3 +4625,83 @@ Stack trace:
 REQUEST_URI=/alumni/index.php?r=frontend/collegian/detail_collegian
 in /Applications/MAMP/htdocs/alumni/protected/controllers/frontend/CollegianController.php (39)
 in /Applications/MAMP/htdocs/alumni/index.php (13)
+=======
+2015/04/30 17:43:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "news".' in /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController('news')
+#1 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/alumni/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/alumni/index.php?r=news
+---
+2015/04/30 17:44:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "news".' in /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController('news')
+#1 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/alumni/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/alumni/index.php?r=news
+HTTP_REFERER=http://localhost/alumni/index.php?r=news
+---
+2015/04/30 17:48:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "news".' in /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController('news')
+#1 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/alumni/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/alumni/index.php?r=news
+HTTP_REFERER=http://localhost/alumni/index.php?r=masmenu
+---
+2015/04/30 17:48:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Education/Index".' in /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController('Education/Index')
+#1 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/alumni/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/alumni/index.php?r=Education/Index
+HTTP_REFERER=http://localhost/alumni/index.php?r=Generation/Index
+---
+2015/04/30 17:50:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "news".' in /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController('news')
+#1 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/alumni/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/alumni/index.php?r=news
+HTTP_REFERER=http://localhost/alumni/index.php?r=masmenu
+---
+2015/05/02 15:11:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "news".' in /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController('news')
+#1 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/alumni/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/alumni/index.php?r=news
+HTTP_REFERER=http://localhost/alumni/index.php?r=masmenu
+---
+2015/05/02 15:14:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "news".' in /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController('news')
+#1 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/alumni/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/alumni/index.php?r=news
+HTTP_REFERER=http://localhost/alumni/index.php?r=masmenu
+---
+2015/05/04 09:57:13 [error] [exception.CException] exception 'CException' with message 'EducationController cannot find the requested view "index".' in /Applications/MAMP/htdocs/alumni/framework/web/CController.php:878
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(782): CController->renderPartial('index', 'Hello Education...', true)
+#1 /Applications/MAMP/htdocs/alumni/protected/controllers/EducationController.php(18): CController->render('index', 'Hello Education...')
+#2 /Applications/MAMP/htdocs/alumni/framework/web/actions/CInlineAction.php(49): EducationController->actionIndex()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CController->run('Index')
+#7 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController('Education/Index')
+#8 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /Applications/MAMP/htdocs/alumni/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/alumni/index.php?r=Education/Index
+HTTP_REFERER=http://localhost/alumni/index.php?r=Generation/Index
+---
+>>>>>>> origin/master
