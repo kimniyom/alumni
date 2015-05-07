@@ -170,4 +170,14 @@ class Collegian extends CActiveRecord
             $result = Yii::app()->db->createCommand($query)->queryRow();
             return $result;
         }
+        
+        public function Get_img_profile($collegian_code = ''){
+            $query = "SELECT img_profile FROM images_profile WHERE collegian_code = '$collegian_code' ";
+            $result = Yii::app()->db->createCommand($query)->queryRow();
+            if($result){
+                return $result['img_profile'];
+            } else {
+                return "bg_5.jpg";
+            }
+        }
 }

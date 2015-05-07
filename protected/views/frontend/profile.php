@@ -4,7 +4,7 @@
     <head>
         <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
         <meta charset="utf-8">
-        <title>Facebook Theme Demo</title>
+        <title>ข้อมูลส่วนตัว</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <link href="<?php echo $path; ?>assets/css/bootstrap.css" rel="stylesheet">
         <!--[if lt IE 9]>
@@ -13,10 +13,69 @@
         <link href="<?php echo $path; ?>assets/css/facebook.css" rel="stylesheet">
         <link href="<?php echo Yii::app()->baseUrl; ?>/css/font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
         <!-- Ionicons -->
-        
+
         <script type="text/javascript" src="<?php echo $path; ?>assets/js/jquery.js"></script>
         <script type="text/javascript" src="<?php echo $path; ?>assets/js/bootstrap.js"></script>
         <script type="text/javascript" src="<?php echo Yii::app()->baseUrl; ?>/js_store/js_detail_collegian.js"></script>
+
+        <!-- Croup IMG -->
+        <?php $croup = Yii::app()->baseUrl . "/assets/jquery.picture.cut/"; ?>
+        <!--
+        <link rel="stylesheet" href="dependencies/bootstrap-3.2.0/css/bootstrap.min.css"> 
+        <link rel="stylesheet" href="demo_assets/google-code-prettify/prettify.css">
+
+        <script src="dependencies/jquery/jquery-1.11.1.min.js"></script>    
+        <script src="dependencies/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+        <!--for bootstrap theme-->
+        <script src="<?php echo $croup; ?>dependencies/jquery-ui-1.11.1.custom/jquery-ui.min.js"></script>
+        <script src="<?php echo $croup; ?>demo_assets/google-code-prettify/prettify.js"></script>
+
+        <script src="<?php echo $croup; ?>src/jquery.picture.cut.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                autoload_img_profile();
+                $("#profile_photo").PictureCut({
+                    InputOfImageDirectory: "image",
+                    PluginFolderOnServer: "<?php echo $croup; ?>",
+                    FolderOnServer: "<?php echo $croup; ?>uploads/",
+                    EnableCrop: true,
+                    CropWindowStyle: "Bootstrap",
+                    Default: ["jpg", "png"],
+                    UploadedCallback: function (data) {
+                        var url = "index.php?r=frontend/collegian/add_img_profile";
+                        var colegiancode = "<?php echo $CollegianCode; ?>";
+                        var img_profile = data.currentFileName;
+                        alert(colegiancode + img_profile);
+                        var data = {collegian_code: colegiancode, img_profile: img_profile};
+                        $.post(url, data, function (success) {
+                            autoload_img_profile();
+                            $("#from_img_profile").modal("hide");
+                        });
+                    }
+                });
+            });
+
+            function edit_img_profile() {
+                $("#from_img_profile").modal();
+            }
+
+            function autoload_img_profile() {
+                var loading = "<center><div class='overlay'><i class='fa fa-refresh fa-spin'></i></div><center>";
+                $("#show_img_profile").html(loading);
+                var url = "index.php?r=frontend/collegian/img_profile";
+                var colegiancode = "<?php echo $CollegianCode; ?>";
+                var data = {collegian_code: colegiancode};
+                $.post(url, data, function (success) {
+                    $("#show_img_profile").html(success);
+                });
+            }
+        </script>
+
+        <!--
+        <link rel="stylesheet" href="demo_assets/demo.css">
+        -->
+
         <script type="text/javascript">
             $(document).ready(function () {
                 $('[data-toggle=offcanvas]').click(function () {
@@ -27,13 +86,49 @@
                     $('#xs-menu').toggleClass('visible-xs').toggleClass('hidden-xs');
                     $('#btnShow').toggle();
                 });
+                     
             });
+
+            function autoload_imf_profile() {
+                var url = "index.php?r=frontend/collegian/img_profile";
+                var colegiancode = "<?php echo $CollegianCode; ?>";
+                var data = {collegian_code: colegiancode};
+                $.post(url, data, function (success) {
+                    $("#img_profile").html(success);
+                });
+            }
         </script>
-        
+
+
     </head>
 
     <body>
-        <input type="hidden" id="collegian_code" value="<?php echo $CollegianCode;?>"/>
+
+        <!-- 
+            Dialog Img_profile 
+        -->
+        <div class="modal fade" id="from_img_profile">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">
+                            <i class="fa fa-image"></i>
+                            เลือกรูปภาพประจำตัว
+                        </h4>
+                    </div>
+                    <div class="modal-body" style=" padding: 20px;">
+                        <center>
+                            <div id="profile_photo"></div>
+                        </center>
+                    </div>
+
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+
+        <input type="hidden" id="collegian_code" value="<?php echo $CollegianCode; ?>"/>
         <div class="wrapper">
             <div class="box">
                 <div class="row row-offcanvas row-offcanvas-left">
@@ -93,10 +188,19 @@
                                 </form>
                                 <ul class="nav navbar-nav">
                                     <li>
-                                        <a href="#"><i class="glyphicon glyphicon-home"></i> Home</a>
+                                        <a href="#"><b> หน้าแรก</b></a>
                                     </li>
-                                    <li>
-                                        <a href="#postModal" role="button" data-toggle="modal"><i class="glyphicon glyphicon-plus"></i> Post</a>
+                                    <li style="padding: 0px;">
+                                        <a href="#" style=" margin: 0px;">
+                                            <?php
+                                            $collegian = new Collegian();
+                                            $img = $collegian->Get_img_profile(Yii::app()->session['collegian_code']);
+                                            ?>
+                                            <img src="<?php echo Yii::app()->baseUrl; ?>/assets/jquery.picture.cut/uploads/<?php echo $img; ?>" style="height: 20px;" class="img-rounded">
+                                            <b>
+                                                <?php echo Yii::app()->session['collegian_name']; ?>
+                                            </b>
+                                        </a>
                                     </li>
                                     <li>
                                         <a href="#"><span class="badge">badge</span></a>
@@ -129,10 +233,11 @@
 
                                         <div class="panel panel-default">
                                             <div class="panel-thumbnail" style=" position: relative;">
-                                                <img src="<?php echo $path; ?>assets/img/bg_5.jpg" class="img-responsive">
-                                                <a href="#">
+                                                <div id="show_img_profile"></div>
+
+                                                <a href="#" onclick="edit_img_profile();">
                                                     <div class="label label-default" style=" position: absolute;  bottom: 0px; right: 0px; width: 100%; opacity: 0.7; background: #666666;">
-                                                        <h4><i class="fa fa-plus"></i> แก้ไขรูปภาพ</h4>
+                                                        <h4><i class="fa fa-camera"></i> แก้ไขรูปภาพ</h4>
                                                     </div>
                                                 </a>
                                             </div>
@@ -141,7 +246,7 @@
                                                     <i class="fa fa-user"></i>
                                                     <?php echo Yii::app()->session['collegian_name']; ?>
                                                 </p>
-                                                
+
                                                 <p>
                                                     <i class="fa fa-calendar"></i>
                                                     เข้าใช้งานเมื่อ 
@@ -158,7 +263,7 @@
                                             </div>
                                             <div class="panel-body">
                                                 <div class="list-group" id="detail_collegian">
-                                                    
+
                                                 </div>
                                             </div>
                                         </div>
@@ -314,30 +419,4 @@
         </div>
 
 
-        <!--post modal-->
-        <div id="postModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                        Update Status
-                    </div>
-                    <div class="modal-body">
-                        <form class="form center-block">
-                            <div class="form-group">
-                                <textarea class="form-control input-lg" autofocus="" placeholder="What do you want to share?"></textarea>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <div>
-                            <button class="btn btn-primary btn-sm" data-dismiss="modal" aria-hidden="true">Post</button>
-                            <ul class="pull-left list-inline"><li><a href=""><i class="glyphicon glyphicon-upload"></i></a></li><li><a href=""><i class="glyphicon glyphicon-camera"></i></a></li><li><a href=""><i class="glyphicon glyphicon-map-marker"></i></a></li></ul>
-                        </div>	
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        
     </body></html>

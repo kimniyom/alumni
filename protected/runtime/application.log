@@ -4705,3 +4705,146 @@ REQUEST_URI=/alumni/index.php?r=Education/Index
 HTTP_REFERER=http://localhost/alumni/index.php?r=Generation/Index
 ---
 >>>>>>> origin/master
+2015/05/07 05:01:31 [error] [exception.CException] exception 'CException' with message 'EducationController cannot find the requested view "index".' in C:\xampp\htdocs\alumni\framework\web\CController.php:878
+Stack trace:
+#0 C:\xampp\htdocs\alumni\framework\web\CController.php(782): CController->renderPartial('index', 'Hello Education...', true)
+#1 C:\xampp\htdocs\alumni\protected\controllers\EducationController.php(18): CController->render('index', 'Hello Education...')
+#2 C:\xampp\htdocs\alumni\framework\web\actions\CInlineAction.php(49): EducationController->actionIndex()
+#3 C:\xampp\htdocs\alumni\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\alumni\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\alumni\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\alumni\framework\web\CWebApplication.php(282): CController->run('Index')
+#7 C:\xampp\htdocs\alumni\framework\web\CWebApplication.php(141): CWebApplication->runController('Education/Index')
+#8 C:\xampp\htdocs\alumni\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\alumni\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/alumni/index.php?r=Education/Index
+HTTP_REFERER=http://localhost/alumni/index.php?r=masmenu
+---
+2015/05/07 05:04:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in C:\xampp\htdocs\alumni\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\alumni\framework\web\CController.php(270): CController->missingAction('')
+#1 C:\xampp\htdocs\alumni\framework\web\CWebApplication.php(282): CController->run('')
+#2 C:\xampp\htdocs\alumni\framework\web\CWebApplication.php(141): CWebApplication->runController('frontend/colleg...')
+#3 C:\xampp\htdocs\alumni\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\alumni\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/alumni/index.php?r=frontend/collegian
+---
+2015/05/07 10:15:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "backend/collegian/add_img_profile".' in C:\xampp\htdocs\alumni\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\alumni\framework\web\CWebApplication.php(141): CWebApplication->runController('backend/collegi...')
+#1 C:\xampp\htdocs\alumni\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\alumni\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/alumni/index.php?r=backend/collegian/add_img_profile
+HTTP_REFERER=http://localhost/alumni/index.php?r=frontend/Collegian/Profile&collegian_code=0000000000000
+---
+2015/05/07 10:26:00 [error] [php] unlink(/alumni/assets/jquery.picture.cut/images/b61bb8d6.jpg): No such file or directory (C:\xampp\htdocs\alumni\protected\controllers\frontend\CollegianController.php:61)
+Stack trace:
+#0 C:\xampp\htdocs\alumni\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\alumni\framework\web\CController.php(286): CollegianController->runAction()
+#2 C:\xampp\htdocs\alumni\framework\web\CController.php(265): CollegianController->runActionWithFilters()
+#3 C:\xampp\htdocs\alumni\framework\web\CWebApplication.php(282): CollegianController->run()
+#4 C:\xampp\htdocs\alumni\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\alumni\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\alumni\index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=frontend/collegian/add_img_profile
+in C:\xampp\htdocs\alumni\protected\controllers\frontend\CollegianController.php (61)
+in C:\xampp\htdocs\alumni\index.php (13)
+2015/05/07 10:27:59 [error] [php] unlink(/alumni/assets/jquery.picture.cut/uploads/b61bb8d6.jpg): No such file or directory (C:\xampp\htdocs\alumni\protected\controllers\frontend\CollegianController.php:61)
+Stack trace:
+#0 C:\xampp\htdocs\alumni\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\alumni\framework\web\CController.php(286): CollegianController->runAction()
+#2 C:\xampp\htdocs\alumni\framework\web\CController.php(265): CollegianController->runActionWithFilters()
+#3 C:\xampp\htdocs\alumni\framework\web\CWebApplication.php(282): CollegianController->run()
+#4 C:\xampp\htdocs\alumni\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\alumni\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\alumni\index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=frontend/collegian/add_img_profile
+in C:\xampp\htdocs\alumni\protected\controllers\frontend\CollegianController.php (61)
+in C:\xampp\htdocs\alumni\index.php (13)
+2015/05/07 10:31:04 [error] [php] unlink(C:\xampp\htdocs\alumni\protected/assets/jquery.picture.cut/uploads/b61bb8d6.jpg): No such file or directory (C:\xampp\htdocs\alumni\protected\controllers\frontend\CollegianController.php:61)
+Stack trace:
+#0 C:\xampp\htdocs\alumni\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\alumni\framework\web\CController.php(286): CollegianController->runAction()
+#2 C:\xampp\htdocs\alumni\framework\web\CController.php(265): CollegianController->runActionWithFilters()
+#3 C:\xampp\htdocs\alumni\framework\web\CWebApplication.php(282): CollegianController->run()
+#4 C:\xampp\htdocs\alumni\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\alumni\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\alumni\index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=frontend/collegian/add_img_profile
+in C:\xampp\htdocs\alumni\protected\controllers\frontend\CollegianController.php (61)
+in C:\xampp\htdocs\alumni\index.php (13)
+2015/05/07 10:31:46 [error] [php] unlink(/assets/jquery.picture.cut/uploads/b61bb8d6.jpg): No such file or directory (C:\xampp\htdocs\alumni\protected\controllers\frontend\CollegianController.php:61)
+Stack trace:
+#0 C:\xampp\htdocs\alumni\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\alumni\framework\web\CController.php(286): CollegianController->runAction()
+#2 C:\xampp\htdocs\alumni\framework\web\CController.php(265): CollegianController->runActionWithFilters()
+#3 C:\xampp\htdocs\alumni\framework\web\CWebApplication.php(282): CollegianController->run()
+#4 C:\xampp\htdocs\alumni\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\alumni\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\alumni\index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=frontend/collegian/add_img_profile
+in C:\xampp\htdocs\alumni\protected\controllers\frontend\CollegianController.php (61)
+in C:\xampp\htdocs\alumni\index.php (13)
+2015/05/07 10:32:09 [error] [php] unlink(../assets/jquery.picture.cut/uploads/b61bb8d6.jpg): No such file or directory (C:\xampp\htdocs\alumni\protected\controllers\frontend\CollegianController.php:61)
+Stack trace:
+#0 C:\xampp\htdocs\alumni\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\alumni\framework\web\CController.php(286): CollegianController->runAction()
+#2 C:\xampp\htdocs\alumni\framework\web\CController.php(265): CollegianController->runActionWithFilters()
+#3 C:\xampp\htdocs\alumni\framework\web\CWebApplication.php(282): CollegianController->run()
+#4 C:\xampp\htdocs\alumni\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\alumni\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\alumni\index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=frontend/collegian/add_img_profile
+in C:\xampp\htdocs\alumni\protected\controllers\frontend\CollegianController.php (61)
+in C:\xampp\htdocs\alumni\index.php (13)
+2015/05/07 10:52:06 [error] [php] Undefined variable: img (C:\xampp\htdocs\alumni\protected\views\frontend\profile.php:194)
+Stack trace:
+#0 C:\xampp\htdocs\alumni\framework\web\CController.php(869): CollegianController->renderFile()
+#1 C:\xampp\htdocs\alumni\protected\controllers\frontend\CollegianController.php(16): CollegianController->renderPartial()
+#2 C:\xampp\htdocs\alumni\framework\web\actions\CInlineAction.php(49): CollegianController->actionProfile()
+#3 C:\xampp\htdocs\alumni\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 C:\xampp\htdocs\alumni\framework\web\CController.php(286): CollegianController->runAction()
+#5 C:\xampp\htdocs\alumni\framework\web\CController.php(265): CollegianController->runActionWithFilters()
+#6 C:\xampp\htdocs\alumni\framework\web\CWebApplication.php(282): CollegianController->run()
+#7 C:\xampp\htdocs\alumni\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 C:\xampp\htdocs\alumni\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\alumni\index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=frontend/Collegian/Profile&collegian_code=0000000000000
+in C:\xampp\htdocs\alumni\protected\views\frontend\profile.php (194)
+in C:\xampp\htdocs\alumni\protected\controllers\frontend\CollegianController.php (16)
+in C:\xampp\htdocs\alumni\index.php (13)
+2015/05/07 10:52:14 [error] [php] Undefined variable: img (C:\xampp\htdocs\alumni\protected\views\frontend\profile.php:194)
+Stack trace:
+#0 C:\xampp\htdocs\alumni\framework\web\CController.php(869): CollegianController->renderFile()
+#1 C:\xampp\htdocs\alumni\protected\controllers\frontend\CollegianController.php(16): CollegianController->renderPartial()
+#2 C:\xampp\htdocs\alumni\framework\web\actions\CInlineAction.php(49): CollegianController->actionProfile()
+#3 C:\xampp\htdocs\alumni\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 C:\xampp\htdocs\alumni\framework\web\CController.php(286): CollegianController->runAction()
+#5 C:\xampp\htdocs\alumni\framework\web\CController.php(265): CollegianController->runActionWithFilters()
+#6 C:\xampp\htdocs\alumni\framework\web\CWebApplication.php(282): CollegianController->run()
+#7 C:\xampp\htdocs\alumni\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 C:\xampp\htdocs\alumni\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\alumni\index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=frontend/Collegian/Profile&collegian_code=0000000000000
+in C:\xampp\htdocs\alumni\protected\views\frontend\profile.php (194)
+in C:\xampp\htdocs\alumni\protected\controllers\frontend\CollegianController.php (16)
+in C:\xampp\htdocs\alumni\index.php (13)
+2015/05/07 10:52:17 [error] [php] Undefined variable: img (C:\xampp\htdocs\alumni\protected\views\frontend\profile.php:194)
+Stack trace:
+#0 C:\xampp\htdocs\alumni\framework\web\CController.php(869): CollegianController->renderFile()
+#1 C:\xampp\htdocs\alumni\protected\controllers\frontend\CollegianController.php(16): CollegianController->renderPartial()
+#2 C:\xampp\htdocs\alumni\framework\web\actions\CInlineAction.php(49): CollegianController->actionProfile()
+#3 C:\xampp\htdocs\alumni\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 C:\xampp\htdocs\alumni\framework\web\CController.php(286): CollegianController->runAction()
+#5 C:\xampp\htdocs\alumni\framework\web\CController.php(265): CollegianController->runActionWithFilters()
+#6 C:\xampp\htdocs\alumni\framework\web\CWebApplication.php(282): CollegianController->run()
+#7 C:\xampp\htdocs\alumni\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 C:\xampp\htdocs\alumni\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\alumni\index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=frontend/Collegian/Profile&collegian_code=0000000000000
+in C:\xampp\htdocs\alumni\protected\views\frontend\profile.php (194)
+in C:\xampp\htdocs\alumni\protected\controllers\frontend\CollegianController.php (16)
+in C:\xampp\htdocs\alumni\index.php (13)
