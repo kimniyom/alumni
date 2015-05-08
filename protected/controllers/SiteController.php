@@ -31,7 +31,11 @@ class SiteController extends Controller {
         // using the default layout 'protected/views/layouts/main.php'
         //$this->render('index');
         //
-         $this->redirect(array('main_admin/index'));
+         $this->redirect(array('site/main'));
+    }
+    
+    public function actionMain(){
+        $this->render('main');
     }
 
     /**
