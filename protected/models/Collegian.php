@@ -163,9 +163,10 @@ class Collegian extends CActiveRecord
         }
         
         public function Get_Collegian_By_CollegianCode($collegian_code = ''){
-            $query = "SELECT c.*,p.shot_name AS prename
+            $query = "SELECT c.*,p.shot_name AS prename,g.GenYear
                         FROM collegian c 
                         INNER JOIN prefix p ON c.shot_name = p.id 
+                        INNER JOIN generation g ON c.GenNumber = g.GenNumber
                         WHERE c.collegian_code = '$collegian_code' ";
             $result = Yii::app()->db->createCommand($query)->queryRow();
             return $result;
