@@ -20,6 +20,7 @@
 </script>
 
 <select id="ampur_code" name="ampur_code" onchange="chang_tambon(this.value);" class="form-control">
+    <option value="">== ทั้งหมด ==</option>
     <?php foreach ($ampur as $am) { ?>
         <option value="<?php echo $am['ampur_id']; ?>"><?php echo $am['ampur_name']; ?></option>
     <?php } ?>
