@@ -1,0 +1,36 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : May 8, 2015, 11:30:46 PM
+    Author     : KimniyomWin8Pro
+*/
+#box_new_green{background-color: #ccf8e0;
+                     *background-color: #ccf8e0;
+                     background-image: -moz-linear-gradient(top, #FFFFFF, #ccf8e0);
+                     background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#FFFFFF), to(#ccf8e0));
+                     background-image: -webkit-linear-gradient(top, #FFFFFF, #ccf8e0);
+                     background-image: -o-linear-gradient(top, #FFFFFF, #ccf8e0);
+                     background-image: linear-gradient(to bottom, #FFFFFF, #ccf8e0);
+                     background-repeat: repeat-x;
+                     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#ccf8e0', GradientType=0);
+                     filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+                     //box-shadow:#CCC 0px 0px 5px 0px;
+                     //border:#CCC solid 1px;padding: 5px; 
+}
+
+#box_new_orange{background-color: #fdeeaa;
+                     *background-color: #fdeeaa;
+                     background-image: -moz-linear-gradient(top, #FFFFFF, #fdeeaa);
+                     background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#FFFFFF), to(#fdeeaa));
+                     background-image: -webkit-linear-gradient(top, #FFFFFF, #fdeeaa);
+                     background-image: -o-linear-gradient(top, #FFFFFF, #fdeeaa);
+                     background-image: linear-gradient(to bottom, #FFFFFF, #fdeeaa);
+                     background-repeat: repeat-x;
+                     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#fdeeaa', GradientType=0);
+                     filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+                     //box-shadow:#CCC 0px 0px 5px 0px;
+                     //border:#CCC solid 1px;padding: 5px; 
+}
