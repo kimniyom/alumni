@@ -33,7 +33,7 @@
                 var url = "index.php?r=main_admin/do_login";
                 var data = {username: $("#username").val(), password: $("#password").val()};
                 $.post(url, data, function (success) {
-                    if(success == '1'){
+                    if (success == '1') {
                         window.location.reload();
                     } else {
                         $("#msg_login").html("<center><font style='color:red'>Login Wrong ...!</font></center>");
@@ -51,31 +51,38 @@
                     <b>Admin</b>Login</a>
             </div><!-- /.login-logo -->
             <div class="login-box-body">
-                <p class="login-box-msg" id="msg_login">Sign in to start your session</p>
-        
-                    <div class="form-group has-feedback">
-                        <input type="text" class="form-control" id="username" name="username" placeholder="Username" required="required"/>
-                        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-                    </div>
-                    <div class="form-group has-feedback">
-                        <input type="password" id="password" name="password" class="form-control" placeholder="Password" required="required"/>
-                        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-6">
-                            <button type="submit" class="btn btn-primary btn-block btn-flat" onclick="sent_form();">
-                                <i class="fa fa-lock"></i>
-                                Sign In
-                            </button>
-                        </div>
-                        <div class="col-xs-6">
-                            <button type="reset" class="btn btn-danger btn-block btn-flat">
-                                <i class="fa fa-remove"></i>
-                                Cancel
-                            </button>
-                        </div><!-- /.col -->
-                    </div>
+                <p class="login-box-msg" id="msg_login">กรอกข้อมูลเพื่อเข้าสู่ระบบ</p>
 
+                <div class="form-group has-feedback">
+                    <input type="text" class="form-control" id="username" name="username" placeholder="Username" required="required"/>
+                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    <input type="password" id="password" name="password" class="form-control" placeholder="Password" required="required"/>
+                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <button type="submit" class="btn btn-primary btn-block btn-flat" onclick="sent_form();">
+                            <i class="fa fa-lock"></i>
+                            ตกลง
+                        </button>
+                    </div>
+                    <div class="col-xs-6">
+                        <button type="reset" class="btn btn-danger btn-block btn-flat">
+                            <i class="fa fa-remove"></i>
+                            ยกเลิก
+                        </button>
+                    </div><!-- /.col -->
+                </div>
+
+                <div class="social-auth-links text-center">
+                    <p>- OR -</p>
+                    <a href="<?php echo Yii::app()->createUrl('site/index') ?>" 
+                       class="btn btn-block btn-social btn-facebook btn-flat">
+                        <i class="fa fa-arrow-left"></i> กลับหน้าเว็บไซต์
+                    </a>
+                </div><!-- /.social-auth-links -->
 
             </div><!-- /.login-box-body -->
         </div><!-- /.login-box -->
