@@ -2,6 +2,8 @@
 
 class CollegianController extends Controller {
 
+    public $layout = "profile";
+
     public function actionLogin() {
         if (Yii::app()->session['user'] != "U") {
             $this->renderPartial('//frontend/collegian_login');
@@ -12,8 +14,14 @@ class CollegianController extends Controller {
     }
 
     public function actionProfile() {
-        $data['CollegianCode'] = $_GET['collegian_code'];
-        $this->renderPartial('//frontend/profile', $data);
+        if (Yii::app()->session['user'] == "") {
+            $this->redirect(array('frontend/collegian/login'));
+        } else {
+            $collegian = new Collegian();
+            $data['CollegianCode'] = $_GET['collegian_code'];
+            $data['detail'] = $collegian->Get_Collegian_By_CollegianCode($data['CollegianCode']);
+            $this->render('//frontend/profile', $data);
+        }
     }
 
     public function actionDo_login() {
@@ -70,6 +78,32 @@ class CollegianController extends Controller {
             Yii::app()->db->createCommand()
                     ->insert("images_profile", $column);
         }
+    }
+
+    public function actionEdit_password() {
+        $collegian = new Collegian();
+        $collegian_code = $_GET['collegian_code'];
+        $data['detail'] = $collegian->Get_Collegian_By_CollegianCode($collegian_code);
+
+        $this->render('//frontend/edit_password', $data);
+    }
+
+    public function actionSave_edit_password() {
+        $collegian_code = $_POST['collegian_code'];
+        $data = array("collegian_password" => $_POST['collegian_password']);
+
+        Yii::app()->db->createCommand()
+                ->update("collegian", $data, "collegian_code = '$collegian_code' ");
+    }
+
+    public function actionEdit_profile() {
+        $collegian = new Collegian();
+        $collegian_code = $_GET['collegian_code'];
+        $query = "SELECT * FROM prefix";
+        $data['perfix'] = Yii::app()->db->createCommand($query)->queryAll();
+        $data['detail'] = $collegian->Get_Collegian_By_CollegianCode($collegian_code);
+
+        $this->render('//collegian/edit_collegian', $data);
     }
 
 }
