@@ -23,7 +23,7 @@ class CollegianController extends Controller {
         $collegian = new Collegian();
         $data['GenNumber'] = $GenNumber;
         $data['collegian'] = $collegian->Get_Collegian_InNumber($GenNumber);
-        $this->render('view',$data);
+        $this->render('view', $data);
     }
 
     /**
@@ -125,7 +125,7 @@ class CollegianController extends Controller {
         $query = "SELECT * FROM collegian WHERE collegian_code = '" . $_POST['collegian_code'] . "' ";
         $check_code = Yii::app()->db->createCommand($query)->queryScalar();
         if ($check_code == 0) {
-            $birth = $_POST['year'] . '-' . $_POST['month'] . '-' . $_POST['day'];
+            //$birth = $_POST['year'] . '-' . $_POST['month'] . '-' . $_POST['day'];
             $data = array(
                 "collegian_code" => $_POST['collegian_code'],
                 "shot_name" => $_POST['shot_name'],
@@ -133,17 +133,20 @@ class CollegianController extends Controller {
                 "collegian_lname" => $_POST['collegian_lname'],
                 "collegian_username" => $_POST['collegian_username'],
                 "collegian_password" => $_POST['collegian_password'],
-                "collegian_card" => $_POST['collegian_card'],
-                "collegian_birth" => $birth,
-                "changwat_code" => $_POST['changwat_code'],
-                "ampur_code" => $_POST['ampur_code'],
-                "tambon_code" => $_POST['tambon_code'],
-                "zipcode" => $_POST['zipcode'],
-                "weight" => $_POST['weight'],
-                "height" => $_POST['height'],
-                "collegian_email" => $_POST['collegian_email'],
-                "collegian_tel" => $_POST['collegian_tel'],
-                "occupation" => $_POST['occupation'],
+                /*
+                  "collegian_card" => $_POST['collegian_card'],
+                  "collegian_birth" => $birth,
+                  "changwat_code" => $_POST['changwat_code'],
+                  "ampur_code" => $_POST['ampur_code'],
+                  "tambon_code" => $_POST['tambon_code'],
+                  "zipcode" => $_POST['zipcode'],
+                  "weight" => $_POST['weight'],
+                  "height" => $_POST['height'],
+                  "collegian_email" => $_POST['collegian_email'],
+                  "collegian_tel" => $_POST['collegian_tel'],
+                  "occupation" => $_POST['occupation'],
+                 * 
+                 */
                 "GenNumber" => $_POST['GenNumber'],
                 "status" => "U",
                 "d_update" => date("Y-m-d H:i:s")
@@ -168,11 +171,48 @@ class CollegianController extends Controller {
 
                 Yii::app()->db->createCommand()
                         ->insert("codeline", $data_codeline);
-            } 
+            }
             echo "success";
         } else {
             echo "unsuccess";
         }
+    }
+
+    public function actionEdit_collegian() {
+        $birth = $_POST['year'] . '-' . $_POST['month'] . '-' . $_POST['day'];
+        $collegian_code = $_POST['collegian_code'];
+        $data = array(
+            "shot_name" => $_POST['shot_name'],
+            "collegian_name" => $_POST['collegian_name'],
+            "collegian_lname" => $_POST['collegian_lname'],
+            "collegian_username" => $_POST['collegian_username'],
+            "collegian_card" => $_POST['collegian_card'],
+            "collegian_birth" => $birth,
+            "changwat_code" => $_POST['changwat_code'],
+            "ampur_code" => $_POST['ampur_code'],
+            "tambon_code" => $_POST['tambon_code'],
+            "zipcode" => $_POST['zipcode'],
+            "weight" => $_POST['weight'],
+            "height" => $_POST['height'],
+            "collegian_email" => $_POST['collegian_email'],
+            "collegian_tel" => $_POST['collegian_tel'],
+            "occupation" => $_POST['occupation'],
+            "status" => "U",
+            "d_update" => date("Y-m-d H:i:s")
+        );
+
+        Yii::app()->db->createCommand()
+                ->update("collegian", $data, "collegian_code = '$collegian_code' ");
+    }
+
+    public function actionFrom_edit_collegian() {
+        $collegian = new Collegian();
+        $collegian_code = $_GET['collegian_code'];
+        $query = "SELECT * FROM prefix";
+        $data['perfix'] = Yii::app()->db->createCommand($query)->queryAll();
+        $data['detail'] = $collegian->Get_Collegian_By_CollegianCode($collegian_code);
+
+        $this->render('//admin/edit_collegian', $data);
     }
 
 }
