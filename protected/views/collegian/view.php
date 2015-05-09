@@ -29,19 +29,24 @@ $this->breadcrumbs = array(
                 <tr>
                     <th>รหัส</th>
                     <th>ชื่อ - สกุล</th>
-                    <th>วันเกิด</th>
-                    <th>เบอร์โทรศัพท์</th>
-                    <th>อีเมลล์</th>
+                    <th>ชื่อเข้าใช้งาน</th>
+                    <th>รหัสผ่าน</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach ($collegian as $rs): ?>
                     <tr>
                         <td><?php echo $rs['collegian_code']; ?></td>
-                        <td><?php echo $rs['prename'].$rs['collegian_name'] . ' ' . $rs['collegian_lname']; ?></td>
-                        <td><?php echo $rs['collegian_birth']; ?></td>
-                        <td><?php echo $rs['collegian_tel']; ?></td>
-                        <td><?php echo $rs['collegian_email']; ?></td>
+                        <td><?php echo $rs['prename'] . $rs['collegian_name'] . ' ' . $rs['collegian_lname']; ?></td>
+                        <td><?php echo $rs['collegian_username']; ?></td>
+                        <td><?php echo $rs['collegian_password']; ?></td>
+                        <td align="center">
+                            <a href="<?php echo Yii::app()->createUrl('collegian/From_edit_collegian&collegian_code=' . $rs['collegian_code']) ?>">
+                                <div class="btn btn-primary btn-sm">
+                                    <i class="fa fa-photo"></i> แก้ไข</div>
+                            </a>
+                        </td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
