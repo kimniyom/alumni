@@ -12,52 +12,8 @@
         $LTE = Yii::app()->baseUrl . '/themes/AdminLTE2/';
         ?>
 
-        <style type="text/css">
-            #link{ color: #99ffcc;}
-            #link:hover{ color: #000;}
-            #link:focus{ color: #000;}
-            .navbar ul li:hover{ background: #FFF; color:#000;}
-            .dropdown-menu  .sub-menu {
-                left: 100%;
-                position: absolute;
-                top: 0;
-                visibility: hidden;
-                margin-top: -1px;
-            }
-
-            .dropdown-menu li:hover .sub-menu {
-                visibility: visible;
-            }
-
-            .dropdown:hover .dropdown-menu {
-                display: block;
-            }
-
-            .nav-tabs .dropdown-menu, .nav-pills .dropdown-menu, .navbar .dropdown-menu {
-                margin-top: 0;
-            }
-
-            .navbar .sub-menu:before {
-                border-bottom: 7px solid transparent;
-                border-left: none;
-                border-right: 7px solid rgba(0, 0, 0, 0.2);
-                border-top: 7px solid transparent;
-                left: -7px;
-                top: 10px;
-            }
-            .navbar .sub-menu:after {
-                border-top: 6px solid transparent;
-                border-left: none;
-                border-right: 6px solid #fff;
-                border-bottom: 6px solid transparent;
-                left: 10px;
-                top: 11px;
-                left: -6px;
-            }
-
-        </style>
         <link href="<?php echo Yii::app()->baseUrl; ?>/css/style_alumni.css" rel="stylesheet">
-        <link href="<?php echo $path; ?>css/bootstrap-paper.min.css" rel="stylesheet">
+        <link href="<?php echo $path; ?>css/bootstrap-cosmo.min.css" rel="stylesheet">
         <!-- Font Awesome Icons -->
         <link href="<?php echo Yii::app()->baseUrl; ?>/css/font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 
@@ -84,7 +40,7 @@
     <body style="background: #ecf0f5;">
 
         <div class="navbar navbar-default" style=" margin-bottom: 0px; background: none;"></div>
-        <div class="navbar navbar-inverse navbar-fixed-top" style=" background:url('<?php echo $path; ?>images/bg-green.jpg') #1d9d74;">
+        <div class="navbar navbar-default navbar-fixed-top" style=" background:url('<?php echo $path; ?>images/bg-green.jpg')#1d9d74; box-shadow:0px 0px 3px 0px #666666; border-bottom: none;">
             <div class="container">
                 <div class="navbar-header">
                     <a href="../" class="navbar-brand">เว็บไซต์ทำเนียบรุ่น Com Sci</a>
