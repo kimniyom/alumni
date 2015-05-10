@@ -63,7 +63,46 @@ class UserController extends Controller {
             echo "1";
         }
     }
+
+    public function actionDetail_agent() {
+        $id = Yii::app()->session['agent_id'];
+        $agent = new CompanyAgent();
+        $data['agent'] = $agent->Get_agent($id);
+        $data['id'] = $id;
+        $this->render('//user/detail_agent', $data);
+    }
+
+    public function actionAdd_img_profile() {
+        $id = $_POST['id'];
+        $img_profile = $_POST['img_profile'];
+
+        //Check Profile 
+        $sql = "SELECT images FROM company_agent WHERE id = '$id' ";
+        $result = Yii::app()->db->createCommand($sql)->queryRow();
+
+        if (!empty($result['images'])) {
+            unlink(Yii::app()->basePath . "/../assets/jquery.picture.cut/uploads_images_user/" . $result['images']);
+            $column = array("images" => $img_profile);
+            Yii::app()->db->createCommand()
+                    ->update("company_agent", $column, " id='$id' ");
+        } else {
+            $column = array("images" => $img_profile);
+            Yii::app()->db->createCommand()
+                    ->update("company_agent", $column, " id='$id' ");
+        }
+    }
     
-    
+    public function actionImg_profile() {
+        $id = $_POST['id'];
+        $agent = new CompanyAgent();
+        $img = $agent->Get_img_profile($id);
+        if(!empty($img)){
+            $images = $img;
+        } else {
+            $images = "avatar5.png";
+        }
+        $data['img'] = $images;
+        $this->renderPartial("//user/img_profile", $data);
+    }
 
 }

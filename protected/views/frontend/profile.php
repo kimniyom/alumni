@@ -18,7 +18,7 @@
                         var url = "index.php?r=frontend/collegian/add_img_profile";
                         var colegiancode = "<?php echo $CollegianCode; ?>";
                         var img_profile = data.currentFileName;
-                        alert(colegiancode + img_profile);
+                        //alert(colegiancode + img_profile);
                         var data = {collegian_code: colegiancode, img_profile: img_profile};
                         $.post(url, data, function (success) {
                             autoload_img_profile();

@@ -50,5 +50,11 @@ class CompanyAgent extends CActiveRecord {
         $rs = Yii::app()->db->createCommand($query)->queryRow();
         return $rs;
     }
+    
+    public function Get_img_profile($id = ''){
+        $query = "SELECT images FROM company_agent WHERE id = '$id' ";
+        $rs = Yii::app()->db->createCommand($query)->queryRow();
+        return $rs['images'];
+    }
 
 }
