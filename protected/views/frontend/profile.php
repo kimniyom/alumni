@@ -26,6 +26,14 @@
                         });
                     }
                 });
+
+                $('#edit_name_profile').popover({
+                    html: true,
+                    content: function () {
+                        return $('#popover_content_wrapper').html();
+                    }
+                });
+
             });
 
             function edit_img_profile() {
@@ -109,7 +117,24 @@
                     <div class="panel-body">
                         <p class="lead">
                             <i class="fa fa-user"></i>
-                            <?php echo $detail['collegian_name'].' '.$detail['collegian_lname']; ?>
+                            <?php echo $detail['collegian_name'] . ' ' . $detail['collegian_lname']; ?>
+                            <a href="Javascript:void(0);" data-toggle="popover" 
+                               id="edit_name_profile"
+                               title="แก้ไขชื่อ - สกุล" style=" font-size: 14px; color: #993300;">
+                                <i class="fa fa-pencil"></i> แก้ไขชื่อ
+                            </a>
+                            <div id="popover_content_wrapper" style="display: none">
+                                <div style=" font-size: 12px;">
+                                    <label>ชื่อ</label>
+                                    <input type="text" class="form-control input-sm"/>
+                                    <label>นามสกุล</label>
+                                    <input type="text" class="form-control input-sm"/>
+                                    <br/>
+                                    <center>
+                                        <div class="btn  btn-primary btn-sm">ยืนยัน</div>
+                                    </center>
+                                </div>
+                            </div>
                         </p>
                         <p>
                             <i class="fa fa-users"></i>
