@@ -4,6 +4,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< Updated upstream
             <file>file:/C:/xampp/htdocs/alumni/protected/controllers/frontend/CollegianController.php</file>
             <file>file:/C:/xampp/htdocs/alumni/protected/views/profile/img_profile.php</file>
             <file>file:/C:/xampp/htdocs/alumni/protected/views/frontend/profile.php</file>
@@ -15,6 +16,9 @@
             <file>file:/C:/xampp/htdocs/alumni/protected/views/frontend/edit_password.php</file>
             <file>file:/C:/xampp/htdocs/alumni/protected/views/layouts/profile.php</file>
             <file>file:/C:/xampp/htdocs/alumni/protected/views/layouts/backend.php</file>
+=======
+            <file>file:/Applications/MAMP/htdocs/alumni/protected/views/layouts/main.php</file>
+>>>>>>> Stashed changes
         </group>
     </open-files>
 </project-private>
