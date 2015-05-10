@@ -26,6 +26,13 @@
         <!-- AdminLTE App -->
         <script src="<?php echo $LTE; ?>dist/js/app.min.js" type="text/javascript"></script>
         <script src="<?php echo Yii::app()->baseUrl; ?>/js_store/js_main.js" type="text/javascript"></script>
+        
+        <!-- Croup IMG -->
+        <?php $croup = Yii::app()->baseUrl . "/assets/jquery.picture.cut/"; ?>
+        <script src="<?php echo $croup; ?>dependencies/jquery-ui-1.11.1.custom/jquery-ui.min.js"></script>
+        <script src="<?php echo $croup; ?>demo_assets/google-code-prettify/prettify.js"></script>
+
+        <script src="<?php echo $croup; ?>src/jquery.picture.cut.js"></script>
 
         <script type="text/javascript">
             function CheckNum() {
