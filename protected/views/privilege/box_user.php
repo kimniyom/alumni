@@ -7,6 +7,10 @@
             <i class="fa fa-group"></i> <?php echo Yii::app()->session['agent_name']; ?><br/>
             <i class="fa fa-compass"></i> <?php echo Yii::app()->session['company']; ?><br/>
             <i class="fa fa-user-secret"></i> ตัวแทนบริษัท
+            <br/><br/>
+            <a href="<?php echo Yii::app()->createUrl('frontend/user/detail_agent')?>" style=" float: right;"> 
+                <i class="fa fa-user"></i> ข้อมูลส่วนตัว</a>
+            <br/>
         </div><!-- /.box-body -->
     </div><!-- /.box -->
 </div>
