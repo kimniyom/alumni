@@ -35,7 +35,11 @@ $this->breadcrumbs = array(
             <thead>
                 <tr>
                     <th colspan="2">
-                        <img src="<?php echo Yii::app()->baseUrl; ?>/themes/AdminLTE2/dist/img/avatar5.png" class="img-circle" alt="User Image" width="100"/><br/>
+                        <?php if($agent['images'] == ''){ ?>
+                        <img src="<?php echo Yii::app()->baseUrl; ?>/assets/jquery.picture.cut/uploads_images_user/avatar5.png" class="img-circle" alt="User Image" width="100"/><br/>
+                        <?php } else { ?>
+                        <img src="<?php echo Yii::app()->baseUrl; ?>/assets/jquery.picture.cut/uploads_images_user/<?php echo $agent['images']; ?>" class="img-circle" alt="User Image" width="100"/><br/>
+                        <?php } ?>
                     </th>
                 </tr>
             </thead>
