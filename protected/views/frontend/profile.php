@@ -7,6 +7,7 @@
         <script>
             $(document).ready(function () {
                 autoload_img_profile();
+                get_senior();
                 $("#profile_photo").PictureCut({
                     InputOfImageDirectory: "image",
                     PluginFolderOnServer: "<?php echo $croup; ?>",
@@ -35,42 +36,20 @@
                 });
 
             });
-
-            function edit_img_profile() {
-                $("#from_img_profile").modal();
-            }
-
-            function autoload_img_profile() {
-                var loading = "<center><div class='overlay'><i class='fa fa-refresh fa-spin'></i></div><center>";
-                $("#show_img_profile").html(loading);
-                var url = "index.php?r=frontend/collegian/img_profile";
-                var collegiancode = "<?php echo $CollegianCode; ?>";
-                var data = {collegian_code: collegiancode};
-                $.post(url, data, function (success) {
-                    $("#show_img_profile").html(success);
-                });
-            }
         </script>
 
-        <!--
-        <link rel="stylesheet" href="demo_assets/demo.css">
-        -->
-
-        <script type="text/javascript">
-            function autoload_imf_profile() {
-                var url = "index.php?r=frontend/collegian/img_profile";
-                var colegiancode = "<?php echo $CollegianCode; ?>";
-                var data = {collegian_code: colegiancode};
-                $.post(url, data, function (success) {
-                    $("#img_profile").html(success);
-                });
-            }
-        </script>
-
+        <script type="text/javascript" src="<?php echo Yii::app()->baseUrl; ?>/js_store/js_profile_collegian.js"></script>
 
     </head>
 
     <body>
+
+        <!--
+            #
+            #เก็บค่ารหัสนักศึกษาที่ส่งเข้ามาไว้ใช้ 
+            #
+        -->
+        <input type="hidden" id="collegian_code" value="<?php echo $CollegianCode; ?>"/>
 
         <!-- 
             Dialog Img_profile 
@@ -96,8 +75,6 @@
         </div><!-- /.modal -->
 
 
-        <input type="hidden" id="collegian_code" value="<?php echo $CollegianCode; ?>"/>
-
         <!-- content -->                      
         <div class="row">
 
@@ -105,15 +82,11 @@
             <div class="col-sm-5">
 
                 <div class="panel panel-default">
-                    <div class="panel-thumbnail" style=" position: relative;">
-                        <div id="show_img_profile"></div>
 
-                        <a href="#" onclick="edit_img_profile();">
-                            <div class="label label-default" style=" position: absolute;  bottom: 0px; right: 0px; width: 100%; opacity: 0.7; background: #666666;">
-                                <h4><i class="fa fa-camera"></i> แก้ไขรูปภาพ</h4>
-                            </div>
-                        </a>
+                    <div class="panel-thumbnail" style=" position: relative;">
+                        <div id="show_img_profile"></div>  
                     </div>
+
                     <div class="panel-body">
                         <p class="lead">
                             <i class="fa fa-user"></i>
@@ -123,18 +96,18 @@
                                title="แก้ไขชื่อ - สกุล" style=" font-size: 14px; color: #993300;">
                                 <i class="fa fa-pencil"></i> แก้ไขชื่อ
                             </a>
-                            <div id="popover_content_wrapper" style="display: none">
-                                <div style=" font-size: 12px;">
-                                    <label>ชื่อ</label>
-                                    <input type="text" class="form-control input-sm"/>
-                                    <label>นามสกุล</label>
-                                    <input type="text" class="form-control input-sm"/>
-                                    <br/>
-                                    <center>
-                                        <div class="btn  btn-primary btn-sm">ยืนยัน</div>
-                                    </center>
-                                </div>
+                        <div id="popover_content_wrapper" style="display: none">
+                            <div style=" font-size: 12px;">
+                                <label>ชื่อ</label>
+                                <input type="text" class="form-control input-sm"/>
+                                <label>นามสกุล</label>
+                                <input type="text" class="form-control input-sm"/>
+                                <br/>
+                                <center>
+                                    <div class="btn  btn-primary btn-sm">ยืนยัน</div>
+                                </center>
                             </div>
+                        </div>
                         </p>
                         <p>
                             <i class="fa fa-users"></i>
@@ -243,16 +216,53 @@
                 </div>
 
                 <div class="panel panel-default">
-                    <div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4>Bootply Editor &amp; Code Library</h4></div>
+                    <div class="panel-heading"><h4>พี่รหัส</h4></div>
                     <div class="panel-body">
-                        <p><img src="<?php echo $path; ?>assets/img/150x150.gif" class="img-circle pull-right"> <a href="#">The Bootstrap Playground</a></p>
-                        <div class="clearfix"></div>
-                        <hr>
-                        Design, build, test, and prototype 
-                        using Bootstrap in real-time from your Web browser. Bootply combines the
-                        power of hand-coded HTML, CSS and JavaScript with the benefits of 
-                        responsive design using Bootstrap. Find and showcase Bootstrap-ready 
-                        snippets in the 100% free Bootply.com code repository.
+                        <div id="senior_code"></div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading"><h4>สายรหัส</h4></div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <center>
+                                <div class="col-lg-4 col-sm-4">
+                                    <div id="codeline_up1"></div>
+                                </div>
+                                <div class="col-lg-4 col-sm-4">
+                                    <div id="codeline_up2"></div> 
+                                </div>
+                                <div class="col-lg-4 col-sm-4">
+                                    <div id="codeline_up3"></div>
+                                </div>
+                            </center>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 col-sm-4">
+                                <center>
+                                    <img src="<?php echo $path; ?>assets/img/150x150.gif" class="img-circle"> 
+                                </center>
+                            </div>
+                            <div class="col-lg-4 col-sm-4">
+
+                            </div>
+                            <div class="col-lg-4 col-sm-4">
+
+                            </div>
+
+                        </div>
+                        <div class="row" style="text-align: center;">
+                            <div class="col-lg-4 col-sm-4">
+                                <img src="<?php echo $path; ?>assets/img/150x150.gif" class="img-circle"> 
+                            </div>
+                            <div class="col-lg-4 col-sm-4">
+                                <img src="<?php echo $path; ?>assets/img/150x150.gif" class="img-circle"> 
+                            </div>
+                            <div class="col-lg-4 col-sm-4">
+                                <img src="<?php echo $path; ?>assets/img/150x150.gif" class="img-circle"> 
+                            </div>
+                        </div>
                     </div>
                 </div>
 
