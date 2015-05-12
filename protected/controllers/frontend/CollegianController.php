@@ -106,4 +106,62 @@ class CollegianController extends Controller {
         $this->render('//collegian/edit_collegian', $data);
     }
 
+    public function actionSenior() {
+        $collegian_code = $_POST['collegian_code'];
+        $codeline = new Codeline();
+        $data['senior'] = $codeline->get_senior($collegian_code);
+        $data['collegian_code'] = $collegian_code;
+        $this->renderPartial('//codeline/senior', $data);
+    }
+
+    public function actionGet_senior_all() {
+        $collegiancode = $_POST['collegian_code'];
+        //ดึงรุ่นของนักศึกษามาก่อน
+        $collegian = new Collegian();
+        $codeline = new Codeline();
+        $rs = $collegian->find("collegian_code = '$collegiancode' ");
+        $GenNumber = $rs['GenNumber'];
+        $GenNumberSenior = ($GenNumber - 1); //รุ่นพี่ 
+        $data['GenNumber_senior'] = $GenNumberSenior;
+        $data['collegian_code'] = $collegiancode;
+        $data['senior'] = $codeline->get_senior_all($GenNumberSenior); //ดึงข้อมูลรุ่นพี่ก่อนหน้ามาแสดง
+        $this->renderPartial('//codeline/get_senior_all', $data);
+    }
+
+    public function actionSave_senior() {
+        $columns = array(
+            "collegian_code" => $_POST['collegian_code'],
+            "senior_code" => $_POST['senior_code'],
+            "line_id" => $_POST['line_id'],
+            "GenNumber" => $_POST['GenNumber']
+        );
+
+        Yii::app()->db->createCommand()
+                ->insert("codeline", $columns);
+    }
+
+    public function actionCodeline_up1() {
+        $collegian_code = $_POST['collegian_code'];
+        $codeline = new Codeline();
+        $data['senior'] = $codeline->get_senior($collegian_code);
+        $data['collegian_code'] = $collegian_code;
+        $this->renderPartial('//codeline/Codeline_up1', $data);
+    }
+
+    public function actionCodeline_up2() {
+        $collegian_code = $_POST['collegian_code'];
+        $codeline = new Codeline();
+        $data['senior'] = $codeline->get_senior($collegian_code);
+        $data['collegian_code'] = $collegian_code;
+        $this->renderPartial('//codeline/Codeline_up2', $data);
+    }
+    
+    public function actionCodeline_up3() {
+        $collegian_code = $_POST['collegian_code'];
+        $codeline = new Codeline();
+        $data['senior'] = $codeline->get_senior($collegian_code);
+        $data['collegian_code'] = $collegian_code;
+        $this->renderPartial('//codeline/Codeline_up3', $data);
+    }
+
 }

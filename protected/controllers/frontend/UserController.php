@@ -91,18 +91,66 @@ class UserController extends Controller {
                     ->update("company_agent", $column, " id='$id' ");
         }
     }
-    
+
     public function actionImg_profile() {
         $id = $_POST['id'];
         $agent = new CompanyAgent();
         $img = $agent->Get_img_profile($id);
-        if(!empty($img)){
+        if (!empty($img)) {
             $images = $img;
         } else {
             $images = "avatar5.png";
         }
         $data['img'] = $images;
         $this->renderPartial("//user/img_profile", $data);
+    }
+
+    public function actionEdit_agent() {
+        $id = $_GET['id'];
+        $agent = new CompanyAgent();
+        $data['agent'] = $agent->Get_agent($id);
+        $query = "SELECT * FROM prefix";
+        $data['perfix'] = Yii::app()->db->createCommand($query)->queryAll();
+        $this->render('//user/edit_agent', $data);
+    }
+
+    public function actionSave_edit_user() {
+        $id = $_POST['id'];
+        $columns = array(
+            "shot_name" => $_POST['shot_name'],
+            "name" => $_POST['name'],
+            "lname" => $_POST['lname'],
+            "tel" => $_POST['tel'],
+            "mobile" => $_POST['mobile'],
+            "company" => $_POST['company'],
+            "address" => $_POST['address'],
+            "d_update" => date("Y-m-d H:i:s")
+        );
+
+        Yii::app()->db->createCommand()
+                ->update("company_agent", $columns, "id = '$id' ");
+    }
+
+    public function actionEdit_password() {
+        $id = $_GET['id'];
+        $agent = new CompanyAgent();
+        $data['agent'] = $agent->Get_agent($id);
+        $this->render('//user/edit_password', $data);
+    }
+
+    public function actionSave_edit_password() {
+        $id = $_POST['id'];
+        $columns = array(
+            "username" => $_POST['username'],
+            "password" => $_POST['password']
+        );
+
+        Yii::app()->db->createCommand()
+                ->update("company_agent", $columns, "id = '$id' ");
+    }
+    
+    public function actionEdit_user_success(){
+        $this->render('//user/edit_user_success');
     }
 
 }
