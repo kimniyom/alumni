@@ -17,6 +17,9 @@
         <!-- Font Awesome Icons -->
         <link href="<?php echo Yii::app()->baseUrl; ?>/css/font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 
+        <!-- Effect -->
+        <link href="<?php echo Yii::app()->baseUrl; ?>/assets/ihover-gh-pages/src/ihover.css" rel="stylesheet">
+
         <!-- Theme style -->
         <link href="<?php echo $LTE; ?>dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
         <link href="<?php echo $LTE; ?>dist/css/skins/skin-blue.min.css" rel="stylesheet" type="text/css" />
@@ -26,7 +29,7 @@
         <!-- AdminLTE App -->
         <script src="<?php echo $LTE; ?>dist/js/app.min.js" type="text/javascript"></script>
         <script src="<?php echo Yii::app()->baseUrl; ?>/js_store/js_main.js" type="text/javascript"></script>
-        
+
         <!-- Croup IMG -->
         <?php $croup = Yii::app()->baseUrl . "/assets/jquery.picture.cut/"; ?>
         <script src="<?php echo $croup; ?>dependencies/jquery-ui-1.11.1.custom/jquery-ui.min.js"></script>
@@ -40,6 +43,24 @@
                     event.returnValue = false;
                 }
             }
+
+            $(document).ready(function () {
+                var windowsize = ($(window).width());
+                if (windowsize < 768) {
+                    $("#banner").hide();
+                } else {
+                    $("#banner").show();
+                }
+
+                $(window).resize(function () {
+                    if (windowsize < 768) {
+                        $("#banner").hide();
+                    } else {
+                        $("#banner").show();
+                    }
+                });
+            });
+
         </script>
 
     </head>
@@ -106,7 +127,7 @@
         <!--
         Start Banner By Kimniyom
         -->
-        <div class="row" style="background:url('<?php echo $path; ?>images/bg-green.jpg'); margin-bottom:0px; margin-top: 0px;">
+        <div class="row" style="background:url('<?php echo $path; ?>images/bg-green.jpg'); margin-bottom:0px; margin-top: 0px;" id="banner">
             <div class="container">
                 <div class="row carousel-holder">
                     <div class="col-md-12">
@@ -124,13 +145,16 @@
                                         <div class="<?php echo $class; ?>" style="color:#FFF;">
                                             <div class="row">
                                                 <div class=" col-md-7 col-sm-7" style=" text-align: left;">
-                                                    <h2 style="color:#FFF; text-shadow:2px 1px #000;">วิทยาการคอมพิวเตอร์ จบแล้วทำงานอะไร</h2>
+                                                    <h1 style="color:#FFF; text-shadow:2px 1px #000;">วิทยาการคอมพิวเตอร์ จบแล้วทำงานอะไร</h1>
+                                                    <br/>
+                                                    <div class="alert alert-success">
                                                     <p style=" font-size: 18px;text-indent: 2.5em;">
                                                         สาขานี้เรียนอะไร
                                                         สาขาวิทยาการคอมพิวเตอร์ เป็นสาขาที่เรียนเกี่ยวกับทฤษฎีการคำนวณสำหรับคอมพิวเตอร์
                                                         ทฤษฎีการประมวลผลสารสนเทศ ทั้งด้านซอฟต์แวร์ ฮาร์ดแวร์ และ เครือข่าย 
                                                         ซึ่งประกอบด้วยหลายหัวข้อที่เกี่ยวข้องกับคอมพิวเตอร์.</dd>
                                                     </p>
+                                                    </div>
                                                 </div>
                                                 <div class=" col-md-5 col-sm-5">
                                                     <img src="<?php echo Yii::app()->baseUrl; ?>/images/devices3.png" height="250" style=" margin-top: 10px;"/>
@@ -173,7 +197,7 @@
             </div>
         </div>
 
-        <div class="row" style="background:url('<?php echo $path; ?>images/tooplate_home_body.png')repeat-x top; padding-top:10px;">
+        <div class="row" style="background:url('<?php echo $path; ?>images/tooplate_home_body.png')repeat-x top; padding:10px 10px 0px 10px;">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-3 col-sm-3">
@@ -282,7 +306,6 @@
         <div class="row" style="background:url('<?php echo $path; ?>images/bg-green.jpg'); margin-bottom:0px; margin-top: 0px; border-top: solid 3px #FFF;">
             <div class="container" style=" height: 150px;"></div>
         </div>
-
     </body>
 
 </html>

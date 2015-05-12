@@ -18,6 +18,9 @@
         <script type="text/javascript" src="<?php echo $path; ?>assets/js/bootstrap.js"></script>
         <script type="text/javascript" src="<?php echo Yii::app()->baseUrl; ?>/js_store/js_detail_collegian.js"></script>
 
+        <!-- Effect -->
+        <link href="<?php echo Yii::app()->baseUrl; ?>/assets/ihover-gh-pages/src/ihover.css" rel="stylesheet">
+
         <!-- Croup IMG -->
         <?php $croup = Yii::app()->baseUrl . "/assets/jquery.picture.cut/"; ?>
         <!--
