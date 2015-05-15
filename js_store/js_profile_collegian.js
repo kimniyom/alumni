@@ -2,6 +2,7 @@
 
 $(document).ready(function () {
     codeline_up1();
+    codeline_down1();
 });
 
 function edit_img_profile() {
@@ -83,6 +84,18 @@ function codeline_up1() {
     var data = {collegian_code: collegiancode};
     $.post(url, data, function (success) {
         $("#codeline_up1").html(success);
+    });
+}
+
+//ดึงข้อมูลพี่รหัสมาแสดง
+function codeline_down1() {
+    var loading = "<center><div class='overlay'><i class='fa fa-refresh fa-spin'></i></div><center>";
+    $("#codeline_down1").html(loading);
+    var url = "index.php?r=frontend/collegian/codeline_down1";
+    var collegiancode = $("#collegian_code").val();
+    var data = {collegian_code: collegiancode};
+    $.post(url, data, function (success) {
+        $("#codeline_down1").html(success);
     });
 }
 

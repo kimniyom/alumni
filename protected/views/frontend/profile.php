@@ -238,30 +238,39 @@
                                 </div>
                             </center>
                         </div>
-                        <div class="row">
-                            <div class="col-lg-4 col-sm-4">
-                                <center>
-                                    <img src="<?php echo $path; ?>assets/img/150x150.gif" class="img-circle"> 
-                                </center>
-                            </div>
-                            <div class="col-lg-4 col-sm-4">
+                        <div class="row" style=" margin-bottom:10px;">
+                            <center>
+                                <div class="col-lg-4 col-sm-4">
+                                    <i class="fa fa-arrow-up"></i><br/>
+                                    <?php if(isset($detail['img_profile'])){ ?>
+                                    <img src="<?php echo $croup . '/uploads/' . $detail['img_profile']; ?>" class="img-rounded" width="100"> 
+                                    <?php } else { ?>
+                                    <i class="fa fa-user fa-5x"></i>
+                                    <?php } ?>
+                                    
+                                    <br/>
+                                    <i class="fa fa-arrow-down"></i><br/>
+                                </div>
+                                <div class="col-lg-4 col-sm-4">
 
-                            </div>
-                            <div class="col-lg-4 col-sm-4">
+                                </div>
+                                <div class="col-lg-4 col-sm-4">
 
-                            </div>
-
+                                </div>
+                            </center>
                         </div>
                         <div class="row" style="text-align: center;">
-                            <div class="col-lg-4 col-sm-4">
-                                <img src="<?php echo $path; ?>assets/img/150x150.gif" class="img-circle"> 
-                            </div>
-                            <div class="col-lg-4 col-sm-4">
-                                <img src="<?php echo $path; ?>assets/img/150x150.gif" class="img-circle"> 
-                            </div>
-                            <div class="col-lg-4 col-sm-4">
-                                <img src="<?php echo $path; ?>assets/img/150x150.gif" class="img-circle"> 
-                            </div>
+                            <center>
+                                <div class="col-lg-4 col-sm-4">
+                                    <div id="codeline_down1"></div>
+                                </div>
+                                <div class="col-lg-4 col-sm-4">
+                                    <div id="codeline_down2"></div> 
+                                </div>
+                                <div class="col-lg-4 col-sm-4">
+                                    <div id="codeline_down3"></div>
+                                </div>
+                            </center>
                         </div>
                     </div>
                 </div>

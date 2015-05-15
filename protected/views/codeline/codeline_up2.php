@@ -17,8 +17,9 @@
 <?php if (!empty($senior['img_profile'])) { ?>
     <img src="<?php echo $croup; ?>/uploads/<?php echo $senior['img_profile'] ?>" class="img-rounded" style="margin-top: 0px; width: 80px;">
 <?php } else { ?>
-    <img src="<?php echo $path; ?>assets/img/150x150.gif" class="img-rounded" style="margin-top: 0px; width: 80px;"> 
+    <i class="fa fa-user fa-5x"></i> 
 <?php } ?>
 <br/>
-น้า/อา รหัส
+<?php echo $senior['collegian_name'] . ' ' . $senior['collegian_lname']; ?><br/>
+(น้า/อา รหัส)
 

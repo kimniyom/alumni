@@ -108,6 +108,45 @@ class Codeline extends CActiveRecord {
             return 0;
         }
     }
+    
+    public function get_collegian_down($collegion_code = '') {
+        $query = "SELECT g.*,c.senior_code,i.img_profile
+                            FROM codeline c INNER JOIN collegian g ON c.collegian_code = g.collegian_code
+                            LEFT JOIN images_profile i ON g.collegian_code = i.collegian_code
+                            WHERE c.senior_code = '$collegion_code' ";
+        $rs = Yii::app()->db->createCommand($query)->queryRow();
+        if (!empty($rs['collegian_code'])) {
+            return $rs;
+        } else {
+            return 0;
+        }
+    }
+    
+    public function get_collegian_down2($collegion_code = '') {
+        $query = "SELECT g.collegian_code AS code2,g.collegian_name,g.collegian_lname,c.senior_code,i.img_profile
+                            FROM codeline c INNER JOIN collegian g ON c.collegian_code = g.collegian_code
+                            LEFT JOIN images_profile i ON g.collegian_code = i.collegian_code
+                            WHERE c.senior_code = '$collegion_code' ";
+        $rs = Yii::app()->db->createCommand($query)->queryRow();
+        if (!empty($rs['collegian_code'])) {
+            return $rs;
+        } else {
+            return 0;
+        }
+    }
+    
+    public function get_collegian_down3($collegion_code = '') {
+        $query = "SELECT g.collegian_code AS code3,g.collegian_name,g.collegian_lname,c.senior_code,i.img_profile
+                            FROM codeline c INNER JOIN collegian g ON c.collegian_code = g.collegian_code
+                            LEFT JOIN images_profile i ON g.collegian_code = i.collegian_code
+                            WHERE c.senior_code = '$collegion_code' ";
+        $rs = Yii::app()->db->createCommand($query)->queryRow();
+        if (!empty($rs['collegian_code'])) {
+            return $rs;
+        } else {
+            return 0;
+        }
+    }
 
     public function get_senior_all($GenNumber = '') {
         $query = "SELECT g.*,c.line_id,i.img_profile AS images,p.shot_name AS prename

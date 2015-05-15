@@ -37,6 +37,18 @@
 
         <script src="<?php echo $croup; ?>src/jquery.picture.cut.js"></script>
 
+        <!-- 
+            การเรียกใช้ datatable 
+        -->
+
+        <!-- DataTables CSS -->
+        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->baseUrl;?>/assets/DataTables-1.10.7/media/css/dataTables.bootstrap.css">
+        <!-- DataTables -->
+        <script type="text/javascript" charset="utf8" src="<?php echo Yii::app()->baseUrl;?>/assets/DataTables-1.10.7/media/js/jquery.dataTables.js"></script>
+        <script type="text/javascript" charset="utf8" src="<?php echo Yii::app()->baseUrl;?>/assets/DataTables-1.10.7/media/js/dataTables.bootstrap.js"></script>
+        
+
+
         <script type="text/javascript">
             function CheckNum() {
                 if (event.keyCode < 48 || event.keyCode > 57) {
@@ -148,12 +160,12 @@
                                                     <h1 style="color:#FFF; text-shadow:2px 1px #000;">วิทยาการคอมพิวเตอร์ จบแล้วทำงานอะไร</h1>
                                                     <br/>
                                                     <div class="alert alert-success">
-                                                    <p style=" font-size: 18px;text-indent: 2.5em;">
-                                                        สาขานี้เรียนอะไร
-                                                        สาขาวิทยาการคอมพิวเตอร์ เป็นสาขาที่เรียนเกี่ยวกับทฤษฎีการคำนวณสำหรับคอมพิวเตอร์
-                                                        ทฤษฎีการประมวลผลสารสนเทศ ทั้งด้านซอฟต์แวร์ ฮาร์ดแวร์ และ เครือข่าย 
-                                                        ซึ่งประกอบด้วยหลายหัวข้อที่เกี่ยวข้องกับคอมพิวเตอร์.</dd>
-                                                    </p>
+                                                        <p style=" font-size: 18px;text-indent: 2.5em;">
+                                                            สาขานี้เรียนอะไร
+                                                            สาขาวิทยาการคอมพิวเตอร์ เป็นสาขาที่เรียนเกี่ยวกับทฤษฎีการคำนวณสำหรับคอมพิวเตอร์
+                                                            ทฤษฎีการประมวลผลสารสนเทศ ทั้งด้านซอฟต์แวร์ ฮาร์ดแวร์ และ เครือข่าย 
+                                                            ซึ่งประกอบด้วยหลายหัวข้อที่เกี่ยวข้องกับคอมพิวเตอร์.</dd>
+                                                        </p>
                                                     </div>
                                                 </div>
                                                 <div class=" col-md-5 col-sm-5">
