@@ -15,11 +15,11 @@
 
 
 
-<div class="panel panel-info">
+<div class="panel panel-default">
     <div class="panel-heading">
         <h4><i class="fa fa-plus"></i> แก้ไขข้อมูลนักศึกษา</h4>
     </div>
-    <div class="panel-body" style=" background: #f9f9f9;">
+    <div class="panel-body">
         <div class="form">
             <div class="row">
                 <div class="col-sm-3">

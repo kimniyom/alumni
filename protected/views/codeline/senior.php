@@ -33,16 +33,18 @@
         </div>
     <?php } else { ?>
         <div class="col-lg-4 col-sm-4">
-            <img src="<?php echo Yii::app()->baseUrl; ?>/images/User-blue-icon.png" class="img-rounded"> 
+            <center>
+                <img src="<?php echo Yii::app()->baseUrl; ?>/images/User-blue-icon.png" class="img-rounded"> 
+            </center>
         </div>
         <div class="col-lg-8 col-sm-8">
-            <center>
-                ยังไม่มีพี่รหัส คลิกเพิ่มข้างล่าง<br/>
-                <div class="btn btn-default" 
-                     onclick="dialog_senior();">
-                    <i class="fa fa-user-plus fa-3x"></i>
+            <a href="Javascript:void(0);" onclick="dialog_senior();">
+                <div class="well" style=" border: dashed 2px #809deb; color: #7d7e80; text-align: center;">
+                    <i class="fa fa-plus fa-5x"></i> <br/>
+                    <h3>เพิ่มพี่รหัส</h3>
                 </div>
-            </center>
+            </a>
+
         </div>
     <?php } ?>
 </div>

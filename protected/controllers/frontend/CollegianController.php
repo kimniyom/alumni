@@ -155,7 +155,7 @@ class CollegianController extends Controller {
         $data['collegian_code'] = $collegian_code;
         $this->renderPartial('//codeline/Codeline_up2', $data);
     }
-    
+
     public function actionCodeline_up3() {
         $collegian_code = $_POST['collegian_code'];
         $codeline = new Codeline();
@@ -163,7 +163,7 @@ class CollegianController extends Controller {
         $data['collegian_code'] = $collegian_code;
         $this->renderPartial('//codeline/Codeline_up3', $data);
     }
-    
+
     public function actionCodeline_down1() {
         $collegian_code = $_POST['collegian_code'];
         $codeline = new Codeline();
@@ -179,7 +179,7 @@ class CollegianController extends Controller {
         $data['collegian_code'] = $collegian_code;
         $this->renderPartial('//codeline/Codeline_down2', $data);
     }
-    
+
     public function actionCodeline_down3() {
         $collegian_code = $_POST['collegian_code3'];
         $codeline = new Codeline();

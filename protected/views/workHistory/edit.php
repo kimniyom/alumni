@@ -1,14 +1,14 @@
 <script type="text/javascript">
-    function save_work() {
-        var url = "index.php?r=frontend/workhistory/save_work";
-        var collegian_code = "<?php echo $collegian_code ?>";
+    function edit_work() {
+        var url = "index.php?r=frontend/workhistory/edit_work";
+        var id = "<?php echo $work['id'] ?>";
         var company = $("#company").val();
         var company_tel = $("#company_tel").val();
         var begin = $("#begin").val();
         var end = $("#end").val();
         var position = $("#position").val();
         var data = {
-            collegian_code: collegian_code,
+            id: id,
             company: company,
             company_tel: company_tel,
             begin: begin,
@@ -21,6 +21,7 @@
         }
 
         $.post(url, data, function (resulr) {
+            alert("แก้ไขข้อมูล สำเร็จ ...");
             window.location.reload();
         });
     }
@@ -28,7 +29,11 @@
 
 <div class="panel panel-default">
     <div class="panel-heading">
-        <h4><i class="fa fa-suitcase" style=" color:#a77400;"></i> ที่ทำงาน</h4>
+        <h4>
+            <i class="fa fa-suitcase" style=" color:#a77400;"></i> 
+            <i class="fa fa-edit"></i>
+            ที่ทำงาน
+        </h4>
     </div>
     <div class="panel-body">
         <div class="row">
@@ -36,7 +41,7 @@
                 <label>บริษัท *</label>
             </div>
             <div class="col-lg-8 col-md-8 col-sm-8">
-                <input type="text" id="company" class="form-control" placeholder="ที่ทำงานของคุณคือ ... ?"/>
+                <input type="text" id="company" class="form-control" placeholder="ที่ทำงานของคุณคือ ... ?" value="<?php echo $work['company'] ?>"/>
             </div>
         </div><br/>
 
@@ -45,7 +50,7 @@
                 <label>เบอร์โทรศัพท์บริษัท</label>
             </div>
             <div class="col-lg-8 col-md-8 col-sm-8">
-                <input type="text" id="company_tel" class="form-control" onkeypress="CheckNum();"/>
+                <input type="text" id="company_tel" class="form-control" value="<?php echo $work['company_tel'] ?>"/>
             </div>
         </div>
 
@@ -56,9 +61,11 @@
             <div class="col-lg-4 col-md-4 col-sm-4">
                 <label>เริ่มเข้าทำงาน *</label>
                 <?php
+                $begin = $work['begin'];
                 $this->widget('zii.widgets.jui.CJuiDatePicker', array(
                     'name' => 'begin',
                     'id' => 'begin',
+                    'value' => $begin,
                     // additional javascript options for the date picker plugin
                     'options' => array(
                         'dateFormat' => 'yy-mm-dd',
@@ -88,9 +95,15 @@
             <div class="col-lg-4 col-md-4 col-sm-4">
                 <label>สิ้นสุด</label>
                 <?php
+                if ($work['end'] != '0000-00-00') {
+                    $end = $work['end'];
+                } else {
+                    $end = "";
+                }
                 $this->widget('zii.widgets.jui.CJuiDatePicker', array(
                     'name' => 'end',
                     'id' => 'end',
+                    'value' => $end,
                     // additional javascript options for the date picker plugin
                     'options' => array(
                         'dateFormat' => 'yy-mm-dd',
@@ -119,13 +132,13 @@
                 <label>ตำแหน่ง *</label>
             </div>
             <div class="col-lg-8 col-md-8 col-sm-8">
-                <input type="text" id="position" class="form-control" placeholder="คุณทำงานที่นี้ในตำแหน่งใด ..?"/>
+                <input type="text" id="position" class="form-control" placeholder="คุณทำงานที่นี้ในตำแหน่งใด ..?" value="<?php echo $work['position']; ?>"/>
             </div>
         </div>
     </div>
     <div class="panel-footer">
         <center>
-            <div class="btn btn-primary btn-sm" onclick="save_work();">
+            <div class="btn btn-primary btn-sm" onclick="edit_work();">
                 <i class="fa fa-save"></i> บันทึกการเปลี่ยนแปลง</div>
         </center>
     </div>
@@ -139,25 +152,25 @@
     </thead>
     <tbody>
         <?php
-        foreach ($work as $rs):
+        foreach ($workAll as $rs):
             $lib = new Lib();
             ?>
             <tr>
+                <td style="text-align: center;">
+                    <i class="fa fa-suitcase fa-5x" style=" color:#a77400;"></i>
+                </td>
                 <td>
-    <center><i class="fa fa-suitcase fa-5x" style=" color:#a77400;"></i></center>
-    </td>
-    <td>
-        <b><?php echo $rs['company']; ?></b><br/>
-        <?php echo $lib->thaidate($rs['begin']); ?> ถึง <?php
-        if ($rs['end'] != '0000-00-00') {
-            echo $lib->thaidate($rs['end']);
-        } else {
-            echo "ปัจจุบัน";
-        }
-        ?><br/>
-        <?php echo $rs['position']; ?>
-    </td>
-    </tr>
-<?php endforeach; ?>
-</tbody>
+                    <b><?php echo $rs['company']; ?></b><br/>
+                    <?php echo $lib->thaidate($rs['begin']); ?> ถึง <?php
+                    if ($rs['end'] != '0000-00-00') {
+                        echo $lib->thaidate($rs['end']);
+                    } else {
+                        echo "ปัจจุบัน";
+                    }
+                    ?><br/>
+                    <?php echo $rs['position']; ?>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+    </tbody>
 </table>

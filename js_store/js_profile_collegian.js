@@ -3,6 +3,13 @@
 $(document).ready(function () {
     codeline_up1();
     codeline_down1();
+    get_work_history();
+    get_learning_history();
+    //check ความสมบูรณ์ข้อมูล
+    var c_card = $("#c_card").val();
+    if (c_card == '') {
+        $("#error_detail").show();
+    }
 });
 
 function edit_img_profile() {
@@ -96,6 +103,30 @@ function codeline_down1() {
     var data = {collegian_code: collegiancode};
     $.post(url, data, function (success) {
         $("#codeline_down1").html(success);
+    });
+}
+
+//ดึงข้อมูลประวัติการทำงานมาแสดง
+function get_work_history() {
+    var loading = "<center><div class='overlay'><i class='fa fa-refresh fa-spin'></i></div><center>";
+    $("#workhistory").html(loading);
+    var url = "index.php?r=frontend/workhistory/get_work";
+    var collegiancode = $("#collegian_code").val();
+    var data = {collegian_code: collegiancode};
+    $.post(url, data, function (success) {
+        $("#workhistory").html(success);
+    });
+}
+
+//ดึงข้อมูลประวัติการทำงานมาแสดง
+function get_learning_history() {
+    var loading = "<center><div class='overlay'><i class='fa fa-refresh fa-spin'></i></div><center>";
+    $("#learninghistory").html(loading);
+    var url = "index.php?r=frontend/learninghistory/get_learning";
+    var collegiancode = $("#collegian_code").val();
+    var data = {collegian_code: collegiancode};
+    $.post(url, data, function (success) {
+        $("#learninghistory").html(success);
     });
 }
 

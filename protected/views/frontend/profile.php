@@ -50,6 +50,7 @@
             #
         -->
         <input type="hidden" id="collegian_code" value="<?php echo $CollegianCode; ?>"/>
+        <input type="hidden" id="c_card" value="<?php echo $detail['collegian_card']; ?>"/>
 
         <!-- 
             Dialog Img_profile 
@@ -77,6 +78,14 @@
 
         <!-- content -->                      
         <div class="row">
+
+            <div class="alert alert-danger" id="error_detail" style=" display: none;">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <i class="fa fa-user"></i> ข้อมูลส่วนตัวยังไม่สมบูรณ์
+            </div>
+
 
             <!-- main col left --> 
             <div class="col-sm-5">
@@ -137,12 +146,12 @@
                 -->
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <a href="#" class="pull-right"><i class="fa fa-ellipsis-v"></i> ทั้งหมด</a> 
+                        <a href="<?php echo Yii::app()->createUrl('frontend/learninghistory/index&collegian_code=' . $detail['collegian_code']); ?>" class="pull-right"><i class="fa fa-plus"></i> เพิ่ม</a>  
                         <h4>
                             <i class="fa fa-mortar-board"></i> ประวัติการศึกษา</h4>
                     </div>
                     <div class="panel-body">
-                        <div class="list-group" id="detail_education">
+                        <div class="list-group" id="learninghistory">
 
                         </div>
                     </div>
@@ -153,12 +162,12 @@
                 -->
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <a href="#" class="pull-right"><i class="fa fa-ellipsis-v"></i> ทั้งหมด</a> 
+                        <a href="<?php echo Yii::app()->createUrl('frontend/workhistory/index&collegian_code=' . $detail['collegian_code']); ?>" class="pull-right"><i class="fa fa-plus"></i> เพิ่ม</a> 
                         <h4>
                             <i class="fa fa-user-secret"></i> ประวัติการทำงาน</h4>
                     </div>
                     <div class="panel-body">
-                        <div class="list-group" id="history_work">
+                        <div class="list-group" id="workhistory">
 
                         </div>
                     </div>
@@ -216,14 +225,14 @@
                 </div>
 
                 <div class="panel panel-default">
-                    <div class="panel-heading"><h4>พี่รหัส</h4></div>
+                    <div class="panel-heading"><h4><i class="fa fa-group"></i> พี่รหัส</h4></div>
                     <div class="panel-body">
                         <div id="senior_code"></div>
                     </div>
                 </div>
 
                 <div class="panel panel-default">
-                    <div class="panel-heading"><h4>สายรหัส</h4></div>
+                    <div class="panel-heading"> <h4><i class="fa fa-sitemap"></i> สายรหัส</h4></div>
                     <div class="panel-body">
                         <div class="row">
                             <center>
@@ -242,12 +251,12 @@
                             <center>
                                 <div class="col-lg-4 col-sm-4">
                                     <i class="fa fa-arrow-up"></i><br/>
-                                    <?php if(isset($detail['img_profile'])){ ?>
-                                    <img src="<?php echo $croup . '/uploads/' . $detail['img_profile']; ?>" class="img-rounded" width="100"> 
+                                    <?php if (isset($detail['img_profile'])) { ?>
+                                        <img src="<?php echo $croup . '/uploads/' . $detail['img_profile']; ?>" class="img-rounded" width="100"> 
                                     <?php } else { ?>
-                                    <i class="fa fa-user fa-5x"></i>
+                                        <i class="fa fa-user fa-5x"></i>
                                     <?php } ?>
-                                    
+
                                     <br/>
                                     <i class="fa fa-arrow-down"></i><br/>
                                 </div>

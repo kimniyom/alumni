@@ -77,9 +77,10 @@
                         </ul>
 
                         <ul class="nav hidden-xs" id="lg-menu">
-                            <li class="active"><a href="#featured"><i class="glyphicon glyphicon-list-alt"></i> Featured</a></li>
-                            <li><a href="#stories"><i class="glyphicon glyphicon-list"></i> Stories</a></li>
-                            <li><a href="#"><i class="glyphicon glyphicon-save"></i> Saved</a></li>
+                            <li class="active"><a href="#featured"><i class="glyphicon glyphicon-home"></i> หน้าเว็บไซต์</a></li>
+                            <li><a href="#stories"><i class="glyphicon glyphicon-comment"></i> ข้อความจากผู้ดูแลระบบ <span class="label label-danger">10</span></a></li>
+                            <li><a href="#"><i class="glyphicon glyphicon-user"></i> ข้อความจากเพื่อนนักศึกษา <span class="label label-info">10</span></a></li>
+                            <li><a href="#"><i class="glyphicon glyphicon-envelope"></i> ข้อความจากตัวแทนบริษัท <span class="label label-success">10</span></a></li>
                             <li><a href="#"><i class="glyphicon glyphicon-refresh"></i> Refresh</a></li>
                         </ul>
                         <ul class="list-unstyled hidden-xs" id="sidebar-footer">
@@ -90,9 +91,10 @@
 
                         <!-- tiny only nav-->
                         <ul class="nav visible-xs" id="xs-menu">
-                            <li><a href="#featured" class="text-center"><i class="glyphicon glyphicon-list-alt"></i></a></li>
-                            <li><a href="#stories" class="text-center"><i class="glyphicon glyphicon-list"></i></a></li>
-                            <li><a href="#" class="text-center"><i class="glyphicon glyphicon-paperclip"></i></a></li>
+                            <li><a href="#featured" class="text-center"><i class="glyphicon glyphicon-home"></i></a></li>
+                            <li><a href="#stories" class="text-center"><i class="glyphicon glyphicon-comment"></i></a></li>
+                            <li><a href="#" class="text-center"><i class="glyphicon glyphicon-user"></i></a></li>
+                            <li><a href="#" class="text-center"><i class="glyphicon glyphicon-envelope"></i> </a></li>
                             <li><a href="#" class="text-center"><i class="glyphicon glyphicon-refresh"></i></a></li>
                         </ul>
 
@@ -111,7 +113,19 @@
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                 </button>
-                                <a href="http://usebootstrap.com/theme/facebook" class="navbar-brand logo">b</a>
+                                <a href="<?php echo Yii::app()->createUrl('frontend/Collegian/Profile&collegian_code=' . Yii::app()->session['collegian_code']); ?>" 
+                                   class="navbar-brand" 
+                                   style=" margin: 0px; padding: 7px;" id="logo_profile">
+                                       <?php
+                                       $collegian = new Collegian();
+                                       $img = $collegian->Get_img_profile(Yii::app()->session['collegian_code']);
+                                       ?>
+                                    <img src="<?php echo Yii::app()->baseUrl; ?>/assets/jquery.picture.cut/uploads/<?php echo $img; ?>" 
+                                         style="height: 35px; margin: 0px;" class="img-rounded">
+                                    <b>
+                                        <?php echo Yii::app()->session['collegian_name']; ?>
+                                    </b>
+                                </a>
                             </div>
                             <nav class="collapse navbar-collapse" role="navigation">
                                 <form class="navbar-form navbar-left">
@@ -127,16 +141,7 @@
                                         <a href="#"><b> หน้าแรก</b></a>
                                     </li>
                                     <li style="padding: 0px;">
-                                        <a href="<?php echo Yii::app()->createUrl('frontend/Collegian/Profile&collegian_code=' . Yii::app()->session['collegian_code']); ?>" style=" margin: 0px;">
-                                            <?php
-                                            $collegian = new Collegian();
-                                            $img = $collegian->Get_img_profile(Yii::app()->session['collegian_code']);
-                                            ?>
-                                            <img src="<?php echo Yii::app()->baseUrl; ?>/assets/jquery.picture.cut/uploads/<?php echo $img; ?>" style="height: 20px;" class="img-rounded">
-                                            <b>
-                                                <?php echo Yii::app()->session['collegian_name']; ?>
-                                            </b>
-                                        </a>
+
                                     </li>
                                     <li>
                                         <a href="#"><span class="badge">badge</span></a>
