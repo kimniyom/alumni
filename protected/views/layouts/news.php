@@ -1,4 +1,4 @@
-<?php $path = Yii::app()->baseUrl . '/themes/facebook/'; ?>
+<?php $path = Yii::app()->baseUrl . '/themes/News/'; ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
