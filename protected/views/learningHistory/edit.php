@@ -1,21 +1,23 @@
 <script type="text/javascript">
-    function edit_work() {
-        var url = "index.php?r=frontend/workhistory/edit_work";
-        var id = "<?php echo $work['id'] ?>";
-        var company = $("#company").val();
-        var company_tel = $("#company_tel").val();
+    function edit_learaning() {
+        var url = "index.php?r=frontend/learninghistory/edit_learaning";
+        var id = "<?php echo $learning['id'] ?>";
+        var school = $("#school").val();
+        var EduId = $("#education").val();
+        var faculty = $("#faculty").val();
         var begin = $("#begin").val();
         var end = $("#end").val();
-        var position = $("#position").val();
+        var gpa = $("#gpa").val();
         var data = {
             id: id,
-            company: company,
-            company_tel: company_tel,
+            school: school,
+            EduId: EduId,
+            faculty: faculty,
             begin: begin,
             end: end,
-            position: position
+            gpa: gpa
         };
-        if (company == '' || begin == '' || position == '') {
+        if (school == '' || EduId == '' || faculty == '' || begin == '' || end == '' || gpa == '') {
             alert("กรอกข้อมูลใน * ไม่ครบ ..");
             return false;
         }
@@ -25,43 +27,77 @@
             window.location.reload();
         });
     }
+
+    function delete_learning(id) {
+        var url = "index.php?r=frontend/learninghistory/delete_learaning";
+        var id = "<?php echo $learning['id'] ?>";
+        var data = {id: id};
+        var r = confirm("คุณแน่ใจหรือไม่ที่จะลบ ...!");
+        if (r == true) {
+            $.post(url, data, function (resul) {
+                window.location.reload();
+            });
+        }
+    }
+
+
+
 </script>
 
 <div class="panel panel-default">
     <div class="panel-heading">
-        <h4>ที่ทำงาน</h4>
+        <h4><i class="fa fa-mortar-board" style="color: #0063dc;"></i><i class="fa fa-edit"></i> การศึกษา</h4>
     </div>
     <div class="panel-body">
         <div class="row">
             <div class="col-lg-3 col-md-3 col-sm-3">
-                <label>บริษัท *</label>
+                <label>สถาบัน*</label>
             </div>
             <div class="col-lg-8 col-md-8 col-sm-8">
-                <input type="text" id="company" class="form-control" placeholder="ที่ทำงานของคุณคือ ... ?" value="<?php echo $work['company'] ?>"/>
+                <input type="text" id="school" class="form-control" placeholder="คุณจบมาจากที่ไหน ... ?" value="<?php echo $learning['school'] ?>"/>
             </div>
         </div><br/>
 
         <div class="row">
             <div class="col-lg-3 col-md-3 col-sm-3">
-                <label>เบอร์โทรศัพท์บริษัท</label>
+                <label>ระดับการศึกษา *</label>
             </div>
             <div class="col-lg-8 col-md-8 col-sm-8">
-                <input type="text" id="company_tel" class="form-control" value="<?php echo $work['company_tel'] ?>"/>
+                <select id="education" class="form-control">
+                    <option value="">== ไม่ได้เลือกระดับการศึกษา ==</option>
+                    <?php foreach ($education as $edu): ?>
+                        <option value="<?php echo $edu['EduID']; ?>"
+                        <?php
+                        if ($learning['EduId'] == $edu['EduID']) {
+                            echo "selected";
+                        }
+                        ?>><?php echo $edu['EduName']; ?></option>
+                            <?php endforeach; ?>
+                </select>
+            </div>
+        </div><br/>
+
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-3">
+                <label>คณะ / สาขา *</label>
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8">
+                <input type="text" id="faculty" class="form-control"  placeholder="คุณจบมาจากคณะอะไร ... ?" value="<?php echo $learning['faculty'] ?>"/>
             </div>
         </div>
 
         <div class="row">
             <div class="col-lg-3 col-md-3 col-sm-3">
-                <label>ระยะเวลา</label>
+                <label>ระยะเวลา *</label>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4">
-                <label>เริ่มเข้าทำงาน *</label>
+                <label>เริ่ม *</label>
                 <?php
-                $begin = $work['begin'];
+                $begin = $learning['begin'];
                 $this->widget('zii.widgets.jui.CJuiDatePicker', array(
                     'name' => 'begin',
                     'id' => 'begin',
-                    'value' => $begin,
+                    'value' => $learning['begin'],
                     // additional javascript options for the date picker plugin
                     'options' => array(
                         'dateFormat' => 'yy-mm-dd',
@@ -89,17 +125,12 @@
 
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4">
-                <label>สิ้นสุด</label>
+                <label>สิ้นสุด *</label>
                 <?php
-                if ($work['end'] != '0000-00-00') {
-                    $end = $work['end'];
-                } else {
-                    $end = "";
-                }
                 $this->widget('zii.widgets.jui.CJuiDatePicker', array(
                     'name' => 'end',
                     'id' => 'end',
-                    'value' => $end,
+                    'value' => $learning['end'],
                     // additional javascript options for the date picker plugin
                     'options' => array(
                         'dateFormat' => 'yy-mm-dd',
@@ -118,23 +149,22 @@
                 ?>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4">
-                <p></p><br/>
-                <p>ถ้าปัจจุบันยังทำงานที่นี้ ไม่ต้องระบุ</p>
+
             </div>
         </div><br/>
 
         <div class="row">
             <div class="col-lg-3 col-md-3 col-sm-3">
-                <label>ตำแหน่ง *</label>
+                <label>เกรดเฉลี่ยสะสม *</label>
             </div>
             <div class="col-lg-8 col-md-8 col-sm-8">
-                <input type="text" id="position" class="form-control" placeholder="คุณทำงานที่นี้ในตำแหน่งใด ..?" value="<?php echo $work['position']; ?>"/>
+                <input type="text" id="gpa" class="form-control" value="<?php echo $learning['gpa'] ?>"/>
             </div>
         </div>
     </div>
     <div class="panel-footer">
         <center>
-            <div class="btn btn-primary btn-sm" onclick="edit_work();">
+            <div class="btn btn-primary btn-sm" onclick="edit_learaning();">
                 <i class="fa fa-save"></i> บันทึกการเปลี่ยนแปลง</div>
         </center>
     </div>
@@ -143,30 +173,45 @@
 <table class="table" style="background: #FFF">
     <thead>
         <tr>
-            <th colspan="2"></th>
+            <th colspan="3" style=" text-align: right;">
+                <a href="index.php?r=frontend/learninghistory/index&collegian_code=<?php echo $collegian_code; ?>">
+                    <i class="fa fa-plus"></i> เพิ่มการศึกษา
+                </a>
+            </th>
         </tr>
     </thead>
     <tbody>
         <?php
-        foreach ($workAll as $rs):
+        foreach ($learningAll as $rs):
             $lib = new Lib();
             ?>
             <tr>
                 <td>
-                    <i class="fa fa-suitcase fa-5x"></i>
-                </td>
-                <td>
-                    <b><?php echo $rs['company']; ?></b><br/>
-                    <?php echo $lib->thaidate($rs['begin']); ?> ถึง <?php
-                    if ($rs['end'] != '0000-00-00') {
-                        echo $lib->thaidate($rs['end']);
-                    } else {
-                        echo "ปัจจุบัน";
-                    }
-                    ?><br/>
-                    <?php echo $rs['position']; ?>
-                </td>
-            </tr>
-        <?php endforeach; ?>
-    </tbody>
+        <center>
+            <i class="fa fa-mortar-board fa-5x" style="color: #a77400;"></i>
+        </center>
+    </td>
+    <td>
+        <label>สถาบัน : </label>
+        <b><?php echo $rs['school']; ?></b><br/>
+        <label>ระดับ : </label><?php echo $rs['EduName']; ?><br/>
+        <label>คณะ / สาขา : </label><?php echo $rs['faculty']; ?><br/>
+        <label>ระยะเวลา : </label> <?php echo $lib->thaidate($rs['begin']); ?> ถึง <?php
+        if ($rs['end'] != '0000-00-00') {
+            echo $lib->thaidate($rs['end']);
+        } else {
+            echo "ปัจจุบัน";
+        }
+        ?><br/>
+        <label>เกรดเฉลี่ย : </label> <?php echo $rs['gpa']; ?>
+    </td>
+    <td style="text-align: right;">
+        <a href="index.php?r=frontend/learninghistory/edit&collegian_code=<?php echo $rs['collegian_code'] . '&id=' . $rs['id']; ?>">
+            <div class="btn btn-default btn-sm"><i class="fa fa-pencil"></i></div>
+        </a>
+        <div class="btn btn-default btn-sm" onclick="delete_learning('<?php echo $rs['id'] ?>');"><i class="fa fa-trash"></i></div>
+    </td>
+    </tr>
+<?php endforeach; ?>
+</tbody>
 </table>

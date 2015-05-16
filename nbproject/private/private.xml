@@ -3,18 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Applications/MAMP/htdocs/alumni/protected/controllers/frontend/CollegianController.php</file>
-            <file>file:/Applications/MAMP/htdocs/alumni/protected/controllers/frontend/WorkHistoryController.php</file>
-            <file>file:/Applications/MAMP/htdocs/alumni/protected/models/Codeline.php</file>
-            <file>file:/Applications/MAMP/htdocs/alumni/protected/views/codeline/codeline_down1.php</file>
-            <file>file:/Applications/MAMP/htdocs/alumni/protected/views/codeline/codeline_down2.php</file>
-            <file>file:/Applications/MAMP/htdocs/alumni/js_store/js_profile_collegian.js</file>
-            <file>file:/Applications/MAMP/htdocs/alumni/protected/views/codeline/codeline_up3.php</file>
-            <file>file:/Applications/MAMP/htdocs/alumni/protected/views/workHistory/index.php</file>
-            <file>file:/Applications/MAMP/htdocs/alumni/protected/views/codeline/codeline_down3.php</file>
-            <file>file:/Applications/MAMP/htdocs/alumni/protected/models/WorkHistory.php</file>
-            <file>file:/Applications/MAMP/htdocs/alumni/protected/views/codeline/codeline_up1.php</file>
-            <file>file:/Applications/MAMP/htdocs/alumni/protected/views/frontend/profile.php</file>
+            <file>file:/C:/xampp/htdocs/alumni/protected/views/workHistory/index.php</file>
+            <file>file:/C:/xampp/htdocs/alumni/protected/controllers/frontend/LearningHistoryController.php</file>
+            <file>file:/C:/xampp/htdocs/alumni/protected/controllers/frontend/WorkHistoryController.php</file>
+            <file>file:/C:/xampp/htdocs/alumni/protected/views/learningHistory/edit.php</file>
+            <file>file:/C:/xampp/htdocs/alumni/protected/views/workHistory/edit.php</file>
+            <file>file:/C:/xampp/htdocs/alumni/protected/views/workHistory/view.php</file>
+            <file>file:/C:/xampp/htdocs/alumni/protected/models/WorkHistory.php</file>
+            <file>file:/C:/xampp/htdocs/alumni/protected/views/learningHistory/view.php</file>
+            <file>file:/C:/xampp/htdocs/alumni/protected/views/learningHistory/index.php</file>
         </group>
     </open-files>
 </project-private>

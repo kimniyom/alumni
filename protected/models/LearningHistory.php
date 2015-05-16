@@ -114,8 +114,17 @@ class LearningHistory extends CActiveRecord {
         $query = "SELECT l.*,e.EduName
                         FROM learning_history l INNER JOIN educations e ON l.EduId = e.EduID
                         WHERE e.EduActive = '1' AND l.collegian_code = '$collegian_code' ORDER BY l.EduId DESC";
-        
+
         $result = Yii::app()->db->createCommand($query)->queryAll();
+        return $result;
+    }
+
+    public function Get_learning_by_id($id = '') {
+        $query = "SELECT l.*,e.EduName
+                        FROM learning_history l INNER JOIN educations e ON l.EduId = e.EduID
+                        WHERE e.EduActive = '1' AND l.id = '$id' ";
+
+        $result = Yii::app()->db->createCommand($query)->queryRow();
         return $result;
     }
 

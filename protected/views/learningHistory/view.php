@@ -4,7 +4,7 @@ if ($learning) {
     $lib = new Lib();
     foreach ($learning as $rs):
         ?>
-        <p class="list-group-item" style=" color: #412300; position: relative;">
+        <p class="list-group-item" style="position: relative;">
             <b>สถาบัน : <?php echo $rs['school']; ?></b><br/>
             <label>ระดับ : </label><?php echo $rs['EduName']; ?><br/>
             <label>คณะ / สาขา : </label><?php echo $rs['faculty']; ?><br/>

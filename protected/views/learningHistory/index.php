@@ -27,6 +27,17 @@
             window.location.reload();
         });
     }
+
+    function delete_learning(id) {
+        var url = "index.php?r=frontend/learninghistory/delete_learaning";
+        var data = {id: id};
+        var r = confirm("คุณแน่ใจหรือไม่ที่จะลบ ...!");
+        if (r == true) {
+            $.post(url, data, function (resul) {
+                window.location.reload();
+            });
+        }
+    }
 </script>
 
 <div class="panel panel-default">
@@ -150,7 +161,7 @@
 <table class="table" style="background: #FFF">
     <thead>
         <tr>
-            <th colspan="2"></th>
+            <th colspan="3"></th>
         </tr>
     </thead>
     <tbody>
@@ -177,6 +188,12 @@
         }
         ?><br/>
         <label>เกรดเฉลี่ย : </label> <?php echo $rs['gpa']; ?>
+    </td>
+    <td style="text-align: right;">
+        <a href="index.php?r=frontend/learninghistory/edit&collegian_code=<?php echo $rs['collegian_code'] . '&id=' . $rs['id']; ?>">
+            <div class="btn btn-default btn-sm"><i class="fa fa-pencil"></i></div>
+        </a>
+        <div class="btn btn-default btn-sm" onclick="delete_learning('<?php echo $rs['id'] ?>');"><i class="fa fa-trash"></i></div>
     </td>
     </tr>
 <?php endforeach; ?>

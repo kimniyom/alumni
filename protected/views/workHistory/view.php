@@ -4,7 +4,7 @@ if ($work) {
     $lib = new Lib();
     foreach ($work as $rs):
         ?>
-        <p class="list-group-item" style=" color: #412300; position: relative;">
+        <p class="list-group-item" style="position: relative;">
             <b>บริษัท : <?php echo $rs['company']; ?></b><br/>
             <label>ตำแหน่ง : </label><?php echo $rs['position']; ?><br/>
             ระยะเวลา : <?php echo $lib->thaidate($rs['begin']); ?> ถึง <?php

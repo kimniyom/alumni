@@ -25,6 +25,18 @@
             window.location.reload();
         });
     }
+
+    function delete_work(id) {
+        var url = "index.php?r=frontend/workhistory/delete_work";
+        var id = "<?php echo $work['id'] ?>";
+        var data = {id: id};
+        var r = confirm("คุณแน่ใจหรือไม่ที่จะลบ ...!");
+        if (r == true) {
+            $.post(url, data, function (resul) {
+                window.location.reload();
+            });
+        }
+    }
 </script>
 
 <div class="panel panel-default">
@@ -147,7 +159,11 @@
 <table class="table" style="background: #FFF">
     <thead>
         <tr>
-            <th colspan="2"></th>
+            <th colspan="3" style="text-align: right;">
+                <a href="index.php?r=frontend/workhistory/index&collegian_code=<?php echo $collegian_code; ?>">
+                    <i class="fa fa-plus"></i> เพิ่มที่ทำงาน
+                </a>
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -169,6 +185,12 @@
                     }
                     ?><br/>
                     <?php echo $rs['position']; ?>
+                </td>
+                <td style="text-align: right;">
+                    <a href="index.php?r=frontend/workhistory/edit&collegian_code=<?php echo $rs['collegian_code'] . '&id=' . $rs['id']; ?>">
+                        <div class="btn btn-default btn-sm"><i class="fa fa-pencil"></i></div>
+                    </a>
+                    <div class="btn btn-default btn-sm" onclick="delete_work('<?php echo $rs['id'] ?>');"><i class="fa fa-trash"></i></div>
                 </td>
             </tr>
         <?php endforeach; ?>

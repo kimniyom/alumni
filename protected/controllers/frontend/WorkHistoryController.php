@@ -62,4 +62,10 @@ class WorkHistoryController extends Controller {
                 ->update("work_history", $columns, "id = '$id' ");
     }
 
+    public function actionDelete_work() {
+        $id = $_POST['id'];
+        Yii::app()->db->createCommand()
+                ->delete("work_history", "id = '$id' ");
+    }
+
 }
