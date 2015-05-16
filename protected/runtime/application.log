@@ -11108,6 +11108,7 @@ Stack trace:
 REQUEST_URI=/alumni/index.php?r=frontend/learninghistory/edit&collegian_code=1211111111111&id=1
 HTTP_REFERER=http://localhost/alumni/index.php?r=frontend/Collegian/Profile&collegian_code=1211111111111
 ---
+<<<<<<< HEAD
 2015/05/16 08:38:43 [error] [php] Undefined index: collegiancode (C:\xampp\htdocs\alumni\protected\controllers\frontend\CollegianController.php:46)
 Stack trace:
 #0 C:\xampp\htdocs\alumni\framework\web\CController.php(286): CollegianController->runAction()
@@ -12353,6 +12354,63 @@ REQUEST_URI=/alumni/index.php?r=frontend/collegian/detail_collegian
 in C:\xampp\htdocs\alumni\protected\controllers\frontend\CollegianController.php (46)
 in C:\xampp\htdocs\alumni\index.php (13)
 2015/05/16 15:11:13 [error] [php] Undefined index: collegiancode (C:\xampp\htdocs\alumni\protected\controllers\frontend\CollegianController.php:46)
+Stack trace:
+#0 C:\xampp\htdocs\alumni\framework\web\CController.php(286): CollegianController->runAction()
+#1 C:\xampp\htdocs\alumni\framework\web\CController.php(265): CollegianController->runActionWithFilters()
+#2 C:\xampp\htdocs\alumni\framework\web\CWebApplication.php(282): CollegianController->run()
+#3 C:\xampp\htdocs\alumni\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\alumni\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\alumni\index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=frontend/collegian/detail_collegian
+in C:\xampp\htdocs\alumni\protected\controllers\frontend\CollegianController.php (46)
+in C:\xampp\htdocs\alumni\index.php (13)
+=======
+2015/05/15 20:14:16 [error] [php] Undefined index: collegiancode (/Applications/MAMP/htdocs/alumni/protected/controllers/frontend/CollegianController.php:46)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CollegianController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CollegianController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CollegianController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=frontend/collegian/detail_collegian
+in /Applications/MAMP/htdocs/alumni/protected/controllers/frontend/CollegianController.php (46)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+>>>>>>> origin/master
+2015/05/16 15:15:15 [error] [php] Undefined index: collegiancode (C:\xampp\htdocs\alumni\protected\controllers\frontend\CollegianController.php:46)
+Stack trace:
+#0 C:\xampp\htdocs\alumni\framework\web\CController.php(286): CollegianController->runAction()
+#1 C:\xampp\htdocs\alumni\framework\web\CController.php(265): CollegianController->runActionWithFilters()
+#2 C:\xampp\htdocs\alumni\framework\web\CWebApplication.php(282): CollegianController->run()
+#3 C:\xampp\htdocs\alumni\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\alumni\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\alumni\index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=frontend/collegian/detail_collegian
+in C:\xampp\htdocs\alumni\protected\controllers\frontend\CollegianController.php (46)
+in C:\xampp\htdocs\alumni\index.php (13)
+2015/05/16 15:15:22 [error] [php] Undefined index: collegiancode (C:\xampp\htdocs\alumni\protected\controllers\frontend\CollegianController.php:46)
+Stack trace:
+#0 C:\xampp\htdocs\alumni\framework\web\CController.php(286): CollegianController->runAction()
+#1 C:\xampp\htdocs\alumni\framework\web\CController.php(265): CollegianController->runActionWithFilters()
+#2 C:\xampp\htdocs\alumni\framework\web\CWebApplication.php(282): CollegianController->run()
+#3 C:\xampp\htdocs\alumni\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\alumni\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\alumni\index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=frontend/collegian/detail_collegian
+in C:\xampp\htdocs\alumni\protected\controllers\frontend\CollegianController.php (46)
+in C:\xampp\htdocs\alumni\index.php (13)
+2015/05/16 15:15:28 [error] [php] Undefined index: collegiancode (C:\xampp\htdocs\alumni\protected\controllers\frontend\CollegianController.php:46)
+Stack trace:
+#0 C:\xampp\htdocs\alumni\framework\web\CController.php(286): CollegianController->runAction()
+#1 C:\xampp\htdocs\alumni\framework\web\CController.php(265): CollegianController->runActionWithFilters()
+#2 C:\xampp\htdocs\alumni\framework\web\CWebApplication.php(282): CollegianController->run()
+#3 C:\xampp\htdocs\alumni\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\alumni\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\alumni\index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=frontend/collegian/detail_collegian
+in C:\xampp\htdocs\alumni\protected\controllers\frontend\CollegianController.php (46)
+in C:\xampp\htdocs\alumni\index.php (13)
+2015/05/16 15:15:33 [error] [php] Undefined index: collegiancode (C:\xampp\htdocs\alumni\protected\controllers\frontend\CollegianController.php:46)
 Stack trace:
 #0 C:\xampp\htdocs\alumni\framework\web\CController.php(286): CollegianController->runAction()
 #1 C:\xampp\htdocs\alumni\framework\web\CController.php(265): CollegianController->runActionWithFilters()
