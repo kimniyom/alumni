@@ -14,7 +14,7 @@
 </script>
 <?php $croup = Yii::app()->baseUrl . "/assets/jquery.picture.cut/"; ?>
 <?php $path = Yii::app()->baseUrl . '/themes/facebook/'; ?>
-<input type="text" id="collegian_code1" value="<?php echo $senior1['collegian_code'] ?>"/>
+<input type="hidden" id="collegian_code1" value="<?php echo $senior1['collegian_code'] ?>"/>
 <?php if (!empty($senior1['img_profile'])) { ?>
     <img src="<?php echo $croup; ?>/uploads/<?php echo $senior1['img_profile'] ?>" class="img-rounded" style="margin-top: 0px; width: 80px;">
 <?php } else { ?>

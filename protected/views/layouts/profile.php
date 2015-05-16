@@ -83,11 +83,6 @@
                             <li><a href="#"><i class="glyphicon glyphicon-envelope"></i> ข้อความจากตัวแทนบริษัท <span class="label label-success">10</span></a></li>
                             <li><a href="#"><i class="glyphicon glyphicon-refresh"></i> Refresh</a></li>
                         </ul>
-                        <ul class="list-unstyled hidden-xs" id="sidebar-footer">
-                            <li>
-                                <a href="http://usebootstrap.com/theme/facebook"><h3>Bootstrap</h3> <i class="glyphicon glyphicon-heart-empty"></i> Bootply</a>
-                            </li>
-                        </ul>
 
                         <!-- tiny only nav-->
                         <ul class="nav visible-xs" id="xs-menu">
