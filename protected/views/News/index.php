@@ -1,4 +1,16 @@
-<table>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#News").dataTable({
+        });
+    });
+
+</script>
+<div class="panel panel-info">
+    <div class="panel panel-heading">
+        หน้าประกาศข่าว
+    </div>
+<div class="panel-body">
+    <table class="table table-bordered" id="News">
     <thead>
         <tr>
             <th>News_ID</th>
@@ -22,3 +34,5 @@
         <?php endforeach;?>
     </tbody>
 </table>
+</div>
+</div>
