@@ -11,14 +11,16 @@
 </script>
 
 <script type="text/javascript">
-    function save_workings() {
-        var url = "index.php?r=frontend/workings/save_workings";
-        var collegian_code = "<?php echo $collegian_code ?>";
+    function edit_workings() {
+        var url = "index.php?r=frontend/workings/edit_workings";
+        var id = "<?php echo $workings['id'] ?>";
+        var collegian_code = "<?php echo $collegian_code; ?>";
         var workings_name = $("#workings_name").val();
         //var workings_detail = CKEDITOR.instances.workings_detail.getData();
         var workings_detail = $("#workings_detail").val();
         //alert(collegian_code);
         var data = {
+            id: id,
             collegian_code: collegian_code,
             workings_name: workings_name,
             workings_detail: workings_detail
@@ -55,7 +57,7 @@
                 <label>ชื่อผลงาน *</label>
             </div>
             <div class="col-lg-8 col-md-8 col-sm-8">
-                <input type="text" id="workings_name" class="form-control" placeholder="ชื่อผลงานของคุณคือ ... ?"/>
+                <input type="text" id="workings_name" class="form-control" value="<?php echo $workings['workings_name']; ?>"/>
             </div>
         </div><br/>
 
@@ -64,13 +66,13 @@
                 <label>รายละเอียด *</label>
             </div>
             <div class="col-lg-8 col-md-8 col-sm-8">
-                <textarea class="form-control" id="workings_detail" name="workings_detail" rows="5"></textarea>
+                <textarea class="form-control" id="workings_detail" name="workings_detail" rows="5"><?php echo $workings['workings_detail']; ?></textarea>
             </div>
         </div>
     </div>
     <div class="panel-footer">
         <center>
-            <div class="btn btn-primary btn-sm" onclick="save_workings();">
+            <div class="btn btn-primary btn-sm" onclick="edit_workings();">
                 <i class="fa fa-save"></i> บันทึกการเปลี่ยนแปลง</div>
         </center>
     </div>
@@ -79,12 +81,16 @@
 <table class="table" style="background: #FFF">
     <thead>
         <tr>
-            <th colspan="3"></th>
+            <th colspan="3" style="text-align: right;">
+                <a href="index.php?r=frontend/workings/index&collegian_code=<?php echo $collegian_code; ?>">
+                    <i class="fa fa-plus"></i> เพิ่มผลงาน
+                </a>
+            </th>
         </tr>
     </thead>
     <tbody>
         <?php
-        foreach ($workings as $rs):
+        foreach ($workingsAll as $rs):
             ?>
             <tr>
                 <td>
