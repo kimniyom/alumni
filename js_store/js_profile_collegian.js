@@ -5,6 +5,7 @@ $(document).ready(function () {
     codeline_down1();
     get_work_history();
     get_learning_history();
+    get_workings();
     //check ความสมบูรณ์ข้อมูล
     var c_card = $("#c_card").val();
     if (c_card == '') {
@@ -118,7 +119,7 @@ function get_work_history() {
     });
 }
 
-//ดึงข้อมูลประวัติการทำงานมาแสดง
+//ดึงข้อมูลประวัติการศึกษามาแสดง
 function get_learning_history() {
     var loading = "<center><div class='overlay'><i class='fa fa-refresh fa-spin'></i></div><center>";
     $("#learninghistory").html(loading);
@@ -127,6 +128,18 @@ function get_learning_history() {
     var data = {collegian_code: collegiancode};
     $.post(url, data, function (success) {
         $("#learninghistory").html(success);
+    });
+}
+
+//ดึงข้อมูลผลงานมาแสดง
+function get_workings() {
+    var loading = "<center><div class='overlay'><i class='fa fa-refresh fa-spin'></i></div><center>";
+    $("#workings").html(loading);
+    var url = "index.php?r=frontend/workings/get_workings";
+    var collegiancode = $("#collegian_code").val();
+    var data = {collegian_code: collegiancode};
+    $.post(url, data, function (success) {
+        $("#workings").html(success);
     });
 }
 
