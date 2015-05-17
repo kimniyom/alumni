@@ -36,6 +36,10 @@
         <script src="<?php echo $croup; ?>src/jquery.picture.cut.js"></script>
 
         <!--
+            CkEditor
+        -->
+        <script src="<?php echo Yii::app()->baseUrl; ?>/assets/ckeditor/adapter/ckeditor.js"></script>
+        <!--
         <link rel="stylesheet" href="demo_assets/demo.css">
         -->
 
