@@ -92,6 +92,9 @@
 
                 <div class="panel panel-default">
 
+                    <!--
+                    #### รูปภาพโปรไๆล์ 
+                    -->
                     <div class="panel-thumbnail" style=" position: relative;">
                         <div id="show_img_profile"></div>  
                     </div>
@@ -108,12 +111,12 @@
                         <div id="popover_content_wrapper" style="display: none">
                             <div style=" font-size: 12px;">
                                 <label>ชื่อ</label>
-                                <input type="text" class="form-control input-sm"/>
+                                <input type="text" id="edit_collegian_name" class="form-control input-sm" value="<?php echo $detail['collegian_name']; ?>"/>
                                 <label>นามสกุล</label>
-                                <input type="text" class="form-control input-sm"/>
+                                <input type="text" id="edit_collegian_lname" class="form-control input-sm" value="<?php echo $detail['collegian_lname']; ?>"/>
                                 <br/>
                                 <center>
-                                    <div class="btn  btn-primary btn-sm">ยืนยัน</div>
+                                    <div class="btn  btn-primary btn-sm" onclick="Edit_name_profile();">ยืนยัน</div>
                                 </center>
                             </div>
                         </div>
@@ -172,7 +175,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!--
                     ประวัติการทำงาน
                 -->
@@ -264,10 +267,15 @@
                     </div>
                 </div>
 
+                <!-- 
+                ## ความถนัด
+                -->
                 <div class="panel panel-default">
-                    <div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4>Stackoverflow</h4></div>
+                    <div class="panel-heading">
+                        <a href="#" class="pull-right"><i class="fa fa-plus"></i> เพิ่ม</a> 
+                        <h4>ความถนัด</h4>
+                    </div>
                     <div class="panel-body">
-                        <img src="<?php echo $path; ?>assets/img/150x150.gif" class="img-circle pull-right"> <a href="#">Keyword: Bootstrap</a>
                         <div class="clearfix"></div>
                         <hr>
 
