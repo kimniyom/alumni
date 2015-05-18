@@ -143,3 +143,21 @@ function get_workings() {
     });
 }
 
+//แก้ไขชื่อ โปรไฟล์ 
+function Edit_name_profile() {
+    var url = "index.php?r=frontend/collegian/edit_name_profile";
+    var collegiancode = $("#collegian_code").val();
+    var collegian_name = $("#edit_collegian_name").val();
+    var collegian_lname = $("#edit_collegian_lname").val();
+    var data = {
+        collegian_code: collegiancode,
+        collegian_name: collegian_name,
+        collegian_lname: collegian_lname
+    };
+    $.post(url, data, function (success) {
+        window.location.reload();
+    });
+}
+
+
+
