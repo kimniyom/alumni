@@ -188,4 +188,15 @@ class CollegianController extends Controller {
         $this->renderPartial('//codeline/Codeline_down3', $data);
     }
 
+    public function actionEdit_name_profile() {
+        $collegian_code = $_POST['collegian_code'];
+        $columns = array(
+            "collegian_name" => $_POST['collegian_name'],
+            "collegian_lname" => $_POST['collegian_lname']
+        );
+
+        Yii::app()->db->createCommand()
+                ->update("collegian", $columns, "collegian_code = '$collegian_code' ");
+    }
+
 }
