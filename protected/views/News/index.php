@@ -1,7 +1,7 @@
 <script type="text/javascript">
     $(document).ready(function () {
-        $("#News").dataTable({
-        });
+        $("#News").dataTable(
+        );
     });
 
 </script>
