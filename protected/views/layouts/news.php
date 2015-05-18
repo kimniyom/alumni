@@ -1,4 +1,4 @@
-<?php $path = Yii::app()->baseUrl . '/themes/News/'; ?>
+<?php $path = Yii::app()->baseUrl . '/themes/news/'; ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -6,6 +6,7 @@
         <meta charset="utf-8">
         <title>จัดการข่าวสาร</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <script type="text/javascript" src="<?php echo $path; ?>assets/js/jquery.js"></script>
         <link href="<?php echo $path; ?>assets/css/bootstrap.css" rel="stylesheet">
         <!--[if lt IE 9]>
           <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -18,6 +19,19 @@
 
         <!-- End Of Data Table -->
         <link href="<?php echo $path; ?>assets/css/facebook.css" rel="stylesheet">
+        <script type="text/javascript" src="<?php echo $path; ?>assets/js/bootstrap.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('[data-toggle=offcanvas]').click(function () {
+                    $(this).toggleClass('visible-xs text-center');
+                    $(this).find('i').toggleClass('glyphicon-chevron-right glyphicon-chevron-left');
+                    $('.row-offcanvas').toggleClass('active');
+                    $('#lg-menu').toggleClass('hidden-xs').toggleClass('visible-xs');
+                    $('#xs-menu').toggleClass('visible-xs').toggleClass('hidden-xs');
+                    $('#btnShow').toggle();
+                });
+            });
+        </script>
     </head>
 
     <body>
@@ -160,19 +174,4 @@
                 </div>
             </div>
         </div>
-
-        <script type="text/javascript" src="<?php echo $path; ?>assets/js/jquery.js"></script>
-        <script type="text/javascript" src="<?php echo $path; ?>assets/js/bootstrap.js"></script>
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $('[data-toggle=offcanvas]').click(function () {
-                    $(this).toggleClass('visible-xs text-center');
-                    $(this).find('i').toggleClass('glyphicon-chevron-right glyphicon-chevron-left');
-                    $('.row-offcanvas').toggleClass('active');
-                    $('#lg-menu').toggleClass('hidden-xs').toggleClass('visible-xs');
-                    $('#xs-menu').toggleClass('visible-xs').toggleClass('hidden-xs');
-                    $('#btnShow').toggle();
-                });
-            });
-        </script>
     </body></html>
