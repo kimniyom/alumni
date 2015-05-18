@@ -1,16 +1,14 @@
 <script type="text/javascript">
-    $(document).ready(function () {
-        $("#News").dataTable(
-        );
+    $(document).ready(function(){
+        $("#News").dataTable();
     });
-
 </script>
 <div class="panel panel-info">
     <div class="panel panel-heading">
         หน้าประกาศข่าว
     </div>
 <div class="panel-body">
-    <table class="table table-bordered" id="News">
+    <table class="display cell-border" id="News">
     <thead>
         <tr>
             <th>News_ID</th>
