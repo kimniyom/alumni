@@ -272,36 +272,26 @@
                 -->
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <a href="#" class="pull-right"><i class="fa fa-plus"></i> เพิ่ม</a> 
-                        <h4>ความถนัด</h4>
+                        <a href="<?php echo Yii::app()->createUrl('frontend/aptitude/index&collegian_code=' . $detail['collegian_code']); ?>" class="pull-right">
+                            <i class="fa fa-plus"></i> เพิ่ม</a> 
+                        <h4><i class="fa fa-child"></i> ความถนัด</h4>
                     </div>
                     <div class="panel-body">
-                        <div class="clearfix"></div>
-                        <hr>
-
-                        <p>If you're looking for help with Bootstrap code, the <code>twitter-bootstrap</code> tag at <a href="http://stackoverflow.com/questions/tagged/twitter-bootstrap">Stackoverflow</a> is a good place to find answers.</p>
-
-                        <hr>
-                        <form>
-                            <div class="input-group">
-                                <div class="input-group-btn">
-                                    <button class="btn btn-default">+1</button><button class="btn btn-default"><i class="glyphicon glyphicon-share"></i></button>
-                                </div>
-                                <input class="form-control" placeholder="Add a comment.." type="text">
-                            </div>
-                        </form>
-
+                        <div id="aptitude"></div>
                     </div>
                 </div>
 
+                <!-- 
+                ## ETC
+                -->
                 <div class="panel panel-default">
-                    <div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4>Portlet Heading</h4></div>
+                    <div class="panel-heading">
+                        <a href="<?php echo Yii::app()->createUrl('frontend/collegian_etc/index&collegian_code=' . $detail['collegian_code']); ?>" class="pull-right">
+                            <i class="fa fa-plus"></i> เพิ่ม</a> 
+                        <h4><i class="fa fa-child"></i> ข้อมูลอื่น ๆ</h4>
+                    </div>
                     <div class="panel-body">
-                        <ul class="list-group">
-                            <li class="list-group-item">Modals</li>
-                            <li class="list-group-item">Sliders / Carousel</li>
-                            <li class="list-group-item">Thumbnails</li>
-                        </ul>
+                        <div id="etc"></div>
                     </div>
                 </div>
 
