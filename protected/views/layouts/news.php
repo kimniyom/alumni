@@ -20,6 +20,8 @@
         <!-- End Of Data Table -->
         <link href="<?php echo $path; ?>assets/css/facebook.css" rel="stylesheet">
         <script type="text/javascript" src="<?php echo $path; ?>assets/js/bootstrap.js"></script>
+        <!-- CkEditor -->
+        <script src="<?php echo Yii::app()->baseUrl; ?>/assets/ckeditor/adapter/ckeditor.js"></script>
         <script type="text/javascript">
             $(document).ready(function () {
                 $('[data-toggle=offcanvas]').click(function () {
@@ -95,7 +97,8 @@
                                         <a href="#"><i class="glyphicon glyphicon-home"></i> จัดการข่าว</a>
                                     </li>
                                     <li>
-                                        <a href="#postModal" role="button" data-toggle="modal"><i class="glyphicon glyphicon-plus"></i> เพิ่มข่าว</a>
+                                        <a href="<?php echo Yii::app()->createUrl("News/Create_News"); ?>" role="button" data-toggle="modal">
+                                            <i class="glyphicon glyphicon-plus"></i> เพิ่มข่าว</a>
                                     </li>
                                     <li>
                                         <a href="#"><span class="badge">badge</span></a>
@@ -126,17 +129,6 @@
                                         <?php echo $content; ?>
                                     </div>
                                 </div><!--/row-->
-
-                                <div class="row" id="footer">    
-                                    <div class="col-sm-12">
-
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <p>
-                                            <a href="#" class="pull-right">©Copyright 2015</a>
-                                        </p>
-                                    </div>
-                                </div>
                                 <hr>
 
 
@@ -145,32 +137,6 @@
                     </div>
                     <!-- /main -->
 
-                </div>
-            </div>
-        </div>
-
-
-        <!--post modal-->
-        <div id="postModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                        Update Status
-                    </div>
-                    <div class="modal-body">
-                        <form class="form center-block">
-                            <div class="form-group">
-                                <textarea class="form-control input-lg" autofocus="" placeholder="What do you want to share?"></textarea>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <div>
-                            <button class="btn btn-primary btn-sm" data-dismiss="modal" aria-hidden="true">Post</button>
-                            <ul class="pull-left list-inline"><li><a href=""><i class="glyphicon glyphicon-upload"></i></a></li><li><a href=""><i class="glyphicon glyphicon-camera"></i></a></li><li><a href=""><i class="glyphicon glyphicon-map-marker"></i></a></li></ul>
-                        </div>	
-                    </div>
                 </div>
             </div>
         </div>
