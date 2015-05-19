@@ -6,6 +6,8 @@ $(document).ready(function () {
     get_work_history();
     get_learning_history();
     get_workings();
+    get_aptitude();
+    get_etc();
     //check ความสมบูรณ์ข้อมูล
     var c_card = $("#c_card").val();
     if (c_card == '') {
@@ -156,6 +158,30 @@ function Edit_name_profile() {
     };
     $.post(url, data, function (success) {
         window.location.reload();
+    });
+}
+
+//ดึงข้อมูลความถนัด
+function get_aptitude() {
+    var loading = "<center><div class='overlay'><i class='fa fa-refresh fa-spin'></i></div><center>";
+    $("#aptitude").html(loading);
+    var url = "index.php?r=frontend/aptitude/get_aptitude";
+    var collegiancode = $("#collegian_code").val();
+    var data = {collegian_code: collegiancode};
+    $.post(url, data, function (success) {
+        $("#aptitude").html(success);
+    });
+}
+
+//ดึงข้อมูลอื่น ๆ 
+function get_etc() {
+    var loading = "<center><div class='overlay'><i class='fa fa-refresh fa-spin'></i></div><center>";
+    $("#etc").html(loading);
+    var url = "index.php?r=frontend/collegian_etc/get_etc";
+    var collegiancode = $("#collegian_code").val();
+    var data = {collegian_code: collegiancode};
+    $.post(url, data, function (success) {
+        $("#etc").html(success);
     });
 }
 
