@@ -3430,3 +3430,35 @@ Stack trace:
 REQUEST_URI=/alumni/index.php?r=Education/Index
 HTTP_REFERER=http://localhost/alumni/index.php?r=Collegian
 ---
+2015/05/19 11:21:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "ืำไห".' in C:\xampp\htdocs\alumni\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\alumni\framework\web\CWebApplication.php(141): CWebApplication->runController('\xE0\xB8\xB7\xE0\xB8\xB3\xE0\xB9\x84\xE0\xB8\xAB')
+#1 C:\xampp\htdocs\alumni\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\alumni\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/alumni/index.php?r=%E0%B8%B7%E0%B8%B3%E0%B9%84%E0%B8%AB
+---
+2015/05/19 11:50:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "ืำไห".' in C:\xampp\htdocs\alumni\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\alumni\framework\web\CWebApplication.php(141): CWebApplication->runController('\xE0\xB8\xB7\xE0\xB8\xB3\xE0\xB9\x84\xE0\xB8\xAB')
+#1 C:\xampp\htdocs\alumni\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\alumni\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/alumni/index.php?r=%E0%B8%B7%E0%B8%B3%E0%B9%84%E0%B8%AB
+---
+2015/05/19 11:51:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "ืำไห".' in C:\xampp\htdocs\alumni\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\alumni\framework\web\CWebApplication.php(141): CWebApplication->runController('\xE0\xB8\xB7\xE0\xB8\xB3\xE0\xB9\x84\xE0\xB8\xAB')
+#1 C:\xampp\htdocs\alumni\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\alumni\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/alumni/index.php?r=%E0%B8%B7%E0%B8%B3%E0%B9%84%E0%B8%AB
+---
+2015/05/19 11:51:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "ืำไห".' in C:\xampp\htdocs\alumni\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\alumni\framework\web\CWebApplication.php(141): CWebApplication->runController('\xE0\xB8\xB7\xE0\xB8\xB3\xE0\xB9\x84\xE0\xB8\xAB')
+#1 C:\xampp\htdocs\alumni\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\alumni\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/alumni/index.php?r=%E0%B8%B7%E0%B8%B3%E0%B9%84%E0%B8%AB
+---
