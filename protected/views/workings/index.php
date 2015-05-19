@@ -47,7 +47,7 @@
 
 <div class="panel panel-default">
     <div class="panel-heading">
-        <h4><i class="fa fa-star" style=" color:#a77400;"></i> ผลงาน</h4>
+        <h4><i class="fa fa-trophy" style=" color:#a77400;"></i> ผลงาน</h4>
     </div>
     <div class="panel-body">
         <div class="row">
@@ -88,7 +88,7 @@
             ?>
             <tr>
                 <td>
-        <center><i class="fa fa-suitcase fa-5x" style=" color:#a77400;"></i></center>
+        <center><i class="fa fa-trophy fa-5x" style=" color:#a77400;"></i></center>
     </td>
     <td>
         <b>ชื่อผลงาน : <?php echo $rs['workings_name']; ?></b><br/>
