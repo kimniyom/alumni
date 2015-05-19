@@ -31,4 +31,20 @@ class BackofficeController extends Controller {
                 ->update("company_agent", $data, "id = '$id' ");
     }
 
+    public function actionDetail_collegian_etc() {
+        $etc = new CollegianEtc();
+        $data['etc'] = $etc->Get_Collegian_etc();
+        $this->render('//backoffice/collegian_etc', $data);
+    }
+
+    public function actionActive_etc() {
+        $id = $_POST['id'];
+        $columns = array(
+            "active" => '1'
+        );
+
+        Yii::app()->db->createCommand()
+                ->update("collegian_etc", $columns, "id = '$id' ");
+    }
+
 }
