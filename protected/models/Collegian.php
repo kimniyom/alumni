@@ -163,7 +163,7 @@ class Collegian extends CActiveRecord {
                         INNER JOIN generation g ON c.GenNumber = g.GenNumber
                         LEFT JOIN changwat cw ON c.changwat_code = cw.changwat_id
                         LEFT JOIN ampur a ON c.ampur_code = a.ampur_id AND c.changwat_code = a.changwat_id
-                        LEFT JOIN tambon t ON c.tambon_code = t.tambon_code AND c.changwat_code = t.changwat_id AND c.ampur_code = t.ampur_id
+                        LEFT JOIN tambon t ON c.tambon_code = t.id AND c.changwat_code = t.changwat_id AND c.ampur_code = t.ampur_id
                         LEFT JOIN images_profile i ON c.collegian_code = i.collegian_code
                         WHERE c.collegian_code = '$collegian_code' ";
         $result = Yii::app()->db->createCommand($query)->queryRow();
