@@ -12,7 +12,7 @@
 <p class="list-group-item">อายุ : 
     <?php
     if (isset($detail['collegian_birth'])) {
-        $lib->get_age($detail['collegian_birth']) . " ปี ";
+        echo $lib->get_age($detail['collegian_birth']) . " ปี ";
     } else {
         echo "-";
     }

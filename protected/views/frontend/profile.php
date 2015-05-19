@@ -175,38 +175,10 @@
                         </div>
                     </div>
                 </div>
-
-                <!--
-                    ประวัติการทำงาน
-                -->
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <a href="<?php echo Yii::app()->createUrl('frontend/workings/index&collegian_code=' . $detail['collegian_code']); ?>" class="pull-right"><i class="fa fa-plus"></i> เพิ่ม</a> 
-                        <h4>
-                            <i class="fa fa-user-secret"></i> ผลงาน</h4>
-                    </div>
-                    <div class="panel-body">
-                        <div class="list-group" id="workings">
-
-                        </div>
-                    </div>
-                </div>
-
             </div>
 
             <!-- main col right -->
             <div class="col-sm-7">
-
-                <div class="well"> 
-                    <form class="form">
-                        <h4>Sign-up</h4>
-                        <div class="input-group text-center">
-                            <input class="form-control input-lg" placeholder="Enter your email address" type="text">
-                            <span class="input-group-btn"><button class="btn btn-lg btn-primary" type="button">OK</button></span>
-                        </div>
-                    </form>
-                </div>
-
                 <div class="panel panel-default">
                     <div class="panel-heading"><h4><i class="fa fa-group"></i> พี่รหัส</h4></div>
                     <div class="panel-body">
@@ -266,6 +238,22 @@
                         </div>
                     </div>
                 </div>
+                
+                 <!--
+                    ผลงาน
+                -->
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <a href="<?php echo Yii::app()->createUrl('frontend/workings/index&collegian_code=' . $detail['collegian_code']); ?>" class="pull-right"><i class="fa fa-plus"></i> เพิ่ม</a> 
+                        <h4>
+                            <i class="fa fa-trophy"></i> ผลงาน</h4>
+                    </div>
+                    <div class="panel-body">
+                        <div class="list-group" id="workings">
+
+                        </div>
+                    </div>
+                </div>
 
                 <!-- 
                 ## ความถนัด
@@ -288,51 +276,31 @@
                     <div class="panel-heading">
                         <a href="<?php echo Yii::app()->createUrl('frontend/collegian_etc/index&collegian_code=' . $detail['collegian_code']); ?>" class="pull-right">
                             <i class="fa fa-plus"></i> เพิ่ม</a> 
-                        <h4><i class="fa fa-child"></i> ข้อมูลอื่น ๆ</h4>
+                        <h4><i class="fa fa-tasks"></i> ข้อมูลอื่น ๆ</h4>
                     </div>
                     <div class="panel-body">
                         <div id="etc"></div>
                     </div>
                 </div>
 
-                <div class="panel panel-default">
-                    <div class="panel-thumbnail"><img src="<?php echo $path; ?>assets/img/bg_4.jpg" class="img-responsive"></div>
-                    <div class="panel-body">
-                        <p class="lead">Social Good</p>
-                        <p>1,200 Followers, 83 Posts</p>
-
-                        <p>
-                            <img src="<?php echo $path; ?>assets/img/photo.jpg" height="28px" width="28px">
-                            <img src="<?php echo $path; ?>assets/img/photo.png" height="28px" width="28px">
-                            <img src="<?php echo $path; ?>assets/img/photo_002.jpg" height="28px" width="28px">
-                        </p>
-                    </div>
-                </div>
-
+           
             </div>
         </div><!--/row-->
 
-        <div class="row">
-            <div class="col-sm-6">
-                <a href="#">Twitter</a> <small class="text-muted">|</small> <a href="#">Facebook</a> <small class="text-muted">|</small> <a href="#">Google+</a>
-            </div>
-        </div>
 
         <div class="row" id="footer">    
             <div class="col-sm-6">
 
             </div>
             <div class="col-sm-6">
-                <p>
-                    <a href="#" class="pull-right">©Copyright 2013</a>
-                </p>
+
             </div>
         </div>
 
         <hr>
 
         <h4 class="text-center">
-            <a href="http://usebootstrap.com/theme/facebook" target="ext">Download this Template @Bootply</a>
+            <a href="index.php?r=site" target="ext">&copy; ระบบทะเบียนศิษย์เก่านักศึกษา</a>
         </h4>
 
         <hr>
