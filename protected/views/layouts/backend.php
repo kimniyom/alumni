@@ -6,7 +6,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>AdminLTE 2 | Dashboard</title>
+        <title>ระบบทะเบียนศิษย์เก่า</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <!-- Bootstrap 3.3.2 -->
         <?php $link = Yii::app()->baseUrl . "/themes/AdminLTE2/"; ?>
@@ -128,7 +128,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <header class="main-header">
 
                 <!-- Logo -->
-                <a href="#l" class="logo"><b>Admin</b>LTE</a>
+                <a href="#l" class="logo"><b>ผู้ดูแล</b>ระบบ</a>
 
                 <!-- Header Navbar -->
                 <nav class="navbar navbar-fixed-top" role="navigation">
@@ -298,10 +298,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <footer class="main-footer">
                 <!-- To the right -->
                 <div class="pull-right hidden-xs">
-                    Anything you want
+                    Assembor Themes.
                 </div>
                 <!-- Default to the left --> 
-                <strong>Copyright &copy; 2015 <a href="#">Company</a>.</strong> All rights reserved.
+                <strong>สงวนลิขสิทธิ์ &copy; เว็บไซต์ทำเนียบรุ่นนักศึกษา</strong> 
             </footer>
 
         </div><!-- ./wrapper -->
