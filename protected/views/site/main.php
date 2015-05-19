@@ -25,7 +25,7 @@ $this->breadcrumbs = array(
             </li>
             <!-- /.timeline-label -->
 
-            <?php for ($i = 1; $i <= 5; $i++) { ?>
+            <?php foreach ($news_genaral as $Ng) { ?>
                 <!-- timeline item -->
                 <li>
                     <!-- timeline icon -->
@@ -33,19 +33,22 @@ $this->breadcrumbs = array(
                     <div class="timeline-item">
                         <span class="time">
                             <i class="fa fa-clock-o"></i> 
-                            <?php echo date("Y-m-d"); ?>
-                            12:05
+                            <?php echo $Ng['CreateNews_Date']; ?>
                         </span>
 
-                        <h3 class="timeline-header"><a href="#">หัวข้อ <?php echo $i; ?></a> ...</h3>
+                        <h3 class="timeline-header">
+                            <a href="#">
+                                <i class="fa fa-newspaper-o"></i>
+                                <?php echo $Ng['News_Head']; ?></a> 
+                        </h3>
 
-                        <div class="timeline-body">
-                            ...
-                            รายละเอียด <?php echo $i; ?>
-                        </div>
-
+                        <!--
+                        <div class="timeline-body"></div>
+                        -->
                         <div class='timeline-footer'>
-                            <a class="btn btn-primary btn-xs">อ่านต่อ ...</a>
+                            โดย : <i class="fa fa-user"></i> 
+                            <font style=" font-weight: normal;"><?php echo $Ng['News_Owner']; ?></font>
+                            <a class="btn btn-primary btn-xs" style=" float: right;">อ่านต่อ ...</a>
                         </div>
                     </div>
                 </li>
