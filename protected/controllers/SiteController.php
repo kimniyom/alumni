@@ -33,9 +33,11 @@ class SiteController extends Controller {
         //
          $this->redirect(array('site/main'));
     }
-    
-    public function actionMain(){
-        $this->render('main');
+
+    public function actionMain() {
+        $news = new NewsModels();
+        $data['news_genaral'] = $news->findAll("1=1 ORDER BY  News_id DESC LIMIT 5");
+        $this->render('main', $data);
     }
 
     /**
