@@ -83,7 +83,10 @@
         <div class="navbar navbar-default navbar-fixed-top" style=" background:url('<?php echo $path; ?>images/bg-green.jpg')#1d9d74; box-shadow:0px 0px 3px 0px #666666; border-bottom: none;">
             <div class="container">
                 <div class="navbar-header">
-                    <a href="../" class="navbar-brand">เว็บไซต์ทำเนียบรุ่น Com Sci</a>
+                    <a href="../" class="navbar-brand" style=" font-weight: bold;">
+                        <font style="color:#99ff33;">เว็บไซต์ทำเนียบรุ่น </font>
+                        <font style="color:#ffff33;">Com Sci</font>
+                    </a>
                     <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
