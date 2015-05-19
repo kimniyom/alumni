@@ -16,12 +16,12 @@
         var News_Owner = $("#News_Owner").val();
         var News_Detail = CKEDITOR.instances.News_Detail.getData();
         //var News_Detail = $("#News_Detail").val();
-        //alert(News_Catagories);
+        //alert(News_Groups);
 
         var data = {
             News_Head: News_Head,
-            News_Catagory_id: News_Catagories,
-            News_Group_id:News_Groups,
+            News_Catagories: News_Catagories,
+            News_Groups:News_Groups,
             News_Detail: News_Detail,
             News_Owner:News_Owner
             

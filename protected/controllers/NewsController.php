@@ -26,8 +26,8 @@ Class NewsController extends Controller {
         $columns = array(
             "News_Head" => $_POST['News_Head'],
             "News_Detail" => $_POST['News_Detail'],
-            "News_Catagory_id" => $_POST['News_Catagory_id'],
-            "News_Group_id" => $_POST['News_Group_id'],
+            "News_Catagory_id" => $_POST['News_Catagories'],
+            "News_Group_id" => $_POST['News_Groups'],
             "News_Detail" => $_POST['News_Detail'],
             "News_Owner" => $_POST['News_Owner'],
             "News_User_Status"=>"A",
