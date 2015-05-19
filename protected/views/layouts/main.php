@@ -42,11 +42,11 @@
         -->
 
         <!-- DataTables CSS -->
-        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->baseUrl;?>/assets/DataTables-1.10.7/media/css/dataTables.bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->baseUrl; ?>/assets/DataTables-1.10.7/media/css/dataTables.bootstrap.css">
         <!-- DataTables -->
-        <script type="text/javascript" charset="utf8" src="<?php echo Yii::app()->baseUrl;?>/assets/DataTables-1.10.7/media/js/jquery.dataTables.js"></script>
-        <script type="text/javascript" charset="utf8" src="<?php echo Yii::app()->baseUrl;?>/assets/DataTables-1.10.7/media/js/dataTables.bootstrap.js"></script>
-        
+        <script type="text/javascript" charset="utf8" src="<?php echo Yii::app()->baseUrl; ?>/assets/DataTables-1.10.7/media/js/jquery.dataTables.js"></script>
+        <script type="text/javascript" charset="utf8" src="<?php echo Yii::app()->baseUrl; ?>/assets/DataTables-1.10.7/media/js/dataTables.bootstrap.js"></script>
+
 
 
         <script type="text/javascript">
