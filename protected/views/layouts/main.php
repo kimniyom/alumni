@@ -246,7 +246,9 @@
                         </div>
 
                         <div class="btn btn-info" style=" width: 100%; margin-bottom: 20px;">
-                            <i class="fa fa-search"></i> ข้อมูลศิษย์เก่า
+                            <a href="<?php echo Yii::app()->createUrl('frontend/search/search_collegian') ?>">
+                                <i class="fa fa-search"></i> ค้นหาข้อมูลศิษย์เก่า
+                            </a>
                         </div>
 
                         <!-- USERS LIST -->
