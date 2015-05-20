@@ -36,7 +36,7 @@ $this->breadcrumbs = array(
 
         <div class="row">
             <div class="col-sm-4">
-                <label>การศึกษา *</label>
+                <label>วุฒิการศึกษา *</label>
             </div>
             <div class="col-sm-8">
                 <select id="education" class="form-control input-sm" name="education">
@@ -46,7 +46,41 @@ $this->breadcrumbs = array(
                     <?php } ?>
                 </select>
             </div>
-
+        </div>
+        
+        <div class="row">
+            <div class="col-sm-4">
+                <label>ประวัติการทำงาน</label>
+            </div>
+            <div class="col-sm-8">
+                <select id="education" class="form-control input-sm" name="education">
+                    <option value="">==เลือกระยะเวลา==</option>
+                        <option value="0">0 ปี</option>
+                        <option value="1">1 - 3 ปี</option>
+                        <option value="2">3 - 5 ปี</option>
+                        <option value="3">มากกว่า 5 ปี</option>
+                </select>
+            </div>
+        </div>
+        
+        <hr>
+        
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" id="workings"> ผลงาน
+            </label>
+        </div>
+        
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" id="aptitude"> ความถนัด
+            </label>
+        </div>
+        
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" id="aptitude"> อื่น ๆ
+            </label>
         </div>
 
     </div>
