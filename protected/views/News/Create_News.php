@@ -36,16 +36,6 @@
         });
     }
 
-    function delete_workings(id) {
-        var url = "index.php?r=frontend/workings/delete_workings";
-        var data = {id: id};
-        var r = confirm("คุณแน่ใจหรือไม่ที่จะลบ ...!");
-        if (r == true) {
-            $.post(url, data, function (resul) {
-                window.location.reload();
-            });
-        }
-    }
 </script>
 <div class="box box-warning">
 
