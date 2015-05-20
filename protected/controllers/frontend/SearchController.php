@@ -4,8 +4,10 @@ class SearchController extends Controller {
 
     public $layout = "main";
 
-    public function actionSearch_collegian_address() {
-        $this->render('//frontend/search/search_address');
+    public function actionSearch_collegian() {
+        $education = new Educations();
+        $data['education'] = $education->findAll();
+        $this->render('//frontend/search/search', $data);
     }
 
 }
