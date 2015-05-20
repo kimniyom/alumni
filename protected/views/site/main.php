@@ -37,7 +37,7 @@ $this->breadcrumbs = array(
                         </span>
 
                         <h3 class="timeline-header">
-                            <a href="#">
+                            <a href="index.php?r=News/Detail_News&News_id=<?php echo $Ng['News_id'] ?>">
                                 <i class="fa fa-newspaper-o"></i>
                                 <?php echo $Ng['News_Head']; ?></a> 
                         </h3>
@@ -48,7 +48,9 @@ $this->breadcrumbs = array(
                         <div class='timeline-footer'>
                             โดย : <i class="fa fa-user"></i> 
                             <font style=" font-weight: normal;"><?php echo $Ng['News_Owner']; ?></font>
-                            <a class="btn btn-primary btn-xs" style=" float: right;">อ่านต่อ ...</a>
+                            <span class="label label-info">อ่าน 0</span>
+                            <span class="label label-danger">ตอบ 0</span>
+                            <a href="index.php?r=News/Detail_News&News_id=<?php echo $Ng['News_id'] ?>" class="btn btn-primary btn-xs" style=" float: right;">อ่านต่อ ...</a>
                         </div>
                     </div>
                 </li>
