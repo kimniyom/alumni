@@ -30,12 +30,24 @@ Class NewsController extends Controller {
             "News_Group_id" => $_POST['News_Groups'],
             "News_Detail" => $_POST['News_Detail'],
             "News_Owner" => $_POST['News_Owner'],
-            "News_User_Status"=>"A",
+            "News_User_Status" => "A",
             "CreateNews_Date" => date("Y-m-d H:i:s")
         );
 
         Yii::app()->db->createCommand()
                 ->insert("News", $columns);
+    }
+
+    //Author : Kimniyom => โชว์รายละเอียดข่าว
+    public function actionDetail_News() {
+        $this->layout = "main";
+        $News_id = $_GET['News_id'];
+        $start = ($News_id - 5);
+        $end = ($News_id + 5);
+        $news = new NewsModels();
+        $data['News'] = $news->find("News_id = '$News_id' ");
+        $data['News_jam'] = $news->findAll("News_Catagory_id = '1' AND News_id between '$start' AND '$end' AND News_id != '$News_id' ");
+        $this->render("//News/Detail", $data);
     }
 
 }
