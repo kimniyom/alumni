@@ -4306,3 +4306,200 @@ REQUEST_URI=/alumni/index.php?r=news
 in C:\xampp\htdocs\alumni\protected\views\News\index.php (30)
 in C:\xampp\htdocs\alumni\protected\controllers\NewsController.php (15)
 in C:\xampp\htdocs\alumni\index.php (13)
+2015/05/21 09:31:27 [error] [php] Undefined index: collegiancode (/Applications/MAMP/htdocs/alumni/protected/controllers/frontend/CollegianController.php:46)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CollegianController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CollegianController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CollegianController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=frontend/collegian/detail_collegian
+in /Applications/MAMP/htdocs/alumni/protected/controllers/frontend/CollegianController.php (46)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/05/21 09:31:52 [error] [php] Undefined index: collegiancode (/Applications/MAMP/htdocs/alumni/protected/controllers/frontend/CollegianController.php:46)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CollegianController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CollegianController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CollegianController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=frontend/collegian/detail_collegian
+in /Applications/MAMP/htdocs/alumni/protected/controllers/frontend/CollegianController.php (46)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/05/21 09:32:08 [error] [php] Undefined index: collegiancode (/Applications/MAMP/htdocs/alumni/protected/controllers/frontend/CollegianController.php:46)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CollegianController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CollegianController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CollegianController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=frontend/collegian/detail_collegian
+in /Applications/MAMP/htdocs/alumni/protected/controllers/frontend/CollegianController.php (46)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/05/21 09:32:22 [error] [php] Undefined index: collegiancode (/Applications/MAMP/htdocs/alumni/protected/controllers/frontend/CollegianController.php:46)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CollegianController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CollegianController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CollegianController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=frontend/collegian/detail_collegian
+in /Applications/MAMP/htdocs/alumni/protected/controllers/frontend/CollegianController.php (46)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/05/21 09:32:31 [error] [php] Undefined index: collegiancode (/Applications/MAMP/htdocs/alumni/protected/controllers/frontend/CollegianController.php:46)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CollegianController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CollegianController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CollegianController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=frontend/collegian/detail_collegian
+in /Applications/MAMP/htdocs/alumni/protected/controllers/frontend/CollegianController.php (46)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/05/21 09:32:56 [error] [php] Undefined index: collegiancode (/Applications/MAMP/htdocs/alumni/protected/controllers/frontend/CollegianController.php:46)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CollegianController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CollegianController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CollegianController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=frontend/collegian/detail_collegian
+in /Applications/MAMP/htdocs/alumni/protected/controllers/frontend/CollegianController.php (46)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/05/21 09:42:27 [error] [php] Undefined index: collegiancode (/Applications/MAMP/htdocs/alumni/protected/controllers/frontend/CollegianController.php:46)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CollegianController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CollegianController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CollegianController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=frontend/collegian/detail_collegian
+in /Applications/MAMP/htdocs/alumni/protected/controllers/frontend/CollegianController.php (46)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/05/21 10:05:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Search/SearchAll".' in /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController('Search/SearchAl...')
+#1 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/alumni/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/alumni/index.php?r=Search/SearchAll
+HTTP_REFERER=http://localhost/alumni/index.php?r=frontend/search/search_collegian
+---
+2015/05/21 10:05:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Search/SearchAll".' in /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController('Search/SearchAl...')
+#1 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/alumni/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/alumni/index.php?r=Search/SearchAll
+---
+2015/05/21 10:06:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Search/SearchAll".' in /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController('Search/SearchAl...')
+#1 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/alumni/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/alumni/index.php?r=Search/SearchAll
+---
+2015/05/21 10:06:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "front/Search/SearchAll".' in /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController('front/Search/Se...')
+#1 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/alumni/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/alumni/index.php?r=front/Search/SearchAll
+HTTP_REFERER=http://localhost/alumni/index.php?r=frontend/search/search_collegian
+---
+2015/05/21 10:06:27 [error] [php] Undefined index: workinghistory (/Applications/MAMP/htdocs/alumni/protected/controllers/frontend/SearchController.php:17)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): SearchController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): SearchController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): SearchController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=frontend/Search/SearchAll
+in /Applications/MAMP/htdocs/alumni/protected/controllers/frontend/SearchController.php (17)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/05/21 10:07:16 [error] [php] Undefined variable: JOIN (/Applications/MAMP/htdocs/alumni/protected/controllers/frontend/SearchController.php:38)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): SearchController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): SearchController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): SearchController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=frontend/Search/SearchAll
+in /Applications/MAMP/htdocs/alumni/protected/controllers/frontend/SearchController.php (38)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/05/21 11:04:05 [error] [php] Invalid argument supplied for foreach() (/Applications/MAMP/htdocs/alumni/protected/views/frontend/search/result.php:8)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(869): SearchController->renderFile()
+#1 /Applications/MAMP/htdocs/alumni/protected/controllers/frontend/SearchController.php(77): SearchController->renderPartial()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/actions/CInlineAction.php(49): SearchController->actionSearchAll()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): SearchController->runAction()
+#5 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): SearchController->runActionWithFilters()
+#6 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): SearchController->run()
+#7 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=frontend/Search/SearchAll
+in /Applications/MAMP/htdocs/alumni/protected/views/frontend/search/result.php (8)
+in /Applications/MAMP/htdocs/alumni/protected/controllers/frontend/SearchController.php (77)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/05/21 11:04:33 [error] [php] Undefined index: shotname (/Applications/MAMP/htdocs/alumni/protected/views/frontend/search/result.php:14)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(869): SearchController->renderFile()
+#1 /Applications/MAMP/htdocs/alumni/protected/controllers/frontend/SearchController.php(77): SearchController->renderPartial()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/actions/CInlineAction.php(49): SearchController->actionSearchAll()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): SearchController->runAction()
+#5 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): SearchController->runActionWithFilters()
+#6 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): SearchController->run()
+#7 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=frontend/Search/SearchAll
+in /Applications/MAMP/htdocs/alumni/protected/views/frontend/search/result.php (14)
+in /Applications/MAMP/htdocs/alumni/protected/controllers/frontend/SearchController.php (77)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/05/21 11:11:08 [error] [php] Array to string conversion (/Applications/MAMP/htdocs/alumni/protected/views/frontend/search/result.php:21)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(869): SearchController->renderFile()
+#1 /Applications/MAMP/htdocs/alumni/protected/controllers/frontend/SearchController.php(77): SearchController->renderPartial()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/actions/CInlineAction.php(49): SearchController->actionSearchAll()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): SearchController->runAction()
+#5 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): SearchController->runActionWithFilters()
+#6 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): SearchController->run()
+#7 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=frontend/Search/SearchAll
+in /Applications/MAMP/htdocs/alumni/protected/views/frontend/search/result.php (21)
+in /Applications/MAMP/htdocs/alumni/protected/controllers/frontend/SearchController.php (77)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/05/21 11:11:35 [error] [php] Array to string conversion (/Applications/MAMP/htdocs/alumni/protected/views/frontend/search/result.php:21)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(869): SearchController->renderFile()
+#1 /Applications/MAMP/htdocs/alumni/protected/controllers/frontend/SearchController.php(77): SearchController->renderPartial()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/actions/CInlineAction.php(49): SearchController->actionSearchAll()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): SearchController->runAction()
+#5 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): SearchController->runActionWithFilters()
+#6 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): SearchController->run()
+#7 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=frontend/Search/SearchAll
+in /Applications/MAMP/htdocs/alumni/protected/views/frontend/search/result.php (21)
+in /Applications/MAMP/htdocs/alumni/protected/controllers/frontend/SearchController.php (77)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
