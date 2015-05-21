@@ -1,3 +1,29 @@
+
+<script type="text/javascript">
+    function Search_param() {
+        var workings;
+        var aptitude;
+        var etc;
+        var changwat = $("#changwat").val();
+        var education = $("#education").val();
+        var workhistory = $("#workhistory").val();
+
+        $("#workings").prop("checked", function (i, val) {
+            workings = val;
+        });
+
+        $("#aptitude").prop("checked", function (i, val) {
+            aptitude = val;
+        });
+
+        $("#etc").prop("checked", function (i, val) {
+            etc = val;
+        });
+
+        alert(workings + " - " + aptitude + " - " + etc + "-" + changwat + "-" + education + " - " + workhistory);
+    }
+</script>
+
 <?php
 /* @var $this CollegianController */
 /* @var $model Collegian */
@@ -9,7 +35,7 @@ $this->breadcrumbs = array(
 ?>
 <div class="box box-warning">
     <div class="box-header with-border">
-        ค้นหาข้อมูล
+        <label><i class="fa fa-search"></i> ค้นหาข้อมูล</label>
         <div class="box-tools pull-right">
             <button class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
         </div><!-- /.box-tools -->
@@ -17,7 +43,7 @@ $this->breadcrumbs = array(
     <div class="box-body">
         <div class="row">
             <div class="col-sm-4">
-                <label>จังหวัด *</label>
+                <label>จังหวัด </label>
             </div>
             <div class="col-sm-8">
                 <?php
@@ -25,7 +51,7 @@ $this->breadcrumbs = array(
                 $r_changwat = Yii::app()->db->createCommand($sql_changwat)->queryAll();
                 ?>
 
-                <select id="changwat_code" class="form-control input-sm" name="changwat_code">
+                <select id="changwat" class="form-control input-sm" name="changwat_code">
                     <option value="">==ยังไม่ได้เลือกจังหวัด==</option>
                     <?php foreach ($r_changwat as $ch) { ?>
                         <option value="<?php echo $ch['changwat_id']; ?>"><?php echo $ch['changwat_name']; ?></option>
@@ -36,7 +62,7 @@ $this->breadcrumbs = array(
 
         <div class="row">
             <div class="col-sm-4">
-                <label>วุฒิการศึกษา *</label>
+                <label>วุฒิการศึกษา </label>
             </div>
             <div class="col-sm-8">
                 <select id="education" class="form-control input-sm" name="education">
@@ -46,42 +72,51 @@ $this->breadcrumbs = array(
                     <?php } ?>
                 </select>
             </div>
-        </div>
-        
+        </div><br/>
+
         <div class="row">
             <div class="col-sm-4">
                 <label>ประวัติการทำงาน</label>
             </div>
             <div class="col-sm-8">
-                <select id="education" class="form-control input-sm" name="education">
-                    <option value="">==เลือกระยะเวลา==</option>
-                        <option value="0">0 ปี</option>
-                        <option value="1">1 - 3 ปี</option>
-                        <option value="2">3 - 5 ปี</option>
-                        <option value="3">มากกว่า 5 ปี</option>
+                <select id="workhistory" class="form-control input-sm" name="education">
+                    <option value="">ยังไม่มีประสบการณ์</option>
+                    <option value="1">1 - 3 ปี</option>
+                    <option value="2">3 - 5 ปี</option>
+                    <option value="3">มากกว่า 5 ปี</option>
                 </select>
             </div>
         </div>
-        
-        <hr>
-        
-        <div class="checkbox">
-            <label>
-                <input type="checkbox" id="workings"> ผลงาน
-            </label>
+
+        <div class="row" style="text-align: center; background: #efefef; margin: 5px 1px;">
+            <div class="col-sm-4"> 
+                <div class="checkbox checkbox-success">
+                    <input id="workings" class="styled" type="checkbox">
+                    <label for="checkbox2">
+                        ผลงาน
+                    </label>
+                </div>
+
+            </div>
+            <div class="col-sm-4">
+                <div class="checkbox checkbox-success">
+                    <input type="checkbox" id="aptitude"> 
+                    <label>
+                        ความถนัด
+                    </label>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="checkbox checkbox-success">
+                    <input type="checkbox" id="etc">
+                    <label> อื่น ๆ</label>
+                </div>
+            </div>
         </div>
-        
-        <div class="checkbox">
-            <label>
-                <input type="checkbox" id="aptitude"> ความถนัด
-            </label>
-        </div>
-        
-        <div class="checkbox">
-            <label>
-                <input type="checkbox" id="aptitude"> อื่น ๆ
-            </label>
+
+        <div class="box-footer" style="text-align: center;">
+            <div class="btn btn-primary" onclick="Search_param();"><i class="fa fa-search"></i> ค้นหา</div>
         </div>
 
     </div>
-</div>
