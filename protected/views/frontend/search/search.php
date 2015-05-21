@@ -1,6 +1,8 @@
 
 <script type="text/javascript">
     function Search_param() {
+        var loading = "<center><div class='overlay'><i class='fa fa-refresh fa-spin'></i></div><center>";
+        $("#result_search").html(loading);
         var workings;
         var aptitude;
         var etc;
@@ -9,18 +11,47 @@
         var workhistory = $("#workhistory").val();
 
         $("#workings").prop("checked", function (i, val) {
-            workings = val;
+            if (val == true) {
+                workings = 1;
+            } else {
+                workings = "";
+            }
         });
 
         $("#aptitude").prop("checked", function (i, val) {
-            aptitude = val;
+            if (val == true) {
+                aptitude = 1;
+            } else {
+                aptitude = "";
+            }
         });
 
         $("#etc").prop("checked", function (i, val) {
-            etc = val;
+            if (val == true) {
+                etc = 1;
+            } else {
+                etc = "";
+            }
         });
 
-        alert(workings + " - " + aptitude + " - " + etc + "-" + changwat + "-" + education + " - " + workhistory);
+
+
+        //alert(workings + " - " + aptitude + " - " + etc + "-" + changwat + "-" + education + " - " + workhistory);
+        var url = "index.php?r=frontend/Search/SearchAll";
+        var data = {
+            changwat: changwat,
+            education: education,
+            workinghistory: workhistory,
+            workings: workings,
+            aptitude: aptitude,
+            etc: etc
+
+        };
+
+        $.post(url, data, function (result) {
+            $("#result_search").html(result);
+        });
+
     }
 </script>
 
@@ -79,8 +110,8 @@ $this->breadcrumbs = array(
                 <label>ประวัติการทำงาน</label>
             </div>
             <div class="col-sm-8">
-                <select id="workhistory" class="form-control input-sm" name="education">
-                    <option value="">ยังไม่มีประสบการณ์</option>
+                <select id="workhistory" class="form-control input-sm" name="workhistory">
+                    <option value="0">ยังไม่มีประสบการณ์</option>
                     <option value="1">1 - 3 ปี</option>
                     <option value="2">3 - 5 ปี</option>
                     <option value="3">มากกว่า 5 ปี</option>
@@ -118,5 +149,9 @@ $this->breadcrumbs = array(
         <div class="box-footer" style="text-align: center;">
             <div class="btn btn-primary" onclick="Search_param();"><i class="fa fa-search"></i> ค้นหา</div>
         </div>
+        
+        <hr>
+        
+        <div id="result_search"></div>
 
     </div>
