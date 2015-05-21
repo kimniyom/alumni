@@ -9,7 +9,8 @@ Class NewsController extends Controller {
 
     public function actionIndex() {
         $News = new NewsModels();
-        $rs = $News->findAll();
+        //$rs = $News->findAll();
+        $rs = $News->Get_News_All();
         $data['News'] = $rs;
         $this->render('//News/index', $data);
     }
