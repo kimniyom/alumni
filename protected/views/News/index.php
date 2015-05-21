@@ -27,7 +27,7 @@
                         <td><?php echo $rs['News_Icon_id']; ?></td>
                         <td><?php echo $rs['News_Catagory_id']; ?></td>
                         <td><?php echo $rs['News_Group_id']; ?></td>
-                        <td><?php echo $rs['News_Owner']; ?></td>
+                        <td><?php echo $rs['collegian_name']." ".$rs['collegian_lname']; ?></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
