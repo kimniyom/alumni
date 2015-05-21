@@ -47,7 +47,10 @@
         <script type="text/javascript" charset="utf8" src="<?php echo Yii::app()->baseUrl; ?>/assets/DataTables-1.10.7/media/js/jquery.dataTables.js"></script>
         <script type="text/javascript" charset="utf8" src="<?php echo Yii::app()->baseUrl; ?>/assets/DataTables-1.10.7/media/js/dataTables.bootstrap.js"></script>
 
-
+        <!--
+        Bootstrap Swite 
+        -->
+        <link href="<?php echo Yii::app()->baseUrl; ?>/css/bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
 
         <script type="text/javascript">
             function CheckNum() {
@@ -132,8 +135,6 @@
                             </li>
                         <?php } ?>
                     </ul>
-
-
 
                 </div>
             </div>
