@@ -3,12 +3,23 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Applications/MAMP/htdocs/alumni/protected/views/frontend/search/result.php</file>
-            <file>file:/Applications/MAMP/htdocs/alumni/protected/models/Search.php</file>
+            <file>file:/Applications/MAMP/htdocs/alumni/protected/views/privilege/head_agent.php</file>
+            <file>file:/Applications/MAMP/htdocs/alumni/protected/views/profile/img_profile.php</file>
+            <file>file:/Applications/MAMP/htdocs/alumni/protected/views/frontend/detail_collegian.php</file>
+            <file>file:/Applications/MAMP/htdocs/alumni/protected/views/codeline/senior.php</file>
+            <file>file:/Applications/MAMP/htdocs/alumni/protected/views/layouts/profile.php</file>
+            <file>file:/Applications/MAMP/htdocs/alumni/protected/views/privilege/head_menu_agent.php</file>
+            <file>file:/Applications/MAMP/htdocs/alumni/protected/views/collegian_etc/view.php</file>
             <file>file:/Applications/MAMP/htdocs/alumni/js_store/js_profile_collegian.js</file>
-            <file>file:/Applications/MAMP/htdocs/alumni/protected/views/frontend/search/search.php</file>
-            <file>file:/Applications/MAMP/htdocs/alumni/protected/views/News/Create_News.php</file>
-            <file>file:/Applications/MAMP/htdocs/alumni/protected/controllers/frontend/SearchController.php</file>
+            <file>file:/Applications/MAMP/htdocs/alumni/protected/controllers/frontend/CollegianController.php</file>
+            <file>file:/Applications/MAMP/htdocs/alumni/protected/views/layouts/timeline.php</file>
+            <file>file:/Applications/MAMP/htdocs/alumni/protected/views/frontend/search/result.php</file>
+            <file>file:/Applications/MAMP/htdocs/alumni/protected/controllers/frontend/TimelineController.php</file>
+            <file>file:/Applications/MAMP/htdocs/alumni/protected/controllers/frontend/PrivilegeController.php</file>
+            <file>file:/Applications/MAMP/htdocs/alumni/protected/views/privilege/head_menu_collegian.php</file>
+            <file>file:/Applications/MAMP/htdocs/alumni/protected/views/timeline/profile_preview.php</file>
+            <file>file:/Applications/MAMP/htdocs/alumni/protected/views/privilege/head_admin.php</file>
+            <file>file:/Applications/MAMP/htdocs/alumni/protected/views/privilege/head_collegian.php</file>
         </group>
     </open-files>
 </project-private>
