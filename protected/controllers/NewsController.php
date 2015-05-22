@@ -8,11 +8,30 @@ Class NewsController extends Controller {
     public $layout = "News";
 
     public function actionIndex() {
-        $News = new NewsModels();
-        //$rs = $News->findAll();
-        $rs = $News->Get_News_All();
-        $data['News'] = $rs;
-        $this->render('//News/index', $data);
+        $this->render('//News/index');
+    }
+
+    public function actionNews_general_all() {
+        $news = new NewsModels();
+
+        if (Yii::app()->session['user'] == "U") {
+            $data['news'] = $news->Get_newsgeneralAll(Yii::app()->session['collegian_code']);
+        } else {
+            $data['news'] = $news->Get_newsgeneralAll_admin();
+        }
+        $this->render("//News/news_general", $data);
+    }
+
+    public function actionNews_collegian_all() {
+
+        $news = new NewsModels();
+        if (Yii::app()->session['user'] == "U") {
+            $data['news'] = $news->Get_newscollegianAll(Yii::app()->session['collegian_code']);
+        } else {
+            $data['news'] = $news->Get_newscollegianAll_admin();
+        }
+
+        $this->render("//News/news_collegian", $data);
     }
 
     public function actionCreate_News() {
@@ -28,10 +47,10 @@ Class NewsController extends Controller {
             "News_Head" => $_POST['News_Head'],
             "News_Detail" => $_POST['News_Detail'],
             "News_Catagory_id" => $_POST['News_Catagories'],
-            "News_Group_id" => $_POST['News_Groups'],
-            "News_Detail" => $_POST['News_Detail'],
+            //"News_Group_id" => $_POST['News_Groups'],
+            //"News_Detail" => $_POST['News_Detail'],
             "News_Owner" => $_POST['News_Owner'],
-            "News_User_Status" => "A",
+            "News_User_Status" => Yii::app()->session['user'],
             "CreateNews_Date" => date("Y-m-d H:i:s")
         );
 
