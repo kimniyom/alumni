@@ -13,9 +13,11 @@
         <![endif]-->
         <!-- Data Table -->
         <!-- DataTables CSS -->
-        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->baseUrl; ?>/assets/DataTables-1.10.7/media/css/jquery.dataTables.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->baseUrl; ?>/assets/DataTables-1.10.7/media/css/dataTables.bootstrap.css">
+        <link href="<?php echo Yii::app()->baseUrl; ?>/css/font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
         <!-- DataTables -->
         <script type="text/javascript" charset="utf8" src="<?php echo Yii::app()->baseUrl; ?>/assets/DataTables-1.10.7/media/js/jquery.dataTables.js"></script>
+        <script type="text/javascript" charset="utf8" src="<?php echo Yii::app()->baseUrl; ?>/assets/DataTables-1.10.7/media/js/dataTables.bootstrap.js"></script>
 
         <!-- End Of Data Table -->
         <link href="<?php echo $path; ?>assets/css/facebook.css" rel="stylesheet">
@@ -50,22 +52,16 @@
                         </ul>
 
                         <ul class="nav hidden-xs" id="lg-menu">
-                            <li><a href="#stories"><i class="glyphicon glyphicon-list"></i> จัดการข่าวสาร</a></li>
-                            <li><a href="#stories"><i class="glyphicon glyphicon-list"></i> จัดการหมวดข่าวสาร</a></li>
-                            <li><a href="#stories"><i class="glyphicon glyphicon-list"></i> จัดการประเภทผู้รับข่าว</a></li>
-                            <li><a href="<?php echo Yii::app()->createUrl("MasMenu"); ?>"><i class="glyphicon glyphicon-home"></i> กลับหน้าหลัก</a></li>
+                            <li><a href="index.php?r=site"><i class="glyphicon glyphicon-home"></i> กลับหน้าเว็บ</a></li>
+                            <li><a href="index.php?r=news/News_general_all"><i class="glyphicon glyphicon-comment"></i> ข่าวทั่วไป</a></li>
+                            <li><a href="index.php?r=news/News_collegian_all"><i class="glyphicon glyphicon-envelope"></i> ข่าวภายใน</a></li>
+                            <?php if (Yii::app()->session['user'] == "U") { ?>
+                                <li><a href="index.php?r=frontend/collegian/profile&collegian_code=<?php echo Yii::app()->session['collegian_code'] ?>"><i class="glyphicon glyphicon-home"></i> กลับหน้าโปรไฟล์</a></li>
+                            <?php } else { ?>
+                                <li><a href="<?php echo Yii::app()->createUrl("MasMenu"); ?>"><i class="glyphicon glyphicon-home"></i> กลับหน้าผู้ดูแลระบบ</a></li>
+                            <?php } ?>
                             <li><a href="#"><i class="glyphicon glyphicon-refresh"></i> Refresh</a></li>
                         </ul>
-
-
-                        <!-- tiny only nav-->
-                        <ul class="nav visible-xs" id="xs-menu">
-                            <li><a href="#featured" class="text-center"><i class="glyphicon glyphicon-list-alt"></i></a></li>
-                            <li><a href="#stories" class="text-center"><i class="glyphicon glyphicon-list"></i></a></li>
-                            <li><a href="#" class="text-center"><i class="glyphicon glyphicon-paperclip"></i></a></li>
-                            <li><a href="#" class="text-center"><i class="glyphicon glyphicon-refresh"></i></a></li>
-                        </ul>
-
                     </div>
                     <!-- /sidebar -->
 
@@ -84,14 +80,6 @@
                                 <a href="http://usebootstrap.com/theme/facebook" class="navbar-brand logo">b</a>
                             </div>
                             <nav class="collapse navbar-collapse" role="navigation">
-                                <form class="navbar-form navbar-left">
-                                    <div class="input-group input-group-sm" style="max-width:360px;">
-                                        <input class="form-control" placeholder="Search" name="srch-term" id="srch-term" type="text">
-                                        <div class="input-group-btn">
-                                            <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-                                        </div>
-                                    </div>
-                                </form>
                                 <ul class="nav navbar-nav">
                                     <li>
                                         <a href="#"><i class="glyphicon glyphicon-home"></i> จัดการข่าว</a>
@@ -100,10 +88,9 @@
                                         <a href="<?php echo Yii::app()->createUrl("News/Create_News"); ?>" role="button" data-toggle="modal">
                                             <i class="glyphicon glyphicon-plus"></i> เพิ่มข่าว</a>
                                     </li>
-                                    <li>
-                                        <a href="#"><span class="badge">badge</span></a>
-                                    </li>
+        
                                 </ul>
+                                <!--
                                 <ul class="nav navbar-nav navbar-right">
                                     <li class="dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i></a>
@@ -116,6 +103,7 @@
                                         </ul>
                                     </li>
                                 </ul>
+                                -->
                             </nav>
                         </div>
                         <!-- /top nav -->

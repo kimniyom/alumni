@@ -102,7 +102,10 @@
                             <li><a href="index.php?r=frontend/news_collegian/news_general_all&collegian_code=<?php echo Yii::app()->session['collegian_code'] ?>">
                                     <i class="fa fa-bullhorn"></i> ประกาศข่าวทั่วไป <span class="label label-success"><?php echo $news_model->Count_News_Genneral(Yii::app()->session['collegian_code'])?></span></a>
                             </li>
-                            <li><a href="#"><i class="fa fa-bell"></i> ประกาศข่าวในนักศึกษา <span class="label label-success"><?php echo $news_model->Count_News_Collegian(Yii::app()->session['collegian_code'])?></span></a></li>
+                            <li>
+                                <a href="index.php?r=frontend/news_collegian/news_collegian_all&collegian_code=<?php echo Yii::app()->session['collegian_code'] ?>">
+                                <i class="fa fa-bell"></i> ประกาศข่าวในนักศึกษา <span class="label label-success"><?php echo $news_model->Count_News_Collegian(Yii::app()->session['collegian_code'])?></span></a>
+                            </li>
                             <hr style="margin: 5px 0px;">
                             <li><a href="#"><i class="glyphicon glyphicon-refresh"></i> Refresh</a></li>
                         </ul>
