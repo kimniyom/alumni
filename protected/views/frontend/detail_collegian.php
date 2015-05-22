@@ -34,7 +34,8 @@
     ตำบล : <?php echo $detail['tambon_name']; ?>
 </p>
 
-
-<a href="<?php echo Yii::app()->createUrl('frontend/collegian/edit_profile&collegian_code=' . $detail['collegian_code']) ?>" style=" float: right;">
-    <i class="fa fa-edit"></i> แก้ไขข้อมูลพื้นฐาน
-</a>
+<?php if (Yii::app()->session['collegian_code'] == $detail['collegian_code']) { ?>
+    <a href="<?php echo Yii::app()->createUrl('frontend/collegian/edit_profile&collegian_code=' . $detail['collegian_code']) ?>" style=" float: right;">
+        <i class="fa fa-edit"></i> แก้ไขข้อมูลพื้นฐาน
+    </a>
+<?php } ?>

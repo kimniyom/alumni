@@ -22,11 +22,17 @@ if ($learning) {
         </p>
     <?php endforeach; ?>
 <?php } else { ?>
-    <a href="index.php?r=frontend/learninghistory/index&collegian_code=<?php echo Yii::app()->session['collegian_code']; ?>">
-        <div class="well" style=" border: dashed 2px #809deb; color: #7d7e80; text-align: center;">
-            <i class="fa fa-plus fa-5x"></i> <br/>
-            <h3>เพิ่มข้อมูลการศึกษา</h3>
-        </div>
-    </a>
+    <?php if (Yii::app()->session['collegian_code'] == $collegian_code) { ?>
+        <a href="index.php?r=frontend/learninghistory/index&collegian_code=<?php echo Yii::app()->session['collegian_code']; ?>">
+            <div class="well" style=" border: dashed 2px #809deb; color: #7d7e80; text-align: center;">
+                <i class="fa fa-plus fa-5x"></i> <br/>
+                <h3>เพิ่มข้อมูลการศึกษา</h3>
+            </div>
+        </a>
+    <?php
+    } else {
+        echo "ไม่มีข้อมูล";
+    }
+    ?>
 <?php } ?>
 

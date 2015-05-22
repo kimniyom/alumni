@@ -52,6 +52,7 @@ class CollegianController extends Controller {
     public function actionImg_profile() {
         $collegiancode = $_POST['collegian_code'];
         $collegian = new Collegian();
+        $data['collegian_code'] = $collegiancode;
         $data['img'] = $collegian->Get_img_profile($collegiancode);
 
         $this->renderPartial("//profile/img_profile", $data);

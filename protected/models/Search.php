@@ -12,4 +12,12 @@ class Search {
         //return $query;
         return Yii::app()->db->createCommand($query)->queryAll();
     }
+    
+    function Get_work_year($collegian_code = ''){
+        $query = "SELECT timestampdiff(YEAR,MIN(`begin`),IF(w.`end` = '0000-00-00',date(NOW()),MAX(w.`end`))) AS work_year
+                    FROM work_history w 
+                    WHERE collegian_code = '$collegian_code' ";
+        $rs = Yii::app()->db->createCommand($query)->queryRow();
+        return $rs['work_year'];
+    }
 }
