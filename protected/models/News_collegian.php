@@ -29,5 +29,10 @@ class News_collegian {
         
         return $rs['TOTAL'];
     }
+    
+    function Get_newscollegianAll($collegian_code = '') {
+        $query = "SELECT * FROM News WHERE News_Owner = '$collegian_code' AND News_Catagory_id = '2' ORDER BY News_id DESC";
+        return Yii::app()->db->createCommand($query)->queryAll();
+    }
 
 }
