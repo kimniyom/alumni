@@ -1,15 +1,15 @@
 <script type="text/javascript">
     $(document).ready(function(){
-       $("#news_general").dataTable(); 
+       $("#news_collegian").dataTable(); 
     });
 </script>
 
 <div class="panel panel-default">
     <div class="panel-heading">
-        <i class="fa fa-bullhorn"></i> <label>ข่าวทั่วไป </label>
+        <i class="fa fa-bullhorn"></i> <label>ข่าวภายใน</label>
     </div>
     <div class="panel-body">
-        <table class="table table-bordered" id="news_general">
+        <table class="table table-bordered" id="news_collegian">
             <thead>
                 <tr>
                     <th>ลำดับ</th>

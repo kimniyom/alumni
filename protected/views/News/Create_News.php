@@ -37,7 +37,6 @@
     }
 
 </script>
-<div class="box box-warning">
 
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -46,10 +45,10 @@
         <div class="panel-body">
             <div class="form">
                 <div class="row">
-                    <div class="col-sm-1">
+                    <div class="col-sm-2">
                         <label>หัวข้อข่าว</label>
                     </div>
-                    <div class="col-sm-11">
+                    <div class="col-sm-10">
                         <input type="text" id="News_Head" name="News_Head" class="form-control input-sm" required="required"/>
                     </div>
                 </div>
@@ -60,21 +59,14 @@
                     </div>
                     <div class="col-sm-3">
                         <select id="News_Catagories" name="News_Catagories" class="form-control input-sm">
-                            <?php foreach ($News_Catagories as $rs): ?>
-                                <option value="<?php echo $rs['News_Catagory_id']; ?>"><?php echo $rs['News_Catagory']; ?></option>
-                            <?php endforeach; ?>
+                            <option value="1">ข่าวทั่วไป</option>
+                            <option value="2">ข่าวภายในนักศึกษา</option>
                         </select>
                     </div>
                     <div class="col-sm-2">
-                        <label aling="right">แสดงที่กลุ่ม</label>
+                        
                     </div>
-                    <div class="col-sm-3">
-                        <select id="News_Groups" name="News_Groups" class="form-control input-sm">
-                            <?php foreach ($News_Groups as $rs): ?>
-                                <option value="<?php echo $rs['News_Group_id']; ?>"><?php echo $rs['News_Group']; ?></option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
+                    <div class="col-sm-3"></div>
                 </div>
                 <br>
                 <div class="row">
@@ -84,11 +76,19 @@
                 </div>
                 <br/>
                 <div class="row">
-                    <div class="col-sm-2" align="right">
+                    <div class="col-sm-2">
                         <label>เจ้าของข่าว</label>
                     </div>
-                    <div class="col-sm-2" align="Left">
-                        <input type="text" id="News_Owner" name="News_Owner" class="form-control input-sm"/>
+                    <div class="col-sm-10">
+                        <?php if(Yii::app()->session['user'] == "A"){
+                            $id = Yii::app()->session['admin_id'];
+                            $name = Yii::app()->session['admin_name'];
+                        } else {
+                            $id = Yii::app()->session['collegian_code'];
+                            $name = Yii::app()->session['collegian_name'];
+                        }?>
+                        <input type="hidden" id="News_Owner" name="News_Owner" value="<?php echo $id;?>" class="form-control input-sm"/>
+                        <input type="text" id="News_Owner" name="Owner" value="<?php echo $name;?>" class="form-control input-sm" readonly="readonly"/>
                     </div>
                 </div>
             </div><!-- form -->
@@ -104,4 +104,3 @@
             </div>
         </div>
     </div>
-</div>
