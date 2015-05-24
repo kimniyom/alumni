@@ -23,7 +23,7 @@ class CollegianController extends Controller {
         $collegian = new Collegian();
         $data['GenNumber'] = $GenNumber;
         $data['collegian'] = $collegian->Get_Collegian_InNumber($GenNumber);
-        $this->render('view', $data);
+        $this->render('//collegian/view', $data);
     }
 
     /**
@@ -35,7 +35,7 @@ class CollegianController extends Controller {
         $data['perfix'] = Yii::app()->db->createCommand($query)->queryAll();
         $data['GenID'] = $_GET['GenID'];
         $data['GenNumber'] = $_GET['GenNumber'];
-        $this->render('create', $data);
+        $this->render('//collegian/create', $data);
     }
 
     /**
@@ -79,7 +79,7 @@ class CollegianController extends Controller {
     public function actionIndex() {
         $gen = new GenerationModel();
         $data['gen'] = $gen->findAll(" 1=1 ORDER BY GenNumber DESC");
-        $this->render('//Collegian/generation', $data);
+        $this->render('//collegian/generation', $data);
     }
 
     /**
