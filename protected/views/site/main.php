@@ -6,6 +6,7 @@
 $this->breadcrumbs = array(
     'ยินดีต้อนรับ' => array('Index')
 );
+$lib = new Lib();
 ?>
 
 <div class="box box-warning">
@@ -33,7 +34,7 @@ $this->breadcrumbs = array(
                     <div class="timeline-item">
                         <span class="time">
                             <i class="fa fa-clock-o"></i> 
-                            <?php echo $Ng['CreateNews_Date']; ?>
+                            <?php echo $lib->thaidate($Ng['CreateNews_Date']); ?>
                         </span>
 
                         <h3 class="timeline-header">
@@ -47,7 +48,15 @@ $this->breadcrumbs = array(
                         -->
                         <div class='timeline-footer'>
                             โดย : <i class="fa fa-user"></i> 
-                            <font style=" font-weight: normal;"><?php echo $Ng['News_Owner']; ?></font>
+                            <font style=" font-weight: normal;">
+                            <?php
+                            if ($Ng['News_User_Status'] == "U") {
+                                echo $Ng['collegian_name'] . " " . $Ng['collegian_lname'];
+                            } else {
+                                echo "ผู้ดูแลระบบ";
+                            }
+                            ?> 
+                            </font>
                             <span class="label label-info">อ่าน 0</span>
                             <span class="label label-danger">ตอบ 0</span>
                             <a href="index.php?r=News/Detail_News&News_id=<?php echo $Ng['News_id'] ?>" class="btn btn-primary btn-xs" style=" float: right;">อ่านต่อ ...</a>
@@ -57,6 +66,9 @@ $this->breadcrumbs = array(
                 <!-- END timeline item -->
             <?php } ?>
         </ul>
+    </div>
+    <div class="box-footer" style="text-align: right;">
+        <div class="btn btn-warning btn-sm">ข่าวทั้งหมด...</div>
     </div>
 </div>
 
@@ -80,7 +92,7 @@ $this->breadcrumbs = array(
             </li>
             <!-- /.timeline-label -->
 
-            <?php for ($i = 1; $i <= 5; $i++) { ?>
+            <?php foreach ($news_collegian as $cl) { ?>
                 <!-- timeline item -->
                 <li>
                     <!-- timeline icon -->
@@ -88,25 +100,41 @@ $this->breadcrumbs = array(
                     <div class="timeline-item">
                         <span class="time">
                             <i class="fa fa-clock-o"></i> 
-                            <?php echo date("Y-m-d"); ?>
-                            12:05
+                            <?php echo $lib->thaidate($cl['CreateNews_Date']); ?>
                         </span>
 
-                        <h3 class="timeline-header"><a href="#">หัวข้อ <?php echo $i; ?></a> ...</h3>
+                        <h3 class="timeline-header">
+                            <a href="index.php?r=News/Detail_News&News_id=<?php echo $cl['News_id'] ?>">
+                                <i class="fa fa-newspaper-o"></i>
+                                <?php echo $cl['News_Head']; ?></a> 
+                        </h3>
 
-                        <div class="timeline-body">
-                            ...
-                            รายละเอียด <?php echo $i; ?>
-                        </div>
-
+                        <!--
+                        <div class="timeline-body"></div>
+                        -->
                         <div class='timeline-footer'>
-                            <a class="btn btn-primary btn-xs">อ่านต่อ ...</a>
+                            โดย : <i class="fa fa-user"></i> 
+                            <font style=" font-weight: normal;">
+                            <?php
+                            if ($cl['News_User_Status'] == "U") {
+                                echo $cl['collegian_name'] . " " . $cl['collegian_lname'];
+                            } else {
+                                echo "ผู้ดูแลระบบ";
+                            }
+                            ?>
+                            </font>
+                            <span class="label label-info">อ่าน 0</span>
+                            <span class="label label-danger">ตอบ 0</span>
+                            <a href="index.php?r=News/Detail_News&News_id=<?php echo $cl['News_id'] ?>" class="btn btn-primary btn-xs" style=" float: right;">อ่านต่อ ...</a>
                         </div>
                     </div>
                 </li>
                 <!-- END timeline item -->
             <?php } ?>
         </ul>
+    </div>
+    <div class="box-footer" style="text-align: right;">
+        <div class="btn btn-warning btn-sm">ข่าวทั้งหมด...</div>
     </div>
 </div>
 
