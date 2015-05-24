@@ -38,7 +38,7 @@
         //echo $year_end;
         foreach ($result as $rs):
             $year_age = $search->Get_work_year($rs['collegian_code']);
-            if ($year_age >= $year_start && $year_age <= $year_end):
+            if ($year_age >= $year_start && $year_age <= $year_end && $rs['collegian_code'] != Yii::app()->session['collegian_code']):
                 $img = $collegian->Get_img_profile($rs['collegian_code']);
                 ?>
                 <tr>
