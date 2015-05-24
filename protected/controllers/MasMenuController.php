@@ -1,6 +1,6 @@
 <?php
 
-class MasMenuController extends Controller {
+class MasmenuController extends Controller {
 
     /**
      * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -16,7 +16,11 @@ class MasMenuController extends Controller {
 
         $data['menu'] = $db->get_masmenu();
         $data['header'] = "จัดการลิงค์เมนู";
-        $this->render('//masmenu/index', $data);
+        if (Yii::app()->session['super'] == "1") {
+            $this->render('//masmenu/index', $data);
+        } else {
+            $this->render('//masmenu/home');
+        }
     }
 
     public function actionSave_menu() {
