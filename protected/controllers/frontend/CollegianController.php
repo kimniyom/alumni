@@ -146,7 +146,7 @@ class CollegianController extends Controller {
         $codeline = new Codeline();
         $data['senior'] = $codeline->get_senior($collegian_code);
         $data['collegian_code'] = $collegian_code;
-        $this->renderPartial('//codeline/Codeline_up1', $data);
+        $this->renderPartial('//codeline/codeline_up1', $data);
     }
 
     public function actionCodeline_up2() {
@@ -154,7 +154,7 @@ class CollegianController extends Controller {
         $codeline = new Codeline();
         $data['senior'] = $codeline->get_senior($collegian_code);
         $data['collegian_code'] = $collegian_code;
-        $this->renderPartial('//codeline/Codeline_up2', $data);
+        $this->renderPartial('//codeline/codeline_up2', $data);
     }
 
     public function actionCodeline_up3() {
@@ -162,7 +162,7 @@ class CollegianController extends Controller {
         $codeline = new Codeline();
         $data['senior'] = $codeline->get_senior($collegian_code);
         $data['collegian_code'] = $collegian_code;
-        $this->renderPartial('//codeline/Codeline_up3', $data);
+        $this->renderPartial('//codeline/codeline_up3', $data);
     }
 
     public function actionCodeline_down1() {
@@ -170,7 +170,7 @@ class CollegianController extends Controller {
         $codeline = new Codeline();
         $data['senior1'] = $codeline->get_collegian_down($collegian_code);
         $data['collegian_code'] = $collegian_code;
-        $this->renderPartial('//codeline/Codeline_down1', $data);
+        $this->renderPartial('//codeline/codeline_down1', $data);
     }
 
     public function actionCodeline_down2() {
@@ -178,7 +178,7 @@ class CollegianController extends Controller {
         $codeline = new Codeline();
         $data['senior2'] = $codeline->get_collegian_down2($collegian_code);
         $data['collegian_code'] = $collegian_code;
-        $this->renderPartial('//codeline/Codeline_down2', $data);
+        $this->renderPartial('//codeline/codeline_down2', $data);
     }
 
     public function actionCodeline_down3() {
@@ -186,7 +186,7 @@ class CollegianController extends Controller {
         $codeline = new Codeline();
         $data['senior3'] = $codeline->get_collegian_down3($collegian_code);
         $data['collegian_code'] = $collegian_code;
-        $this->renderPartial('//codeline/Codeline_down3', $data);
+        $this->renderPartial('//codeline/codeline_down3', $data);
     }
 
     public function actionEdit_name_profile() {

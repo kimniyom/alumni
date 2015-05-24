@@ -66,9 +66,7 @@ class SearchController extends Controller {
         if ($workings != "") {
             $JOIN .= " INNER JOIN workings wk ON c.collegian_code = wk.collegian_code ";
             $WHERE .= " AND 1=1";
-            
-            
-            
+              
         } else {
             $JOIN .= "";
             $WHERE .= "";
