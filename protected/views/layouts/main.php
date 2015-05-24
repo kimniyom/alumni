@@ -229,29 +229,25 @@
                             <input type="hidden" id="status_user" value=""/>
                         <?php } ?>
 
-                        <div class="box box-danger">
-                            <div class="box box-solid">
-                                <div class="box-header with-border">
-                                    <h3 class="box-title"><i class="fa fa-search"></i> ค้นหา</h3>
-                                </div>
-                                <div class="box-body no-padding">
-                                    <ul class="nav nav-pills nav-stacked">
-                                        <li><a href="<?php echo Yii::app()->createUrl('frontend/search/search_collegian_address') ?>"><i class="fa fa-home"></i> ค้นหาตามที่อยู่</a></li>
-                                        <li><a href="#"><i class="fa fa-mortar-board"></i> ค้นหาตามวุฒิการศึกษา</a></li>
-                                        <li><a href="#"><i class="fa fa-legal"></i> ค้นหาตามประวัติการทำงาน</a></li>
-                                        <li><a href="#"><i class="fa fa-suitcase"></i> ค้นหาตามผลงานนักศึกษา</a></li>
-                                        <li><a href="#"><i class="fa fa-thumbs-o-up"></i> ค้นหาตามความถนัด</a></li>
-                                    </ul>
-                                </div><!-- /.box-body -->
-                            </div><!-- /.box -->
+                        <!--
+                    <div class="box box-danger">
+                        <div class="box box-solid">
+                            <div class="box-header with-border">
+                                <h3 class="box-title"><i class="fa fa-search"></i> ค้นหา</h3>
+                            </div>
+                            <div class="box-body no-padding">
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li><a href="#"><i class="fa fa-thumbs-o-up"></i> ค้นหาตามความถนัด</a></li>
+                                </ul>
+                            </div>
                         </div>
-
-                        <div class="btn btn-info" style=" width: 100%; margin-bottom: 20px;">
-                            <a href="<?php echo Yii::app()->createUrl('frontend/search/search_collegian') ?>">
+                    </div>
+                        -->
+                        <a href="<?php echo Yii::app()->createUrl('frontend/search/search_collegian') ?>">
+                            <div class="btn btn-info" style=" width: 100%; margin-bottom: 20px;">
                                 <i class="fa fa-search"></i> ค้นหาข้อมูลศิษย์เก่า
-                            </a>
-                        </div>
-
+                            </div>
+                        </a>
                         <!-- USERS LIST -->
                         <div class="box box-danger">
                             <div class="box-header with-border">
@@ -271,7 +267,7 @@
                                         ?>
 
                                         <li>
-                                            <img src="<?php echo Yii::app()->baseUrl; ?>/assets/jquery.picture.cut/uploads_images_user/<?php echo $img;?>" alt="User Image"/>
+                                            <img src="<?php echo Yii::app()->baseUrl; ?>/assets/jquery.picture.cut/uploads_images_user/<?php echo $img; ?>" alt="User Image"/>
                                             <a class="users-list-name" href="javascript:void(0);"><?php echo $c['name'] ?></a>
                                         </li>
                                     <?php endforeach; ?>

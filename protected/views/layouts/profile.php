@@ -1,4 +1,4 @@
-<?php $path = Yii::app()->baseUrl . '/themes/facebook/'; ?>
+<?php $path = Yii::app()->baseUrl."/themes/facebook/"; ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -42,7 +42,7 @@
         <!--
         <link rel="stylesheet" href="demo_assets/demo.css">
         -->
-        
+
         <!-- 
             การเรียกใช้ datatable 
         -->
@@ -92,19 +92,16 @@
                         </ul>
 
                         <ul class="nav hidden-xs" id="lg-menu">
-                            <?php $news_model = new News_collegian();?>
+                            <?php $news_model = new News_collegian(); ?>
                             <li class="active"><a href="index.php?r=site"><i class="glyphicon glyphicon-home"></i> หน้าเว็บไซต์</a></li>
                             <hr style="margin: 5px 0px;">
                             <li><a href="#stories"><i class="glyphicon glyphicon-comment"></i> ข้อความจากผู้ดูแลระบบ <span class="label label-danger">10</span></a></li>
                             <li><a href="#"><i class="glyphicon glyphicon-user"></i> ข้อความจากเพื่อนนักศึกษา <span class="label label-info">10</span></a></li>
                             <li><a href="#"><i class="glyphicon glyphicon-envelope"></i> ข้อความจากตัวแทนบริษัท <span class="label label-success">10</span></a></li>
                             <hr style="margin: 5px 0px;">
-                            <li><a href="index.php?r=frontend/news_collegian/news_general_all&collegian_code=<?php echo Yii::app()->session['collegian_code'] ?>">
-                                    <i class="fa fa-bullhorn"></i> ประกาศข่าวทั่วไป <span class="label label-success"><?php echo $news_model->Count_News_Genneral(Yii::app()->session['collegian_code'])?></span></a>
-                            </li>
                             <li>
-                                <a href="index.php?r=frontend/news_collegian/news_collegian_all&collegian_code=<?php echo Yii::app()->session['collegian_code'] ?>">
-                                <i class="fa fa-bell"></i> ประกาศข่าวในนักศึกษา <span class="label label-success"><?php echo $news_model->Count_News_Collegian(Yii::app()->session['collegian_code'])?></span></a>
+                                <a href="index.php?r=news">
+                                    <i class="fa fa-bullhorn"></i> จัดการข่าว </a>
                             </li>
                             <hr style="margin: 5px 0px;">
                             <li><a href="#"><i class="glyphicon glyphicon-refresh"></i> Refresh</a></li>

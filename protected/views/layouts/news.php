@@ -52,14 +52,20 @@
                         </ul>
 
                         <ul class="nav hidden-xs" id="lg-menu">
+                            <?php $news_model = new News_collegian(); ?>
                             <li><a href="index.php?r=site"><i class="glyphicon glyphicon-home"></i> กลับหน้าเว็บ</a></li>
-                            <li><a href="index.php?r=news/News_general_all"><i class="glyphicon glyphicon-comment"></i> ข่าวทั่วไป</a></li>
-                            <li><a href="index.php?r=news/News_collegian_all"><i class="glyphicon glyphicon-envelope"></i> ข่าวภายใน</a></li>
                             <?php if (Yii::app()->session['user'] == "U") { ?>
-                                <li><a href="index.php?r=frontend/collegian/profile&collegian_code=<?php echo Yii::app()->session['collegian_code'] ?>"><i class="glyphicon glyphicon-home"></i> กลับหน้าโปรไฟล์</a></li>
+                                <li><a href="index.php?r=frontend/collegian/profile&collegian_code=<?php echo Yii::app()->session['collegian_code'] ?>">
+                                        <i class="glyphicon glyphicon-chevron-left"></i> กลับหน้าโปรไฟล์</a>
+                                </li>
                             <?php } else { ?>
-                                <li><a href="<?php echo Yii::app()->createUrl("MasMenu"); ?>"><i class="glyphicon glyphicon-home"></i> กลับหน้าผู้ดูแลระบบ</a></li>
+                                <li><a href="<?php echo Yii::app()->createUrl("Masmenu"); ?>">
+                                        <i class="glyphicon glyphicon-chevron-left"></i> กลับหน้าผู้ดูแลระบบ</a>
+                                </li>
                             <?php } ?>
+                                
+                            <li><a href="index.php?r=news/News_general_all"><i class="glyphicon glyphicon-comment"></i> ข่าวทั่วไป <span class="label label-danger"><?php echo $news_model->Count_News_Genneral(); ?></span></a></li>
+                            <li><a href="index.php?r=news/News_collegian_all"><i class="glyphicon glyphicon-envelope"></i> ข่าวภายใน <span class="label label-warning"><?php echo $news_model->Count_News_Collegian(); ?></span></a></li>
                             <li><a href="#"><i class="glyphicon glyphicon-refresh"></i> Refresh</a></li>
                         </ul>
                     </div>
@@ -77,18 +83,15 @@
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                 </button>
-                                <a href="http://usebootstrap.com/theme/facebook" class="navbar-brand logo">b</a>
+                                <a href="javascript:void(0);" class="navbar-brand logo" style=" width: 200px;">ระบบจัดการข่าว</a>
                             </div>
                             <nav class="collapse navbar-collapse" role="navigation">
                                 <ul class="nav navbar-nav">
                                     <li>
-                                        <a href="#"><i class="glyphicon glyphicon-home"></i> จัดการข่าว</a>
-                                    </li>
-                                    <li>
                                         <a href="<?php echo Yii::app()->createUrl("News/Create_News"); ?>" role="button" data-toggle="modal">
-                                            <i class="glyphicon glyphicon-plus"></i> เพิ่มข่าว</a>
+                                            <i class="glyphicon glyphicon-plus"></i> เพิ่มข่าวที่นี้ ... </a>
                                     </li>
-        
+
                                 </ul>
                                 <!--
                                 <ul class="nav navbar-nav navbar-right">

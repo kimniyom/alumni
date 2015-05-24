@@ -143,11 +143,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <li class="dropdown messages-menu">
                                 <!-- Menu toggle button -->
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    ข้อความจากนักศึกษา
                                     <i class="fa fa-envelope-o"></i>
                                     <span class="label label-success">4</span>
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li class="header">You have 4 messages</li>
                                     <li class="footer"><a href="#">See All Messages</a></li>
                                 </ul>
                             </li><!-- /.messages-menu -->
@@ -156,11 +156,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <li class="dropdown notifications-menu">
                                 <!-- Menu toggle button -->
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    ข้อความจากตัวแทนบริษัท
                                     <i class="fa fa-bell-o"></i>
                                     <span class="label label-warning">10</span>
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li class="header">You have 10 notifications</li>
                                     <li class="footer"><a href="#">View all</a></li>
                                 </ul>
                             </li>
@@ -232,6 +232,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <!-- Sidebar Menu -->
                     <ul class="sidebar-menu">
                         <li class="header">เมนูจัดการระบบ</li>
+                        <?php if (Yii::app()->session['super'] == '1') { ?>
+                            <li>
+                                <a href="<?php echo Yii::app()->createUrl('masmenu'); ?>">
+                                    <i class="fa fa-circle-thin"></i>
+                                    <span>จัดการเมนู Admin</span></a>
+                            </li>
+                        <?php } ?>
                         <!-- Optionally, you can add icons to the links -->
                         <?php
                         $menu = new MasMenu();
@@ -245,20 +252,26 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             } else {
                                 $active = "";
                             }
-                            ?>
-                            <li class="<?php echo $active; ?>">
-                                <a href="<?php echo Yii::app()->createUrl($url); ?>" onclick="set_menu('<?php echo $rs['menu_id'] ?>');">
-                                    <i class="fa fa-circle-thin"></i>
-                                    <span><?php echo $rs['menu_name']; ?></span></a>
-                            </li>
-                        <?php endforeach; ?>
+                            if ($rs['flag'] == "0") {
+                                ?>
+                                <li class="<?php echo $active; ?>">
+                                    <a href="<?php echo Yii::app()->createUrl($url); ?>" onclick="set_menu('<?php echo $rs['menu_id'] ?>');">
+                                        <i class="fa fa-circle-thin"></i>
+                                        <span><?php echo $rs['menu_name']; ?></span></a>
+                                </li>
+                                <?php
+                            }
+                        endforeach;
+                        ?>
                         <br/>
+                        <?php if (Yii::app()->session['super'] == '1') { ?>
                         <li style="text-align: center;">
                             <div class="btn btn-success" style=" width: 100%; border-radius: 0px;"
                                  onclick="popup_dialog_add();">
                                 <i class="fa fa-plus"></i> เพิ่มเมนู
                             </div>
                         </li>
+                        <?php } ?>
                     </ul><!-- /.sidebar-menu -->
                 </section>
                 <!-- /.sidebar -->
@@ -269,7 +282,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        <?php echo isset($header) ? $header : "Admin"; ?>
+<?php echo isset($header) ? $header : "Admin"; ?>
                     </h1>
                     <ol class="breadcrumb">
                         <?php if (isset($this->breadcrumbs)): ?>
@@ -279,7 +292,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 'links' => $this->breadcrumbs,
                             ));
                             ?><!-- breadcrumbs -->
-                        <?php endif ?>
+<?php endif ?>
                     </ol>
 
 
@@ -289,7 +302,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <!-- Main content -->
                 <section class="content">
 
-                    <?php echo $content; ?>
+<?php echo $content; ?>
 
                 </section><!-- /.content -->
             </div><!-- /.content-wrapper -->
