@@ -1,32 +1,14 @@
-<?php $path = Yii::app()->baseUrl . '/themes/facebook/'; ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <!-- Croup IMG -->
         <?php $croup = Yii::app()->baseUrl . "/assets/jquery.picture.cut/"; ?>
-        <script>
+        <?php $path = Yii::app()->baseUrl . '/themes/facebook/'; ?>
+
+        <script type="text/javascript">
             $(document).ready(function () {
                 autoload_img_profile();
                 get_senior();
-                $("#profile_photo").PictureCut({
-                    InputOfImageDirectory: "image",
-                    PluginFolderOnServer: "<?php echo $croup; ?>",
-                    FolderOnServer: "<?php echo $croup; ?>uploads/",
-                    EnableCrop: true,
-                    CropWindowStyle: "Bootstrap",
-                    Default: ["jpg", "png"],
-                    UploadedCallback: function (data) {
-                        var url = "index.php?r=frontend/collegian/add_img_profile";
-                        var colegiancode = "<?php echo $CollegianCode; ?>";
-                        var img_profile = data.currentFileName;
-                        //alert(colegiancode + img_profile);
-                        var data = {collegian_code: colegiancode, img_profile: img_profile};
-                        $.post(url, data, function (success) {
-                            autoload_img_profile();
-                            $("#from_img_profile").modal("hide");
-                        });
-                    }
-                });
 
                 $('#edit_name_profile').popover({
                     html: true,
@@ -238,9 +220,9 @@
                         </div>
                     </div>
                 </div>
-                
-                 <!--
-                    ผลงาน
+
+                <!--
+                   ผลงาน
                 -->
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -283,7 +265,7 @@
                     </div>
                 </div>
 
-           
+
             </div>
         </div><!--/row-->
 
@@ -305,5 +287,30 @@
 
         <hr>
 
-
-    </body></html>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#profile_photo").PictureCut({
+                    InputOfImageDirectory: "image",
+                    PluginFolderOnServer: "<?php echo $croup; ?>",
+                    FolderOnServer: "<?php echo $croup; ?>uploads/",
+                    //PluginFolderOnServer: "/kimniyom/alumni/assets/jquery.picture.cut/",
+                    //FolderOnServer: "/kimniyom/alumni/assets/jquery.picture.cut/uploads/",
+                    EnableCrop: true,
+                    CropWindowStyle: "Bootstrap",
+                    //Default: ["jpg", "png"],
+                    UploadedCallback: function (data) {
+                        var url = "index.php?r=frontend/collegian/add_img_profile";
+                        var colegiancode = "<?php echo $CollegianCode ?>";
+                        var img_profile = data.currentFileName;
+                        //alert(colegiancode + img_profile);
+                        var data = {collegian_code: colegiancode, img_profile: img_profile};
+                        $.post(url, data, function (success) {
+                            autoload_img_profile();
+                            $("#from_img_profile").modal("hide");
+                        });
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
