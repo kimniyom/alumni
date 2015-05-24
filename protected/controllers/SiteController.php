@@ -36,7 +36,8 @@ class SiteController extends Controller {
 
     public function actionMain() {
         $news = new NewsModels();
-        $data['news_genaral'] = $news->findAll("1=1 ORDER BY  News_id DESC LIMIT 5");
+        $data['news_collegian'] = $news->Get_News("2","5");
+        $data['news_genaral'] = $news->Get_News("1","5");
         $this->render('main', $data);
     }
 

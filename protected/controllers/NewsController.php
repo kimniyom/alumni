@@ -5,7 +5,7 @@
  */
 Class NewsController extends Controller {
 
-    public $layout = "News";
+    public $layout = "news";
 
     public function actionIndex() {
         $this->render('//News/index');
