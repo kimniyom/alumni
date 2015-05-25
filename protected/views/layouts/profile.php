@@ -1,4 +1,4 @@
-<?php $path = Yii::app()->baseUrl."/themes/facebook/"; ?>
+<?php $path = Yii::app()->baseUrl . "/themes/facebook/"; ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -93,11 +93,30 @@
 
                         <ul class="nav hidden-xs" id="lg-menu">
                             <?php $news_model = new News_collegian(); ?>
+                            <?php
+                            $msg = new Posts();
+                            $receiver_code = Yii::app()->session['id'];
+                            $receiver_status = Yii::app()->session['user'];
+                            $post_collegian = $msg->Count_msg_collegian($receiver_code, $receiver_status);
+                            $post_agent = $msg->Count_msg_agent($receiver_code, $receiver_status);
+                            $post_admin = $msg->Count_msg_admin($receiver_code, $receiver_status);
+                            ?>
                             <li class="active"><a href="index.php?r=site"><i class="glyphicon glyphicon-home"></i> หน้าเว็บไซต์</a></li>
                             <hr style="margin: 5px 0px;">
-                            <li><a href="#stories"><i class="glyphicon glyphicon-comment"></i> ข้อความจากผู้ดูแลระบบ <span class="label label-danger">10</span></a></li>
-                            <li><a href="#"><i class="glyphicon glyphicon-user"></i> ข้อความจากเพื่อนนักศึกษา <span class="label label-info">10</span></a></li>
-                            <li><a href="#"><i class="glyphicon glyphicon-envelope"></i> ข้อความจากตัวแทนบริษัท <span class="label label-success">10</span></a></li>
+                            <li>
+                                <a href="#stories"><i class="glyphicon glyphicon-comment"></i> ข้อความจากผู้ดูแลระบบ 
+                                    <span class="label label-danger"><?php echo $post_admin; ?></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="glyphicon glyphicon-user"></i> ข้อความจากเพื่อนนักศึกษา 
+                                    <span class="label label-info"><?php echo $post_collegian; ?></span></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="glyphicon glyphicon-envelope"></i> ข้อความจากตัวแทนบริษัท 
+                                    <span class="label label-success"><?php echo $post_agent; ?></span></a>
+                            </li>
                             <hr style="margin: 5px 0px;">
                             <li>
                                 <a href="index.php?r=news">
@@ -146,23 +165,12 @@
                                 </a>
                             </div>
                             <nav class="collapse navbar-collapse" role="navigation">
-                                <form class="navbar-form navbar-left">
-                                    <div class="input-group input-group-sm" style="max-width:360px;">
-                                        <input class="form-control" placeholder="Search" name="srch-term" id="srch-term" type="text">
-                                        <div class="input-group-btn">
-                                            <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-                                        </div>
-                                    </div>
-                                </form>
                                 <ul class="nav navbar-nav">
                                     <li>
                                         <a href="#"><b> หน้าแรก</b></a>
                                     </li>
                                     <li style="padding: 0px;">
 
-                                    </li>
-                                    <li>
-                                        <a href="#"><span class="badge">badge</span></a>
                                     </li>
                                 </ul>
                                 <ul class="nav navbar-nav navbar-right">
