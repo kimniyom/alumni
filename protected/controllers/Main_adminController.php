@@ -21,6 +21,7 @@ class Main_adminController extends Controller {
             Yii::app()->session['admin_name'] = $result['admin_name'] . '-' . $result['admin_lname'];
             Yii::app()->session['admin_id'] = $result['id'];
             Yii::app()->session['super'] = $result['super'];
+            Yii::app()->session['id'] =  $result['id'];
         } else {
             $json = "0";
         }
