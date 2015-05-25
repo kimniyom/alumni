@@ -109,7 +109,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="index.php?r=frontend/posts">
                                     <i class="glyphicon glyphicon-user"></i> ข้อความจากเพื่อนนักศึกษา 
                                     <span class="label label-info"><?php echo $post_collegian; ?></span></a>
                             </li>
