@@ -21,6 +21,7 @@ class UserController extends Controller {
                 Yii::app()->session['agent_name'] = $result['name'] . '-' . $result['lname'];
                 Yii::app()->session['company'] = $result['company'];
                 Yii::app()->session['agent_id'] = $result['id'];
+                Yii::app()->session['id'] =  $result['id'];
             } else {
                 $json = "2";
             }
