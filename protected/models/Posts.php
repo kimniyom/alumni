@@ -33,7 +33,7 @@ class Posts extends CActiveRecord {
         $rs = Yii::app()->db->createCommand($query)->queryRow();
         return $rs['TOTAL'];
     }
-    
+
     public function Count_msg_agent($receiver_code = '', $receiver_status = '') {
         $query = "SELECT COUNT(*) AS TOTAL "
                 . "FROM posts "
@@ -44,7 +44,7 @@ class Posts extends CActiveRecord {
         $rs = Yii::app()->db->createCommand($query)->queryRow();
         return $rs['TOTAL'];
     }
-    
+
     public function Count_msg_admin($receiver_code = '', $receiver_status = '') {
         $query = "SELECT COUNT(*) AS TOTAL "
                 . "FROM posts "
@@ -54,6 +54,46 @@ class Posts extends CActiveRecord {
                 . "AND read_post = '0' ";
         $rs = Yii::app()->db->createCommand($query)->queryRow();
         return $rs['TOTAL'];
+    }
+
+    public function Post_collegian_all($receiver_code = '', $receiver_status = '') {
+        $query = "SELECT p.*,c.collegian_name AS name,c.collegian_lname AS lname "
+                . "FROM posts p INNER JOIN collegian c ON p.sender_code = c.id "
+                . "WHERE receiver_code = '$receiver_code' "
+                . "AND receiver_status = '$receiver_status' "
+                . "AND sender_status = 'U' "
+                . "ORDER BY read_post,d_update DESC";
+        $rs = Yii::app()->db->createCommand($query)->queryAll();
+        return $rs;
+    }
+
+    public function Post_agent_all($receiver_code = '', $receiver_status = '') {
+        $query = "SELECT p.*,c.name AS name,c.lname AS lname "
+                . "FROM posts p INNER JOIN company_agent c ON p.sender_code = c.id "
+                . "WHERE receiver_code = '$receiver_code' "
+                . "AND receiver_status = '$receiver_status' "
+                . "AND sender_status = 'M' "
+                . "ORDER BY read_post,d_update DESC";
+        $rs = Yii::app()->db->createCommand($query)->queryAll();
+        return $rs;
+    }
+
+    public function Post_admin_all($receiver_code = '', $receiver_status = '') {
+        $query = "SELECT p.*,c.admin_name AS name,c.admin_lname AS lname "
+                . "FROM posts p INNER JOIN admin c ON p.sender_code = c.id "
+                . "WHERE receiver_code = '$receiver_code' "
+                . "AND receiver_status = '$receiver_status' "
+                . "AND sender_status = 'A' "
+                . "ORDER BY read_post,d_update DESC";
+        $rs = Yii::app()->db->createCommand($query)->queryAll();
+        return $rs;
+    }
+
+    public function Detail_post_collegian($post_id = '') {
+        $query = "SELECT p.*,c.collegian_name AS name,c.collegian_lname AS lname
+                        FROM posts p INNER JOIN collegian c ON p.sender_code = c.id 
+                        WHERE post_id = '$post_id' ";
+        return Yii::app()->db->createCommand($query)->queryRow();
     }
 
 }
