@@ -34,6 +34,7 @@ class CollegianController extends Controller {
             Yii::app()->session['user'] = "U";
             Yii::app()->session['collegian_name'] = $result['collegian_name'] . ' ' . $result['collegian_lname'];
             Yii::app()->session['collegian_code'] = $result['collegian_code'];
+            Yii::app()->session['id'] =  $result['id'];
         } else {
             $json = "0";
         }
