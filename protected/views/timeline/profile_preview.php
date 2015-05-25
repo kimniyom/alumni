@@ -50,15 +50,40 @@
                         //{name: 'document', groups: ['mode', 'document']}, // Displays document group with its two subgroups.
                         //{name: 'clipboard', groups: ['clipboard', 'undo']}, // Group's name will be used to create voice label.
                         '/', // Line break - next group will be placed in new line.
-                       // {name: 'basicstyles', groups: ['basicstyles', 'cleanup']},
-                       { name: 'basicstyles', groups: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat' ] },
-                        { name: 'paragraph', groups: [ 'list', 'indent', 'align'] },
+                        // {name: 'basicstyles', groups: ['basicstyles', 'cleanup']},
+                        {name: 'basicstyles', groups: ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat']},
+                        {name: 'paragraph', groups: ['list', 'indent', 'align']},
                         {name: 'styles', groups: ['Styles', 'Format', 'Font', 'FontSize']},
                         {name: 'colors', groups: ['TextColor', 'BGColor']}
                         //{name: 'links'}
                     ]
                 });
             });
+        </script>
+
+        <script type="text/javascript">
+            function send_msg() {
+                var url = "index.php?r=frontend/posts/send_post";
+                var msg = CKEDITOR.instances.msg.getData();
+                var receiver_code = $("#receiver_code").val();
+                var receiver_status = $("#receiver_status").val();
+                var data = {
+                    detail: msg,
+                    receiver_code: receiver_code,
+                    receiver_status: receiver_status
+                };
+
+                if (msg == "") {
+                    alert("กรุณากรอกข้อความของคุณ ...");
+                    return false;
+                }
+
+                $.post(url, data, function (success) {
+                    alert("ส่งข้อความแล้ว ...");
+                    window.location.reload();
+                });
+
+            }
         </script>
 
         <script type="text/javascript" src="<?php echo Yii::app()->baseUrl; ?>/js_store/js_profile_collegian.js"></script>
@@ -159,10 +184,13 @@
                 <div class="panel panel-default">
                     <div class="panel-heading"><h4><i class="fa fa-envelope"></i> ส่งข้อความถึงบุคคลนี้</h4></div>
                     <div class="panel-body">
+
+                        <input type="hidden" id="receiver_code" value="<?php echo $detail['id']; ?>"/>
+                        <input type="hidden" id="receiver_status" value="<?php echo $detail['status']; ?>"/>
                         <textarea id="msg" rows="3"></textarea>
                     </div>
                     <div class="panel-footer" style=" text-align: right;">
-                        <div class="btn btn-primary btn-sm"><i class="fa fa-send-o"></i> ส่ง</div>
+                        <div class="btn btn-primary btn-sm" onclick="send_msg();"><i class="fa fa-send-o"></i> ส่ง</div>
                     </div>
                 </div>
 

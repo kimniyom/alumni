@@ -6108,3 +6108,71 @@ Stack trace:
 REQUEST_URI=/alumni/index.php?r=frontend/collegian/detail_collegian
 in C:\xampp\htdocs\alumni\protected\controllers\frontend\CollegianController.php (46)
 in C:\xampp\htdocs\alumni\index.php (13)
+2015/05/24 19:50:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "posts/send_post".' in C:\xampp\htdocs\alumni\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\alumni\framework\web\CWebApplication.php(141): CWebApplication->runController('posts/send_post')
+#1 C:\xampp\htdocs\alumni\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\alumni\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/alumni/index.php?r=posts/send_post
+HTTP_REFERER=http://localhost/alumni/index.php?r=frontend/timeline/profile&collegian_code=0000000000001
+---
+2015/05/24 19:51:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "posts/send_post".' in C:\xampp\htdocs\alumni\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\alumni\framework\web\CWebApplication.php(141): CWebApplication->runController('posts/send_post')
+#1 C:\xampp\htdocs\alumni\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\alumni\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/alumni/index.php?r=posts/send_post
+HTTP_REFERER=http://localhost/alumni/index.php?r=frontend/timeline/profile&collegian_code=0000000000001
+---
+2015/05/24 20:12:01 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'read = '0'' at line 1. The SQL statement executed was: SELECT COUNT(*) AS TOTAL FROM posts WHERE receiver_code = '1' AND receiver_status = 'U' AND sender_status = 'U' AND read = '0' .
+in C:\xampp\htdocs\alumni\protected\models\Posts.php (33)
+in C:\xampp\htdocs\alumni\protected\views\layouts\profile.php (105)
+in C:\xampp\htdocs\alumni\protected\controllers\frontend\CollegianController.php (23)
+2015/05/24 20:12:01 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'read = '0'' at line 1. The SQL statement executed was: SELECT COUNT(*) AS TOTAL FROM posts WHERE receiver_code = '1' AND receiver_status = 'U' AND sender_status = 'U' AND read = '0' ' in C:\xampp\htdocs\alumni\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\alumni\framework\db\CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 C:\xampp\htdocs\alumni\protected\models\Posts.php(33): CDbCommand->queryRow()
+#2 C:\xampp\htdocs\alumni\protected\views\layouts\profile.php(105): Posts->Count_msg_collegian('1', 'U')
+#3 C:\xampp\htdocs\alumni\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\alumni\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\alumni\framework\web\CController.php(784): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\alumni\protected\controllers\frontend\CollegianController.php(23): CController->render('//frontend/prof...', Array)
+#7 C:\xampp\htdocs\alumni\framework\web\actions\CInlineAction.php(49): CollegianController->actionProfile()
+#8 C:\xampp\htdocs\alumni\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\alumni\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\alumni\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\alumni\framework\web\CWebApplication.php(282): CController->run('Profile')
+#12 C:\xampp\htdocs\alumni\framework\web\CWebApplication.php(141): CWebApplication->runController('frontend/Colleg...')
+#13 C:\xampp\htdocs\alumni\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\alumni\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/alumni/index.php?r=frontend/Collegian/Profile&collegian_code=0000000000001
+HTTP_REFERER=http://localhost/alumni/index.php?r=frontend/collegian/login
+---
+2015/05/24 20:12:43 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'read = '0'' at line 1. The SQL statement executed was: SELECT COUNT(*) AS TOTAL FROM posts WHERE receiver_code = '1' AND receiver_status = 'U' AND sender_status = 'U' AND read = '0' .
+in C:\xampp\htdocs\alumni\protected\models\Posts.php (33)
+in C:\xampp\htdocs\alumni\protected\views\layouts\profile.php (105)
+in C:\xampp\htdocs\alumni\protected\controllers\frontend\CollegianController.php (23)
+2015/05/24 20:12:43 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'read = '0'' at line 1. The SQL statement executed was: SELECT COUNT(*) AS TOTAL FROM posts WHERE receiver_code = '1' AND receiver_status = 'U' AND sender_status = 'U' AND read = '0' ' in C:\xampp\htdocs\alumni\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\alumni\framework\db\CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 C:\xampp\htdocs\alumni\protected\models\Posts.php(33): CDbCommand->queryRow()
+#2 C:\xampp\htdocs\alumni\protected\views\layouts\profile.php(105): Posts->Count_msg_collegian('1', 'U')
+#3 C:\xampp\htdocs\alumni\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\alumni\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\alumni\framework\web\CController.php(784): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\alumni\protected\controllers\frontend\CollegianController.php(23): CController->render('//frontend/prof...', Array)
+#7 C:\xampp\htdocs\alumni\framework\web\actions\CInlineAction.php(49): CollegianController->actionProfile()
+#8 C:\xampp\htdocs\alumni\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\alumni\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\alumni\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\alumni\framework\web\CWebApplication.php(282): CController->run('Profile')
+#12 C:\xampp\htdocs\alumni\framework\web\CWebApplication.php(141): CWebApplication->runController('frontend/Colleg...')
+#13 C:\xampp\htdocs\alumni\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\alumni\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/alumni/index.php?r=frontend/Collegian/Profile&collegian_code=0000000000001
+HTTP_REFERER=http://localhost/alumni/index.php?r=frontend/collegian/login
+---
