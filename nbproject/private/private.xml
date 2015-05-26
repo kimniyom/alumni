@@ -3,31 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/alumni/protected/controllers/Main_adminController.php</file>
-            <file>file:/C:/xampp/htdocs/alumni/protected/views/timeline/profile_preview.php</file>
-            <file>file:/C:/xampp/htdocs/alumni/protected/controllers/frontend/PrivilegeController.php</file>
-            <file>file:/C:/xampp/htdocs/alumni/protected/controllers/CollegianController.php</file>
-            <file>file:/C:/xampp/htdocs/alumni/protected/controllers/EducationController.php</file>
-            <file>file:/C:/xampp/htdocs/alumni/protected/views/layouts/main.php</file>
-            <file>file:/C:/xampp/htdocs/alumni/protected/models/Posts.php</file>
-            <file>file:/C:/xampp/htdocs/alumni/protected/views/layouts/news.php</file>
-            <file>file:/C:/xampp/htdocs/alumni/protected/views/layouts/profile.php</file>
-            <file>file:/C:/xampp/htdocs/alumni/protected/controllers/BackofficeController.php</file>
-            <file>file:/C:/xampp/htdocs/alumni/protected/views/layouts/backend.php</file>
-            <file>file:/C:/xampp/htdocs/alumni/protected/controllers/frontend/CollegianController.php</file>
-            <file>file:/C:/xampp/htdocs/alumni/protected/views/layouts/posts.php</file>
-            <file>file:/C:/xampp/htdocs/alumni/protected/controllers/NewsController.php</file>
-            <file>file:/C:/xampp/htdocs/alumni/protected/controllers/frontend/PostsController.php</file>
-            <file>file:/C:/xampp/htdocs/alumni/protected/controllers/CurrentController.php</file>
-            <file>file:/C:/xampp/htdocs/alumni/protected/controllers/GenerationController.php</file>
-            <file>file:/C:/xampp/htdocs/alumni/protected/views/posts/detail_post.php</file>
-            <file>file:/C:/xampp/htdocs/alumni/protected/views/posts/index.php</file>
-            <file>file:/C:/xampp/htdocs/alumni/protected/controllers/DroupdownController.php</file>
-            <file>file:/C:/xampp/htdocs/alumni/protected/views/frontend/search/search.php</file>
-            <file>file:/C:/xampp/htdocs/alumni/js_store/js_main.js</file>
-            <file>file:/C:/xampp/htdocs/alumni/protected/controllers/frontend/WorkhistoryController.php</file>
             <file>file:/C:/xampp/htdocs/alumni/protected/views/posts/post_collegian.php</file>
-            <file>file:/C:/xampp/htdocs/alumni/protected/controllers/ProfileController.php</file>
         </group>
     </open-files>
 </project-private>
