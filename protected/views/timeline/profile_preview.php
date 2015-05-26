@@ -65,15 +65,17 @@
             function send_msg() {
                 var url = "index.php?r=frontend/posts/send_post";
                 var msg = CKEDITOR.instances.msg.getData();
+                var title = $("#title").val();
                 var receiver_code = $("#receiver_code").val();
                 var receiver_status = $("#receiver_status").val();
                 var data = {
+                    title: title,
                     detail: msg,
                     receiver_code: receiver_code,
                     receiver_status: receiver_status
                 };
 
-                if (msg == "") {
+                if (msg == "" || title == "") {
                     alert("กรุณากรอกข้อความของคุณ ...");
                     return false;
                 }
@@ -187,6 +189,7 @@
 
                         <input type="hidden" id="receiver_code" value="<?php echo $detail['id']; ?>"/>
                         <input type="hidden" id="receiver_status" value="<?php echo $detail['status']; ?>"/>
+                        <input type="text" id="title" name="title" class="form-control input-sm" placeholder="หัวข้อ"/><br/>
                         <textarea id="msg" rows="3"></textarea>
                     </div>
                     <div class="panel-footer" style=" text-align: right;">
