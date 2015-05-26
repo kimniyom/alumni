@@ -21,7 +21,7 @@ class UserController extends Controller {
                 Yii::app()->session['agent_name'] = $result['name'] . '-' . $result['lname'];
                 Yii::app()->session['company'] = $result['company'];
                 Yii::app()->session['agent_id'] = $result['id'];
-                Yii::app()->session['id'] =  $result['id'];
+                Yii::app()->session['id'] = $result['id'];
             } else {
                 $json = "2";
             }
@@ -149,8 +149,8 @@ class UserController extends Controller {
         Yii::app()->db->createCommand()
                 ->update("company_agent", $columns, "id = '$id' ");
     }
-    
-    public function actionEdit_user_success(){
+
+    public function actionEdit_user_success() {
         $this->render('//user/edit_user_success');
     }
 

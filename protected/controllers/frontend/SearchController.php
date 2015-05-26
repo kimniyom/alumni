@@ -4,6 +4,15 @@ class SearchController extends Controller {
 
     public $layout = "main";
 
+    public function beforeAction($action) {
+        if (isset(Yii::app()->session['user'])) {
+            return true;
+        } else {
+            //$this->render('//site/main');
+            $this->redirect(array('site/main'));
+        }
+    }
+
     public function actionSearch_collegian() {
         $education = new Educations();
         $data['education'] = $education->findAll();
@@ -18,10 +27,10 @@ class SearchController extends Controller {
         $workings = $_POST['workings'];
         $aptitude = $_POST['aptitude'];
         $etc = $_POST['etc'];
-        
+
         $yearstart = "";
         $yearend = "";
-        
+
         if ($changwat != "") {
             $JOIN = " INNER JOIN changwat ch ON c.changwat_code = ch.changwat_id ";
             $WHERE = " AND c.changwat_code = '$changwat'";
@@ -45,18 +54,17 @@ class SearchController extends Controller {
             } else {
                 $JOIN .= " INNER JOIN work_history w ON c.collegian_code = w.collegian_code";
                 $WHERE .= " AND 1=1";
-                
-                if($workhistory == 1){
+
+                if ($workhistory == 1) {
                     $yearstart = "1";
                     $yearend = "3";
-                } else if($workhistory == 2){
+                } else if ($workhistory == 2) {
                     $yearstart = "3";
                     $yearend = "5";
-                } else if($workhistory == 3){
+                } else if ($workhistory == 3) {
                     $yearstart = "5";
                     $yearend = "100";
                 }
-                
             }
         } else {
             $JOIN .= "";
@@ -66,7 +74,6 @@ class SearchController extends Controller {
         if ($workings != "") {
             $JOIN .= " INNER JOIN workings wk ON c.collegian_code = wk.collegian_code ";
             $WHERE .= " AND 1=1";
-              
         } else {
             $JOIN .= "";
             $WHERE .= "";
@@ -91,7 +98,7 @@ class SearchController extends Controller {
         $data['result'] = $Search->SearchCollegian($JOIN, $WHERE);
         $data['year_start'] = $yearstart;
         $data['year_end'] = $yearend;
-        $this->renderPartial('//frontend/search/result',$data);
+        $this->renderPartial('//frontend/search/result', $data);
     }
 
 }

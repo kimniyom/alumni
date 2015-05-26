@@ -34,7 +34,7 @@ class CollegianController extends Controller {
             Yii::app()->session['user'] = "U";
             Yii::app()->session['collegian_name'] = $result['collegian_name'] . ' ' . $result['collegian_lname'];
             Yii::app()->session['collegian_code'] = $result['collegian_code'];
-            Yii::app()->session['id'] =  $result['id'];
+            Yii::app()->session['id'] = $result['id'];
         } else {
             $json = "0";
         }
@@ -43,6 +43,7 @@ class CollegianController extends Controller {
     }
 
     public function actionDetail_collegian() {
+
         $collegian = new Collegian();
         $collegian_code = $_POST['collegiancode'];
         $data['detail'] = $collegian->Get_Collegian_By_CollegianCode($collegian_code);
@@ -83,6 +84,14 @@ class CollegianController extends Controller {
     }
 
     public function actionEdit_password() {
+
+        if (isset(Yii::app()->session['user'])) {
+            return true;
+        } else {
+            //$this->render('//site/main');
+            $this->redirect(array('site/main'));
+        }
+
         $collegian = new Collegian();
         $collegian_code = $_GET['collegian_code'];
         $data['detail'] = $collegian->Get_Collegian_By_CollegianCode($collegian_code);
@@ -99,6 +108,14 @@ class CollegianController extends Controller {
     }
 
     public function actionEdit_profile() {
+        
+         if (isset(Yii::app()->session['user'])) {
+            return true;
+        } else {
+            //$this->render('//site/main');
+            $this->redirect(array('site/main'));
+        }
+        
         $collegian = new Collegian();
         $collegian_code = $_GET['collegian_code'];
         $query = "SELECT * FROM prefix";

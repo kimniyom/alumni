@@ -4,6 +4,15 @@ class TimelineController extends Controller {
 
     public $layout = "timeline";
 
+    public function beforeAction($action) {
+        if (isset(Yii::app()->session['user'])) {
+            return true;
+        } else {
+            //$this->render('//site/main');
+            $this->redirect(array('site/main'));
+        }
+    }
+
     public function actionProfile() {
         if (Yii::app()->session['user'] == "") {
             $this->redirect(array('frontend/collegian/login'));

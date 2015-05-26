@@ -2,6 +2,15 @@
 
 class PrivilegeController extends Controller {
 
+    public function beforeAction($action) {
+        if (isset(Yii::app()->session['user'])) {
+            return true;
+        } else {
+            //$this->render('//site/main');
+            $this->redirect(array('site/main'));
+        }
+    }
+
     public function actionBox_detail_user() {
         $status = $_POST['status_user'];
         if ($status == 'A') {
@@ -23,7 +32,7 @@ class PrivilegeController extends Controller {
             $this->renderPartial('//privilege/head_agent');
         }
     }
-    
+
     public function actionHeader_menu() {
         $status = $_POST['status_user'];
         if ($status == 'A') {
