@@ -243,11 +243,13 @@
                         </div>
                     </div>
                         -->
-                        <a href="<?php echo Yii::app()->createUrl('frontend/search/search_collegian') ?>">
-                            <div class="btn btn-info" style=" width: 100%; margin-bottom: 20px;">
-                                <i class="fa fa-search"></i> ค้นหาข้อมูลศิษย์เก่า
-                            </div>
-                        </a>
+                        <?php if (Yii::app()->session['user'] != "") { ?>
+                            <a href="<?php echo Yii::app()->createUrl('frontend/search/search_collegian') ?>">
+                                <div class="btn btn-info" style=" width: 100%; margin-bottom: 20px;">
+                                    <i class="fa fa-search"></i> ค้นหาข้อมูลศิษย์เก่า
+                                </div>
+                            </a>
+                        <?php } ?>
                         <!-- USERS LIST -->
                         <div class="box box-danger">
                             <div class="box-header with-border">

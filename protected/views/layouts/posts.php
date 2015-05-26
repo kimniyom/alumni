@@ -32,6 +32,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <script src="<?php echo $link; ?>plugins/datatables/jquery.dataTables.js" type="text/javascript"></script>
         <script src="<?php echo $link; ?>plugins/datatables/dataTables.bootstrap.js" type="text/javascript"></script>
 
+        <!--
+            CkEditor
+        -->
+        <script src="<?php echo Yii::app()->baseUrl; ?>/assets/ckeditor/adapter/ckeditor.js"></script>
+
         <script type="text/javascript">
             function CheckNum() {
                 if (event.keyCode < 48 || event.keyCode > 57) {
@@ -41,6 +46,59 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         </script>
 
+        <script type="text/javascript">
+            function dialog_post_admin() {
+                $("#dialog_post_admin").modal();
+            }
+
+            function send_post_admin() {
+                var url = "index.php?r=frontend/posts/send_post";
+                var msg = CKEDITOR.instances.detail_to_admin.getData();
+                var receiver_code = "4";
+                var receiver_status = "A";
+                var title = $("#title_to_admin").val();
+                if (msg == "") {
+                    alert("กรุณากรอกข้อความ ...");
+                    return false;
+                }
+
+                var data = {
+                    receiver_code: receiver_code,
+                    receiver_status: receiver_status,
+                    title: title,
+                    detail: msg
+                };
+
+                $.post(url, data, function (success) {
+                    alert("ส่งข้อความของท่านแล้ว ...");
+                    window.location.reload();
+                });
+
+            }
+        </script>
+
+        <script>
+            $(document).ready(function () {
+                //CKEDITOR.replace( 'workings_detail' );
+                CKEDITOR.replace('detail_to_admin', {
+                    //removePlugins: 'bidi,div,font,forms,flash,horizontalrule,iframe,justify,table,tabletools,smiley,link',
+                    //removePlugins: 'bidi,forms,flash,iframe,div,table,tabletools',
+                    //removeButtons: 'Anchor,Underline,Strike,Subscript,Superscript,Image'
+                    //format_tags: 'p;h1;h2;h3;pre;address'
+                    toolbarGroups: [
+                        //{name: 'document', groups: ['mode', 'document']}, // Displays document group with its two subgroups.
+                        //{name: 'clipboard', groups: ['clipboard', 'undo']}, // Group's name will be used to create voice label.
+                        '/', // Line break - next group will be placed in new line.
+                        // {name: 'basicstyles', groups: ['basicstyles', 'cleanup']},
+                        {name: 'basicstyles', groups: ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat']},
+                        {name: 'paragraph', groups: ['list', 'indent', 'align']},
+                        {name: 'styles', groups: ['Styles', 'Format', 'Font', 'FontSize']},
+                        {name: 'colors', groups: ['TextColor', 'BGColor']}
+                        //{name: 'links'}
+                    ]
+                });
+            });
+        </script>
     </head>
 
     <!--
@@ -68,6 +126,29 @@ scratch. This page gets rid of all links and provides the needed markup only.
     form dialog add
     -->
 
+
+    <div class="modal fade" id="dialog_post_admin">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">
+                        <i class="fa fa-envelope-o"></i> ส่งข้อความถึงผู้ดูแลระบบ 
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <label>หัวข้อ</label>
+                    <input type="text" id="title_to_admin" class="form-control input-sm"/><br/>
+                    <textarea id="detail_to_admin" rows="3"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
+                    <button type="button" class="btn btn-primary" onclick="send_post_admin();"><i class="fa fa-send-o"></i> ส่งข้อความ</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
     <body class="skin-red fixed">
         <div class="wrapper">
 
@@ -86,61 +167,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <!-- Navbar Right Menu -->
                     <div class="navbar-custom-menu">
                         <ul class="nav navbar-nav">
-                            <!-- Messages: style can be found in dropdown.less-->
-                            <li class="dropdown messages-menu">
-                                <!-- Menu toggle button -->
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    ข้อความจากนักศึกษา
-                                    <i class="fa fa-envelope-o"></i>
-                                    <span class="label label-success">4</span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li class="footer"><a href="#">See All Messages</a></li>
-                                </ul>
-                            </li><!-- /.messages-menu -->
-
-                            <!-- Notifications Menu -->
-                            <li class="dropdown notifications-menu">
-                                <!-- Menu toggle button -->
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    ข้อความจากตัวแทนบริษัท
-                                    <i class="fa fa-bell-o"></i>
-                                    <span class="label label-warning">10</span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li class="footer"><a href="#">View all</a></li>
-                                </ul>
-                            </li>
-
                             <!-- User Account Menu -->
                             <li class="dropdown user user-menu">
                                 <!-- Menu Toggle Button -->
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <a href="index.php?r=site">
                                     <!-- The user image in the navbar-->
-                                    <i class="fa fa-cog"></i>
+                                    <i class="fa fa-home"></i>
                                     <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                                    <span class="hidden-xs">Profile</span>
+                                    <span class="hidden-xs">หน้าเว็บไซต์</span>
                                 </a>
-                                <ul class="dropdown-menu">
-                                    <!-- The user image in the menu -->
-                                    <li class="user-header">
-                                        <img src="<?php echo $link; ?>dist/img/avatar04.png" class="img-circle" alt="User Image" />
-                                        <p>
-                                            สวัสดีคุณ <?php echo Yii::app()->session['admin_name']; ?>
-                                        </p>
-
-                                    </li>
-                                    <!-- Menu Body -->
-                                    <!-- Menu Footer-->
-                                    <li class="user-footer">
-                                        <div class="pull-left">
-                                            <a href="<?PHP echo Yii::app()->createUrl('admin/view&id=' . Yii::app()->session['admin_id']); ?>" class="btn btn-default btn-flat">ข้อมูลส่วนตัว</a>
-                                        </div>
-                                        <div class="pull-right">
-                                            <a href="<?php echo Yii::app()->createUrl('site/logout'); ?>" class="btn btn-default btn-flat">ออกจากระบบ</a>
-                                        </div>
-                                    </li>
-                                </ul>
                             </li>
                         </ul>
                     </div>
@@ -174,7 +209,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <i class="fa fa-newspaper-o"></i> โปรไฟล์</a>
                             <?php } else { ?>
                                 <i class="fa fa-group"></i> <?php echo Yii::app()->session['agent_name']; ?><br/>
-                                <i class="fa fa-user-secret"></i>ตัวแทนบริษัท
+                                <i class="fa fa-user-secret"></i>ตัวแทนบริษัท<br/>
+                                <a href="<?php echo Yii::app()->createUrl('frontend/user/detail_agent') ?>"
+                                   class="btn btn-success btn-sm" style="width: 100%;">
+                                    <i class="fa fa-newspaper-o"></i> โปรไฟล์</a>
                                 <br/>
                             <?php } ?>
 
@@ -183,23 +221,34 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
                     <!-- Sidebar Menu -->
+                    <?php
+                    $post = new Posts();
+                    $receiver_code = Yii::app()->session['id'];
+                    $receiver_status = Yii::app()->session['user'];
+                    ?>
                     <ul class="sidebar-menu">
                         <li class="header" style="color: #FFFFFF;"><i class="fa fa-arrow-right"></i> ข้อความรับ</li>
                         <!-- Optionally, you can add icons to the links -->
                         <li>
                             <a href="<?php echo Yii::app()->createUrl('frontend/posts/post_collegian'); ?>">
                                 <i class="fa fa-envelope"></i>
-                                <span>ข้อความจากนักศึกษา</span></a>
+                                <span>ข้อความจากนักศึกษา</span>
+                                <span class="badge"><?php echo $post->Count_msg_collegian($receiver_code, $receiver_status); ?></span>
+                            </a>
                         </li>
                         <li>
                             <a href="<?php echo Yii::app()->createUrl('frontend/posts/post_agent'); ?>">
                                 <i class="fa fa-envelope"></i>
-                                <span>ข้อความจากตัวแทนบริษัท</span></a>
+                                <span>ข้อความจากตัวแทนบริษัท</span>
+                                <span class="badge"><?php echo $post->Count_msg_agent($receiver_code, $receiver_status); ?></span>
+                            </a>
                         </li>
                         <li>
                             <a href="<?php echo Yii::app()->createUrl('frontend/posts/post_admin'); ?>">
                                 <i class="fa fa-envelope"></i>
-                                <span>ข้อความจากผู้ดูแลระบบ</span></a>
+                                <span>ข้อความจากผู้ดูแลระบบ</span>
+                                <span class="badge"><?php echo $post->Count_msg_admin($receiver_code, $receiver_status); ?></span>
+                            </a>
                         </li>
                     </ul><!-- /.sidebar-menu -->
 
@@ -208,20 +257,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <li class="header" style="color: #FFFFFF;"><i class="fa fa-arrow-left"></i> ข้อความส่ง</li>
                         <!-- Optionally, you can add icons to the links -->
                         <li>
-                            <a href="<?php echo Yii::app()->createUrl(''); ?>">
+                            <a href="javascript:dialog_post_admin();">
                                 <i class="fa fa-envelope"></i>
-                                <span>ส่งถึงนักศึกษา</span></a>
+                                <span>ส่งข้อความถึงผูดูแลระบบ</span></a>
                         </li>
+                        <!--
                         <li>
-                            <a href="<?php echo Yii::app()->createUrl(''); ?>">
+                            <a href="#">
                                 <i class="fa fa-envelope"></i>
                                 <span>ส่งถึงตัวแทนบริษัท</span></a>
                         </li>
                         <li>
-                            <a href="<?php echo Yii::app()->createUrl(''); ?>">
+                            <a href="#">
                                 <i class="fa fa-envelope"></i>
                                 <span>ส่งถึงผู้ดูแลระบบ</span></a>
                         </li>
+                        -->
                     </ul><!-- /.sidebar-menu -->
 
                 </section>

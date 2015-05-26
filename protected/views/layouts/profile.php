@@ -104,17 +104,17 @@
                             <li class="active"><a href="index.php?r=site"><i class="glyphicon glyphicon-home"></i> หน้าเว็บไซต์</a></li>
                             <hr style="margin: 5px 0px;">
                             <li>
-                                <a href="#stories"><i class="glyphicon glyphicon-comment"></i> ข้อความจากผู้ดูแลระบบ 
+                                <a href="index.php?r=frontend/posts/post_admin"><i class="glyphicon glyphicon-comment"></i> ข้อความจากผู้ดูแลระบบ 
                                     <span class="label label-danger"><?php echo $post_admin; ?></span>
                                 </a>
                             </li>
                             <li>
-                                <a href="index.php?r=frontend/posts">
+                                <a href="index.php?r=frontend/posts/post_collegian">
                                     <i class="glyphicon glyphicon-user"></i> ข้อความจากเพื่อนนักศึกษา 
                                     <span class="label label-info"><?php echo $post_collegian; ?></span></a>
                             </li>
                             <li>
-                                <a href="#"><i class="glyphicon glyphicon-envelope"></i> ข้อความจากตัวแทนบริษัท 
+                                <a href="index.php?r=frontend/posts/post_agent"><i class="glyphicon glyphicon-envelope"></i> ข้อความจากตัวแทนบริษัท 
                                     <span class="label label-success"><?php echo $post_agent; ?></span></a>
                             </li>
                             <hr style="margin: 5px 0px;">
@@ -166,9 +166,6 @@
                             </div>
                             <nav class="collapse navbar-collapse" role="navigation">
                                 <ul class="nav navbar-nav">
-                                    <li>
-                                        <a href="#"><b> หน้าแรก</b></a>
-                                    </li>
                                     <li style="padding: 0px;">
 
                                     </li>

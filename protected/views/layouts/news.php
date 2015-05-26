@@ -39,7 +39,11 @@
     </head>
 
     <body>
-
+        <?php
+        if (empty(Yii::app()->session['user'])) {
+            $this->redirect(array('site/main'));
+        }
+        ?>
         <div class="wrapper">
             <div class="box">
                 <div class="row row-offcanvas row-offcanvas-left">
@@ -63,7 +67,7 @@
                                         <i class="glyphicon glyphicon-chevron-left"></i> กลับหน้าผู้ดูแลระบบ</a>
                                 </li>
                             <?php } ?>
-                                
+
                             <li><a href="index.php?r=news/News_general_all"><i class="glyphicon glyphicon-comment"></i> ข่าวทั่วไป <span class="label label-danger"><?php echo $news_model->Count_News_Genneral(); ?></span></a></li>
                             <li><a href="index.php?r=news/News_collegian_all"><i class="glyphicon glyphicon-envelope"></i> ข่าวภายใน <span class="label label-warning"><?php echo $news_model->Count_News_Collegian(); ?></span></a></li>
                             <li><a href="#"><i class="glyphicon glyphicon-refresh"></i> Refresh</a></li>

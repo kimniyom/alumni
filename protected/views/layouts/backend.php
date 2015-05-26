@@ -137,32 +137,31 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <span class="sr-only">Toggle navigation</span>
                     </a>
                     <!-- Navbar Right Menu -->
+                    <?php
+                    $post = new Posts();
+                    $receiver_code = Yii::app()->session['id'];
+                    $receiver_status = Yii::app()->session['user'];
+                    ?>
                     <div class="navbar-custom-menu">
                         <ul class="nav navbar-nav">
                             <!-- Messages: style can be found in dropdown.less-->
                             <li class="dropdown messages-menu">
                                 <!-- Menu toggle button -->
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <a href="index.php?r=frontend/posts/post_collegian">
                                     ข้อความจากนักศึกษา
                                     <i class="fa fa-envelope-o"></i>
-                                    <span class="label label-success">4</span>
+                                    <span class="label label-success"><?php echo $post->Count_msg_collegian($receiver_code, $receiver_status); ?></span>
                                 </a>
-                                <ul class="dropdown-menu">
-                                    <li class="footer"><a href="#">See All Messages</a></li>
-                                </ul>
                             </li><!-- /.messages-menu -->
 
                             <!-- Notifications Menu -->
                             <li class="dropdown notifications-menu">
                                 <!-- Menu toggle button -->
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <a href="index.php?r=frontend/posts/post_agent">
                                     ข้อความจากตัวแทนบริษัท
                                     <i class="fa fa-bell-o"></i>
-                                    <span class="label label-warning">10</span>
+                                    <span class="label label-warning"><?php echo $post->Count_msg_agent($receiver_code, $receiver_status); ?></span>
                                 </a>
-                                <ul class="dropdown-menu">
-                                    <li class="footer"><a href="#">View all</a></li>
-                                </ul>
                             </li>
 
                             <!-- User Account Menu -->
@@ -218,20 +217,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </div>
                     </div>
 
-                    <!-- search form (Optional) -->
-                    <form action="#" method="get" class="sidebar-form">
-                        <div class="input-group">
-                            <input type="text" name="q" class="form-control" placeholder="Search..."/>
-                            <span class="input-group-btn">
-                                <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
-                            </span>
-                        </div>
-                    </form>
-                    <!-- /.search form -->
-
                     <!-- Sidebar Menu -->
                     <ul class="sidebar-menu">
                         <li class="header">เมนูจัดการระบบ</li>
+                        <li>
+                            <a href="<?php echo Yii::app()->createUrl('site'); ?>">
+                                <i class="fa fa-home"></i>
+                                <span>หน้าเว็บ</span></a>
+                        </li>
                         <?php if (Yii::app()->session['super'] == '1') { ?>
                             <li>
                                 <a href="<?php echo Yii::app()->createUrl('masmenu'); ?>">
@@ -265,12 +258,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         ?>
                         <br/>
                         <?php if (Yii::app()->session['super'] == '1') { ?>
-                        <li style="text-align: center;">
-                            <div class="btn btn-success" style=" width: 100%; border-radius: 0px;"
-                                 onclick="popup_dialog_add();">
-                                <i class="fa fa-plus"></i> เพิ่มเมนู
-                            </div>
-                        </li>
+                            <li style="text-align: center;">
+                                <div class="btn btn-success" style=" width: 100%; border-radius: 0px;"
+                                     onclick="popup_dialog_add();">
+                                    <i class="fa fa-plus"></i> เพิ่มเมนู
+                                </div>
+                            </li>
                         <?php } ?>
                     </ul><!-- /.sidebar-menu -->
                 </section>
@@ -282,7 +275,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-<?php echo isset($header) ? $header : "Admin"; ?>
+                        <?php echo isset($header) ? $header : "Admin"; ?>
                     </h1>
                     <ol class="breadcrumb">
                         <?php if (isset($this->breadcrumbs)): ?>
@@ -292,7 +285,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 'links' => $this->breadcrumbs,
                             ));
                             ?><!-- breadcrumbs -->
-<?php endif ?>
+                        <?php endif ?>
                     </ol>
 
 
@@ -302,7 +295,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <!-- Main content -->
                 <section class="content">
 
-<?php echo $content; ?>
+                    <?php echo $content; ?>
 
                 </section><!-- /.content -->
             </div><!-- /.content-wrapper -->
