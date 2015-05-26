@@ -13,6 +13,15 @@
  */
 class EducationController extends Controller {
 
+    public function beforeAction($action) {
+        if (isset(Yii::app()->session['user'])) {
+            return true;
+        } else {
+            //$this->render('//site/main');
+            $this->redirect(array('site/main'));
+        }
+    }
+
     //put your code here
     public function actionIndex() {
         $data['header'] = "ขอมูลปีการศึกษา";

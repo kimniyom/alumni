@@ -4,8 +4,17 @@ class TimelineController extends Controller {
 
     public $layout = "Timeline";
 
+    public function beforeAction($action) {
+        if (isset(Yii::app()->session['user'])) {
+            return true;
+        } else {
+            //$this->render('//site/main');
+            $this->redirect(array('site/main'));
+        }
+    }
+
     public function actionIndex() {
-        
+
         $this->renderPartial('//layouts/profile');
     }
 

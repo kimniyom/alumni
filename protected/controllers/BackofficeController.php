@@ -4,6 +4,15 @@ class BackofficeController extends Controller {
 
     public $layout = "backend";
 
+    public function beforeAction($action) {
+        if (isset(Yii::app()->session['user'])) {
+            return true;
+        } else {
+            //$this->render('//site/main');
+            $this->redirect(array('site/main'));
+        }
+    }
+
     public function actionGet_agent() {
         $agent = new CompanyAgent();
         $data['agent'] = $agent->findAll();

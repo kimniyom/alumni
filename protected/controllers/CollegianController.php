@@ -8,6 +8,15 @@ class CollegianController extends Controller {
      */
     public $layout = 'backend';
 
+    public function beforeAction($action) {
+        if (isset(Yii::app()->session['user'])) {
+            return true;
+        } else {
+            //$this->render('//site/main');
+            $this->redirect(array('site/main'));
+        }
+    }
+
     /**
      * @return array action filters
      */
