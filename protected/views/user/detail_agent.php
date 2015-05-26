@@ -3,7 +3,7 @@ $croup = Yii::app()->baseUrl . "/assets/jquery.picture.cut/";
 $lib = new Lib();
 ?>
 <script type="text/javascript">
-    
+
     $(document).ready(function () {
         autoload_img_profile();
         $("#profile_photo").PictureCut({
@@ -26,7 +26,7 @@ $lib = new Lib();
             }
         });
     });
-    
+
     function active_user(id) {
         var url = "index.php?r=backoffice/active_user";
         var data = {id: id};
@@ -34,7 +34,7 @@ $lib = new Lib();
             window.location.reload();
         });
     }
-    
+
     function unactive_user(id) {
         var url = "index.php?r=backoffice/unactive_user";
         var data = {id: id};
@@ -42,11 +42,11 @@ $lib = new Lib();
             window.location.reload();
         });
     }
-    
+
     function edit_img_profile() {
         $("#from_img_profile").modal();
     }
-    
+
     function autoload_img_profile() {
         var loading = "<center><div class='overlay'><i class='fa fa-refresh fa-spin'></i></div><center>";
         $("#show_img_profile").html(loading);
@@ -57,7 +57,7 @@ $lib = new Lib();
             $("#show_img_profile").html(success);
         });
     }
-    
+
 </script>
 
 <?php
@@ -122,6 +122,25 @@ $this->breadcrumbs = array(
                                 <li>ห้ามนำข้อมูลไปแผยแพร่ก่อนได้รับอณุญาติ</li>
                             </ul>
                         </div>
+
+                        <?php
+                        $post = new Posts();
+                        $receiver_code = Yii::app()->session['id'];
+                        $receiver_status = Yii::app()->session['user'];
+                        ?>
+
+                        <center>
+                            <div class="btn-group" role="group" aria-label="...">
+                                <a href="index.php?r=frontend/posts/post_collegian">
+                                    <button type="button" class="btn btn-primary btn-sm">ข้อความจากนักศึกษา 
+                                        <span class="badge"><?php echo $post->Count_msg_collegian($receiver_code, $receiver_status); ?></span>
+                                    </button></a>
+                                <a href="index.php?r=frontend/posts/post_admin">
+                                    <button type="button" class="btn btn-primary btn-sm">ข้อความจากผู้ดูแลระบบ 
+                                        <span class="badge"><?php echo $post->Count_msg_admin($receiver_code, $receiver_status); ?></span>
+                                    </button></a>
+                            </div>
+                        </center>
                     </div>
                 </div>
 
