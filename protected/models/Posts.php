@@ -89,11 +89,49 @@ class Posts extends CActiveRecord {
         return $rs;
     }
 
-    public function Detail_post_collegian($post_id = '') {
-        $query = "SELECT p.*,c.collegian_name AS name,c.collegian_lname AS lname
-                        FROM posts p INNER JOIN collegian c ON p.sender_code = c.id 
+    public function Detail_post_collegian($post_id = '', $status = '') {
+
+        if ($status == "A") {
+            $Table = " admin ";
+            $Field = "admin_name as name,admin_lname as lname";
+        } else if ($status == "U") {
+            $Table = " collegian ";
+            $Field = "collegian_name as name,collegian_lname as lname";
+        } else if($status == "M"){
+            $Table = " company_agent ";
+            $Field = "name ,lname";
+        }
+
+        $query = "SELECT p.*,$Field
+                        FROM posts p INNER JOIN $Table c ON p.sender_code = c.id 
                         WHERE post_id = '$post_id' ";
         return Yii::app()->db->createCommand($query)->queryRow();
+    }
+
+    public function Upper_post($post_id = '', $status = '') {
+
+        if ($status == "A") {
+            $Table = " admin ";
+            $Field = "admin_name as name,admin_lname as lname";
+        } else if ($status == "U") {
+            $Table = " collegian ";
+            $Field = "collegian_name as name,collegian_lname as lname";
+        } else if($status == "M"){
+            $Table = " company_agent ";
+            $Field = " name AS name ,lname AS lname";
+        }
+
+        $sql = "SELECT upper FROM posts WHERE post_id = '$post_id' ";
+        $rs = Yii::app()->db->createCommand($sql)->queryRow();
+
+        if ($rs) {
+            $query = "SELECT p.*,$Field
+                        FROM posts p INNER JOIN $Table c ON p.sender_code = c.id 
+                        WHERE post_id = '" . $rs['upper'] . "' ";
+            return Yii::app()->db->createCommand($query)->queryRow();
+        } else {
+            return 0;
+        }
     }
 
 }
