@@ -9,9 +9,11 @@ if ($etc) {
             <?php } else { ?>
                 <label><?php echo $rs['etc']; ?></label><br/>
             <?php } ?>
-            <a href="index.php?r=frontend/collegian_etc/edit&collegian_code=<?php echo $rs['collegian_code'] . '&id=' . $rs['id']; ?>" class="btn btn-default btn-sm" style=" bottom: 5px; right: 5px; position: absolute;">
-                <i class="fa fa-pencil"></i>
-            </a>
+            <?php if (Yii::app()->session['collegian_code'] == $collegian_code) { ?>
+                <a href="index.php?r=frontend/collegian_etc/edit&collegian_code=<?php echo $rs['collegian_code'] . '&id=' . $rs['id']; ?>" class="btn btn-default btn-sm" style=" bottom: 5px; right: 5px; position: absolute;">
+                    <i class="fa fa-pencil"></i>
+                </a>
+            <?php } ?>
         </p>
     <?php endforeach; ?>
 <?php } else { ?>
@@ -22,8 +24,10 @@ if ($etc) {
                 <h3>เพิ่มข้อมูลอื่น ๆ</h3>
             </div>
         </a>
-    <?php } else {
+    <?php
+    } else {
         echo "ไม่มีข้อมูล";
-    } ?>
+    }
+    ?>
 <?php } ?>
 
