@@ -24,6 +24,13 @@
         <script type="text/javascript" src="<?php echo $path; ?>assets/js/bootstrap.js"></script>
         <!-- CkEditor -->
         <script src="<?php echo Yii::app()->baseUrl; ?>/assets/ckeditor/adapter/ckeditor.js"></script>
+
+        <!--
+        Uploadify
+        -->
+        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->baseUrl; ?>/assets/uploadify/uploadify.css">
+        <script src="<?php echo Yii::app()->baseUrl; ?>/assets/uploadify/jquery.uploadify-3.1.js"></script>
+        
         <script type="text/javascript">
             $(document).ready(function () {
                 $('[data-toggle=offcanvas]').click(function () {
