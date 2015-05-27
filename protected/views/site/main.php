@@ -68,7 +68,9 @@ $lib = new Lib();
         </ul>
     </div>
     <div class="box-footer" style="text-align: right;">
-        <div class="btn btn-warning btn-sm">ข่าวทั้งหมด...</div>
+        <a href="index.php?r=frontend/news_collegian/news_generalView">
+            <div class="btn btn-warning btn-sm">ข่าวทั้งหมด...</div>
+        </a>
     </div>
 </div>
 
@@ -136,7 +138,9 @@ $lib = new Lib();
             </ul>
         </div>
         <div class="box-footer" style="text-align: right;">
-            <div class="btn btn-warning btn-sm">ข่าวทั้งหมด...</div>
+            <a href="index.php?r=frontend/news_collegian/news_collegianView">
+                <div class="btn btn-warning btn-sm">ข่าวทั้งหมด...</div>
+            </a>
         </div>
     </div>
 
