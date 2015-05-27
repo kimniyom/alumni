@@ -8304,3 +8304,35 @@ Stack trace:
 REQUEST_URI=/alumni/index.php?r=frontend/collegian/detail_collegian
 in C:\AppServ\htdocs\alumni\protected\controllers\frontend\CollegianController.php (48)
 in C:\AppServ\htdocs\alumni\index.php (13)
+2015/05/27 11:13:35 [error] [exception.CException] exception 'CException' with message 'MasmenuController cannot find the requested view "//masmenu/home".' in C:\AppServ\htdocs\alumni\framework\web\CController.php:878
+Stack trace:
+#0 C:\AppServ\htdocs\alumni\framework\web\CController.php(782): CController->renderPartial('//masmenu/home', NULL, true)
+#1 C:\AppServ\htdocs\alumni\protected\controllers\MasmenuController.php(31): CController->render('//masmenu/home')
+#2 C:\AppServ\htdocs\alumni\framework\web\actions\CInlineAction.php(49): MasmenuController->actionIndex()
+#3 C:\AppServ\htdocs\alumni\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\AppServ\htdocs\alumni\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\AppServ\htdocs\alumni\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\AppServ\htdocs\alumni\framework\web\CWebApplication.php(282): CController->run('')
+#7 C:\AppServ\htdocs\alumni\framework\web\CWebApplication.php(141): CWebApplication->runController('masmenu')
+#8 C:\AppServ\htdocs\alumni\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 C:\AppServ\htdocs\alumni\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/alumni/index.php?r=masmenu
+HTTP_REFERER=http://localhost/alumni/index.php?r=Main_admin
+---
+2015/05/27 11:13:44 [error] [exception.CException] exception 'CException' with message 'MasmenuController cannot find the requested view "//masmenu/home".' in C:\AppServ\htdocs\alumni\framework\web\CController.php:878
+Stack trace:
+#0 C:\AppServ\htdocs\alumni\framework\web\CController.php(782): CController->renderPartial('//masmenu/home', NULL, true)
+#1 C:\AppServ\htdocs\alumni\protected\controllers\MasmenuController.php(31): CController->render('//masmenu/home')
+#2 C:\AppServ\htdocs\alumni\framework\web\actions\CInlineAction.php(49): MasmenuController->actionIndex()
+#3 C:\AppServ\htdocs\alumni\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\AppServ\htdocs\alumni\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\AppServ\htdocs\alumni\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\AppServ\htdocs\alumni\framework\web\CWebApplication.php(282): CController->run('')
+#7 C:\AppServ\htdocs\alumni\framework\web\CWebApplication.php(141): CWebApplication->runController('masmenu')
+#8 C:\AppServ\htdocs\alumni\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 C:\AppServ\htdocs\alumni\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/alumni/index.php?r=masmenu
+HTTP_REFERER=http://localhost/alumni/index.php?r=Main_admin
+---

@@ -60,6 +60,7 @@ Class NewsController extends Controller {
 
     public function actionEdit_news() {
         $News_id = $_GET['News_id'];
+        $data['type'] = $_GET['type'];
         $News = new NewsModels();
         $data['News'] = $News->Get_News_Edit($News_id);
         $this->render('//News/Edit_News', $data);
