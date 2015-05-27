@@ -16,9 +16,11 @@ if ($learning) {
             }
             ?><br/>
             <label>เกรดเฉลี่ย : </label><?php echo $rs['gpa']; ?><br/>
-            <a href="index.php?r=frontend/learninghistory/edit&collegian_code=<?php echo $rs['collegian_code'] . '&id=' . $rs['id']; ?>" class="btn btn-default btn-sm" style=" bottom: 5px; right: 5px; position: absolute;">
-                <i class="fa fa-pencil"></i>
-            </a>
+            <?php if (Yii::app()->session['collegian_code'] == $collegian_code) { ?>
+                <a href="index.php?r=frontend/learninghistory/edit&collegian_code=<?php echo $rs['collegian_code'] . '&id=' . $rs['id']; ?>" class="btn btn-default btn-sm" style=" bottom: 5px; right: 5px; position: absolute;">
+                    <i class="fa fa-pencil"></i>
+                </a>
+            <?php } ?>
         </p>
     <?php endforeach; ?>
 <?php } else { ?>
@@ -29,7 +31,7 @@ if ($learning) {
                 <h3>เพิ่มข้อมูลการศึกษา</h3>
             </div>
         </a>
-    <?php
+        <?php
     } else {
         echo "ไม่มีข้อมูล";
     }
