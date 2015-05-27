@@ -72,7 +72,7 @@ $lib = new Lib();
     </div>
 </div>
 
-<?php if (Yii::app()->session['user'] == "A" && Yii::app()->session['user'] == "U") { ?>
+<?php if (Yii::app()->session['user'] == "A" || Yii::app()->session['user'] == "U") { ?>
 
     <!--
     ประกาศ ภายใน
