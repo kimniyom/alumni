@@ -52,6 +52,13 @@
         -->
         <link href="<?php echo Yii::app()->baseUrl; ?>/css/bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
 
+        <!--
+        bootstrap-tree
+        -->
+        <link href="<?php echo Yii::app()->baseUrl; ?>/css/bootstrap-tree.css" rel="stylesheet">
+        <script type="text/javascript" charset="utf8" src="<?php echo Yii::app()->baseUrl; ?>/js/bootstrap-tree.js"></script>
+
+
         <script type="text/javascript">
             function CheckNum() {
                 if (event.keyCode < 48 || event.keyCode > 57) {
@@ -74,6 +81,13 @@
                         $("#banner").show();
                     }
                 });
+
+                $('#tree1').treed();
+
+                $('#tree2').treed({openedClass: 'glyphicon-folder-open', closedClass: 'glyphicon-folder-close'});
+
+                $('#tree3').treed({openedClass: 'glyphicon-chevron-right', closedClass: 'glyphicon-chevron-down'});
+
             });
 
         </script>
@@ -282,8 +296,32 @@
                             </div><!-- /.box-footer -->
                         </div><!--/.box -->
 
-                    </div>
+                        <div class="box box-primary">
 
+                            <div class="box-body">
+                                <ul id="tree1">
+                                    <li><a href="#">รุ่นทั้งหมด</a>
+                                        <ul>
+                                            <?php
+                                            $gen = new GenerationModel();
+                                            $genaration = $gen->findAll();
+                                            $Lib = new Lib();
+                                            foreach ($genaration as $r) {
+                                                ?>
+                                                <li>
+                                                    <a href="index.php?r=export/export_collegian&GenNumber=<?php echo $r['GenNumber']; ?>">
+                                                        <?php
+                                                        echo 'รุ่น ' . $r['GenNumber'] . ' ปี ' . $r['GenYear'];
+                                                        echo ' ( จำนวน ' . $Lib->Count_Generation($r['GenNumber']) . ' )';
+                                                        ?>
+                                                    </a>
+                                                </li>
+                                            <?php } ?>
+                                        </ul>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="col-lg-9 col-sm-9">
                         <?php echo $content; ?>
@@ -293,7 +331,10 @@
         </div>
 
 
-        <div class="row" style="background:url('<?php echo $path; ?>images/bg-green.jpg'); margin-bottom:0px; margin-top: 0px; border-top: solid 3px #FFF;">
+        <div class="row" 
+             style="background:url('<?php echo $path; ?>images/bg-green.jpg'); 
+             margin-bottom:0px; margin-top: 0px; border-top: solid 3px #FFF;
+             ">
             <div class="container" style=" height: 150px;"></div>
         </div>
     </body>
