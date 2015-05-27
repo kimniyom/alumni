@@ -30,7 +30,7 @@
                         <td><?php echo $rs['CreateNews_Date']; ?></td>
                         <td><?php echo $rs['collegian_name'] . ' ' . $rs['collegian_lname']; ?></td>
                         <td style="text-align: center;">
-                            <a href="index.php?r=news/edit_news&News_id=<?php echo $rs['News_id'] ?>">
+                            <a href="index.php?r=news/edit_news&News_id=<?php echo $rs['News_id'].'&type=1' ?>">
                                 <div class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i></div>
                             </a>
                             <div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>

@@ -40,7 +40,12 @@
             News_Owner: News_Owner
         };
         $.post(url, data, function (result) {
-            window.location.reload();
+            if (<?php echo $type; ?> == '1') {
+                window.location = "index.php?r=News/News_general_all";
+            } else {
+                window.location = "index.php?r=News/News_collegian_all";
+            }
+
         });
     }
     ;</script>
