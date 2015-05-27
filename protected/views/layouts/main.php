@@ -295,7 +295,7 @@
                             </div><!-- /.box-footer -->
                         </div><!--/.box -->
 
-                        <div class="box box-primary">
+                        <div class="box box-danger">
 
                             <div class="box-body">
                                 <ul id="tree1">
@@ -308,19 +308,20 @@
                                             foreach ($genaration as $r) {
                                                 ?>
                                                 <li>
-                                                    <?php if(Yii::app()->session['user'] == "A" || Yii::app()->session['user'] == "U") { ?>
+                                                    <?php if (Yii::app()->session['user'] == "A" || Yii::app()->session['user'] == "U") { ?>
                                                         <a href="index.php?r=export/export_collegian&GenNumber=<?php echo $r['GenNumber']; ?>" target="_blank">
                                                             <?php
                                                             echo 'รุ่น ' . $r['GenNumber'] . ' ปี ' . $r['GenYear'];
-                                                            echo ' ( จำนวน ' . $Lib->Count_Generation($r['GenNumber']) . ' )';
+                                                            echo ' (' . $Lib->Count_Generation($r['GenNumber']) . ')';
                                                             ?>
                                                         </a>
                                                     <?php } else { ?>
                                                         <?php
                                                         echo 'รุ่น ' . $r['GenNumber'] . ' ปี ' . $r['GenYear'];
-                                                        echo ' ( จำนวน ' . $Lib->Count_Generation($r['GenNumber']) . ' )';
+                                                        echo ' (' . $Lib->Count_Generation($r['GenNumber']) . ')';
                                                         ?>
                                                     <?php } ?>
+                                                    <i class="fa fa-file-pdf-o"></i>
                                                 </li>
                                             <?php } ?>
                                         </ul>
