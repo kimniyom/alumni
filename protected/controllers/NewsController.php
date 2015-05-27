@@ -56,6 +56,11 @@ Class NewsController extends Controller {
 
         Yii::app()->db->createCommand()
                 ->insert("News", $columns);
+
+        $sql = "SELECT MAX(News_id) AS id FROM News";
+        $rs = Yii::app()->db->createCommand($sql)->queryRow();
+
+        echo $rs['id'];
     }
 
     public function actionEdit_news() {
@@ -99,6 +104,42 @@ Class NewsController extends Controller {
         }
 
         $this->render("//News/Detail", $data);
+    }
+
+    public function actionNews_upload_images() {
+        $data['news_id'] = $_GET['news_id'];
+        $this->render("//News/news_upload_images", $data);
+    }
+
+    public function actionUploadify() {
+        $news_id = $_GET['news_id'];
+        $targetFolder = 'upload_news/'; // Relative to the root
+
+        if (!empty($_FILES)) {
+            $tempFile = $_FILES['Filedata']['tmp_name'];
+            $img_name = time() . $_FILES['Filedata']['name'];
+            $targetFile = rtrim($targetFolder, '/') . '/' . $img_name;
+
+            // Validate the file type
+            $fileTypes = array('jpg', 'jpeg', 'gif', 'png'); // File extensions
+            $fileParts = pathinfo($_FILES['Filedata']['name']);
+
+            if (in_array(strtolower($fileParts['extension']), $fileTypes)) {
+                move_uploaded_file($tempFile, $targetFile);
+
+                $columns = array(
+                    "News_id" => $news_id,
+                    "News_Image" => $img_name
+                );
+
+                Yii::app()->db->createCommand()
+                        ->insert("News_Images", $columns);
+
+                echo '1';
+            } else {
+                echo 'Invalid file type.';
+            }
+        }
     }
 
 }
