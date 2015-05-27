@@ -45,4 +45,20 @@ class News_collegian {
         return Yii::app()->db->createCommand($query)->queryAll();
     }
 
+    //แสดงข้อมูลสำหรับนักศึกษาทั้งหมด
+    function Get_new_collegianAll() {
+        $query = "SELECT n.*,c.collegian_name,c.collegian_lname
+                FROM News n LEFT JOIN collegian c ON n.News_Owner = c.collegian_code 
+                WHERE News_Catagory_id = '2' ORDER BY News_id DESC";
+        return Yii::app()->db->createCommand($query)->queryAll();
+    }
+    
+    //แสดงข้อมูลทั่วไปทั้งหมด
+    function Get_new_generalAll() {
+        $query = "SELECT n.*,c.collegian_name,c.collegian_lname
+                FROM News n LEFT JOIN collegian c ON n.News_Owner = c.collegian_code 
+                WHERE News_Catagory_id = '1' ORDER BY News_id DESC";
+        return Yii::app()->db->createCommand($query)->queryAll();
+    }
+
 }
