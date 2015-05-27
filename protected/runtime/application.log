@@ -8265,3 +8265,42 @@ Stack trace:
 REQUEST_URI=/alumni/index.php?r=masmenu
 HTTP_REFERER=http://localhost/alumni/index.php?r=Main_admin
 ---
+2015/05/27 10:46:05 [error] [exception.CException] exception 'CException' with message 'NewsModels and its behaviors do not have a method or closure named "Get_News_Edit".' in C:\AppServ\htdocs\alumni\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\AppServ\htdocs\alumni\framework\db\ar\CActiveRecord.php(227): CComponent->__call('Get_News_Edit', Array)
+#1 C:\AppServ\htdocs\alumni\protected\controllers\NewsController.php(64): CActiveRecord->__call('Get_News_Edit', Array)
+#2 C:\AppServ\htdocs\alumni\protected\controllers\NewsController.php(64): NewsModels->Get_News_Edit('18')
+#3 C:\AppServ\htdocs\alumni\framework\web\actions\CInlineAction.php(49): NewsController->actionEdit_news()
+#4 C:\AppServ\htdocs\alumni\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\AppServ\htdocs\alumni\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\AppServ\htdocs\alumni\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\AppServ\htdocs\alumni\framework\web\CWebApplication.php(282): CController->run('edit_news')
+#8 C:\AppServ\htdocs\alumni\framework\web\CWebApplication.php(141): CWebApplication->runController('news/edit_news')
+#9 C:\AppServ\htdocs\alumni\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\AppServ\htdocs\alumni\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/alumni/index.php?r=news/edit_news&News_id=18
+HTTP_REFERER=http://localhost/alumni/index.php?r=news/News_general_all
+---
+2015/05/27 11:01:25 [error] [php] Undefined index: collegiancode (C:\AppServ\htdocs\alumni\protected\controllers\frontend\CollegianController.php:48)
+Stack trace:
+#0 C:\AppServ\htdocs\alumni\framework\web\CController.php(286): CollegianController->runAction()
+#1 C:\AppServ\htdocs\alumni\framework\web\CController.php(265): CollegianController->runActionWithFilters()
+#2 C:\AppServ\htdocs\alumni\framework\web\CWebApplication.php(282): CollegianController->run()
+#3 C:\AppServ\htdocs\alumni\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\AppServ\htdocs\alumni\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 C:\AppServ\htdocs\alumni\index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=frontend/collegian/detail_collegian
+in C:\AppServ\htdocs\alumni\protected\controllers\frontend\CollegianController.php (48)
+in C:\AppServ\htdocs\alumni\index.php (13)
+2015/05/27 11:01:33 [error] [php] Undefined index: collegiancode (C:\AppServ\htdocs\alumni\protected\controllers\frontend\CollegianController.php:48)
+Stack trace:
+#0 C:\AppServ\htdocs\alumni\framework\web\CController.php(286): CollegianController->runAction()
+#1 C:\AppServ\htdocs\alumni\framework\web\CController.php(265): CollegianController->runActionWithFilters()
+#2 C:\AppServ\htdocs\alumni\framework\web\CWebApplication.php(282): CollegianController->run()
+#3 C:\AppServ\htdocs\alumni\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\AppServ\htdocs\alumni\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 C:\AppServ\htdocs\alumni\index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=frontend/collegian/detail_collegian
+in C:\AppServ\htdocs\alumni\protected\controllers\frontend\CollegianController.php (48)
+in C:\AppServ\htdocs\alumni\index.php (13)
