@@ -17,7 +17,7 @@ Class NewsController extends Controller {
         if (Yii::app()->session['user'] == "U") {
             $data['news'] = $news->Get_newsgeneralAll(Yii::app()->session['collegian_code']);
         } else {
-            $data['news'] = $news->Get_newsgeneralAll_admin();
+            $data['news'] = $news->Get_newsgeneral_For_admin();
         }
         $this->render("//News/news_general", $data);
     }
@@ -28,7 +28,7 @@ Class NewsController extends Controller {
         if (Yii::app()->session['user'] == "U") {
             $data['news'] = $news->Get_newscollegianAll(Yii::app()->session['collegian_code']);
         } else {
-            $data['news'] = $news->Get_newscollegianAll_admin();
+            $data['news'] = $news->Get_newscollegian_For_admin();
         }
 
         $this->render("//News/news_collegian", $data);
@@ -56,6 +56,29 @@ Class NewsController extends Controller {
 
         Yii::app()->db->createCommand()
                 ->insert("News", $columns);
+    }
+
+    public function actionEdit_news() {
+        $News_id = $_GET['News_id'];
+        $News = new NewsModels();
+        $data['News'] = $News->Get_News_Edit($News_id);
+        $this->render('//News/Edit_News', $data);
+    }
+
+    public function actionSaveEdit_News() {
+        $News_id = $_POST['News_id'];
+        $columns = array(
+            "News_Head" => $_POST['News_Head'],
+            "News_Detail" => $_POST['News_Detail'],
+            "News_Catagory_id" => $_POST['News_Catagories'],
+            "News_Owner" => $_POST['News_Owner'],
+            //"News_Group_id" => $_POST['News_Groups'],
+            "News_User_Status" => Yii::app()->session['user'],
+            "CreateNews_Date" => date("Y-m-d H:i:s")
+        );
+        Yii::app()->db->createCommand()
+                ->Update("News", $columns, "News_id = '$News_id'");
+        //$this->render('//News/News_general_all');
     }
 
     //Author : Kimniyom => โชว์รายละเอียดข่าว
