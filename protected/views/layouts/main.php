@@ -281,7 +281,6 @@
                                     foreach ($company as $c):
                                         $img = $agent->Get_img_profile($c['id']);
                                         ?>
-
                                         <li>
                                             <img src="<?php echo Yii::app()->baseUrl; ?>/assets/jquery.picture.cut/uploads_images_user/<?php echo $img; ?>" alt="User Image"/>
                                             <a class="users-list-name" href="javascript:void(0);"><?php echo $c['name'] ?></a>
@@ -309,12 +308,19 @@
                                             foreach ($genaration as $r) {
                                                 ?>
                                                 <li>
-                                                    <a href="index.php?r=export/export_collegian&GenNumber=<?php echo $r['GenNumber']; ?>">
+                                                    <?php if(Yii::app()->session['user'] == "A" || Yii::app()->session['user'] == "U") { ?>
+                                                        <a href="index.php?r=export/export_collegian&GenNumber=<?php echo $r['GenNumber']; ?>" target="_blank">
+                                                            <?php
+                                                            echo 'รุ่น ' . $r['GenNumber'] . ' ปี ' . $r['GenYear'];
+                                                            echo ' ( จำนวน ' . $Lib->Count_Generation($r['GenNumber']) . ' )';
+                                                            ?>
+                                                        </a>
+                                                    <?php } else { ?>
                                                         <?php
                                                         echo 'รุ่น ' . $r['GenNumber'] . ' ปี ' . $r['GenYear'];
                                                         echo ' ( จำนวน ' . $Lib->Count_Generation($r['GenNumber']) . ' )';
                                                         ?>
-                                                    </a>
+                                                    <?php } ?>
                                                 </li>
                                             <?php } ?>
                                         </ul>
