@@ -5,9 +5,11 @@ if ($aptitude) {
         ?>
         <p class="list-group-item" style="position: relative;">
             <label><?php echo $rs['aptitude']; ?></label>
-            <a href="index.php?r=frontend/aptitude/edit&collegian_code=<?php echo $rs['collegian_code'] . '&id=' . $rs['id']; ?>" class="btn btn-default btn-sm" style=" bottom: 5px; right: 5px; position: absolute;">
-                <i class="fa fa-pencil"></i>
-            </a>
+            <?php if (Yii::app()->session['collegian_code'] == $collegian_code) { ?>
+                <a href="index.php?r=frontend/aptitude/edit&collegian_code=<?php echo $rs['collegian_code'] . '&id=' . $rs['id']; ?>" class="btn btn-default btn-sm" style=" bottom: 5px; right: 5px; position: absolute;">
+                    <i class="fa fa-pencil"></i>
+                </a>
+            <?php } ?>
         </p>
     <?php endforeach; ?>
 <?php } else { ?>
