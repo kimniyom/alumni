@@ -108,14 +108,13 @@ class CollegianController extends Controller {
     }
 
     public function actionEdit_profile() {
-        
-         if (isset(Yii::app()->session['user'])) {
-            return true;
-        } else {
+
+
+        if (empty(Yii::app()->session['user'])) {
             //$this->render('//site/main');
             $this->redirect(array('site/main'));
         }
-        
+
         $collegian = new Collegian();
         $collegian_code = $_GET['collegian_code'];
         $query = "SELECT * FROM prefix";
