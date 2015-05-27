@@ -1,6 +1,6 @@
 <script type="text/javascript">
-    $(document).ready(function(){
-       $("#news_general").dataTable(); 
+    $(document).ready(function () {
+        $("#news_general").dataTable();
     });
 </script>
 
@@ -28,9 +28,11 @@
                         <td><?php echo $i++; ?></td>
                         <td><?php echo $rs['News_Head']; ?></td>
                         <td><?php echo $rs['CreateNews_Date']; ?></td>
-                        <td><?php echo $rs['collegian_name'].' '.$rs['collegian_lname']; ?></td>
+                        <td><?php echo $rs['collegian_name'] . ' ' . $rs['collegian_lname']; ?></td>
                         <td style="text-align: center;">
-                            <div class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i></div>
+                            <a href="index.php?r=news/edit_news&News_id=<?php echo $rs['News_id'] ?>">
+                                <div class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i></div>
+                            </a>
                             <div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>
                         </td>
                     </tr>
