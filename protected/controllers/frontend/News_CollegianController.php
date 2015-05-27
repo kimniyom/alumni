@@ -29,4 +29,20 @@ class News_CollegianController extends Controller {
         $this->render("//news_collegian/news_collegian", $data);
     }
 
+    public function actionNews_collegianView() {
+        $this->layout = "main";
+        $news = new News_collegian();
+        $data['news'] = $news->Get_new_collegianAll();
+
+        $this->render("//news_collegian/news_collegian_view", $data);
+    }
+
+    public function actionNews_generalView() {
+        $this->layout = "main";
+        $news = new News_collegian();
+        $data['news'] = $news->Get_new_generalAll();
+
+        $this->render("//news_collegian/news_general_view", $data);
+    }
+
 }
