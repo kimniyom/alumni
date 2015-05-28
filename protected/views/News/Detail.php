@@ -95,7 +95,7 @@ $this->breadcrumbs = array(
         <!-- รูปภาพข่าว -->
         <div class="container">
             <div class="album">
-                <ul>
+                <ul class="row">
                     <?php foreach ($news_images as $img_news): ?>
                         <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
                             <img src="<?php echo Yii::app()->baseUrl; ?>/upload_news/<?php echo $img_news['News_Image'] ?>" class="img-responsive"/>
