@@ -8476,3 +8476,315 @@ Stack trace:
 REQUEST_URI=/alumni/index.php?r=comment/get_comment
 in C:\xampp\htdocs\alumni\protected\controllers\CommentController.php (28)
 in C:\xampp\htdocs\alumni\index.php (13)
+2015/05/28 15:30:33 [error] [php] Undefined index: news_id (/Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php:28)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CommentController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CommentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CommentController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=comment/get_comment
+in /Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php (28)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/05/28 15:34:07 [error] [php] Undefined index: news_id (/Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php:28)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CommentController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CommentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CommentController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=comment/get_comment
+in /Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php (28)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/05/28 15:34:17 [error] [php] Undefined index: news_id (/Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php:28)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CommentController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CommentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CommentController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=comment/get_comment
+in /Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php (28)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/05/28 15:34:25 [error] [php] Undefined index: news_id (/Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php:28)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CommentController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CommentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CommentController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=comment/get_comment
+in /Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php (28)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/05/28 15:34:35 [error] [php] Undefined index: news_id (/Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php:28)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CommentController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CommentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CommentController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=comment/get_comment
+in /Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php (28)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/05/28 15:35:08 [error] [php] Undefined index: news_id (/Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php:28)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CommentController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CommentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CommentController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=comment/get_comment
+in /Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php (28)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/05/28 16:03:12 [error] [php] Undefined index: news_id (/Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php:28)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CommentController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CommentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CommentController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=comment/get_comment
+in /Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php (28)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/05/28 18:31:19 [error] [php] Undefined variable: News (/Applications/MAMP/htdocs/alumni/protected/views/news/news_edit_images.php:32)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(869): NewsController->renderFile()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(782): NewsController->renderPartial()
+#2 /Applications/MAMP/htdocs/alumni/protected/controllers/NewsController.php(152): NewsController->render()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/actions/CInlineAction.php(49): NewsController->actionEdit_images_news()
+#4 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): NewsController->runAction()
+#6 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): NewsController->runActionWithFilters()
+#7 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): NewsController->run()
+#8 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=news/edit_images_news&news_id=27
+in /Applications/MAMP/htdocs/alumni/protected/views/news/news_edit_images.php (32)
+in /Applications/MAMP/htdocs/alumni/protected/controllers/NewsController.php (152)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/05/28 18:49:54 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'News_Images' in 'field list'. The SQL statement executed was: SELECT News_Images FROM News_Images WHERE News_Image_id = '14' .
+in /Applications/MAMP/htdocs/alumni/protected/controllers/NewsController.php (159)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/05/28 18:49:54 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'News_Images' in 'field list'. The SQL statement executed was: SELECT News_Images FROM News_Images WHERE News_Image_id = '14' ' in /Applications/MAMP/htdocs/alumni/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /Applications/MAMP/htdocs/alumni/protected/controllers/NewsController.php(159): CDbCommand->queryRow()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/actions/CInlineAction.php(49): NewsController->actionDelete_img_new()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CController->run('delete_img_new')
+#7 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController('news/delete_img...')
+#8 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /Applications/MAMP/htdocs/alumni/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/alumni/index.php?r=news/delete_img_new
+HTTP_REFERER=http://localhost/alumni/index.php?r=news/edit_images_news&news_id=27
+---
+2015/05/28 18:51:39 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'News_Images' in 'field list'. The SQL statement executed was: SELECT News_Images FROM News_Images WHERE News_Image_id = '14' .
+in /Applications/MAMP/htdocs/alumni/protected/controllers/NewsController.php (159)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/05/28 18:51:39 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'News_Images' in 'field list'. The SQL statement executed was: SELECT News_Images FROM News_Images WHERE News_Image_id = '14' ' in /Applications/MAMP/htdocs/alumni/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /Applications/MAMP/htdocs/alumni/protected/controllers/NewsController.php(159): CDbCommand->queryRow()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/actions/CInlineAction.php(49): NewsController->actionDelete_img_new()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CController->run('delete_img_new')
+#7 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController('news/delete_img...')
+#8 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /Applications/MAMP/htdocs/alumni/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/alumni/index.php?r=news/delete_img_new
+HTTP_REFERER=http://localhost/alumni/index.php?r=news/edit_images_news&news_id=27
+---
+2015/05/28 18:52:52 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'News_Images' in 'field list'. The SQL statement executed was: SELECT News_Images FROM News_Images WHERE News_Image_id = '14' .
+in /Applications/MAMP/htdocs/alumni/protected/controllers/NewsController.php (159)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/05/28 18:52:52 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'News_Images' in 'field list'. The SQL statement executed was: SELECT News_Images FROM News_Images WHERE News_Image_id = '14' ' in /Applications/MAMP/htdocs/alumni/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /Applications/MAMP/htdocs/alumni/protected/controllers/NewsController.php(159): CDbCommand->queryRow()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/actions/CInlineAction.php(49): NewsController->actionDelete_img_new()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CController->run('Delete_img_new')
+#7 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController('news/Delete_img...')
+#8 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /Applications/MAMP/htdocs/alumni/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/alumni/index.php?r=news/Delete_img_new
+HTTP_REFERER=http://localhost/alumni/index.php?r=news/edit_images_news&news_id=27
+---
+2015/05/28 18:52:55 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'News_Images' in 'field list'. The SQL statement executed was: SELECT News_Images FROM News_Images WHERE News_Image_id = '14' .
+in /Applications/MAMP/htdocs/alumni/protected/controllers/NewsController.php (159)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/05/28 18:52:55 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'News_Images' in 'field list'. The SQL statement executed was: SELECT News_Images FROM News_Images WHERE News_Image_id = '14' ' in /Applications/MAMP/htdocs/alumni/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /Applications/MAMP/htdocs/alumni/protected/controllers/NewsController.php(159): CDbCommand->queryRow()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/actions/CInlineAction.php(49): NewsController->actionDelete_img_new()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CController->run('Delete_img_new')
+#7 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController('news/Delete_img...')
+#8 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /Applications/MAMP/htdocs/alumni/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/alumni/index.php?r=news/Delete_img_new
+HTTP_REFERER=http://localhost/alumni/index.php?r=news/edit_images_news&news_id=27
+---
+2015/05/28 18:53:08 [error] [php] Undefined index: News_Image_id (/Applications/MAMP/htdocs/alumni/protected/controllers/NewsController.php:156)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): NewsController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): NewsController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): NewsController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=news/Delete_img_new
+in /Applications/MAMP/htdocs/alumni/protected/controllers/NewsController.php (156)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/05/28 18:53:51 [error] [php] Undefined index: News_Image_id (/Applications/MAMP/htdocs/alumni/protected/controllers/NewsController.php:156)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): NewsController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): NewsController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): NewsController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=news/Delete_img_new
+in /Applications/MAMP/htdocs/alumni/protected/controllers/NewsController.php (156)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/05/28 18:53:59 [error] [php] unlink(/upload_news/1432831227IMG_7240.JPG): No such file or directory (/Applications/MAMP/htdocs/alumni/protected/controllers/NewsController.php:162)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): NewsController->runAction()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): NewsController->runActionWithFilters()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): NewsController->run()
+#4 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#6 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=news/Delete_img_new
+in /Applications/MAMP/htdocs/alumni/protected/controllers/NewsController.php (162)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/05/28 18:54:20 [error] [php] unlink(/upload_news/1432831227IMG_7240.JPG): No such file or directory (/Applications/MAMP/htdocs/alumni/protected/controllers/NewsController.php:162)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): NewsController->runAction()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): NewsController->runActionWithFilters()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): NewsController->run()
+#4 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#6 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=news/Delete_img_new
+in /Applications/MAMP/htdocs/alumni/protected/controllers/NewsController.php (162)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/05/28 18:54:23 [error] [php] unlink(/upload_news/1432831227IMG_7240.JPG): No such file or directory (/Applications/MAMP/htdocs/alumni/protected/controllers/NewsController.php:162)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): NewsController->runAction()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): NewsController->runActionWithFilters()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): NewsController->run()
+#4 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#6 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=news/Delete_img_new
+in /Applications/MAMP/htdocs/alumni/protected/controllers/NewsController.php (162)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/05/28 18:54:51 [error] [php] unlink(/upload_news/1432831227IMG_7240.JPG): No such file or directory (/Applications/MAMP/htdocs/alumni/protected/controllers/NewsController.php:162)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): NewsController->runAction()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): NewsController->runActionWithFilters()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): NewsController->run()
+#4 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#6 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=news/delete_img_new
+in /Applications/MAMP/htdocs/alumni/protected/controllers/NewsController.php (162)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/05/28 18:54:52 [error] [php] unlink(/upload_news/1432831227IMG_7240.JPG): No such file or directory (/Applications/MAMP/htdocs/alumni/protected/controllers/NewsController.php:162)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): NewsController->runAction()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): NewsController->runActionWithFilters()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): NewsController->run()
+#4 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#6 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=news/delete_img_new
+in /Applications/MAMP/htdocs/alumni/protected/controllers/NewsController.php (162)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/05/28 18:54:54 [error] [php] unlink(/upload_news/1432831227IMG_7240.JPG): No such file or directory (/Applications/MAMP/htdocs/alumni/protected/controllers/NewsController.php:162)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): NewsController->runAction()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): NewsController->runActionWithFilters()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): NewsController->run()
+#4 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#6 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=news/delete_img_new
+in /Applications/MAMP/htdocs/alumni/protected/controllers/NewsController.php (162)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/05/28 18:55:11 [error] [php] unlink(/upload_news/1432831227IMG_7240.JPG): No such file or directory (/Applications/MAMP/htdocs/alumni/protected/controllers/NewsController.php:162)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): NewsController->runAction()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): NewsController->runActionWithFilters()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): NewsController->run()
+#4 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#6 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=news/delete_img_new
+in /Applications/MAMP/htdocs/alumni/protected/controllers/NewsController.php (162)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/05/28 18:57:16 [error] [php] unlink(/upload_news/1432831227IMG_7240.JPG): No such file or directory (/Applications/MAMP/htdocs/alumni/protected/controllers/NewsController.php:162)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): NewsController->runAction()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): NewsController->runActionWithFilters()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): NewsController->run()
+#4 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#6 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=news/delete_img_new
+in /Applications/MAMP/htdocs/alumni/protected/controllers/NewsController.php (162)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/05/28 18:58:07 [error] [php] unlink(/upload_news/1432830783thumb1_12113.jpg): No such file or directory (/Applications/MAMP/htdocs/alumni/protected/controllers/NewsController.php:162)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): NewsController->runAction()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): NewsController->runActionWithFilters()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): NewsController->run()
+#4 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#6 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=news/delete_img_new
+in /Applications/MAMP/htdocs/alumni/protected/controllers/NewsController.php (162)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/05/28 18:58:58 [error] [php] unlink(/upload_news/1432830783thumb1_12113.jpg): No such file or directory (/Applications/MAMP/htdocs/alumni/protected/controllers/NewsController.php:162)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): NewsController->runAction()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): NewsController->runActionWithFilters()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): NewsController->run()
+#4 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#6 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=news/delete_img_new
+in /Applications/MAMP/htdocs/alumni/protected/controllers/NewsController.php (162)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
