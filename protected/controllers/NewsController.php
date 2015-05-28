@@ -88,16 +88,17 @@ Class NewsController extends Controller {
     }
 
     //Author : Kimniyom => โชว์รายละเอียดข่าว
-    public function actionDetail_News() {
+    public function actionDetail_news() {
 
         $this->layout = "main";
         $News_id = $_GET['News_id'];
-        $start = ($News_id - 5);
-        $end = ($News_id + 5);
+        $start = ($News_id - 2);
+        $end = ($News_id + 2);
         $news = new NewsModels();
         $data['News'] = $news->find("News_id = '$News_id' ");
         $cat_id = $data['News']['News_Catagory_id'];
-        $data['News_jam'] = $news->findAll("News_Catagory_id = '$cat_id' AND News_id between '$start' AND '$end' AND News_id != '$News_id' ");
+        $data['News_jam'] = $news->findAll("News_Catagory_id = '$cat_id' AND News_id >= '$start' AND News_id <='$end' AND News_id != '$News_id' ");
+        $data['news_images'] = $news->Get_images_by_id($News_id);
 
         if ($data['News']['News_Catagory_id'] == "2" && Yii::app()->session['user'] == "") {
             $this->redirect(array('site/main'));
