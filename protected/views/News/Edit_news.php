@@ -47,8 +47,8 @@
             }
 
         });
-    }
-    ;</script>
+    };
+        </script>
 <div class="panel panel-default">
     <div class="panel-heading">
         <h3>แก้ไขข้อมูลข่าว </h3>
