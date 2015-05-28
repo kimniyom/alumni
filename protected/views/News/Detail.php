@@ -49,6 +49,39 @@
     }
 </style>
 
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        load_comment();
+    });
+
+    function load_comment() {
+        $("#show_comment").html("<center>กำลังโหลดข้อมูล ...</center>");
+        var url = "index.php?r=comment/get_comment";
+        var news_id = $("#news_id").val();
+        var data = {news_id: news_id};
+        $.post(url, data, function (result) {
+            $("#show_comment").html(result);
+        });
+    }
+
+    function comment() {
+        var url = "index.php?r=comment/add_comment";
+        var news_id = $("#news_id").val();
+        var comment = $("#message").val();
+        var data = {news_id: news_id, comment: comment};
+        if (comment == "") {
+            $("#message").focus();
+            return false;
+        }
+
+        $.post(url, data, function (result) {
+            $("#message").val("");
+            load_comment();
+        });
+    }
+</script>
+
 <?php
 /* @var $this CollegianController */
 /* @var $model Collegian */
@@ -110,17 +143,17 @@ $this->breadcrumbs = array(
         <?php if (Yii::app()->session['user'] == 'A' || Yii::app()->session['user'] == 'U') { ?>
             <div class="box box-warning">
                 <div class="box-header with-border">
-                    <h3 class="box-title"><i class="fa fa-comment"></i> เพิ่มคอมเม้นน์</h3>
+                    <h3 class="box-title"><i class="fa fa-comment"></i> ความเห็น</h3>
                 </div>
                 <div class="box-body">
-                    <form action="#" method="post">
-                        <div class="input-group">
-                            <input type="text" name="message" placeholder="Type Message ..." class="form-control"/>
-                            <span class="input-group-btn">
-                                <button type="button" class="btn btn-primary btn-flat">Send</button>
-                            </span>
-                        </div>
-                    </form>
+                    <div class="input-group">
+                        <input type="hidden" id="news_id" name="news_id" value="<?php echo $News['News_id'] ?>"/>
+                        <input type="text" name="message" id="message" placeholder="ความคิดเห็นของคุณ ..." class="form-control"/>
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-primary btn-flat" onclick="comment()
+                                                ;">ความเห็น</button>
+                        </span>
+                    </div>
                 </div>
             </div>
 
@@ -132,22 +165,10 @@ $this->breadcrumbs = array(
                         <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                     </div>
                 </div><!-- /.box-header -->
-                <div class="box-body" style="padding: 10px;">
+                <div class="box-body" style="padding: 10px;" id="show_comment">
                     <!-- Conversations are loaded here -->
 
-                    <!-- Message. Default to the left -->
-                    <?php for ($i = 0; $i <= 5; $i++) { ?>
-                        <div class="direct-chat-msg">
-                            <div class='direct-chat-info clearfix'>
-                                <span class='direct-chat-name pull-left'>Alexander Pierce</span>
-                                <span class='direct-chat-timestamp pull-right'>23 Jan 2:00 pm</span>
-                            </div><!-- /.direct-chat-info -->
-                            <img class="direct-chat-img" src="<?php echo Yii::app()->baseUrl; ?>/themes/AdminLTE2/dist/img/user1-128x128.jpg" alt="message user image" /><!-- /.direct-chat-img -->
-                            <div class="direct-chat-text" style=" color: #000;">
-                                Is this template really for free? That's unbelievable!
-                            </div><!-- /.direct-chat-text --> 
-                        </div><!-- /.direct-chat-msg -->
-                    <?php } ?>
+
 
                 </div><!-- /.box-body -->
                 <div class="box-footer">
