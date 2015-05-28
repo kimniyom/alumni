@@ -53,8 +53,8 @@ class NewsModels extends CActiveRecord {
 
         return Yii::app()->db->createCommand($query)->queryAll();
     }
-    
-     //ดึงมาให้หมดสำหรับ Admin ในหมวดข่าวทั่วไป  
+
+    //ดึงมาให้หมดสำหรับ Admin ในหมวดข่าวทั่วไป  
     function Get_newsgeneral_For_admin() {
         $query = "SELECT n.*,IFNULL(c.collegian_name,adm.admin_name) as collegian_name,
             IFNULL(c.collegian_lname,adm.admin_lname) as collegian_lname
@@ -86,5 +86,22 @@ class NewsModels extends CActiveRecord {
         return $rs;
     }
 
+    function Get_images_by_id($news_id = '') {
+        $query = "SELECT * FROM News_Images WHERE News_id = '$news_id' ";
+        $rs = Yii::app()->db->createCommand($query)->queryAll();
+        return $rs;
+    }
+
+    function Get_first_news($news_id = '') {
+        $query = "SELECT News_Image FROM News_Images WHERE News_id = '$news_id' ";
+        $rs = Yii::app()->db->createCommand($query)->queryRow();
+        if ($rs) {
+            $img = $rs['News_Image'];
+        } else {
+            $img = 0;
+        }
+
+        return $img;
+    }
 
 }
