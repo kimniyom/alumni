@@ -85,6 +85,4 @@ class NewsModels extends CActiveRecord {
         $rs = Yii::app()->db->createCommand($query)->queryRow();
         return $rs;
     }
-
-
 }
