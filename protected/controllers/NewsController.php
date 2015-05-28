@@ -143,4 +143,42 @@ Class NewsController extends Controller {
         }
     }
 
+    public function actionEdit_images_news() {
+        $news_id = $_GET['news_id'];
+        $news = new NewsModels();
+
+        $data['news'] = $news->Get_images_by_id($news_id);
+        $data['news_id'] = $news_id;
+        $this->render("//news/news_edit_images", $data);
+    }
+
+    public function actionDelete_img_new() {
+        $News_Image_id = $_POST['News_Image_id'];
+
+        $sql = "SELECT News_Image FROM News_Images WHERE News_Image_id = '$News_Image_id' ";
+        $rs = Yii::app()->db->createCommand($sql)->queryRow();
+
+
+        if (!empty($rs['News_Image'])) {
+            unlink("./upload_news/" . $rs['News_Image']);
+        }
+
+        Yii::app()->db->createCommand()
+                ->delete("News_Images", "News_Image_id = '$News_Image_id' ");
+    }
+
+    public function actionDelete_news() {
+        $news_id = $_POST['News_id'];
+        $sql = "SELECT News_Image FROM News_Images WHERE News_id = '$news_id' ";
+        $result = Yii::app()->db->createCommand($sql)->queryAll();
+
+
+        foreach ($result as $rs) {
+            unlink("./upload_news/" . $rs['News_Image']);
+        }
+
+        Yii::app()->db->createCommand()
+                ->delete("News", "News_id = '$news_id' ");
+    }
+
 }
