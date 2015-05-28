@@ -35,6 +35,7 @@ $this->breadcrumbs = array(
                 <?php
                 $i = 1;
                 $lib = new Lib();
+                $newsmodel = new NewsModels();
                 foreach ($news as $rs):
                     ?>
                     <tr>
@@ -42,7 +43,15 @@ $this->breadcrumbs = array(
                             <a href="index.php?r=News/detail_news&News_id=<?php echo $rs['News_id'] ?>">
                                 <div class="row">
                                     <div class="col-sm-1">
-                                        <img src="<?php echo Yii::app()->baseUrl; ?>/assets/jquery.picture.cut/uploads_images_user/avatar5.png" class="responsive" width="60"/>
+                                        <?php
+                                        $first = $newsmodel->Get_first_news($rs['News_id']);
+                                        if ($first != 0) {
+                                            ?>
+                                            <img src="<?php echo Yii::app()->baseUrl; ?>/upload_news/<?php echo $first; ?>" class="responsive" width="60"/>
+                                            <br/>
+                                        <?php } else { ?>
+                                            <img src="<?php echo Yii::app()->baseUrl; ?>/images/no_photo_icon.png" class="responsive" width="60"/>
+                                        <?php } ?>
                                     </div>
                                     <div class="col-sm-11">
                                         <b><i class="fa fa-newspaper-o"></i> <?php echo $rs['News_Head']; ?></b><br/>
