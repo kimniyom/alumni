@@ -58,7 +58,11 @@
         <link href="<?php echo Yii::app()->baseUrl; ?>/css/bootstrap-tree.css" rel="stylesheet">
         <script type="text/javascript" charset="utf8" src="<?php echo Yii::app()->baseUrl; ?>/js/bootstrap-tree.js"></script>
 
-
+        <!--
+        Photo Album
+        -->
+        <script type="text/javascript" charset="utf8" src="<?php echo Yii::app()->baseUrl; ?>/assets/bootstrap-photo-gallery/photo-gallery.js"></script>
+        
         <script type="text/javascript">
             function CheckNum() {
                 if (event.keyCode < 48 || event.keyCode > 57) {
