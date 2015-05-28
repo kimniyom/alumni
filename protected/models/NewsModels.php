@@ -85,6 +85,7 @@ class NewsModels extends CActiveRecord {
         $rs = Yii::app()->db->createCommand($query)->queryRow();
         return $rs;
     }
+<<<<<<< HEAD
 
     function Get_images_by_id($news_id = '') {
         $query = "SELECT * FROM News_Images WHERE News_id = '$news_id' ";
@@ -105,3 +106,6 @@ class NewsModels extends CActiveRecord {
     }
 
 }
+=======
+}
+>>>>>>> origin/master
