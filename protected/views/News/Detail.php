@@ -126,17 +126,17 @@ $this->breadcrumbs = array(
         </div>
 
         <!-- รูปภาพข่าว -->
-        <div class="container">
+        
             <div class="album">
                 <ul class="row">
                     <?php foreach ($news_images as $img_news): ?>
-                        <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
+                        <li class="col-lg-3 col-md-3 col-sm-3 col-xs-4">
                             <img src="<?php echo Yii::app()->baseUrl; ?>/upload_news/<?php echo $img_news['News_Image'] ?>" class="img-responsive"/>
                         </li>
                     <?php endforeach; ?>
                 </ul>
             </div>
-        </div>
+      
 
         <hr>
         <!-- Comment -->
@@ -187,20 +187,24 @@ $this->breadcrumbs = array(
     </div>
     <div class="container-fluid" style=" margin-top: 10px;">
         <?php foreach ($News_jam as $newsAll) { ?>
-            <div class="col-md-3 col-sm-3">
-                <?php
-                $first_jam = $news->Get_first_news($newsAll['News_id']);
-                if ($first_jam != 0) {
-                    ?>
-                    <img src="<?php echo Yii::app()->baseUrl; ?>/upload_news/<?php echo $first_jam ?>" class="img-responsive"/>
-                <?php } else { ?>
-                    <img src="<?php echo Yii::app()->baseUrl; ?>/images/no_photo_icon.png" class="img-responsive"/>
-                <?php } ?>
-                <a href="index.php?r=News/Detail_News&News_id=<?php echo $newsAll['News_id'] ?>">
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
                     <?php
-                    echo $newsAll['News_Head'];
-                    ?>
-                </a>
+                    $first_jam = $news->Get_first_news($newsAll['News_id']);
+                    if ($first_jam != 0) {
+                        ?>
+                        <img src="<?php echo Yii::app()->baseUrl; ?>/upload_news/<?php echo $first_jam ?>" class="img-responsive"/>
+                    <?php } else { ?>
+                        <img src="<?php echo Yii::app()->baseUrl; ?>/images/no_photo_icon.png" class="img-responsive"/>
+                    <?php } ?>
+                    <div class="caption">
+                        <a href="index.php?r=News/Detail_News&News_id=<?php echo $newsAll['News_id'] ?>">
+                            <?php
+                            echo $newsAll['News_Head'];
+                            ?>
+                        </a>
+                    </div>
+                </div>
             </div>
 
         <?php } ?>
