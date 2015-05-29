@@ -31,6 +31,9 @@
                 รุ่น : <?php echo $senior['GenNumber']; ?>
             </div>
         </div>
+
+        <a href="Javascript:void(0);" onclick="dialog_senior();"><i class="fa fa-plus"></i> เพิ่มพี่รหัส</a>
+
     <?php } else { ?>
         <div class="col-lg-4 col-sm-4">
             <center>
@@ -39,16 +42,17 @@
         </div>
         <div class="col-lg-8 col-sm-8">
             <?php if (Yii::app()->session['collegian_code'] == $collegian_code) { ?>
-            <a href="Javascript:void(0);" onclick="dialog_senior();">
-                <div class="well" style=" border: dashed 2px #809deb; color: #7d7e80; text-align: center;">
-                    <i class="fa fa-plus fa-5x"></i> <br/>
-                    <h3>เพิ่มพี่รหัส</h3>
-                </div>
-            </a>
-            <?php } else { 
+                <a href="Javascript:void(0);" onclick="dialog_senior();">
+                    <div class="well" style=" border: dashed 2px #809deb; color: #7d7e80; text-align: center;">
+                        <i class="fa fa-plus fa-5x"></i> <br/>
+                        <h3>เพิ่มพี่รหัส</h3>
+                    </div>
+                </a>
+                <?php
+            } else {
                 echo "ไม่มีข้อมูล";
             }
-?>
+            ?>
         </div>
     <?php } ?>
 </div>
