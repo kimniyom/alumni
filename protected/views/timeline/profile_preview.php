@@ -197,66 +197,71 @@
                     </div>
                 </div>
 
-                <div class="panel panel-default">
-                    <div class="panel-heading"><h4><i class="fa fa-group"></i> พี่รหัส</h4></div>
-                    <div class="panel-body">
-                        <div id="senior_code"></div>
-                    </div>
-                </div>
-
-                <div class="panel panel-default">
-                    <div class="panel-heading"> <h4><i class="fa fa-sitemap"></i> สายรหัส</h4></div>
-                    <div class="panel-body">
-                        <div class="row">
-                            <center>
-                                <div class="col-lg-4 col-sm-4">
-                                    <div id="codeline_up1"></div>
-                                </div>
-                                <div class="col-lg-4 col-sm-4">
-                                    <div id="codeline_up2"></div> 
-                                </div>
-                                <div class="col-lg-4 col-sm-4">
-                                    <div id="codeline_up3"></div>
-                                </div>
-                            </center>
-                        </div>
-                        <div class="row" style=" margin-bottom:10px;">
-                            <center>
-                                <div class="col-lg-4 col-sm-4">
-                                    <i class="fa fa-arrow-up"></i><br/>
-                                    <?php if (isset($detail['img_profile'])) { ?>
-                                        <img src="<?php echo $croup . '/uploads/' . $detail['img_profile']; ?>" class="img-rounded" width="100"> 
-                                    <?php } else { ?>
-                                        <i class="fa fa-user fa-5x"></i>
-                                    <?php } ?>
-
-                                    <br/>
-                                    <i class="fa fa-arrow-down"></i><br/>
-                                </div>
-                                <div class="col-lg-4 col-sm-4">
-
-                                </div>
-                                <div class="col-lg-4 col-sm-4">
-
-                                </div>
-                            </center>
-                        </div>
-                        <div class="row" style="text-align: center;">
-                            <center>
-                                <div class="col-lg-4 col-sm-4">
-                                    <div id="codeline_down1"></div>
-                                </div>
-                                <div class="col-lg-4 col-sm-4">
-                                    <div id="codeline_down2"></div> 
-                                </div>
-                                <div class="col-lg-4 col-sm-4">
-                                    <div id="codeline_down3"></div>
-                                </div>
-                            </center>
+                <?php if (Yii::app()->session['user'] != "M"): ?>
+                    <div class="panel panel-default">
+                        <div class="panel-heading"><h4><i class="fa fa-group"></i> พี่รหัส</h4></div>
+                        <div class="panel-body">
+                            <div id="senior_code"></div>
                         </div>
                     </div>
-                </div>
 
+                    <div class="panel panel-default">
+                        <div class="panel-heading"> <h4><i class="fa fa-sitemap"></i> สายรหัส</h4></div>
+                        <div class="panel-body">
+                            <!-- พี่รหัส -->
+                            <div class="row">
+                                <center>
+                                    <div class="col-lg-4 col-sm-4">
+                                        <div id="codeline_up1"></div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-4">
+                                        <div id="codeline_up2"></div> 
+                                    </div>
+                                    <div class="col-lg-4 col-sm-4">
+                                        <div id="codeline_up3"></div>
+                                    </div>
+                                </center>
+                            </div>
+
+                            <div class="row" style=" margin-bottom:10px;">
+                                <center>
+                                    <div class="col-lg-4 col-sm-4">
+                                        <i class="fa fa-arrow-up"></i><br/>
+                                        <?php if (isset($detail['img_profile'])) { ?>
+                                            <img src="<?php echo $croup . '/uploads/' . $detail['img_profile']; ?>" class="img-rounded" width="100"> 
+                                        <?php } else { ?>
+                                            <i class="fa fa-user fa-5x"></i>
+                                        <?php } ?>
+
+                                        <br/>
+                                        <i class="fa fa-arrow-down"></i><br/>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-4">
+
+                                    </div>
+                                    <div class="col-lg-4 col-sm-4">
+
+                                    </div>
+                                </center>
+                            </div>
+                            <!-- น้องรหัส -->
+                            <div class="row" style="text-align: center;">
+                                <center>
+                                    <div class="col-lg-4 col-sm-4">
+                                        <div id="codeline_down1"></div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-4">
+                                        <div id="codeline_down2"></div> 
+                                    </div>
+                                    <div class="col-lg-4 col-sm-4">
+                                        <div id="codeline_down3"></div>
+                                    </div>
+                                </center>
+                            </div>
+
+                        </div>
+                    </div>
+                <?php endif; ?>
                 <!--
                    ผลงาน
                 -->
