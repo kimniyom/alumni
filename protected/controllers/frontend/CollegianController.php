@@ -85,9 +85,7 @@ class CollegianController extends Controller {
 
     public function actionEdit_password() {
 
-        if (isset(Yii::app()->session['user'])) {
-            return true;
-        } else {
+        if (empty(Yii::app()->session['user'])) {
             //$this->render('//site/main');
             $this->redirect(array('site/main'));
         }
