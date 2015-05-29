@@ -83,9 +83,9 @@
                         <i class="fa fa-arrow-left"></i> กลับหน้าเว็บไซต์
                     </a>
                 </div><!-- /.social-auth-links -->
-                
-                <a href="#">? ลืมรหัสผ่าน</a><br>
- 
+
+                <a href="index.php?r=Forgot/Collegian">? ลืมรหัสผ่าน</a><br>
+
             </div><!-- /.login-box-body -->
         </div><!-- /.login-box -->
 
