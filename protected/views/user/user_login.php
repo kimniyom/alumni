@@ -85,6 +85,8 @@
                         <i class="fa fa-arrow-left"></i> กลับหน้าเว็บไซต์
                     </a>
                 </div><!-- /.social-auth-links -->
+                
+                <a href="index.php?r=Forgot/user">? ลืมรหัสผ่าน</a><br>
 
             </div><!-- /.login-box-body -->
         </div><!-- /.login-box -->
