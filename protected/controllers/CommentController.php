@@ -32,4 +32,18 @@ class CommentController extends Controller {
         $this->renderPartial("//comment/view", $data);
     }
 
+    public function actionEdit_comment() {
+        $id = $_POST['id'];
+        $columns = array("comment" => $_POST['comment']);
+
+        Yii::app()->db->createCommand()
+                ->update("news_comment", $columns, "id = '$id' ");
+    }
+
+    public function actionDelete_comment() {
+        $id = $_POST['id'];
+        Yii::app()->db->createCommand()
+                ->delete("news_comment", "id = '$id' ");
+    }
+
 }
