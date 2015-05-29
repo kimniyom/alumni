@@ -80,7 +80,8 @@ function add_senior(line_id, senior_code, gennumber) {
 
     $.post(url, data, function (success) {
         get_senior();
-        $("#dialog_senior").modal("hide");
+        window.location.reload();
+        //$("#dialog_senior").modal("hide");
     });
 }
 
