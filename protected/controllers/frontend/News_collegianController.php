@@ -1,6 +1,6 @@
 <?php
 
-class News_CollegianController extends Controller {
+class News_collegianController extends Controller {
 
     public $layout = "profile";
 
