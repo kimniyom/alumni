@@ -99,7 +99,14 @@ Class NewsController extends Controller {
         $cat_id = $data['News']['News_Catagory_id'];
         $data['News_jam'] = $news->findAll("News_Catagory_id = '$cat_id' AND News_id >= '$start' AND News_id <='$end' AND News_id != '$News_id' ");
         $data['news_images'] = $news->Get_images_by_id($News_id);
-
+        
+        //อัพเดท คนอ่าน
+        $read = $news->Maxread($News_id);
+        $new_read = ($read + 1);
+        $columns = array("Read_news" => $new_read);
+        Yii::app()->db->createCommand()
+                ->update("News", $columns,"News_id = '$News_id' ");
+        
         if ($data['News']['News_Catagory_id'] == "2" && Yii::app()->session['user'] == "") {
             $this->redirect(array('site/main'));
         }

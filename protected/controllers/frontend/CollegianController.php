@@ -69,7 +69,8 @@ class CollegianController extends Controller {
         $result = Yii::app()->db->createCommand($sql)->queryRow();
 
         if ($result) {
-            unlink(Yii::app()->basePath . "/../assets/jquery.picture.cut/uploads/" . $result['img_profile']);
+            unlink("./assets/jquery.picture.cut/uploads/" . $result['img_profile']);
+            //unlink(Yii::app()->basePath . "/../assets/jquery.picture.cut/uploads/" . $result['img_profile']);
             $column = array("img_profile" => $img_profile);
             Yii::app()->db->createCommand()
                     ->update("images_profile", $column, " collegian_code='$collegiancode' ");
@@ -141,6 +142,7 @@ class CollegianController extends Controller {
         $data['GenNumber_senior'] = $GenNumberSenior;
         $data['collegian_code'] = $collegiancode;
         $data['senior'] = $codeline->get_senior_all($GenNumberSenior); //ดึงข้อมูลรุ่นพี่ก่อนหน้ามาแสดง
+        $data['senior_in_collegian'] = $codeline->get_senior_in_collegian($collegiancode); //พี่รหัสที่เลือกไว้แล้ว
         $this->renderPartial('//codeline/get_senior_all', $data);
     }
 
@@ -183,7 +185,7 @@ class CollegianController extends Controller {
     public function actionCodeline_down1() {
         $collegian_code = $_POST['collegian_code'];
         $codeline = new Codeline();
-        $data['senior1'] = $codeline->get_collegian_down($collegian_code);
+        $data['senior'] = $codeline->get_collegian_down($collegian_code);
         $data['collegian_code'] = $collegian_code;
         $this->renderPartial('//codeline/codeline_down1', $data);
     }

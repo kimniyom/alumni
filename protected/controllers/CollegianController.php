@@ -224,4 +224,59 @@ class CollegianController extends Controller {
         $this->render('//admin/edit_collegian', $data);
     }
 
+    public function actionDelete_collegian() {
+        $collegian = new Collegian();
+        $collegiancode = $_POST['collegian_code'];
+
+        $detail = $collegian->Get_Collegian_By_CollegianCode($collegiancode);
+        //Check Profile 
+        $sql = "SELECT * FROM images_profile WHERE collegian_code = '$collegiancode' ";
+        $result = Yii::app()->db->createCommand($sql)->queryRow();
+
+        //ลบรูป
+        if ($result) {
+            unlink(Yii::app()->basePath . "/../assets/jquery.picture.cut/uploads/" . $result['img_profile']);
+            Yii::app()->db->createCommand()
+                    ->delete("images_profile", " collegian_code='$collegiancode' ");
+        }
+
+        //ลบข้อความทั้งหมดที่นักศึกษาคนนี้ส่ง
+        Yii::app()->db->createCommand()
+                ->delete("posts", "sender_code = '" . $detail['id'] . "' AND sender_status = 'U' ");
+
+        //ลบข่าว
+        //Check Profile 
+        $sqlNews = "SELECT * FROM News WHERE News_Owner = '$collegiancode' ";
+        $resultNews = Yii::app()->db->createCommand($sqlNews)->queryAll();
+
+        foreach ($resultNews as $dnews) {
+            $sqlImgNews = "SELECT News_Image FROM News_Images WHERE News_id = '" . $dnews['News_id'] . "' ";
+            $resultImgNews = Yii::app()->db->createCommand($sqlImgNews)->queryAll();
+
+
+            foreach ($resultImgNews as $rsimgNews) {
+                unlink("./upload_news/" . $rsimgNews['News_Image']);
+            }
+            //ลบออกจากตารางข่าว
+            Yii::app()->db->createCommand()
+                    ->delete("News", "News_id = '" . $dnews['News_id'] . "' ");
+
+            //ลบออกจากตารางรูปข่าว
+            Yii::app()->db->createCommand()
+                    ->delete("News_Images", "News_id = '" . $dnews['News_id'] . "' ");
+        }
+
+        //ลบcomment ข่าว
+        Yii::app()->db->createCommand()
+                ->delete("news_comment", "owner_id = '$collegiancode' ");
+
+        //ลบจากสายรหัส 
+        Yii::app()->db->createCommand()
+                ->delete("codeline", "collegian_code = '$collegiancode' OR senior_code = '$collegiancode' ");
+
+        //ลบจากตารางหลัก
+        Yii::app()->db->createCommand()
+                ->delete("collegian", "collegian_code = '$collegiancode' ");
+    }
+
 }
