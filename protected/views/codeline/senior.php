@@ -18,19 +18,27 @@
 
 <?php $croup = Yii::app()->baseUrl . "/assets/jquery.picture.cut/"; ?>
 <div class="row">
-    <?php if ($senior != 0) { ?>
-        <div class="col-lg-4 col-sm-4" style="padding-top: 0px;">
-            <center>
-                <img src="<?php echo $croup; ?>/uploads/<?php echo $senior['img_profile'] ?>" class="img-rounded" style="margin-top: 0px; width: 100px;">
-            </center>
-        </div>
-        <div class="col-lg-8 col-sm-8">
-            <div class="alert alert-warning" style=" margin-top: 10px;">
-                รหัสนักศึกษา : <?php echo $senior['collegian_code']; ?><br/>
-                ชื่อ - สกุล : <?php echo $senior['collegian_name'] . ' ' . $senior['collegian_name']; ?><br/>
-                รุ่น : <?php echo $senior['GenNumber']; ?>
+    <?php if (!empty($senior)) { ?>
+
+        <?php foreach ($senior as $rs): ?>
+            <div class="col-lg-4 col-sm-4" style="padding-top: 0px;">
+                <center>
+                    <?php if ($rs['img_profile'] != "") { ?>
+                        <img src="<?php echo $croup; ?>/uploads/<?php echo $rs['img_profile'] ?>" class="img-rounded" style="margin-top: 0px; width: 100px;">
+                    <?php } else { ?>
+                        <img src="<?php echo Yii::app()->baseUrl; ?>/images/User-blue-icon.png" class="img-rounded"> 
+                    <?php } ?>
+                </center>
             </div>
-        </div>
+            <div class="col-lg-8 col-sm-8">
+                <div class="alert alert-warning" style=" margin-top: 10px;">
+                    รหัสนักศึกษา : <?php echo $rs['collegian_code']; ?><br/>
+                    ชื่อ - สกุล : <?php echo $rs['collegian_name'] . ' ' . $rs['collegian_name']; ?><br/>
+                    รุ่น : <?php echo $rs['GenNumber']; ?>
+                </div>
+            </div>
+
+        <?php endforeach; ?>
 
         <a href="Javascript:void(0);" onclick="dialog_senior();"><i class="fa fa-plus"></i> เพิ่มพี่รหัส</a>
 
