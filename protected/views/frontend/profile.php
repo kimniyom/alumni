@@ -173,15 +173,7 @@
                     <div class="panel-body">
                         <div class="row">
                             <center>
-                                <div class="col-lg-4 col-sm-4">
-                                    <div id="codeline_up1"></div>
-                                </div>
-                                <div class="col-lg-4 col-sm-4">
-                                    <div id="codeline_up2"></div> 
-                                </div>
-                                <div class="col-lg-4 col-sm-4">
-                                    <div id="codeline_up3"></div>
-                                </div>
+                                <div id="codeline_up1"></div>
                             </center>
                         </div>
                         <div class="row" style=" margin-bottom:10px;">
@@ -207,15 +199,7 @@
                         </div>
                         <div class="row" style="text-align: center;">
                             <center>
-                                <div class="col-lg-4 col-sm-4">
-                                    <div id="codeline_down1"></div>
-                                </div>
-                                <div class="col-lg-4 col-sm-4">
-                                    <div id="codeline_down2"></div> 
-                                </div>
-                                <div class="col-lg-4 col-sm-4">
-                                    <div id="codeline_down3"></div>
-                                </div>
+                                <div id="codeline_down1"></div>
                             </center>
                         </div>
                     </div>

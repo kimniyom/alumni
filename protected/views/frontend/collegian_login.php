@@ -43,10 +43,16 @@
 
         </script>
     </head>
-    <body class="login-page">
+    <body class="login-page" style=" background: url('<?php echo Yii::app()->baseUrl; ?>/images/Sciencebg.jpg') no-repeat center center fixed; 
+          -webkit-background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+          background-size: cover;
+          margin-bottom:0px; 
+          margin-top: 0px; ">
         <div class="login-box">
             <div class="login-logo">
-                <a href="#">
+                <a href="#" style=" color: #FFF;">
                     <img src="<?php echo $path; ?>dist/img/Student-icon.png" class="img-circle" alt="User Image" width="80"/><br/>
                     <b>เข้าสู่ระบบ</b>นักศึกษา</a>
             </div><!-- /.login-logo -->

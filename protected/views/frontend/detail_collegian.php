@@ -1,14 +1,16 @@
 <?php $lib = new Lib(); ?>
 <p class="list-group-item">รหัสนักศึกษา : <?php echo $detail['collegian_code']; ?></p>
-<p class="list-group-item">วันเกิด : 
-    <?php
-    if (isset($detail['collegian_birth'])) {
-        echo $lib->thaidate($detail['collegian_birth']);
-    } else {
-        echo "-";
-    }
-    ?>
-</p>
+<?php if (Yii::app()->session['user'] != "M") { ?>
+    <p class="list-group-item">วันเกิด : 
+        <?php
+        if (isset($detail['collegian_birth'])) {
+            echo $lib->thaidate($detail['collegian_birth']);
+        } else {
+            echo "-";
+        }
+        ?>
+    </p>
+<?php } ?>
 <p class="list-group-item">อายุ : 
     <?php
     if (isset($detail['collegian_birth'])) {
@@ -30,8 +32,10 @@
 <p class="list-group-item">
     <label>ที่อยู่ </label><br/>
     จังหวัด : <?php echo $detail['changwat_name']; ?>
-    อำเภอ : <?php echo $detail['ampur_name']; ?>
-    ตำบล : <?php echo $detail['tambon_name']; ?>
+    <?php if (Yii::app()->session['user'] != "M") { ?>
+        อำเภอ : <?php echo $detail['ampur_name']; ?>
+        ตำบล : <?php echo $detail['tambon_name']; ?>
+    <?php } ?>
 </p>
 
 <?php if (Yii::app()->session['collegian_code'] == $detail['collegian_code']) { ?>
