@@ -62,7 +62,7 @@
         Photo Album
         -->
         <script type="text/javascript" charset="utf8" src="<?php echo Yii::app()->baseUrl; ?>/assets/bootstrap-photo-gallery/photo-gallery.js"></script>
-        
+
         <script type="text/javascript">
             function CheckNum() {
                 if (event.keyCode < 48 || event.keyCode > 57) {
@@ -100,8 +100,13 @@
 
     <body style="background: #ecf0f5;">
 
+
         <div class="navbar navbar-default" style=" margin-bottom: 0px; background: none;"></div>
-        <div class="navbar navbar-default navbar-fixed-top" style=" background:url('<?php echo $path; ?>images/bg-green.jpg')#1d9d74; box-shadow:0px 0px 3px 0px #666666; border-bottom: none;">
+        <div class="navbar navbar-default navbar-fixed-top" style="border-bottom:none;  background: url('<?php echo $path; ?>images/9011116378_32e56983e3_b.jpg') no-repeat center center fixed; 
+             -webkit-background-size: cover;
+             -moz-background-size: cover;
+             -o-background-size: cover;
+             background-size: cover;">
             <div class="container">
                 <div class="navbar-header">
                     <a href="../" class="navbar-brand" style=" font-weight: bold;">
@@ -115,18 +120,7 @@
                     </button>
                 </div>
                 <div class="navbar-collapse collapse" id="navbar-main">
-                    <ul class="nav navbar-nav">
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="link">เกี่ยวกับเว็บไซต์ <span class="caret"></span></a>
-                            <ul class="dropdown-menu" aria-labelledby="themes">
-                                <li><a href="../default/">Default</a></li>
-                                <li><a href="../cerulean/">Cerulean</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="../help/" id="link">ติดต่อ</a>
-                        </li>
-                    </ul>
+
 
                     <ul class="nav navbar-nav navbar-right">
                         <?php if (Yii::app()->session['user'] == '') { ?>
@@ -161,41 +155,104 @@
         <!--
         Start Banner By Kimniyom
         -->
-        <div class="row" style="background:url('<?php echo $path; ?>images/bg-green.jpg'); margin-bottom:0px; margin-top: 0px;" id="banner">
+        <div class="row" style="
+             background: url('<?php echo $path; ?>images/9011116378_32e56983e3_b.jpg') no-repeat center center fixed; 
+             -webkit-background-size: cover;
+             -moz-background-size: cover;
+             -o-background-size: cover;
+             background-size: cover;
+             margin-bottom:0px; margin-top: 0px;" id="banner">
             <div class="container">
                 <div class="row carousel-holder">
                     <div class="col-md-12">
                         <center>
                             <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                                 <div class="carousel-inner" style="height: 300px;">
-                                    <?php
-                                    for ($i = 0; $i <= 2; $i++) {
-                                        if ($i == '0') {
-                                            $class = "item active";
-                                        } else {
-                                            $class = "item";
-                                        }
-                                        ?>
-                                        <div class="<?php echo $class; ?>" style="color:#FFF;">
-                                            <div class="row">
-                                                <div class=" col-md-7 col-sm-7" style=" text-align: left;">
-                                                    <h1 style="color:#FFF; text-shadow:2px 1px #000;">วิทยาการคอมพิวเตอร์ จบแล้วทำงานอะไร</h1>
-                                                    <br/>
-                                                    <div class="alert alert-success">
-                                                        <p style=" font-size: 18px;text-indent: 2.5em;">
-                                                            สาขานี้เรียนอะไร
-                                                            สาขาวิทยาการคอมพิวเตอร์ เป็นสาขาที่เรียนเกี่ยวกับทฤษฎีการคำนวณสำหรับคอมพิวเตอร์
-                                                            ทฤษฎีการประมวลผลสารสนเทศ ทั้งด้านซอฟต์แวร์ ฮาร์ดแวร์ และ เครือข่าย 
-                                                            ซึ่งประกอบด้วยหลายหัวข้อที่เกี่ยวข้องกับคอมพิวเตอร์.</dd>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                                <div class=" col-md-5 col-sm-5">
-                                                    <img src="<?php echo Yii::app()->baseUrl; ?>/images/devices3.png" height="250" style=" margin-top: 10px;"/>
+
+                                    <div class="item active" style="color:#FFF;">
+                                        <div class="row">
+                                            <div class=" col-md-7 col-sm-7" style=" text-align: left;">
+                                                <h1 style="color:#FFF; text-shadow:2px 1px #000;">วิทยาการคอมพิวเตอร์ จบแล้วทำงานอะไร</h1>
+                                                <br/>
+                                                <div class="alert">
+                                                    <p style=" font-size: 18px;text-indent: 2.5em;">
+                                                        สาขานี้เรียนอะไร
+                                                        สาขาวิทยาการคอมพิวเตอร์ เป็นสาขาที่เรียนเกี่ยวกับทฤษฎีการคำนวณสำหรับคอมพิวเตอร์
+                                                        ทฤษฎีการประมวลผลสารสนเทศ ทั้งด้านซอฟต์แวร์ ฮาร์ดแวร์ และ เครือข่าย 
+                                                        ซึ่งประกอบด้วยหลายหัวข้อที่เกี่ยวข้องกับคอมพิวเตอร์.</dd>
+                                                    </p>
                                                 </div>
                                             </div>
-                                        </div> 
-                                    <?php } ?>
+                                            <div class=" col-md-5 col-sm-5">
+                                                <img src="<?php echo Yii::app()->baseUrl; ?>/images/devices3.png" height="250" style=" margin-top: 10px;"/>
+                                            </div>
+                                        </div>
+                                    </div> 
+
+                                    <div class="item" style="color:#FFF;">
+                                        <div class="row">
+                                            <div class=" col-md-5 col-sm-5">
+                                                <img src="<?php echo Yii::app()->baseUrl; ?>/images/Science.jpg" height="250" style=" margin-top: 25px;"/>
+                                            </div>
+                                            <div class=" col-md-7 col-sm-7" style=" text-align: left;">
+                                                <h1 style="color:#FFF; text-shadow:2px 1px #000;">สาขาวิทยาการคอม มีชื่อเรียกอีกชื่อว่า ...</h1>
+                                                <br/>
+                                                <div class="alert">
+                                                    <p style=" font-size: 18px;text-indent: 2.5em;">
+                                                        สาขาวิทยาการคอมพิวเตอร์ มีชื่อเรียกอีกชื่อว่า <font style="color:#ffff33;">วิทยาศาสตร์คอมพิวเตอร์(Computer science)</font>
+                                                        ส่วนภาษาฝรั่งเศสจะใช้คำว่า Informatique ซึ่งมาจากคำว่า "information" (สารสนเทศ) รวมกับ "automatique" (อัตโนมัติ) 
+                                                        โดย Philippe Dreyfus  โดยคำนี้ก็ได้ใช้ในภาษาอิตาลีเป็นคำว่า Informatica ส่วนในภาษาสเปนจะเป็น Informatica 
+                                                        และในภาษาเยอรมันคือ Informatik ซึ่งดูรวม ๆ แล้วก็เป็นความหมายในทิศทางเดียวกัน</dd>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
+
+                                    <div class="item" style="color:#FFF;">
+                                        <div class="row">
+                                            <div class=" col-md-7 col-sm-7" style=" text-align: left;">
+                                                <h1 style="color:#FFF; text-shadow:2px 1px #000;">สาขานี้เรียนอะไร?</h1>
+                                                <br/>
+                                                <div class="alert">
+                                                    <p style=" font-size: 18px;text-indent: 2.5em;">
+                                                        สาขาวิทยาการคอมพิวเตอร์ เป็นสาขาที่เรียนเกี่ยวกับทฤษฎีการคำนวณสำหรับคอมพิวเตอร์ 
+                                                        ทฤษฎีการประมวลผลสารสนเทศ ทั้งด้านซอฟต์แวร์ ฮาร์ดแวร์ และ เครือข่าย ซึ่งประกอบด้วยหลายหัวข้อที่เกี่ยวข้องกับคอมพิวเตอร์ 
+                                                        เช่น การวิเคราะห์และสังเคราะห์ขั้นตอนวิธี ทฤษฎีภาษาโปรแกรม ทฤษฎีการพัฒนาซอฟต์แวร์ ทฤษฎีฮาร์ดแวร์คอมพิวเตอร์ 
+                                                        และ ทฤษฎีเครือข่าย เป็นต้น</dd>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class=" col-md-5 col-sm-5">
+                                                <img src="<?php echo Yii::app()->baseUrl; ?>/images/computer-icon.png" height="250" style=" margin-top: 10px;"/>
+                                            </div>
+                                        </div>
+                                    </div> 
+
+                                    <div class="item" style="color:#FFF;">
+                                        <div class="row">
+                                            <div class=" col-md-7 col-sm-7">
+                                                <img src="<?php echo Yii::app()->baseUrl; ?>/images/network.jpg" height="250" style=" margin-top: 25px;"/>
+                                            </div>
+                                            <div class=" col-md-5 col-sm-5" style=" text-align: left;">
+                                                <h1 style="color:#FFF; text-shadow:2px 1px #000;">สาขาที่เกี่ยวข้อง ..</h1>
+                                                <br/>
+                                                <div class="alert">
+                                                    <p style=" font-size: 18px;text-indent: 2.5em;">
+                                                    <ul>
+                                                        <li>วิศวกรรมคอมพิวเตอร์</li>
+                                                        <li>วิศวกรรมซอฟต์แวร์  </li>
+                                                        <li>วิทยาการสารสนเทศ  </li>
+                                                        <li>เทคโนโลยีสารสนเทศ  </li>
+                                                        <li>ระบบสารสนเทศ  </li>
+                                                        <li>ระบบสารสนเทศเพื่อการจัดการ  </li>
+                                                    </ul>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
+
                                 </div>
                                 <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
                                     <span class="glyphicon glyphicon-chevron-left"></span>
@@ -262,16 +319,25 @@
                     </div>
                         -->
                         <?php if (Yii::app()->session['user'] != "") { ?>
-                            <a href="<?php echo Yii::app()->createUrl('frontend/search/search_collegian') ?>">
-                                <div class="btn btn-info" style=" width: 100%; margin-bottom: 20px;">
-                                    <i class="fa fa-search"></i> ค้นหาข้อมูลศิษย์เก่า
+                            <div class="box box-danger">
+                                <div class="box-header with-border">
+                                    <h4 style=" margin: 2px;">
+                                        <i class="fa fa-search-plus"></i> ค้นหา
+                                    </h4>
                                 </div>
-                            </a>
+                                <div class="box-body">
+                                    <a href="<?php echo Yii::app()->createUrl('frontend/search/search_collegian') ?>">
+                                        <div class="btn btn-info" style=" width: 100%; margin-bottom: 20px;">
+                                            <i class="fa fa-search"></i> ค้นหาข้อมูลศิษย์เก่า
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
                         <?php } ?>
                         <!-- USERS LIST -->
                         <div class="box box-danger">
                             <div class="box-header with-border">
-                                <h3 class="box-title">สมาชิกใหม่</h3>
+                                <h3 class="box-title"><i class="fa fa-group"></i> สมาชิกใหม่</h3>
                                 <div class="box-tools pull-right">
                                     <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                                 </div>
@@ -342,13 +408,48 @@
         </div>
 
 
-        <div class="row" 
-             style="background:url('<?php echo $path; ?>images/bg-green.jpg'); 
-             margin-bottom:0px; margin-top: 0px; border-top: solid 3px #FFF;
+
+        <div class="navbar navbar-default" 
+             style="
+             background: url('<?php echo Yii::app()->baseUrl; ?>/images/9011116378_32e56983e3_b.jpg') no-repeat center center fixed; 
+             -webkit-background-size: cover;
+             -moz-background-size: cover;
+             -o-background-size: cover;
+             background-size: cover;
+             margin-bottom:0px; 
+             margin-top: 0px; 
+             border-top: solid 3px #FFF;
+             border-right:none;
              ">
-            <div class="container" style=" height: 150px;"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4" style=" color: #FFF;" id="site">
+                        สาขาที่เกียวข้อง
+                        <ul>
+                            <li>วิศวกรรมคอมพิวเตอร์</li>
+                            <li>วิศวกรรมซอฟต์แวร์</li>
+                            <li>วิทยาการสารสนเทศ</li>
+                            <li>เทคโนโลยีสารสนเทศ</li>
+                            <li>ระบบสารสนเทศ</li>
+                            <li>ระบบสารสนเทศเพื่อการจัดการ</li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-4">
+                        <p style=" margin-top: 100px; text-align: right; color: #FFF;">
+                            &COPY; สงวนลิขสิทธิ์<br/>เว็บไซต์ระบบทะเบียน ศิษย์เก่า 
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </body>
+
+    <script src="<?php echo Yii::app()->baseUrl;?>/assets/bootstrap-autohidingnavbar/src/jquery.bootstrap-autohidingnavbar.js"></script>
+
+    <script>
+            $("div.navbar-fixed-top").autoHidingNavbar();
+    </script>
 
 </html>
 
