@@ -119,24 +119,27 @@ $this->breadcrumbs = array(
                 <?php } ?>
             </center>
             <?php echo $News['News_Detail']; ?><br/>
+
             <p style=" float: right;">
+                <span class="label label-info">อ่าน <?php echo $news->Maxread($News['News_id']); ?></span>
+                <span class="label label-danger">ตอบ <?php echo $news->Countpost($News['News_id']); ?></span>
                 อัพเดทเมื่อ 
                 <?php echo $lib->thaidate($News['CreateNews_Date']); ?>
             </p><br/>
         </div>
 
         <!-- รูปภาพข่าว -->
-        
-            <div class="album">
-                <ul class="row">
-                    <?php foreach ($news_images as $img_news): ?>
-                        <li class="col-lg-3 col-md-3 col-sm-3 col-xs-4">
-                            <img src="<?php echo Yii::app()->baseUrl; ?>/upload_news/<?php echo $img_news['News_Image'] ?>" class="img-responsive"/>
-                        </li>
-                    <?php endforeach; ?>
-                </ul>
-            </div>
-      
+
+        <div class="album">
+            <ul class="row">
+                <?php foreach ($news_images as $img_news): ?>
+                    <li class="col-lg-3 col-md-3 col-sm-3 col-xs-4">
+                        <img src="<?php echo Yii::app()->baseUrl; ?>/upload_news/<?php echo $img_news['News_Image'] ?>" class="img-responsive"/>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+
 
         <hr>
         <!-- Comment -->
