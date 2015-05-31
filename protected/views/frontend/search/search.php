@@ -3,12 +3,12 @@
     function Search_param() {
         var loading = "<center><div class='overlay'><i class='fa fa-refresh fa-spin'></i></div><center>";
         $("#result_search").html(loading);
-        var workings;
-        var aptitude;
-        var etc;
         var changwat = $("#changwat").val();
         var education = $("#education").val();
         var workhistory = $("#workhistory").val();
+        var workings;
+        var aptitude;
+        var etc;
 
         $("#workings").prop("checked", function (i, val) {
             if (val == true) {
@@ -85,7 +85,7 @@ $this->breadcrumbs = array(
                 <select id="changwat" class="form-control input-sm" name="changwat_code">
                     <option value="">==ยังไม่ได้เลือกจังหวัด==</option>
                     <?php foreach ($r_changwat as $ch) { ?>
-                        <option value="<?php echo $ch['changwat_id']; ?>"><?php echo $ch['changwat_name']; ?></option>
+                        <option value="<?php echo $ch['changwat_id']; ?>"><?php echo $ch['changwat_id'] . ' ' . $ch['changwat_name']; ?></option>
                     <?php } ?>
                 </select>
             </div>
@@ -149,9 +149,9 @@ $this->breadcrumbs = array(
         <div class="box-footer" style="text-align: center;">
             <div class="btn btn-primary" onclick="Search_param();"><i class="fa fa-search"></i> ค้นหา</div>
         </div>
-        
+
         <hr>
-        
+
         <div id="result_search"></div>
 
     </div>
