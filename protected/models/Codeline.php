@@ -101,12 +101,12 @@ class Codeline extends CActiveRecord {
                             FROM codeline c INNER JOIN collegian g ON c.senior_code = g.collegian_code
                             LEFT JOIN images_profile i ON g.collegian_code = i.collegian_code
                             WHERE c.collegian_code = '$collegion_code' ";
-        $rs = Yii::app()->db->createCommand($query)->queryRow();
-        if (!empty($rs['senior_code'])) {
+        $rs = Yii::app()->db->createCommand($query)->queryAll();
+        //if (!empty($rs['senior_code'])) {
             return $rs;
-        } else {
-            return 0;
-        }
+        //} else {
+            //return 0;
+        //}
     }
     
     public function get_collegian_down($collegion_code = '') {
