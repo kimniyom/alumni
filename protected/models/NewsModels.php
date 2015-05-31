@@ -103,5 +103,17 @@ class NewsModels extends CActiveRecord {
 
         return $img;
     }
+    
+    function Maxread($news_id =''){
+        $query = "SELECT MAX(Read_news) as TOTAL FROM News WHERE News_id = '$news_id' ";
+        $rs = Yii::app()->db->createCommand($query)->queryRow();
+        return $rs['TOTAL'];
+    }
+    
+     function Countpost($news_id =''){
+        $query = "SELECT COUNT(*) as TOTAL FROM news_comment WHERE news_id = '$news_id' ";
+        $rs = Yii::app()->db->createCommand($query)->queryRow();
+        return $rs['TOTAL'];
+    }
 
 }
