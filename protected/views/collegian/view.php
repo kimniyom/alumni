@@ -4,6 +4,18 @@
         });
     });
 
+    function delete_collegian(collegian_code) {
+        var r = confirm("คุณต้องการลบข้อมูลนักศึกษา คนนี้ ใช่ หรือ ไม่ ... ?");
+        if (r == true) {
+            var url = "index.php?r=collegian/delete_collegian";
+            var data = {collegian_code: collegian_code};
+            $.post(url, data, function (success) {
+                alert("ลบข้อมูลนักศึกษาแล้ว ...");
+                window.location.reload();
+            });
+        }
+    }
+
 </script>
 
 <?php
@@ -45,6 +57,11 @@ $this->breadcrumbs = array(
                             <a href="<?php echo Yii::app()->createUrl('collegian/From_edit_collegian&collegian_code=' . $rs['collegian_code']) ?>">
                                 <div class="btn btn-primary btn-sm">
                                     <i class="fa fa-photo"></i> แก้ไข</div>
+                            </a>
+                            <?php $collcode = $rs['collegian_code']; ?>
+                            <a href="#" onclick="delete_collegian('<?php echo $collcode; ?>');">
+                                <div class="btn btn-danger btn-sm">
+                                    <i class="fa fa-trash"></i> ลบ</div>
                             </a>
                         </td>
                     </tr>
