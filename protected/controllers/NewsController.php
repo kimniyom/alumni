@@ -68,7 +68,7 @@ Class NewsController extends Controller {
         $data['type'] = $_GET['type'];
         $News = new NewsModels();
         $data['News'] = $News->Get_News_Edit($News_id);
-        $this->render('//News/Edit_News', $data);
+        $this->render('//News/Edit_news', $data);
     }
 
     public function actionSaveEdit_News() {
@@ -156,7 +156,7 @@ Class NewsController extends Controller {
 
         $data['news'] = $news->Get_images_by_id($news_id);
         $data['news_id'] = $news_id;
-        $this->render("//news/news_edit_images", $data);
+        $this->render("//News/news_edit_images", $data);
     }
 
     public function actionDelete_img_new() {
