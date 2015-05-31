@@ -10569,3 +10569,58 @@ Stack trace:
 REQUEST_URI=/alumni/index.php?r=frontend/Search/SearchAll
 HTTP_REFERER=http://localhost/alumni/index.php?r=frontend/search/search_collegian
 ---
+2015/05/31 21:46:48 [error] [php] Undefined index: news_id (C:\xampp\htdocs\alumni\protected\controllers\CommentController.php:28)
+Stack trace:
+#0 C:\xampp\htdocs\alumni\framework\web\CController.php(286): CommentController->runAction()
+#1 C:\xampp\htdocs\alumni\framework\web\CController.php(265): CommentController->runActionWithFilters()
+#2 C:\xampp\htdocs\alumni\framework\web\CWebApplication.php(282): CommentController->run()
+#3 C:\xampp\htdocs\alumni\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\alumni\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\alumni\index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=comment/get_comment
+in C:\xampp\htdocs\alumni\protected\controllers\CommentController.php (28)
+in C:\xampp\htdocs\alumni\index.php (13)
+2015/05/31 21:46:59 [error] [php] Undefined index: news_id (C:\xampp\htdocs\alumni\protected\controllers\CommentController.php:28)
+Stack trace:
+#0 C:\xampp\htdocs\alumni\framework\web\CController.php(286): CommentController->runAction()
+#1 C:\xampp\htdocs\alumni\framework\web\CController.php(265): CommentController->runActionWithFilters()
+#2 C:\xampp\htdocs\alumni\framework\web\CWebApplication.php(282): CommentController->run()
+#3 C:\xampp\htdocs\alumni\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\alumni\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\alumni\index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=comment/get_comment
+in C:\xampp\htdocs\alumni\protected\controllers\CommentController.php (28)
+in C:\xampp\htdocs\alumni\index.php (13)
+2015/05/31 21:49:20 [error] [php] Undefined index: news_id (C:\xampp\htdocs\alumni\protected\controllers\CommentController.php:28)
+Stack trace:
+#0 C:\xampp\htdocs\alumni\framework\web\CController.php(286): CommentController->runAction()
+#1 C:\xampp\htdocs\alumni\framework\web\CController.php(265): CommentController->runActionWithFilters()
+#2 C:\xampp\htdocs\alumni\framework\web\CWebApplication.php(282): CommentController->run()
+#3 C:\xampp\htdocs\alumni\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\alumni\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\alumni\index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=comment/get_comment
+in C:\xampp\htdocs\alumni\protected\controllers\CommentController.php (28)
+in C:\xampp\htdocs\alumni\index.php (13)
+2015/05/31 21:52:07 [error] [php] Undefined index: news_id (C:\xampp\htdocs\alumni\protected\controllers\CommentController.php:28)
+Stack trace:
+#0 C:\xampp\htdocs\alumni\framework\web\CController.php(286): CommentController->runAction()
+#1 C:\xampp\htdocs\alumni\framework\web\CController.php(265): CommentController->runActionWithFilters()
+#2 C:\xampp\htdocs\alumni\framework\web\CWebApplication.php(282): CommentController->run()
+#3 C:\xampp\htdocs\alumni\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\alumni\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\alumni\index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=comment/get_comment
+in C:\xampp\htdocs\alumni\protected\controllers\CommentController.php (28)
+in C:\xampp\htdocs\alumni\index.php (13)
+2015/05/31 21:52:48 [error] [php] Undefined index: news_id (C:\xampp\htdocs\alumni\protected\controllers\CommentController.php:28)
+Stack trace:
+#0 C:\xampp\htdocs\alumni\framework\web\CController.php(286): CommentController->runAction()
+#1 C:\xampp\htdocs\alumni\framework\web\CController.php(265): CommentController->runActionWithFilters()
+#2 C:\xampp\htdocs\alumni\framework\web\CWebApplication.php(282): CommentController->run()
+#3 C:\xampp\htdocs\alumni\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\alumni\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\alumni\index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=comment/get_comment
+in C:\xampp\htdocs\alumni\protected\controllers\CommentController.php (28)
+in C:\xampp\htdocs\alumni\index.php (13)

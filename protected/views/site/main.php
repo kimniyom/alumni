@@ -118,7 +118,7 @@ $lib = new Lib();
         </ul>
     </div>
     <div class="box-footer" style="text-align: right;">
-        <a href="index.php?r=frontend/news_collegian/news_generalView">
+        <a href="index.php?r=frontend/news_collegian/news_generalview">
             <div class="btn btn-warning btn-sm">ข่าวทั้งหมด...</div>
         </a>
     </div>
@@ -185,7 +185,7 @@ $lib = new Lib();
                                         </font><br/>
                                         <span class="label label-info">อ่าน <?php echo $newmodel->Maxread($cl['News_id']); ?></span>
                                         <span class="label label-danger">ตอบ <?php echo $newmodel->Countpost($cl['News_id']); ?></span>
-                                        <a href="index.php?r=News/Detail_News&News_id=<?php echo $cl['News_id'] ?>" class="btn btn-primary btn-xs" style=" float: right;">อ่านต่อ ...</a>
+                                        <a href="index.php?r=News/Detail_news&News_id=<?php echo $cl['News_id'] ?>" class="btn btn-primary btn-xs" style=" float: right;">อ่านต่อ ...</a>
                                     </div>
                                 </div>
 
@@ -205,7 +205,7 @@ $lib = new Lib();
                                 </span>
 
                                 <h3 class="timeline-header">
-                                    <a href="index.php?r=News/Detail_News&News_id=<?php echo $cl['News_id'] ?>">
+                                    <a href="index.php?r=News/Detail_news&News_id=<?php echo $cl['News_id'] ?>">
                                         <i class="fa fa-newspaper-o"></i>
                                         <?php echo $cl['News_Head']; ?></a> 
                                 </h3>
@@ -238,7 +238,7 @@ $lib = new Lib();
             </ul>
         </div>
         <div class="box-footer" style="text-align: right;">
-            <a href="index.php?r=frontend/news_collegian/news_collegianView">
+            <a href="index.php?r=frontend/news_collegian/news_collegianview">
                 <div class="btn btn-warning btn-sm">ข่าวทั้งหมด...</div>
             </a>
         </div>

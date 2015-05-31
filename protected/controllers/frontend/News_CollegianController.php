@@ -29,7 +29,7 @@ class News_CollegianController extends Controller {
         $this->render("//news_collegian/news_collegian", $data);
     }
 
-    public function actionNews_collegianView() {
+    public function actionNews_collegianview() {
         $this->layout = "main";
         $news = new News_collegian();
         $data['news'] = $news->Get_new_collegianAll();
@@ -37,7 +37,7 @@ class News_CollegianController extends Controller {
         $this->render("//news_collegian/news_collegian_view", $data);
     }
 
-    public function actionNews_generalView() {
+    public function actionNews_generalview() {
         $this->layout = "main";
         $news = new News_collegian();
         $data['news'] = $news->Get_new_generalAll();
