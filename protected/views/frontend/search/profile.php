@@ -12,6 +12,7 @@
                     InputOfImageDirectory: "image",
                     PluginFolderOnServer: "<?php echo $croup; ?>",
                     FolderOnServer: "<?php echo $croup; ?>uploads/",
+                    //PluginFolderOnServer + "src/php/upload.php"
                     EnableCrop: true,
                     CropWindowStyle: "Bootstrap",
                     Default: ["jpg", "png"],
