@@ -30,26 +30,13 @@ class SearchController extends Controller {
 
         $yearstart = "";
         $yearend = "";
-
-        if ($changwat != "") {
-            $JOIN = " INNER JOIN changwat ch ON c.changwat_code = ch.changwat_id ";
-            $WHERE = " AND c.changwat_code = '$changwat'";
-        } else {
-            $JOIN = "";
-            $WHERE = "";
-        }
-
-        if ($education != "") {
-            $JOIN .= " INNER JOIN learning_history l ON c.collegian_code = l.collegian_code ";
-            $WHERE .= " AND l.EduId = '$education'";
-        } else {
-            $JOIN .= "";
-            $WHERE .= "";
-        }
-
-        if ($workhistory != "") {
+        
+         $JOIN = "";
+         $WHERE = "";
+         
+          if ($workhistory != "") {
             if ($workhistory == 0) {
-                $JOIN = "";
+                //$JOIN .= "";
                 $WHERE = " AND c.collegian_code NOT IN(SELECT collegian_code FROM work_history)";
             } else {
                 $JOIN .= " INNER JOIN work_history w ON c.collegian_code = w.collegian_code";
@@ -70,6 +57,24 @@ class SearchController extends Controller {
             $JOIN .= "";
             $WHERE .= "";
         }
+        
+        if ($changwat != "") {
+            $JOIN = " INNER JOIN changwat ch ON c.changwat_code = ch.changwat_id ";
+            $WHERE = " AND ch.changwat_id = '$changwat'";
+        } else {
+            $JOIN = "";
+            $WHERE = "";
+        }
+
+        if ($education != "") {
+            $JOIN .= " INNER JOIN learning_history l ON c.collegian_code = l.collegian_code ";
+            $WHERE .= " AND l.EduId = '$education'";
+        } else {
+            $JOIN .= "";
+            $WHERE .= "";
+        }
+
+       
 
         if ($workings != "") {
             $JOIN .= " INNER JOIN workings wk ON c.collegian_code = wk.collegian_code ";
@@ -83,16 +88,16 @@ class SearchController extends Controller {
             $JOIN .= " INNER JOIN aptitude a ON c.collegian_code = a.collegian_code";
             $WHERE .= " AND 1=1";
         } else {
-            $JOIN .= "";
-            $WHERE .= "";
+           $JOIN .= "";
+           $WHERE .= "";
         }
 
         if ($etc != "") {
             $JOIN .= " INNER JOIN collegian_etc e ON c.collegian_code = e.collegian_code";
             $WHERE .= " AND 1=1 AND e.active = '1'";
         } else {
-            $JOIN .= "";
-            $WHERE .= "";
+           $JOIN .= "";
+           $WHERE .= "";
         }
 
         $data['result'] = $Search->SearchCollegian($JOIN, $WHERE);
