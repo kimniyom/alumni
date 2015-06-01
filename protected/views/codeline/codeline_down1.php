@@ -18,7 +18,8 @@
 <!--
 <input type="hidden" id="collegian_code1" value="<?//php echo $senior['collegian_code'] ?>"/>
 -->
-<table style=" width: 100%; text-align: center;">
+<hr/>
+<table style=" width: 100%; text-align: center;" border="2" cellspan="0" cellpadding="0">
     <?php
     $codeline = new Codeline();
     $i = 1;
@@ -28,7 +29,7 @@
             <tr>
                 <td style="text-align: center;">
                     <?php if (!empty($rs['img_profile'])) { ?>
-                        <img src="<?php echo $croup; ?>/uploads/<?php echo $rs['img_profile'] ?>" class="img-rounded" style="margin-top: 0px; width: 60px;">
+                        <img src="<?php echo $croup; ?>/uploads/<?php echo $rs['img_profile'] ?>" class="img-rounded" style="margin-top: 0px; width: 55px;">
                         <i class="fa fa-arrow-right" style=" float: right;  margin-top: 30px;"></i>
                     <?php } else { ?>
                         <i class="fa fa-user fa-5x"></i>
@@ -37,13 +38,15 @@
                     <?php echo $rs['collegian_name'] ?><br/>
                     (น้องรหัส)
                 </td>
-                <td>
+                <td style="text-align: center;">
                     <?php
                     $subsenior = $codeline->get_collegian_down($rs['collegian_code']);
                     if (!empty($subsenior)) {
                         foreach ($subsenior as $subup1):
+                            echo "<table style='width:100%;' border='1'><tr><td>";
+                            //echo "<td>";
                             if (!empty($subup1['img_profile'])) {
-                                echo "<td><img src = '" . $croup . "/uploads/" . $subup1['img_profile'] . "' class = \"img-rounded\" style = \"margin-top: 0px; width: 80px;\"><br/>";
+                                echo "<img src = '" . $croup . "/uploads/" . $subup1['img_profile'] . "' class = \"img-rounded\" style = \"margin-top: 0px; width: 55px;\"><br/>";
                                 echo "<i class=\"fa fa-arrow-right\" style=\" float: right; margin-top: 30px;\"></i>";
                             } else {
                                 echo "<i class=\"fa fa-user fa-5x\"></i>";
@@ -51,34 +54,41 @@
                             }
 
                             echo "<br/>" . $subup1['collegian_name'] . "<br/>";
-                            echo "(หลาน)";
+                            echo "(หลาน)<br/>";
                             echo "</td>";
-
+                            //echo "</td>";
+                            
                             $subsenior2 = $codeline->get_collegian_down($subup1['collegian_code']);
                             if (!empty($subsenior2)) {
+                                echo "<td style='border:1px solid #000;'>";
                                 foreach ($subsenior2 as $subup2):
-                                    echo "<td>";
+                                    
                                     if (!empty($subup2['img_profile'])) {
-                                        echo "<img src = '" . $croup . "/uploads/" . $subup2['img_profile'] . "' class = \"img-rounded\" style = \"margin-top: 0px; width: 80px;\"><br/>";
+                                        echo "<img src = '" . $croup . "/uploads/" . $subup2['img_profile'] . "' class = \"img-rounded\" style = \"margin-top: 0px; width: 55px;\"><br/>";
                                     } else {
                                         echo "<i class=\"fa fa-user fa-5x\"></i>";
                                     }
                                     echo "<br/>" . $subup2['collegian_name'] . "<br/>";
-                                    echo "(เหลน)";
-                                    echo "</td>";
+                                    echo "(เหลน)<br/>";
+                                    
                                 endforeach;
+                                echo "</td>";
                             } else {
                                 echo "<td><i class=\"fa fa-user fa-5x\"></i><br/>";
-                                echo "ไม่มี<br/>(เหลน)</td>";
+                                echo "ไม่มี<br/>(เหลน)<br/></td>";
                             }
+                             
+                             echo "</tr></table>";
                         endforeach;
                     } else {
+                        echo "<table style='width:100%;' border='1'><tr><td>"; 
                         echo "<i class=\"fa fa-arrow-right\" style=\" float: right; margin-top: 30px;\"></i>";
                         echo "<i class=\"fa fa-user fa-5x\"></i><br/>";
-                        echo "ไม่มี<br/>(หลาน)";
+                        echo "ไม่มี<br/>(หลาน)</td>";
 
                         echo "<td><i class=\"fa fa-user fa-5x\"></i><br/>";
                         echo "ไม่มี<br/>(เหลน)</td>";
+                        echo "</tr></table>"; 
                     }
                     ?>
                 </td>
