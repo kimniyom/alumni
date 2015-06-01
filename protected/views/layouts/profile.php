@@ -123,7 +123,7 @@
                                     <i class="fa fa-bullhorn"></i> จัดการข่าว </a>
                             </li>
                             <hr style="margin: 5px 0px;">
-                            <li><a href="#"><i class="glyphicon glyphicon-refresh"></i> Refresh</a></li>
+                            <li><a href="Javascript:window.location.reload();"><i class="glyphicon glyphicon-refresh"></i> Refresh</a></li>
                         </ul>
 
                         <!-- tiny only nav
