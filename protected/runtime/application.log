@@ -10646,3 +10646,14 @@ Stack trace:
 REQUEST_URI=/alumni/index.php?r=comment/get_comment
 in C:\xampp\htdocs\alumni\protected\controllers\CommentController.php (28)
 in C:\xampp\htdocs\alumni\index.php (13)
+2015/06/01 10:09:29 [error] [php] Undefined index: collegiancode (/Applications/MAMP/htdocs/alumni/protected/controllers/frontend/CollegianController.php:48)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CollegianController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CollegianController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CollegianController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=frontend/collegian/detail_collegian
+in /Applications/MAMP/htdocs/alumni/protected/controllers/frontend/CollegianController.php (48)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
