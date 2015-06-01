@@ -42,6 +42,12 @@
                     }
                 });
             }
+            
+            $(document).keypress(function (e) {
+                if (e.which == 13) {
+                    sent_form();
+                }
+            });
 
         </script>
     </head>
@@ -77,7 +83,7 @@
                         </button>
                     </div>
                     <div class="col-xs-6">
-                        <button type="reset" class="btn btn-danger btn-block btn-flat">
+                        <button type="reset" class="btn btn-danger btn-block btn-flat" onclick="Javascript:window.location.reload();">
                             <i class="fa fa-remove"></i>
                             ยกเลิก
                         </button>

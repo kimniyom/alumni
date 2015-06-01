@@ -118,7 +118,7 @@ $this->breadcrumbs = array(
                 <button type="button" class="btn btn-primary" onclick="save_user();">
                     <i class="fa fa-save"></i> บันทึกข้อมูล
                 </button>
-                <button type="button" class="btn btn-danger">
+                <button type="button" class="btn btn-danger" onclick="Javascript:window.location.reload();">
                     <i class="fa fa-remove"></i> ยกเลิก
                 </button>
             </div>
