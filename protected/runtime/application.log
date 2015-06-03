@@ -10681,3 +10681,25 @@ Stack trace:
 REQUEST_URI=/alumni/index.php?r=frontend/collegian/add_img_profile
 in /Applications/MAMP/htdocs/alumni/protected/controllers/frontend/CollegianController.php (72)
 in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/06/03 04:19:07 [error] [php] Undefined index: news_id (C:\AppServ\htdocs\alumni\protected\controllers\CommentController.php:28)
+Stack trace:
+#0 C:\AppServ\htdocs\alumni\framework\web\CController.php(286): CommentController->runAction()
+#1 C:\AppServ\htdocs\alumni\framework\web\CController.php(265): CommentController->runActionWithFilters()
+#2 C:\AppServ\htdocs\alumni\framework\web\CWebApplication.php(282): CommentController->run()
+#3 C:\AppServ\htdocs\alumni\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\AppServ\htdocs\alumni\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 C:\AppServ\htdocs\alumni\index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=comment/get_comment
+in C:\AppServ\htdocs\alumni\protected\controllers\CommentController.php (28)
+in C:\AppServ\htdocs\alumni\index.php (13)
+2015/06/03 04:19:35 [error] [php] Undefined index: news_id (C:\AppServ\htdocs\alumni\protected\controllers\CommentController.php:28)
+Stack trace:
+#0 C:\AppServ\htdocs\alumni\framework\web\CController.php(286): CommentController->runAction()
+#1 C:\AppServ\htdocs\alumni\framework\web\CController.php(265): CommentController->runActionWithFilters()
+#2 C:\AppServ\htdocs\alumni\framework\web\CWebApplication.php(282): CommentController->run()
+#3 C:\AppServ\htdocs\alumni\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\AppServ\htdocs\alumni\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 C:\AppServ\htdocs\alumni\index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=comment/get_comment
+in C:\AppServ\htdocs\alumni\protected\controllers\CommentController.php (28)
+in C:\AppServ\htdocs\alumni\index.php (13)
