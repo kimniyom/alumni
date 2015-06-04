@@ -4,6 +4,7 @@
             'swf ': '<?php echo Yii::app()->baseUrl; ?>/assets/uploadify/uploadify.swf',
             'uploader': 'index.php?r=news/uploadify&news_id=<?php echo $news_id; ?>',
             'fileSizeLimit': '600KB',
+            'fileTypeExts' : '*.gif; *.jpg; *.png',
             'multi': true,
             'uploadLimit': 4,
             'onUploadSuccess': function (file, data, response) {
