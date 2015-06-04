@@ -186,6 +186,9 @@ Class NewsController extends Controller {
 
         Yii::app()->db->createCommand()
                 ->delete("News", "News_id = '$news_id' ");
+        
+        Yii::app()->db->createCommand()
+                ->delete("News_Images", "News_id = '$news_id' ");
     }
 
 }
