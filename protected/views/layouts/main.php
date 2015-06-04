@@ -4,6 +4,9 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--
+        <meta name="google-translate-customization" content="52b44b8c4f515a69-ba4de274a0df1b97-gc9e8a9e6c8d94a2e-d"/>
+        -->
         <title>
             ทะเบียน ศิษย์เก่า 
         </title>
@@ -11,7 +14,10 @@
         $path = Yii::app()->baseUrl . '/themes/bootstrap/';
         $LTE = Yii::app()->baseUrl . '/themes/AdminLTE2/';
         ?>
-
+        <style type="text/css">
+            .goog-te-banner-frame.skiptranslate {display: none !important;} 
+            body { top: 0px !important; }
+        </style>
         <link href="<?php echo Yii::app()->baseUrl; ?>/css/style_alumni.css" rel="stylesheet">
         <link href="<?php echo $path; ?>css/bootstrap-cosmo.min.css" rel="stylesheet">
         <!-- Font Awesome Icons -->
@@ -71,6 +77,7 @@
             }
 
             $(document).ready(function () {
+                //googleTranslateElementInit();
                 var windowsize = ($(window).width());
                 if (windowsize < 768) {
                     $("#banner").hide();
@@ -94,7 +101,36 @@
 
             });
 
+
+
         </script>
+        <!--
+                <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        -->        
+        <script type="text/javascript">
+
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({
+                    //pageLanguage: 'th'
+                }, 'google_translate_element');
+            }
+            /*
+             function googleTranslateElementInit() {
+             new google.translate.TranslateElement({pageLanguage: 'us', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false}, 'google_translate_element');
+             }
+             */
+            /*
+             function set_language(language) {
+             var url = "index.php?r=site/language";
+             var data = {language: language};
+     
+             $.post(url, data, function (success) {
+             window.location.reload();
+             });
+             }
+             */
+        </script>
+
 
     </head>
 
@@ -109,7 +145,7 @@
              background-size: cover;">
             <div class="container">
                 <div class="navbar-header">
-                    <a href="../" class="navbar-brand" style=" font-weight: bold;">
+                    <a href="#" class="navbar-brand" style=" font-weight: bold;">
                         <font style="color:#99ff33;">เว็บไซต์ทำเนียบรุ่น </font>
                         <font style="color:#ffff33;">Com Sci</font>
                     </a>
@@ -120,8 +156,6 @@
                     </button>
                 </div>
                 <div class="navbar-collapse collapse" id="navbar-main">
-
-
                     <ul class="nav navbar-nav navbar-right">
                         <?php if (Yii::app()->session['user'] == '') { ?>
                             <li>
@@ -273,7 +307,13 @@
 
         <div class="row" style=" background: #f5f5f5; margin-bottom:0px; border-bottom: solid #eeeeee 1px; border-top: solid 1px #FFF;">
             <div class="container" style=" height: 45px; padding-top: 5px;">
-
+                <!--
+                <div style=" float: right;">
+                    <img src="<?php echo Yii::app()->baseUrl; ?>/images/thailand.png" onclick="set_language('th');"/>
+                    <img src="<?php echo Yii::app()->baseUrl; ?>/images/united_kingdom.png" onclick="set_language('en');"/>
+                    <img src="<?php echo Yii::app()->baseUrl; ?>/images/myanmar.png" onclick="set_language('mm');"/>
+                </div>
+                -->
                 <ol class="breadcrumb">
                     <?php if (isset($this->breadcrumbs)): ?>
                         <?php
@@ -445,10 +485,10 @@
         </div>
     </body>
 
-    <script src="<?php echo Yii::app()->baseUrl;?>/assets/bootstrap-autohidingnavbar/src/jquery.bootstrap-autohidingnavbar.js"></script>
+    <script src="<?php echo Yii::app()->baseUrl; ?>/assets/bootstrap-autohidingnavbar/src/jquery.bootstrap-autohidingnavbar.js"></script>
 
     <script>
-            $("div.navbar-fixed-top").autoHidingNavbar();
+    $("div.navbar-fixed-top").autoHidingNavbar();
     </script>
 
 </html>
