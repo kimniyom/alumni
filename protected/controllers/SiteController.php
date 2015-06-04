@@ -106,5 +106,21 @@ class SiteController extends Controller {
         Yii::app()->user->logout();
         $this->redirect(Yii::app()->homeUrl);
     }
+    
+    public function actionLanguage(){
+        unset($_COOKIE['googtrans']);
+        $language = $_POST['language'];
+        if ($language == 'en') {
+            setcookie('googtrans', '/my/en');
+            setcookie('googtrans', '/th/en');
+        } else if($language == 'mm'){
+            //setcookie('googtrans', '');
+            setcookie('googtrans', '/en/my');
+            setcookie('googtrans', '/th/my');
+        } else {
+            unset($_COOKIE['googtrans']);
+            setcookie('googtrans', '/th/MM');
+        }
+    }
 
 }
