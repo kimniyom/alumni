@@ -90,6 +90,16 @@ $this->breadcrumbs = array(
                     </div>
                 </div>
                 <br/>
+                
+                <div class="row">
+                    <div class="col-sm-3">
+                        <label>อีเมล์ *</label>
+                    </div>
+                    <div class="col-sm-9">
+                        <input type="email" id="email" name="email" class="form-control input-sm" required="required"/>
+                    </div>
+                </div>
+                <br/>
 
                 <div class="row">
                     <div class="col-sm-3">
