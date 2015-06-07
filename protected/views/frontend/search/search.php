@@ -97,7 +97,7 @@ $this->breadcrumbs = array(
             </div>
             <div class="col-sm-8">
                 <select id="education" class="form-control input-sm" name="education">
-                    <option value="">==ยังไม่ได้เลือกiระดับการศึกษา==</option>
+                    <option value="">==ยังไม่ได้เลือกระดับการศึกษา==</option>
                     <?php foreach ($education as $rs) { ?>
                         <option value="<?php echo $rs['EduID']; ?>"><?php echo $rs['EduName']; ?></option>
                     <?php } ?>
@@ -111,6 +111,7 @@ $this->breadcrumbs = array(
             </div>
             <div class="col-sm-8">
                 <select id="workhistory" class="form-control input-sm" name="workhistory">
+                    <option value="">== ยังไม่ได้เลือก ==</option>
                     <option value="0">ยังไม่มีประสบการณ์</option>
                     <option value="1">1 - 3 ปี</option>
                     <option value="2">3 - 5 ปี</option>
