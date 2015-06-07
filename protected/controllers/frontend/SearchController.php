@@ -30,11 +30,12 @@ class SearchController extends Controller {
 
         $yearstart = "";
         $yearend = "";
-        
-         $JOIN = "";
-         $WHERE = "";
-         
-          if ($workhistory != "") {
+
+        $JOIN = "";
+        $WHERE = "";
+
+        if ($workhistory != "") {
+            $work = "1";
             if ($workhistory == 0) {
                 //$JOIN .= "";
                 $WHERE = " AND c.collegian_code NOT IN(SELECT collegian_code FROM work_history)";
@@ -54,16 +55,17 @@ class SearchController extends Controller {
                 }
             }
         } else {
+            $work = "0";
             $JOIN .= "";
             $WHERE .= "";
         }
-        
+
         if ($changwat != "") {
             $JOIN = " INNER JOIN changwat ch ON c.changwat_code = ch.changwat_id ";
             $WHERE = " AND ch.changwat_id = '$changwat'";
         } else {
-            $JOIN = "";
-            $WHERE = "";
+            $JOIN .= "";
+            $WHERE .= "";
         }
 
         if ($education != "") {
@@ -74,7 +76,7 @@ class SearchController extends Controller {
             $WHERE .= "";
         }
 
-       
+
 
         if ($workings != "") {
             $JOIN .= " INNER JOIN workings wk ON c.collegian_code = wk.collegian_code ";
@@ -88,22 +90,28 @@ class SearchController extends Controller {
             $JOIN .= " INNER JOIN aptitude a ON c.collegian_code = a.collegian_code";
             $WHERE .= " AND 1=1";
         } else {
-           $JOIN .= "";
-           $WHERE .= "";
+            $JOIN .= "";
+            $WHERE .= "";
         }
 
         if ($etc != "") {
             $JOIN .= " INNER JOIN collegian_etc e ON c.collegian_code = e.collegian_code";
             $WHERE .= " AND 1=1 AND e.active = '1'";
         } else {
-           $JOIN .= "";
-           $WHERE .= "";
+            $JOIN .= "";
+            $WHERE .= "";
         }
 
         $data['result'] = $Search->SearchCollegian($JOIN, $WHERE);
+
         $data['year_start'] = $yearstart;
         $data['year_end'] = $yearend;
+        if($work == "1") {
         $this->renderPartial('//frontend/search/result', $data);
+        } else {
+            $this->renderPartial('//frontend/search/result_all', $data);
+        }
+        
     }
 
 }
