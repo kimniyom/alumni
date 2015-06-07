@@ -10,6 +10,7 @@ function save_user() {
     var mobile = $('#mobile').val();
     var company = $('#company').val();
     var address = $('#address').val();
+    var email = $('email').val();
 
     if (name == '') {
         $("#name").focus();
@@ -41,6 +42,11 @@ function save_user() {
         return false;
     }
 
+    if (email == '') {
+        $("#email").focus();
+        return false;
+    }
+
     if (company == '') {
         $("#company").focus();
         return false;
@@ -66,7 +72,7 @@ function save_user() {
     $.post(url, data, function (success) {
         if (success == '0') {
             alert("ลงทะเบียนใช้งานระบบ สำเร็จ รอการยืนยันจากผู้ดูแลระบบ ...");
-            window.location="index.php?r=site/index";
+            window.location = "index.php?r=site/index";
         } else {
             alert("ชื่อผู้ใช้งาน และรหัสผ่านนี้มีผู้ใช้งานแล้ว ...");
             return false;
