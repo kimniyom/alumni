@@ -216,11 +216,11 @@ $this->breadcrumbs = array(
                 <div class="col-sm-3">
                     <label>สัดส่วน *</label>
                 </div>
-                <div class="col-sm-4">สูง
+                <div class="col-sm-4">หนัก 
                     <input type="text" id="weight" name="weight" class="form-control" 
                            required="required" placeholder="น้ำหนัก" onkeypress="CheckNum();" value="<?php echo $detail['weight']; ?>"/>
                 </div>
-                <div class="col-sm-5">หนัก
+                <div class="col-sm-5">สูง
                     <input type="text" id="height" name="height" class="form-control" 
                            required="required" placeholder="ส่วนสูง" onkeypress="CheckNum();" value="<?php echo $detail['height']; ?>"/>
                 </div>
