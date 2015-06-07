@@ -252,30 +252,32 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </li>
                     </ul><!-- /.sidebar-menu -->
 
-                    <!-- Sidebar Menu -->
-                    <ul class="sidebar-menu">
-                        <li class="header" style="color: #FFFFFF;"><i class="fa fa-arrow-left"></i> ข้อความส่ง</li>
-                        <!-- Optionally, you can add icons to the links -->
-                        <li>
-                            <a href="javascript:dialog_post_admin();">
-                                <i class="fa fa-envelope"></i>
-                                <span>ส่งข้อความถึงผูดูแลระบบ</span></a>
-                        </li>
-                        <!--
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-envelope"></i>
-                                <span>ส่งถึงตัวแทนบริษัท</span></a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-envelope"></i>
-                                <span>ส่งถึงผู้ดูแลระบบ</span></a>
-                        </li>
-                        -->
-                    </ul><!-- /.sidebar-menu -->
+                    <?php if (Yii::app()->session['user'] != 'A') { ?>
+                        <!-- Sidebar Menu -->
+                        <ul class="sidebar-menu">
+                            <li class="header" style="color: #FFFFFF;"><i class="fa fa-arrow-left"></i> ข้อความส่ง</li>
+                            <!-- Optionally, you can add icons to the links -->
+                            <li>
+                                <a href="javascript:dialog_post_admin();">
+                                    <i class="fa fa-envelope"></i>
+                                    <span>ส่งข้อความถึงผูดูแลระบบ</span></a>
+                            </li>
+                            <!--
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-envelope"></i>
+                                    <span>ส่งถึงตัวแทนบริษัท</span></a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-envelope"></i>
+                                    <span>ส่งถึงผู้ดูแลระบบ</span></a>
+                            </li>
+                            -->
+                        </ul><!-- /.sidebar-menu -->
 
-                </section>
+                    </section>
+                <?php } ?>
                 <!-- /.sidebar -->
             </aside>
 
