@@ -53,6 +53,7 @@ class UserController extends Controller {
                 "company" => $_POST['company'],
                 "address" => $_POST['address'],
                 "status" => "M",
+                "email" => $_POST['email'],
                 "d_update" => date("Y-m-d H:i:s")
             );
 
