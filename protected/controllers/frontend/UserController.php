@@ -124,6 +124,7 @@ class UserController extends Controller {
             "lname" => $_POST['lname'],
             "tel" => $_POST['tel'],
             "mobile" => $_POST['mobile'],
+            "email" => $_POST['email'],
             "company" => $_POST['company'],
             "address" => $_POST['address'],
             "d_update" => date("Y-m-d H:i:s")

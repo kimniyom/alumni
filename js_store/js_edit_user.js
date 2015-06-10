@@ -9,6 +9,7 @@ function save_edit_user() {
     //var password = $('#password').val();
     var tel = $('#tel').val();
     var mobile = $('#mobile').val();
+    var email = $("#email").val();
     var company = $('#company').val();
     var address = $('#address').val();
 
@@ -32,6 +33,13 @@ function save_edit_user() {
         return false;
     }
 
+    if (email == '') {
+        $("#email").focus();
+        return false;
+    }
+
+
+
     if (company == '') {
         $("#company").focus();
         return false;
@@ -50,6 +58,7 @@ function save_edit_user() {
         lname: lname,
         tel: tel,
         mobile: mobile,
+        email: email,
         company: company,
         address: address
     }

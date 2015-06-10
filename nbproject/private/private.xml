@@ -3,45 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/Applications/MAMP/htdocs/alumni/protected/config/main.php</file>
-            <file>file:/Applications/MAMP/htdocs/alumni/protected/views/collegian/edit_collegian.php</file>
-            <file>file:/Applications/MAMP/htdocs/alumni/protected/views/user/user_login.php</file>
-            <file>file:/Applications/MAMP/htdocs/alumni/protected/views/frontend/collegian_login.php</file>
-            <file>file:/Applications/MAMP/htdocs/alumni/protected/views/codeline/codeline_down1.php</file>
-            <file>file:/Applications/MAMP/htdocs/alumni/protected/views/admin/login.php</file>
-            <file>file:/Applications/MAMP/htdocs/alumni/protected/config/database.php</file>
-            <file>file:/Applications/MAMP/htdocs/alumni/protected/views/layouts/main.php</file>
-            <file>file:/Applications/MAMP/htdocs/alumni/protected/views/codeline/codeline_up1.php</file>
-            <file>file:/Applications/MAMP/htdocs/alumni/protected/views/frontend/profile.php</file>
-=======
-            <file>file:/C:/xampp/htdocs/alumni/protected/views/frontend/search/profile.php</file>
-            <file>file:/C:/xampp/htdocs/alumni/protected/views/news_collegian/news_general_view.php</file>
-            <file>file:/C:/xampp/htdocs/alumni/protected/controllers/Main_adminController.php</file>
-            <file>file:/C:/xampp/htdocs/alumni/protected/controllers/CollegianController.php</file>
-            <file>file:/C:/xampp/htdocs/alumni/protected/views/layouts/main.php</file>
-            <file>file:/C:/xampp/htdocs/alumni/protected/views/News/Detail.php</file>
-            <file>file:/C:/xampp/htdocs/alumni/protected/views/frontend/collegian_login.php</file>
-            <file>file:/C:/xampp/htdocs/alumni/protected/controllers/BackofficeController.php</file>
-            <file>file:/C:/xampp/htdocs/alumni/protected/views/collegian/view.php</file>
-            <file>file:/C:/xampp/htdocs/alumni/protected/controllers/frontend/CollegianController.php</file>
-            <file>file:/C:/xampp/htdocs/alumni/protected/views/frontend/profile.php</file>
-            <file>file:/C:/xampp/htdocs/alumni/js_store/js_profile_collegian.js</file>
-            <file>file:/C:/xampp/htdocs/alumni/protected/models/Search.php</file>
-            <file>file:/C:/xampp/htdocs/alumni/assets/jquery.picture.cut/index.php</file>
-            <file>file:/C:/xampp/htdocs/alumni/protected/views/admin/login.php</file>
-            <file>file:/C:/xampp/htdocs/alumni/protected/models/NewsModels.php</file>
-            <file>file:/C:/xampp/htdocs/alumni/assets/jquery.picture.cut/src/php/crop.php</file>
-            <file>file:/C:/xampp/htdocs/alumni/protected/views/site/main.php</file>
-            <file>file:/C:/xampp/htdocs/alumni/protected/models/Collegian.php</file>
-            <file>file:/C:/xampp/htdocs/alumni/protected/controllers/frontend/News_collegianController.php</file>
-            <file>file:/C:/xampp/htdocs/alumni/protected/views/user/user_login.php</file>
-            <file>file:/C:/xampp/htdocs/alumni/protected/controllers/NewsController.php</file>
-            <file>file:/C:/xampp/htdocs/alumni/protected/controllers/SiteController.php</file>
-            <file>file:/C:/xampp/htdocs/alumni/protected/controllers/frontend/SearchController.php</file>
-            <file>file:/C:/xampp/htdocs/alumni/assets/bootstrap-autohidingnavbar/demo/index.html</file>
-            <file>file:/C:/xampp/htdocs/alumni/protected/views/frontend/search/search.php</file>
->>>>>>> origin/master
+            <file>file:/C:/xampp/htdocs/alumni/js_store/js_edit_user.js</file>
         </group>
     </open-files>
 </project-private>

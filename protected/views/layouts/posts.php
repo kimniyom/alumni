@@ -236,20 +236,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <span class="badge"><?php echo $post->Count_msg_collegian($receiver_code, $receiver_status); ?></span>
                             </a>
                         </li>
-                        <li>
-                            <a href="<?php echo Yii::app()->createUrl('frontend/posts/post_agent'); ?>">
-                                <i class="fa fa-envelope"></i>
-                                <span>ข้อความจากตัวแทนบริษัท</span>
-                                <span class="badge"><?php echo $post->Count_msg_agent($receiver_code, $receiver_status); ?></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="<?php echo Yii::app()->createUrl('frontend/posts/post_admin'); ?>">
-                                <i class="fa fa-envelope"></i>
-                                <span>ข้อความจากผู้ดูแลระบบ</span>
-                                <span class="badge"><?php echo $post->Count_msg_admin($receiver_code, $receiver_status); ?></span>
-                            </a>
-                        </li>
+                        <?php if (Yii::app()->session['user'] != 'M') { ?>
+                            <li>
+                                <a href="<?php echo Yii::app()->createUrl('frontend/posts/post_agent'); ?>">
+                                    <i class="fa fa-envelope"></i>
+                                    <span>ข้อความจากตัวแทนบริษัท</span>
+                                    <span class="badge"><?php echo $post->Count_msg_agent($receiver_code, $receiver_status); ?></span>
+                                </a>
+                            </li>
+                        <?php } ?>
+                        <?php if (Yii::app()->session['user'] != 'A') { ?>
+                            <li>
+                                <a href="<?php echo Yii::app()->createUrl('frontend/posts/post_admin'); ?>">
+                                    <i class="fa fa-envelope"></i>
+                                    <span>ข้อความจากผู้ดูแลระบบ</span>
+                                    <span class="badge"><?php echo $post->Count_msg_admin($receiver_code, $receiver_status); ?></span>
+                                </a>
+                            </li>
+                        <?php } ?>
                     </ul><!-- /.sidebar-menu -->
 
                     <?php if (Yii::app()->session['user'] != 'A') { ?>

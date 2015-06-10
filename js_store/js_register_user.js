@@ -8,9 +8,10 @@ function save_user() {
     var password = $('#password').val();
     var tel = $('#tel').val();
     var mobile = $('#mobile').val();
+    var email = $('#email').val();
     var company = $('#company').val();
     var address = $('#address').val();
-    var email = $('email').val();
+    
 
     if (name == '') {
         $("#name").focus();
@@ -66,6 +67,7 @@ function save_user() {
         password: password,
         tel: tel,
         mobile: mobile,
+        email: email,
         company: company,
         address: address
     }

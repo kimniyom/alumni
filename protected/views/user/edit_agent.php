@@ -17,7 +17,7 @@ $this->breadcrumbs = array(
             <h4><i class="fa fa-wrench"></i> แก้ไขข้อมูล</h4>
         </div>
         <div class="panel-body">
-            <input type="hidden" id="agent_id" value="<?php echo $agent['id'];?>"/>
+            <input type="hidden" id="agent_id" value="<?php echo $agent['id']; ?>"/>
             <div class="form">
                 <div class="row">
                     <div class="col-sm-3">
@@ -100,6 +100,16 @@ $this->breadcrumbs = array(
                     <div class="col-sm-9">
                         <input type="text" id="mobile" name="mobile" class="form-control input-sm" required="required" onkeypress="CheckNum();" 
                                value="<?php echo $agent['mobile']; ?>"/>
+                    </div>
+                </div>
+                <br/>
+
+                <div class="row">
+                    <div class="col-sm-3">
+                        <label>อีเมล์ *</label>
+                    </div>
+                    <div class="col-sm-9">
+                        <input type="email" id="email" name="email" class="form-control input-sm" required="required" value="<?php echo $agent['email']; ?>"/>
                     </div>
                 </div>
                 <br/>
