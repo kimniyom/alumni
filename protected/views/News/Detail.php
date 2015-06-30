@@ -87,7 +87,7 @@
 /* @var $model Collegian */
 
 $this->breadcrumbs = array(
-    'หน้าหลัก' => array('site/Index'),
+    'หน้าแรก' => array('site/Index'),
     $News['News_Head']
 );
 ?>

@@ -62,5 +62,11 @@ class WorkingsController extends Controller {
         Yii::app()->db->createCommand()
                 ->update("workings", $columns, "id = '$id'");
     }
+    
+    public function actionDelete(){
+        $id = $_POST['id'];
+        Yii::app()->db->createCommand()
+                ->delete("workings","id = '$id' ");
+    }
 
 }

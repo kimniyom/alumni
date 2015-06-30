@@ -35,10 +35,11 @@ Class NewsController extends Controller {
     }
 
     public function actionCreate_News() {
-        $News_Catagories = New News_CatagoriesModels();
-        $News_Groups = New News_GroupsModels();
-        $data['News_Catagories'] = $News_Catagories->findAll();
-        $data['News_Groups'] = $News_Groups->findAll();
+        //$News_Catagories = New News_CatagoriesModels();
+        //$News_Groups = New News_GroupsModels();
+        //$data['News_Catagories'] = $News_Catagories->findAll();
+        //$data['News_Groups'] = $News_Groups->findAll();
+        $data = "";
         $this->render('//News/Create_News', $data);
     }
 

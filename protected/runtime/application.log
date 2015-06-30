@@ -11199,3 +11199,538 @@ Stack trace:
 REQUEST_URI=/alumni/index.php?r=comment/get_comment
 in C:\xampp\htdocs\alumni\protected\controllers\CommentController.php (28)
 in C:\xampp\htdocs\alumni\index.php (13)
+2015/06/16 05:29:28 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'alumni_db.News_Catagories' doesn't exist. The SQL statement executed was: SELECT n.*,CONCAT(c.collegian_name,' ',c.collegian_lname) as News_Owner,
+                Ncr.News_Catagory
+                FROM News n LEFT JOIN collegian c ON n.News_Owner = c.collegian_code
+                LEFT JOIN admin adm on adm.id=n.News_Owner
+                INNER JOIN News_Catagories Ncr ON Ncr.News_Catagory_id=n.News_Catagory_id
+                WHERE n.News_id = '37' .
+in /Applications/MAMP/htdocs/alumni/protected/models/NewsModels.php (85)
+in /Applications/MAMP/htdocs/alumni/protected/controllers/NewsController.php (71)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/06/16 05:29:28 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'alumni_db.News_Catagories' doesn't exist. The SQL statement executed was: SELECT n.*,CONCAT(c.collegian_name,' ',c.collegian_lname) as News_Owner,
+                Ncr.News_Catagory
+                FROM News n LEFT JOIN collegian c ON n.News_Owner = c.collegian_code
+                LEFT JOIN admin adm on adm.id=n.News_Owner
+                INNER JOIN News_Catagories Ncr ON Ncr.News_Catagory_id=n.News_Catagory_id
+                WHERE n.News_id = '37' ' in /Applications/MAMP/htdocs/alumni/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /Applications/MAMP/htdocs/alumni/protected/models/NewsModels.php(85): CDbCommand->queryRow()
+#2 /Applications/MAMP/htdocs/alumni/protected/controllers/NewsController.php(71): NewsModels->Get_News_Edit('37')
+#3 /Applications/MAMP/htdocs/alumni/framework/web/actions/CInlineAction.php(49): NewsController->actionEdit_news()
+#4 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CController->run('edit_news')
+#8 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController('news/edit_news')
+#9 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/alumni/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/alumni/index.php?r=news/edit_news&News_id=37&type=1
+HTTP_REFERER=http://localhost/alumni/index.php?r=news/News_general_all
+---
+2015/06/16 05:31:39 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Ncr.News_Catagory' in 'field list'. The SQL statement executed was: SELECT n.*,CONCAT(c.collegian_name,' ',c.collegian_lname) as News_Owner,
+                Ncr.News_Catagory
+                FROM News n LEFT JOIN collegian c ON n.News_Owner = c.collegian_code
+                LEFT JOIN admin adm on adm.id=n.News_Owner
+                
+                WHERE n.News_id = '37' .
+in /Applications/MAMP/htdocs/alumni/protected/models/NewsModels.php (85)
+in /Applications/MAMP/htdocs/alumni/protected/controllers/NewsController.php (71)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/06/16 05:31:39 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Ncr.News_Catagory' in 'field list'. The SQL statement executed was: SELECT n.*,CONCAT(c.collegian_name,' ',c.collegian_lname) as News_Owner,
+                Ncr.News_Catagory
+                FROM News n LEFT JOIN collegian c ON n.News_Owner = c.collegian_code
+                LEFT JOIN admin adm on adm.id=n.News_Owner
+                
+                WHERE n.News_id = '37' ' in /Applications/MAMP/htdocs/alumni/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /Applications/MAMP/htdocs/alumni/protected/models/NewsModels.php(85): CDbCommand->queryRow()
+#2 /Applications/MAMP/htdocs/alumni/protected/controllers/NewsController.php(71): NewsModels->Get_News_Edit('37')
+#3 /Applications/MAMP/htdocs/alumni/framework/web/actions/CInlineAction.php(49): NewsController->actionEdit_news()
+#4 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CController->run('edit_news')
+#8 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController('news/edit_news')
+#9 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/alumni/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/alumni/index.php?r=news/edit_news&News_id=37&type=1
+HTTP_REFERER=http://localhost/alumni/index.php?r=news/News_general_all
+---
+2015/06/17 09:47:56 [error] [php] Undefined index: collegiancode (/Applications/MAMP/htdocs/alumni/protected/controllers/frontend/CollegianController.php:48)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CollegianController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CollegianController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CollegianController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=frontend/collegian/detail_collegian
+in /Applications/MAMP/htdocs/alumni/protected/controllers/frontend/CollegianController.php (48)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/06/17 09:48:09 [error] [php] Undefined index: collegiancode (/Applications/MAMP/htdocs/alumni/protected/controllers/frontend/CollegianController.php:48)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CollegianController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CollegianController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CollegianController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=frontend/collegian/detail_collegian
+in /Applications/MAMP/htdocs/alumni/protected/controllers/frontend/CollegianController.php (48)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/06/17 09:50:13 [error] [php] Undefined index: collegiancode (/Applications/MAMP/htdocs/alumni/protected/controllers/frontend/CollegianController.php:48)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CollegianController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CollegianController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CollegianController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=frontend/collegian/detail_collegian
+in /Applications/MAMP/htdocs/alumni/protected/controllers/frontend/CollegianController.php (48)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/06/19 08:35:21 [error] [php] Undefined index: collegiancode (/Applications/MAMP/htdocs/alumni/protected/controllers/frontend/CollegianController.php:48)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CollegianController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CollegianController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CollegianController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=frontend/collegian/detail_collegian
+in /Applications/MAMP/htdocs/alumni/protected/controllers/frontend/CollegianController.php (48)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/06/19 08:35:27 [error] [php] Undefined index: collegiancode (/Applications/MAMP/htdocs/alumni/protected/controllers/frontend/CollegianController.php:48)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CollegianController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CollegianController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CollegianController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=frontend/collegian/detail_collegian
+in /Applications/MAMP/htdocs/alumni/protected/controllers/frontend/CollegianController.php (48)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/06/19 08:35:58 [error] [php] Undefined index: collegiancode (/Applications/MAMP/htdocs/alumni/protected/controllers/frontend/CollegianController.php:48)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CollegianController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CollegianController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CollegianController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=frontend/collegian/detail_collegian
+in /Applications/MAMP/htdocs/alumni/protected/controllers/frontend/CollegianController.php (48)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/06/19 08:36:03 [error] [php] Undefined index: collegiancode (/Applications/MAMP/htdocs/alumni/protected/controllers/frontend/CollegianController.php:48)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CollegianController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CollegianController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CollegianController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=frontend/collegian/detail_collegian
+in /Applications/MAMP/htdocs/alumni/protected/controllers/frontend/CollegianController.php (48)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/06/19 08:36:30 [error] [php] Undefined index: collegiancode (/Applications/MAMP/htdocs/alumni/protected/controllers/frontend/CollegianController.php:48)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CollegianController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CollegianController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CollegianController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=frontend/collegian/detail_collegian
+in /Applications/MAMP/htdocs/alumni/protected/controllers/frontend/CollegianController.php (48)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/06/19 08:36:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "delete_workings".' in /Applications/MAMP/htdocs/alumni/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(270): CController->missingAction('delete_workings')
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CController->run('delete_workings')
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/workin...')
+#3 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/alumni/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/alumni/index.php?r=frontend/workings/delete_workings
+HTTP_REFERER=http://localhost/alumni/index.php?r=frontend/workings/edit&collegian_code=0000000000002&id=1
+---
+2015/06/19 08:36:39 [error] [php] Undefined index: collegiancode (/Applications/MAMP/htdocs/alumni/protected/controllers/frontend/CollegianController.php:48)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CollegianController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CollegianController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CollegianController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=frontend/collegian/detail_collegian
+in /Applications/MAMP/htdocs/alumni/protected/controllers/frontend/CollegianController.php (48)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/06/19 08:36:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "delete_workings".' in /Applications/MAMP/htdocs/alumni/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(270): CController->missingAction('delete_workings')
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CController->run('delete_workings')
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/workin...')
+#3 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/alumni/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/alumni/index.php?r=frontend/workings/delete_workings
+HTTP_REFERER=http://localhost/alumni/index.php?r=frontend/workings/edit&collegian_code=0000000000002&id=1
+---
+2015/06/19 08:37:26 [error] [php] Undefined index: collegiancode (/Applications/MAMP/htdocs/alumni/protected/controllers/frontend/CollegianController.php:48)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CollegianController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CollegianController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CollegianController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=frontend/collegian/detail_collegian
+in /Applications/MAMP/htdocs/alumni/protected/controllers/frontend/CollegianController.php (48)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/06/19 08:39:36 [error] [php] Undefined index: collegiancode (/Applications/MAMP/htdocs/alumni/protected/controllers/frontend/CollegianController.php:48)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CollegianController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CollegianController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CollegianController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=frontend/collegian/detail_collegian
+in /Applications/MAMP/htdocs/alumni/protected/controllers/frontend/CollegianController.php (48)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/06/19 08:39:39 [error] [php] Undefined variable: ud (/Applications/MAMP/htdocs/alumni/protected/controllers/frontend/WorkingsController.php:69)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): WorkingsController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): WorkingsController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): WorkingsController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=frontend/workings/delete
+in /Applications/MAMP/htdocs/alumni/protected/controllers/frontend/WorkingsController.php (69)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/06/19 08:39:59 [error] [php] Undefined index: collegiancode (/Applications/MAMP/htdocs/alumni/protected/controllers/frontend/CollegianController.php:48)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CollegianController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CollegianController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CollegianController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=frontend/collegian/detail_collegian
+in /Applications/MAMP/htdocs/alumni/protected/controllers/frontend/CollegianController.php (48)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/06/19 08:40:12 [error] [php] Undefined index: collegiancode (/Applications/MAMP/htdocs/alumni/protected/controllers/frontend/CollegianController.php:48)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CollegianController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CollegianController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CollegianController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=frontend/collegian/detail_collegian
+in /Applications/MAMP/htdocs/alumni/protected/controllers/frontend/CollegianController.php (48)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/06/19 08:40:19 [error] [php] Undefined variable: ud (/Applications/MAMP/htdocs/alumni/protected/controllers/frontend/WorkingsController.php:69)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): WorkingsController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): WorkingsController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): WorkingsController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=frontend/workings/delete
+in /Applications/MAMP/htdocs/alumni/protected/controllers/frontend/WorkingsController.php (69)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/06/19 08:40:45 [error] [php] Undefined index: collegiancode (/Applications/MAMP/htdocs/alumni/protected/controllers/frontend/CollegianController.php:48)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CollegianController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CollegianController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CollegianController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=frontend/collegian/detail_collegian
+in /Applications/MAMP/htdocs/alumni/protected/controllers/frontend/CollegianController.php (48)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/06/19 08:40:50 [error] [php] Undefined index: collegiancode (/Applications/MAMP/htdocs/alumni/protected/controllers/frontend/CollegianController.php:48)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CollegianController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CollegianController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CollegianController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=frontend/collegian/detail_collegian
+in /Applications/MAMP/htdocs/alumni/protected/controllers/frontend/CollegianController.php (48)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/06/20 12:20:04 [error] [php] Undefined index: news_id (/Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php:28)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CommentController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CommentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CommentController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=comment/get_comment
+in /Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php (28)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/06/20 12:20:31 [error] [php] Undefined index: news_id (/Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php:28)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CommentController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CommentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CommentController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=comment/get_comment
+in /Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php (28)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/06/20 12:22:07 [error] [php] Undefined index: news_id (/Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php:28)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CommentController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CommentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CommentController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=comment/get_comment
+in /Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php (28)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/06/20 12:24:50 [error] [php] Undefined index: news_id (/Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php:28)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CommentController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CommentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CommentController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=comment/get_comment
+in /Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php (28)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/06/20 12:26:02 [error] [php] Undefined index: news_id (/Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php:28)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CommentController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CommentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CommentController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=comment/get_comment
+in /Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php (28)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/06/20 12:26:21 [error] [php] Undefined index: news_id (/Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php:28)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CommentController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CommentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CommentController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=comment/get_comment
+in /Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php (28)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/06/20 12:27:11 [error] [php] Undefined index: news_id (/Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php:28)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CommentController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CommentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CommentController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=comment/get_comment
+in /Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php (28)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/06/20 12:27:52 [error] [php] Undefined index: news_id (/Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php:28)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CommentController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CommentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CommentController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=comment/get_comment
+in /Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php (28)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/06/20 12:28:17 [error] [php] Undefined index: news_id (/Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php:28)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CommentController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CommentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CommentController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=comment/get_comment
+in /Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php (28)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/06/20 12:28:29 [error] [php] Undefined index: news_id (/Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php:28)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CommentController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CommentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CommentController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=comment/get_comment
+in /Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php (28)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/06/20 12:29:48 [error] [php] Undefined index: news_id (/Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php:28)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CommentController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CommentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CommentController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=comment/get_comment
+in /Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php (28)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/06/20 12:30:16 [error] [php] Undefined index: news_id (/Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php:28)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CommentController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CommentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CommentController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=comment/get_comment
+in /Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php (28)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/06/20 12:30:46 [error] [php] Undefined index: news_id (/Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php:28)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CommentController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CommentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CommentController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=comment/get_comment
+in /Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php (28)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/06/20 12:32:27 [error] [php] Undefined index: news_id (/Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php:28)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CommentController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CommentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CommentController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=comment/get_comment
+in /Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php (28)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/06/20 12:33:25 [error] [php] Undefined index: news_id (/Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php:28)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CommentController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CommentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CommentController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=comment/get_comment
+in /Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php (28)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/06/20 12:34:23 [error] [php] Undefined index: news_id (/Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php:28)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CommentController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CommentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CommentController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=comment/get_comment
+in /Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php (28)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/06/20 12:34:51 [error] [php] Undefined index: news_id (/Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php:28)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CommentController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CommentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CommentController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=comment/get_comment
+in /Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php (28)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/06/20 12:36:27 [error] [php] Undefined index: news_id (/Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php:28)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CommentController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CommentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CommentController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=comment/get_comment
+in /Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php (28)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/06/23 16:41:04 [error] [php] Undefined index: news_id (/Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php:28)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CommentController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CommentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CommentController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=comment/get_comment
+in /Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php (28)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/06/23 16:41:19 [error] [php] Undefined index: news_id (/Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php:28)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CommentController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CommentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CommentController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=comment/get_comment
+in /Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php (28)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/06/23 16:43:33 [error] [php] Undefined index: news_id (/Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php:28)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CommentController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CommentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CommentController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=comment/get_comment
+in /Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php (28)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/06/23 16:46:18 [error] [php] Undefined index: news_id (/Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php:28)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CommentController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CommentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CommentController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=comment/get_comment
+in /Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php (28)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/06/23 17:08:09 [error] [php] Undefined index: news_id (/Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php:28)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CommentController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CommentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CommentController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=comment/get_comment
+in /Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php (28)
+in /Applications/MAMP/htdocs/alumni/index.php (13)
+2015/06/23 17:09:08 [error] [php] Undefined index: news_id (/Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php:28)
+Stack trace:
+#0 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(286): CommentController->runAction()
+#1 /Applications/MAMP/htdocs/alumni/framework/web/CController.php(265): CommentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(282): CommentController->run()
+#3 /Applications/MAMP/htdocs/alumni/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/alumni/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/alumni/index.php(13): CWebApplication->run()
+REQUEST_URI=/alumni/index.php?r=comment/get_comment
+in /Applications/MAMP/htdocs/alumni/protected/controllers/CommentController.php (28)
+in /Applications/MAMP/htdocs/alumni/index.php (13)

@@ -67,6 +67,12 @@ class UserController extends Controller {
     }
 
     public function actionDetail_agent() {
+        
+        if(Yii::app()->session['user'] != "M"){
+            //echo Yii::app()->createUrl("site/main");
+            $this->redirect(array('site/main'));
+        }
+     
         $id = Yii::app()->session['agent_id'];
         $agent = new CompanyAgent();
         $data['agent'] = $agent->Get_agent($id);

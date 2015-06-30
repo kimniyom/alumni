@@ -93,6 +93,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- 
     form dialog add
     -->
+    
+    <?php if(Yii::app()->session['user'] != "A"){
+        echo Yii::app()->createUrl("site/main");
+    } ?>
+    
     <div class="modal fade" id="dialog_add">
         <div class="modal-dialog">
             <div class="modal-content">

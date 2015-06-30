@@ -1,5 +1,5 @@
 $(document).ready(function(){        
-	$('li img').on('click',function(){
+	$('.album ul li img').on('click',function(){
 		var src = $(this).attr('src');
 		var img = '<img src="' + src + '" class="img-responsive"/>';
 		

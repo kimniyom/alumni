@@ -19,7 +19,9 @@
         echo "-";
     }
     ?>
-<p class="list-group-item">เบอร์โทรศัพท์ : <?php echo $detail['collegian_tel']; ?></p>
+    <?php if (Yii::app()->session['user'] != 'M') { ?>
+    <p class="list-group-item">เบอร์โทรศัพท์ : <?php echo $detail['collegian_tel']; ?></p>
+<?php } ?>
 <p class="list-group-item">อีเมลล์ : <?php echo $detail['collegian_email']; ?></p>
 <p class="list-group-item">อาชีพ : <?php
     if (isset($detail['occupation'])) {

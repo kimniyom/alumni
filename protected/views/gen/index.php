@@ -104,7 +104,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Add & Edit Generation</h4>
+                <h4 class="modal-title">เพิ่ม และ แก้ไข รุ่นนักศึกษา<</h4>
             </div>
             <form id="form_gen" name="form_gen">
                 <div class="modal-body">
@@ -129,4 +129,4 @@
             </form>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
-</div><!-- /.modal --> 
+</div><!-- /.modal --> 

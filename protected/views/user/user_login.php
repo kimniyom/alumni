@@ -38,7 +38,7 @@
                     } else if (success == '2') {
                         $("#msg_login").html("<center><font style='color:red'>รอการยืนยันจากผู้ดูแลระบบ ...!</font></center>");
                     } else {
-                        $("#msg_login").html("<center><font style='color:red'>Login Wrong ...!</font></center>");
+                        $("#msg_login").html("<center><font style='color:red'>ชื่อผู้ใช้ หรือ รหัสผ่านไม่ถูกต้อง ...!</font></center>");
                     }
                 });
             }

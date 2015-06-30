@@ -123,7 +123,7 @@
              function set_language(language) {
              var url = "index.php?r=site/language";
              var data = {language: language};
-     
+             
              $.post(url, data, function (success) {
              window.location.reload();
              });
@@ -309,9 +309,9 @@
             <div class="container" style=" height: 45px; padding-top: 5px;">
                 <!--
                 <div style=" float: right;">
-                    <img src="<?php echo Yii::app()->baseUrl; ?>/images/thailand.png" onclick="set_language('th');"/>
-                    <img src="<?php echo Yii::app()->baseUrl; ?>/images/united_kingdom.png" onclick="set_language('en');"/>
-                    <img src="<?php echo Yii::app()->baseUrl; ?>/images/myanmar.png" onclick="set_language('mm');"/>
+                    <img src="<?//php echo Yii::app()->baseUrl; ?>/images/thailand.png" onclick="set_language('th');"/>
+                    <img src="<?//php echo Yii::app()->baseUrl; ?>/images/united_kingdom.png" onclick="set_language('en');"/>
+                    <img src="<?//php echo Yii::app()->baseUrl; ?>/images/myanmar.png" onclick="set_language('mm');"/>
                 </div>
                 -->
                 <ol class="breadcrumb">
@@ -392,7 +392,7 @@
                                         $img = $agent->Get_img_profile($c['id']);
                                         ?>
                                         <li>
-                                            <img src="<?php echo Yii::app()->baseUrl; ?>/assets/jquery.picture.cut/uploads_images_user/<?php echo $img; ?>" alt="User Image"/>
+                                            <img src="<?php echo Yii::app()->baseUrl; ?>/assets/jquery.picture.cut/uploads_images_user/<?php echo $img; ?>" alt="User Image" onclick="nu();"/>
                                             <a class="users-list-name" href="javascript:void(0);"><?php echo $c['name'] ?></a>
                                         </li>
                                     <?php endforeach; ?>
@@ -487,9 +487,7 @@
 
     <script src="<?php echo Yii::app()->baseUrl; ?>/assets/bootstrap-autohidingnavbar/src/jquery.bootstrap-autohidingnavbar.js"></script>
 
-    <script>
-    $("div.navbar-fixed-top").autoHidingNavbar();
-    </script>
+
 
 </html>
 

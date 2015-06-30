@@ -165,17 +165,19 @@ $this->breadcrumbs = array(
                         <td><?php echo $agent['mobile']; ?></td>
                     </tr>
                     <tr>
-                        <td>อีเมล์</td>
+                        <td>อีเมล</td>
                         <td><?php echo $agent['email']; ?></td>
                     </tr>
                     <tr>
                         <td>ชื่อเข้าใช้งาน</td>
                         <td><?php echo $agent['username']; ?></td>
                     </tr>
+					<!--
                     <tr>
                         <td>รหัสผ่าน</td>
-                        <td><?php echo $agent['password']; ?></td>
+                        <td><?//php echo $agent['password']; ?></td>
                     </tr>
+					-->
                     <tr>
                         <td>ชื่อบริษัท</td>
                         <td><?php echo $agent['company']; ?></td>

@@ -4,7 +4,7 @@
 /* @var $model Collegian */
 
 $this->breadcrumbs = array(
-    'หน้าหลัก' => array('site/Index'),
+    'หน้าแรก' => array('site/Index'),
     $agent['name'] . ' ' . $agent['lname'] => array('frontend/user/detail_agent'),
     "แก้ไข"
 );

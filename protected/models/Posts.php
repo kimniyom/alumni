@@ -126,7 +126,7 @@ class Posts extends CActiveRecord {
 
         if ($rs) {
             $query = "SELECT p.*,$Field
-                        FROM posts p INNER JOIN $Table c ON p.sender_code = c.id 
+                        FROM posts p INNER JOIN $Table c ON p.receiver_code = c.id 
                         WHERE post_id = '" . $rs['upper'] . "' ";
             return Yii::app()->db->createCommand($query)->queryRow();
         } else {

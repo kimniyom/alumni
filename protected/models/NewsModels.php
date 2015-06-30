@@ -76,11 +76,9 @@ class NewsModels extends CActiveRecord {
 // Function ดึงมาแก้ไขข่าว
     public function Get_News_Edit($News_id = '') {
 
-        $query = "SELECT n.*,CONCAT(c.collegian_name,' ',c.collegian_lname) as News_Owner,
-                Ncr.News_Catagory
+        $query = "SELECT n.*,CONCAT(c.collegian_name,' ',c.collegian_lname) as News_Owner
                 FROM News n LEFT JOIN collegian c ON n.News_Owner = c.collegian_code
                 LEFT JOIN admin adm on adm.id=n.News_Owner
-                INNER JOIN News_Catagories Ncr ON Ncr.News_Catagory_id=n.News_Catagory_id
                 WHERE n.News_id = '$News_id' ";
         $rs = Yii::app()->db->createCommand($query)->queryRow();
         return $rs;

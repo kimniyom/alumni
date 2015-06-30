@@ -250,7 +250,7 @@
                 </div>
                 <div class="col-sm-9">
                     <input type="text" id="occupation" name="occupation" class="form-control" required="required"
-                           value="<?php echo $detail['collegian_tel']; ?>"/>
+                           value="<?php echo $detail['occupation']; ?>"/>
                 </div>
             </div>
             <br/>
