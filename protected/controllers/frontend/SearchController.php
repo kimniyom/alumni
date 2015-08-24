@@ -15,7 +15,10 @@ class SearchController extends Controller {
 
     public function actionSearch_collegian() {
         $education = new Educations();
+        $gen = new GenerationModel();
+        $data['gen'] = $gen->findAll();
         $data['education'] = $education->findAll();
+        
         $this->render('//frontend/search/search', $data);
     }
 
@@ -27,6 +30,8 @@ class SearchController extends Controller {
         $workings = $_POST['workings'];
         $aptitude = $_POST['aptitude'];
         $etc = $_POST['etc'];
+        $collegian_name = $_POST['collegian_name'];
+        $genNumber = $_POST['genNumber'];
 
         $yearstart = "";
         $yearend = "";
@@ -101,8 +106,27 @@ class SearchController extends Controller {
             $JOIN .= "";
             $WHERE .= "";
         }
+        
+        if($collegian_name != ""){
+            $JOIN .= "";
+            $WHERE .= " AND (c.collegian_name LIKE '%$collegian_name%' OR c.nickname LIKE '%$collegian_name%') ";
+        } else {
+            $JOIN .= "";
+            $WHERE .= "";
+        }
+        
+        if($genNumber != ""){
+            $JOIN .= "";
+            $WHERE .= " AND c.GenNumber = '$genNumber' ";
+        } else {
+            $JOIN .= "";
+            $WHERE .= "";
+        }
+        
+        
 
         $data['result'] = $Search->SearchCollegian($JOIN, $WHERE);
+        
 
         $data['year_start'] = $yearstart;
         $data['year_end'] = $yearend;

@@ -46,7 +46,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><i class="fa fa-empire"></i> กรอกอีเมลล์</td>
+                    <td><i class="fa fa-empire"></i> กรอกอีเมล</td>
                     <td><input type="email" id="email" class="form-control"/></td>
                 </tr>
                 <tr>

@@ -60,7 +60,7 @@ $this->breadcrumbs = array(
 
             <div class="row">
                 <div class="col-sm-3">
-                    <label>ชื่อ *</label>
+                    <label>ชื่อจริง *</label>
                 </div>
                 <div class="col-sm-9">
                     <input type="text" id="collegian_name" name="collegian_name" class="form-control" required="required"
@@ -76,6 +76,17 @@ $this->breadcrumbs = array(
                 <div class="col-sm-9">
                     <input type="text" id="collegian_lname" name="collegian_lname" class="form-control" required="required"
                            value="<?php echo $detail['collegian_lname']; ?>"/>
+                </div>
+            </div>
+            <br/>
+            
+            <div class="row">
+                <div class="col-sm-3">
+                    <label>ชื่อเล่น *</label>
+                </div>
+                <div class="col-sm-9">
+                    <input type="text" id="nickname" name="nickname" class="form-control" required="required"
+                           value="<?php echo $detail['nickname']; ?>"/>
                 </div>
             </div>
             <br/>
@@ -260,10 +271,11 @@ $this->breadcrumbs = array(
                 </div>
             </div>
             <br/>
+            
         </div><!-- form -->
     </div>
     <div class="panel-footer" style="text-align: right;">
-        <button type="button" class="btn btn-primary" onclick="edit_collegian();">
+        <button type="button" class="btn btn-primary" onclick="admin_edit_collegian();">
             <i class="fa fa-save"></i> บันทึกข้อมูล
         </button>
         <button type="button" class="btn btn-danger">

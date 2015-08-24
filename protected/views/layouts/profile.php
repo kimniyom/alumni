@@ -101,7 +101,7 @@
                             $post_agent = $msg->Count_msg_agent($receiver_code, $receiver_status);
                             $post_admin = $msg->Count_msg_admin($receiver_code, $receiver_status);
                             ?>
-                            <li class="active"><a href="index.php?r=site"><i class="glyphicon glyphicon-home"></i> หน้าเว็บไซต์</a></li>
+                            <li class="active"><a href="index.php?r=site"><i class="glyphicon glyphicon-home"></i> หน้าแรก</a></li>
                             <hr style="margin: 5px 0px;">
                             <li>
                                 <a href="index.php?r=frontend/posts/post_admin"><i class="glyphicon glyphicon-comment"></i> ข้อความจากผู้ดูแลระบบ 
@@ -123,7 +123,7 @@
                                     <i class="fa fa-bullhorn"></i> จัดการข่าว </a>
                             </li>
                             <hr style="margin: 5px 0px;">
-                            <li><a href="Javascript:window.location.reload();"><i class="glyphicon glyphicon-refresh"></i> Refresh</a></li>
+                            <li><a href="Javascript:window.location.reload();"><i class="glyphicon glyphicon-refresh"></i> รีเฟรชหน้า</a></li>
                         </ul>
 
                         <!-- tiny only nav

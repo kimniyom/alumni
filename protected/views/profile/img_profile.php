@@ -14,9 +14,21 @@
                 </div></a>
         </div>
     <?php } else { ?>
-        <div class="ih-item square colored effect13 top_to_bottom" style=" border: none; width: 100%; height: 100%;">
-            <img src="<?php echo Yii::app()->baseUrl; ?>/assets/jquery.picture.cut/uploads/<?php echo $img; ?>" class="img-responsive">
-        </div>
+        <?php if (Yii::app()->session['user'] == 'M') { ?>
+            <?php if ($shot_name == 'นาย') { ?>
+                <div class="ih-item square colored effect13 top_to_bottom" style=" border: none; width: 100%; height: 100%;">
+                    <img src="<?php echo Yii::app()->baseUrl; ?>/images/Boy.png" class="img-responsive">
+                </div>
+            <?php } else { ?>
+                <div class="ih-item square colored effect13 top_to_bottom" style=" border: none; width: 100%; height: 100%;">
+                    <img src="<?php echo Yii::app()->baseUrl; ?>/images/Girl.png" class="img-responsive">
+                </div>
+            <?php } ?>
+        <?php } else { ?>
+            <div class="ih-item square colored effect13 top_to_bottom" style=" border: none; width: 100%; height: 100%;">
+                <img src="<?php echo Yii::app()->baseUrl; ?>/assets/jquery.picture.cut/uploads/<?php echo $img; ?>" class="img-responsive">
+            </div>
+        <?php } ?>
     <?php } ?>
     <!-- end normal -->
 </center>

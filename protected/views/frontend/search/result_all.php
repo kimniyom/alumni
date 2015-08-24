@@ -26,6 +26,7 @@
 <table class="table table-hover" id="table_search">
     <thead>
         <tr>
+            <th style=" display: none;"></th>
             <th>ผลการค้นหา</th>
         </tr>
     </thead>
@@ -36,23 +37,35 @@
         $collegian = new Collegian();
         //echo $year_start;
         //echo $year_end;
+        $i = 0;
         foreach ($result as $rs):
+            $i++;
             $img = $collegian->Get_img_profile($rs['collegian_code']);
             ?>
             <tr>
+                <td style="display: none;"><?php echo $i; ?></td>
                 <td>
                     <a href="index.php?r=frontend/timeline/profile&collegian_code=<?php echo $rs['collegian_code'] ?>" target="_blank">
                         <div class="row">
                             <div class="col-sm-3">
-                                <?php if (!empty($img)) { ?>
-                                    <img src="<?php echo Yii::app()->baseUrl; ?>/assets/jquery.picture.cut/uploads/<?php echo $img; ?>" width="80">
+                                <?php if (Yii::app()->session['user'] == 'M') { ?>
+                                    <?php if ($rs['shot_name'] == 'นาย') { ?>
+                                        <img src="<?php echo Yii::app()->baseUrl; ?>/images/Boy.png" width="80">
+                                    <?php } else { ?>
+                                        <img src="<?php echo Yii::app()->baseUrl; ?>/images/Girl.png" width="80">
+                                    <?php } ?>
                                 <?php } else { ?>
-                                    <img src="<?php echo Yii::app()->baseUrl; ?>/assets/jquery.picture.cut/uploads/bg_5.jpg" width="80">
+                                    <?php if (!empty($img)) { ?>
+                                        <img src="<?php echo Yii::app()->baseUrl; ?>/assets/jquery.picture.cut/uploads/<?php echo $img; ?>" width="80">
+                                    <?php } else { ?>
+                                        <img src="<?php echo Yii::app()->baseUrl; ?>/assets/jquery.picture.cut/uploads/bg_5.jpg" width="80">
+                                    <?php } ?>
                                 <?php } ?>
                             </div>
                             <div class="col-sm-9">
                                 <label style="color: #660000;">
                                     <?php echo $rs['shot_name'] . $rs['collegian_name'] . ' ' . $rs['collegian_lname']; ?>
+                                    (รุ่น <?php echo $rs['GenNumber']; ?>)
                                 </label><br/>
                                 อายุ 
                                 <?php

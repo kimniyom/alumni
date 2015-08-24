@@ -125,10 +125,7 @@
                         <p>
                             <i class="fa fa-users"></i>
                             รุ่น <?php echo $detail['GenNumber']; ?> ปี <?php echo $detail['GenYear']; ?></p>
-                        <p>
-                            <i class="fa fa-calendar"></i>
-                            เข้าใช้งานเมื่อ 
-                        </p>
+                        
                     </div>
                 </div>
 
@@ -301,7 +298,7 @@
         <hr>
 
         <h4 class="text-center">
-            <a href="index.php?r=site" target="ext">&copy; ระบบทะเบียนศิษย์เก่านักศึกษา</a>
+            <a href="index.php?r=site" target="ext">&copy; เว็บไซต์ทำเนียบรุ่น</a>
         </h4>
 
         <hr>

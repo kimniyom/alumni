@@ -4,18 +4,14 @@ class CollegianController extends Controller {
 
     public $layout = "profile";
 
-    public function actionLogin() {
-        if (Yii::app()->session['user'] != "U") {
-            $this->renderPartial('//frontend/collegian_login');
-        } else {
-            $CollegianCode = Yii::app()->session['collegian_code'];
-            $this->redirect(array('frontend/Collegian/Profile', 'collegian_code' => $CollegianCode));
-        }
+    public function actionIndex() {
+        $CollegianCode = Yii::app()->session['collegian_code'];
+        $this->redirect(array('frontend/Collegian/Profile', 'collegian_code' => $CollegianCode));
     }
 
     public function actionProfile() {
         if (Yii::app()->session['user'] == "") {
-            $this->redirect(array('frontend/collegian/login'));
+            $this->redirect(array('site/main'));
         } else {
             $collegian = new Collegian();
             $data['CollegianCode'] = $_GET['collegian_code'];
@@ -54,6 +50,8 @@ class CollegianController extends Controller {
     public function actionImg_profile() {
         $collegiancode = $_POST['collegian_code'];
         $collegian = new Collegian();
+        $result = $collegian->Get_Collegian_By_CollegianCode($collegiancode);
+        $data['shot_name'] = $result['prename'];
         $data['collegian_code'] = $collegiancode;
         $data['img'] = $collegian->Get_img_profile($collegiancode);
 
@@ -115,11 +113,12 @@ class CollegianController extends Controller {
         }
 
         $collegian = new Collegian();
+        $forgot = new Forgot();
         $collegian_code = $_GET['collegian_code'];
         $query = "SELECT * FROM prefix";
         $data['perfix'] = Yii::app()->db->createCommand($query)->queryAll();
         $data['detail'] = $collegian->Get_Collegian_By_CollegianCode($collegian_code);
-
+        $data['forgot'] = $forgot->GetAll();
         $this->render('//collegian/edit_collegian', $data);
     }
 
@@ -164,6 +163,57 @@ class CollegianController extends Controller {
         $data['senior'] = $codeline->get_senior($collegian_code);
         $data['collegian_code'] = $collegian_code;
         $this->renderPartial('//codeline/codeline_up1', $data);
+    }
+
+    public function actionCodeline_up_3level() {
+        $collegian_code = $_GET['collegian_code'];
+        $codeline = new Codeline();
+        $result = $codeline->get_senior($collegian_code);
+        foreach ($result as $rs) {
+            echo $rs['senior_code'] . "V<br/>";
+            //ลุง
+            $results = $codeline->get_senior($rs['senior_code']);
+            foreach ($results as $rss) {
+                echo $rss['senior_code'] . "VV<br/>";
+
+                $resultss = $codeline->get_senior($rss['senior_code']);
+                foreach ($resultss as $rsss) {
+                    echo $rsss['collegian_code'] . "=>" . $rsss['senior_code'] . "<br/>";
+                }
+            }
+        }
+
+
+
+
+        /*
+          $data['collegian_code'] = $collegian_code;
+          $this->renderPartial('//codeline/codeline_up1', $data);
+         * 
+         */
+    }
+
+    public function actionCodeline_up_2level() {
+        $collegian_code = $_GET['collegian_code'];
+        $codeline = new Codeline();
+        $result = $codeline->get_senior($collegian_code);
+        foreach ($result as $rs) {
+            //$rs['senior_code'] . "V<br/>";
+            //ลุง
+            $results = $codeline->get_senior($rs['senior_code']);
+            foreach ($results as $rss) {
+                $level2[] = $rs['senior_code'].'=>'.$rss['senior_code'];
+            }
+        }
+
+
+        $level2 = implode(",", $level2);
+        echo $level2;
+        /*
+          $data['collegian_code'] = $collegian_code;
+          $this->renderPartial('//codeline/codeline_up1', $data);
+         * 
+         */
     }
 
     public function actionCodeline_up2() {

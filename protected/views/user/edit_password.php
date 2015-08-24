@@ -3,7 +3,7 @@
         var username = $("#username").val();
         var password = $("#password").val();
         var confirmpassword = $("#confirmpassword").val();
-        var tel = $("#tel").val();
+        //var tel = $("#tel").val();
         var mobile = "<?php echo $agent['mobile'] ?>";
         var id = "<?php echo $agent['id'] ?>";
         if (username == "") {
@@ -20,12 +20,14 @@
             alert("รหัสไม่ถูกต้อง ...");
             return false;
         }
-
+        
+        /*
         if (tel != mobile) {
             alert("ไม่มีเบอร์โทรศัพท์นี้ ...");
             return false;
         }
-
+        */
+       
         var url = "<?php echo Yii::app()->createUrl('frontend/user/save_edit_password') ?>";
         var data = {id: id, username: username, password: password};
 
@@ -78,7 +80,7 @@ $this->breadcrumbs = array(
                     <input type="password" id="confirmpassword" class="form-control input-sm" onkeypress="CheckNum();"/>
                 </div>
             </div><br/>
-
+            <!--
             <label style="color:#3333ff;"><i class="fa fa-user-secret"></i> ยืนยันตัวตน</label>
             <div class="row list-group-item" style="border-left: none; border-right: none;">
                 <div class="col-lg-4 col-sm-4">
@@ -88,7 +90,7 @@ $this->breadcrumbs = array(
                     <input type="text" id="tel" class="form-control input-sm" onkeypress="CheckNum();"/>
                 </div>
             </div>
-
+            -->
         </div>
         <div class="panel-footer" style=" text-align: center;">
             <div class="btn btn-primary btn-sm" onclick="edit_password();"<i class="fa fa-save"></i> แก้ไขรหัสผ่าน</div>

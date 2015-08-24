@@ -64,7 +64,7 @@
 
                         <ul class="nav hidden-xs" id="lg-menu">
                             <?php $news_model = new News_collegian(); ?>
-                            <li><a href="index.php?r=site"><i class="glyphicon glyphicon-home"></i> กลับหน้าเว็บ</a></li>
+                            <li><a href="index.php?r=site"><i class="glyphicon glyphicon-home"></i> กลับหน้าแรก</a></li>
                             <?php if (Yii::app()->session['user'] == "U") { ?>
                                 <li><a href="index.php?r=frontend/collegian/profile&collegian_code=<?php echo Yii::app()->session['collegian_code'] ?>">
                                         <i class="glyphicon glyphicon-chevron-left"></i> กลับหน้าโปรไฟล์</a>
@@ -77,7 +77,7 @@
 
                             <li><a href="index.php?r=news/News_general_all"><i class="glyphicon glyphicon-comment"></i> ข่าวทั่วไป <span class="label label-danger"><?php echo $news_model->Count_News_Genneral(); ?></span></a></li>
                             <li><a href="index.php?r=news/News_collegian_all"><i class="glyphicon glyphicon-envelope"></i> ข่าวภายใน <span class="label label-warning"><?php echo $news_model->Count_News_Collegian(); ?></span></a></li>
-                            <li><a href="Javascript:window.location.reload();"><i class="glyphicon glyphicon-refresh"></i> Refresh</a></li>
+                            <li><a href="Javascript:window.location.reload();"><i class="glyphicon glyphicon-refresh"></i> รีเฟรชหน้า</a></li>
                         </ul>
                     </div>
                     <!-- /sidebar -->

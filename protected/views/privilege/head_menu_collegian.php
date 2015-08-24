@@ -1,7 +1,7 @@
 <nav class="collapse navbar-collapse" role="navigation">
     <ul class="nav navbar-nav">
         <li>
-            <a href="index.php?r=site"><b><i class="fa fa-home"></i> หน้าเว็บ</b></a>
+            <a href="index.php?r=site"><b><i class="fa fa-home"></i> หน้าแรก</b></a>
         </li>
         <li>
             <a href="<?php echo Yii::app()->createUrl('frontend/collegian/profile&collegian_code=' . Yii::app()->session['collegian_code']) ?>">

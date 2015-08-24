@@ -108,9 +108,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <div class="modal-body">
                     <form id="form_add">
                         <label>MenuName</label>
-                        <input type="text" id="menu_name" name="menu_name" required="required" class="form-control"/>
+                        <input type="text" id="menu_name" name="menu_name" required class="form-control"/>
                         <label>MenuUrl</label>
-                        <input type="text" id="menu_url" name="menu_url" required="required" class="form-control"/>
+                        <input type="text" id="menu_url" name="menu_url" required class="form-control"/>
                         <p>*Controller/Function</p>
                         <div style="text-align: right;">
                             <button type="submit" class="btn btn-primary" onclick="save_masmenu();">Save</button>
@@ -228,7 +228,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <li>
                             <a href="<?php echo Yii::app()->createUrl('site'); ?>">
                                 <i class="fa fa-home"></i>
-                                <span>หน้าเว็บ</span></a>
+                                <span>หน้าแรก</span></a>
                         </li>
                         <?php if (Yii::app()->session['super'] == '1') { ?>
                             <li>

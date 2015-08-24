@@ -5,7 +5,7 @@
 
 $this->breadcrumbs = array(
     'หน้าแรก' => array('site/Index'),
-    'สมัคสมาชิก'
+    'สมัครสมาชิก'
 );
 ?>
 
@@ -13,7 +13,7 @@ $this->breadcrumbs = array(
 
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h4><i class="fa fa-plus"></i> สมัคสมาชิก</h4>
+            <h4><i class="fa fa-plus"></i> สมัครสมาชิก(ตัวแทนบริษัท)</h4>
         </div>
         <div class="panel-body">
             <div class="form">
@@ -90,10 +90,10 @@ $this->breadcrumbs = array(
                     </div>
                 </div>
                 <br/>
-                
+
                 <div class="row">
                     <div class="col-sm-3">
-                        <label>อีเมล์ *</label>
+                        <label>อีเมล *</label>
                     </div>
                     <div class="col-sm-9">
                         <input type="email" id="email" name="email" class="form-control input-sm" required="required"/>
@@ -117,6 +117,33 @@ $this->breadcrumbs = array(
                     </div>
                     <div class="col-sm-9">
                         <textarea id="address" name="address" class="form-control"></textarea>
+                    </div>
+                </div>
+                <br/>
+
+                <hr/>
+
+                <div class="row">
+                    <div class="col-sm-3">
+                        <label>คำถามกรณีลืมรหัสผ่าน *</label>
+                    </div>
+                    <div class="col-sm-9">
+                        <select id="question" name="question" class="form-control input-sm">
+                            <option value="">กรุณาเลือกคำถาม</option>
+                            <?php foreach ($forgot as $forgots): ?>
+                                <option value="<?php echo $forgots['id'] ?>"><?php echo $forgots['question'] ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                </div>
+                <br/>
+
+                <div class="row">
+                    <div class="col-sm-3">
+                        <label>คำตอบ *</label>
+                    </div>
+                    <div class="col-sm-9">
+                        <input type="text" id="answer" name="answer" class="form-control input-sm"/>
                     </div>
                 </div>
                 <br/>

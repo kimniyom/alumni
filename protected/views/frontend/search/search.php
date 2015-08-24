@@ -9,6 +9,8 @@
         var workings;
         var aptitude;
         var etc;
+        var collegian_name = $("#collegian_name").val();
+        var genNumber = $("#genNumber").val();
 
         $("#workings").prop("checked", function (i, val) {
             if (val == true) {
@@ -44,7 +46,9 @@
             workinghistory: workhistory,
             workings: workings,
             aptitude: aptitude,
-            etc: etc
+            etc: etc,
+            collegian_name:collegian_name,
+            genNumber: genNumber
 
         };
 
@@ -72,6 +76,29 @@ $this->breadcrumbs = array(
         </div><!-- /.box-tools -->
     </div><!-- /.box-header -->
     <div class="box-body">
+        <div class="row">
+            <div class="col-sm-4">
+                <label>ค้นหาด้วยชื่อ</label>
+            </div>
+            <div class="col-sm-8">
+                <input type="text" class="form-control input-sm" id="collegian_name" placeholder="ชื่อจริง,ชื่อเล่น"/>
+            </div>
+        </div><br/>
+        
+        <div class="row">
+            <div class="col-sm-4">
+                <label>รุ่น </label>
+            </div>
+            <div class="col-sm-8">
+                <select id="genNumber" class="form-control input-sm" name="genNumber">
+                    <option value="">==ยังไม่ได้เลือกรุ่น==</option>
+                    <?php foreach ($gen as $gens) { ?>
+                        <option value="<?php echo $gens['GenNumber']; ?>"><?php echo $gens['GenNumber']; ?></option>
+                    <?php } ?>
+                </select>
+            </div>
+        </div><br/>
+        
         <div class="row">
             <div class="col-sm-4">
                 <label>จังหวัด </label>

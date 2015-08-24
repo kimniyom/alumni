@@ -133,13 +133,18 @@ class CollegianController extends Controller {
     public function actionSave_collegian() {
         $query = "SELECT * FROM collegian WHERE collegian_code = '" . $_POST['collegian_code'] . "' ";
         $check_code = Yii::app()->db->createCommand($query)->queryScalar();
-        if ($check_code == 0) {
+
+        $user = new CompanyAgent();
+        $check = $user->Check_user($_POST['collegian_username'], $_POST['collegian_password']);
+
+        if ($check_code == 0 || $check == 0) {
             //$birth = $_POST['year'] . '-' . $_POST['month'] . '-' . $_POST['day'];
             $data = array(
                 "collegian_code" => $_POST['collegian_code'],
                 "shot_name" => $_POST['shot_name'],
                 "collegian_name" => $_POST['collegian_name'],
                 "collegian_lname" => $_POST['collegian_lname'],
+                //"nickname" => $_POST['nickname'],
                 "collegian_username" => $_POST['collegian_username'],
                 "collegian_password" => $_POST['collegian_password'],
                 /*
@@ -194,6 +199,7 @@ class CollegianController extends Controller {
             "shot_name" => $_POST['shot_name'],
             "collegian_name" => $_POST['collegian_name'],
             "collegian_lname" => $_POST['collegian_lname'],
+            "nickname" => $_POST['nickname'],
             "collegian_username" => $_POST['collegian_username'],
             "collegian_card" => $_POST['collegian_card'],
             "collegian_birth" => $birth,
@@ -206,6 +212,8 @@ class CollegianController extends Controller {
             "collegian_email" => $_POST['collegian_email'],
             "collegian_tel" => $_POST['collegian_tel'],
             "occupation" => $_POST['occupation'],
+            "question" => $_POST['question'],
+            "answer" => $_POST['answer'],
             "status" => "U",
             "d_update" => date("Y-m-d H:i:s")
         );

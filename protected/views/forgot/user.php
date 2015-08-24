@@ -31,7 +31,12 @@
         <script type="text/javascript">
             function sent_form() {
                 var url = "index.php?r=forgot/check_user";
-                var data = {mobile: $("#mobile").val(), email: $("#email").val()};
+                var data = {
+                    username: $("#username").val(), 
+                    email: $("#email").val(),
+                    question: $("#question").val(),
+                    answer: $("#answer").val()
+                };
                 $.post(url, data, function (success) {
                     $("#msg_login").html(success);
                 });
@@ -40,8 +45,8 @@
         </script>
     </head>
     <body class="login-page">
-        <div class="login-box">
-            <div class="login-logo">
+        <div class="login-box" style=" margin-top: 10px;">
+              <div class="login-logo" style=" margin-top: 0px;">
                 <a href="#">
                     <img src="<?php echo $path; ?>dist/img/forgot_pass.jpg" class="img-circle" alt="User Image" width="100"/><br/>
                     <b>ลืมรหัสผ่าน</b></a>
@@ -50,13 +55,42 @@
                 <p class="login-box-msg" id="msg_login">กรอกข้อมูล</p>
 
                 <div class="form-group has-feedback">
-                    <input type="text" class="form-control" id="mobile" name="mobile" placeholder="เบอร์โทรศัพท์มือถือ" required="required"/>
+                    <input type="text" class="form-control" id="username" name="username" placeholder="username" required/>
                     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="email" id="email" name="email" class="form-control" placeholder="อีเมล์" required="required"/>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="อีเมล" required/>
                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                 </div>
+                
+                <div class="row">
+                    <div class="col-sm-3">
+                        <label>คำถาม</label>
+                    </div>
+                    <div class="col-sm-9">
+                        <select id="question" name="question" class="form-control input-sm">
+                            <option value="">กรุณาเลือกคำถาม</option>
+                            <?php 
+                            $fmodel = new Forgot();
+                            $forgot = $fmodel->GetAll();
+                            foreach ($forgot as $forgots): ?>
+                                <option value="<?php echo $forgots['id'] ?>"><?php echo $forgots['question'] ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                </div>
+                <br/>
+
+                <div class="row">
+                    <div class="col-sm-3">
+                        <label>คำตอบ *</label>
+                    </div>
+                    <div class="col-sm-9">
+                        <input type="text" id="answer" name="answer" class="form-control input-sm"/>
+                    </div>
+                </div>
+                <br/>
+                <hr/>
                 <div class="row">
                     <div class="col-xs-6">
                         <button type="submit" class="btn btn-primary btn-block btn-flat" onclick="sent_form();">
@@ -72,7 +106,7 @@
                     <p>- OR -</p>
                     <a href="<?php echo Yii::app()->createUrl('site/index') ?>" 
                        class="btn btn-block btn-social btn-facebook btn-flat">
-                        <i class="fa fa-arrow-left"></i> กลับหน้าเว็บไซต์
+                        <i class="fa fa-arrow-left"></i> กลับหน้าแรก
                     </a>
                 </div><!-- /.social-auth-links -->
 

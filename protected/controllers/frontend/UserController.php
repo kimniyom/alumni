@@ -13,20 +13,40 @@ class UserController extends Controller {
         $password = $_POST['password'];
 
         $user = new CompanyAgent();
-        $result = $user->Do_login($username, $password);
+
+        //หาตาราง Admin 
+        $query = "select * from admin where username = '$username' and password = '$password' ";
+        $result = Yii::app()->db->createCommand($query)->queryRow();
         if ($result) {
-            if ($result['active'] == '1') {
-                $json = "1";
-                Yii::app()->session['user'] = "M";
-                Yii::app()->session['agent_name'] = $result['name'] . '-' . $result['lname'];
-                Yii::app()->session['company'] = $result['company'];
-                Yii::app()->session['agent_id'] = $result['id'];
-                Yii::app()->session['id'] = $result['id'];
-            } else {
-                $json = "2";
-            }
+            $json = "1";
+            Yii::app()->session['user'] = "A";
+            Yii::app()->session['admin_name'] = $result['admin_name'] . '-' . $result['admin_lname'];
+            Yii::app()->session['admin_id'] = $result['id'];
+            Yii::app()->session['super'] = $result['super'];
+            Yii::app()->session['id'] = $result['id'];
         } else {
-            $json = "0";
+            //หาตาราง User
+            $result_user = $user->Do_login($username, $password);
+            if ($result_user) {
+                $json = "2";
+                Yii::app()->session['user'] = "M";
+                Yii::app()->session['agent_name'] = $result_user['name'] . '-' . $result_user['lname'];
+                Yii::app()->session['company'] = $result_user['company'];
+                Yii::app()->session['agent_id'] = $result_user['id'];
+                Yii::app()->session['id'] = $result_user['id'];
+            } else {
+                $query_collegian = "select * from collegian where collegian_username = '$username' and collegian_password = '$password' ";
+                $result_collegian = Yii::app()->db->createCommand($query_collegian)->queryRow();
+                if ($result_collegian) {
+                    $json = "3";
+                    Yii::app()->session['user'] = "U";
+                    Yii::app()->session['collegian_name'] = $result_collegian['collegian_name'] . ' ' . $result_collegian['collegian_lname'];
+                    Yii::app()->session['collegian_code'] = $result_collegian['collegian_code'];
+                    Yii::app()->session['id'] = $result_collegian['id'];
+                } else {
+                    $json = "0";
+                }
+            }
         }
 
         echo $json;
@@ -34,6 +54,8 @@ class UserController extends Controller {
 
     public function actionRegister() {
         $query = "SELECT * FROM prefix";
+        $forgot = new Forgot();
+        $data['forgot'] = $forgot->GetAll();
         $data['perfix'] = Yii::app()->db->createCommand($query)->queryAll();
         $this->render('//user/register', $data);
     }
@@ -41,7 +63,7 @@ class UserController extends Controller {
     public function actionSave_register() {
         $user = new CompanyAgent();
         $check = $user->Check_user($_POST['username'], $_POST['password']);
-        if ($check < 1) {
+        if ($check == '0') {
             $columns = array(
                 "shot_name" => $_POST['shot_name'],
                 "name" => $_POST['name'],
@@ -54,7 +76,10 @@ class UserController extends Controller {
                 "address" => $_POST['address'],
                 "status" => "M",
                 "email" => $_POST['email'],
-                "d_update" => date("Y-m-d H:i:s")
+                "d_update" => date("Y-m-d H:i:s"),
+                "active" => "1",
+                "question" => $_POST['question'],
+                "answer" => $_POST['answer']
             );
 
             Yii::app()->db->createCommand()
@@ -67,17 +92,25 @@ class UserController extends Controller {
     }
 
     public function actionDetail_agent() {
-        
-        if(Yii::app()->session['user'] != "M"){
+
+        if (Yii::app()->session['user'] != "M") {
             //echo Yii::app()->createUrl("site/main");
             $this->redirect(array('site/main'));
         }
-     
+
         $id = Yii::app()->session['agent_id'];
         $agent = new CompanyAgent();
         $data['agent'] = $agent->Get_agent($id);
         $data['id'] = $id;
         $this->render('//user/detail_agent', $data);
+    }
+
+    public function actionShow_agent() {
+        $agent_id = $_GET['agent_id'];
+        $agent = new CompanyAgent();
+        $data['agent'] = $agent->Get_agent($agent_id);
+        $data['id'] = $agent_id;
+        $this->render('//user/detail_agent_foruser', $data);
     }
 
     public function actionAdd_img_profile() {

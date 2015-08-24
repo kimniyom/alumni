@@ -4,7 +4,7 @@
         <!-- Croup IMG -->
         <?php $croup = Yii::app()->baseUrl . "/assets/jquery.picture.cut/"; ?>
         <?php $path = Yii::app()->baseUrl . '/themes/facebook/'; ?>
-
+<script type="text/javascript" src="<?php echo Yii::app()->baseUrl; ?>/js_store/js_profile_collegian.js"></script>
         <script type="text/javascript">
             $(document).ready(function () {
                 autoload_img_profile();
@@ -20,7 +20,7 @@
             });
         </script>
 
-        <script type="text/javascript" src="<?php echo Yii::app()->baseUrl; ?>/js_store/js_profile_collegian.js"></script>
+        
 
     </head>
 
@@ -106,10 +106,7 @@
                         <p>
                             <i class="fa fa-users"></i>
                             รุ่น <?php echo $detail['GenNumber']; ?> ปี <?php echo $detail['GenYear']; ?></p>
-                        <p>
-                            <i class="fa fa-calendar"></i>
-                            เข้าใช้งานเมื่อ 
-                        </p>
+                       
                     </div>
                 </div>
 
@@ -178,7 +175,7 @@
                         </div>
                         <div class="row" style=" margin-bottom:10px;">
                             <center>
-                                <div class="col-lg-4 col-sm-4">
+                                <div class="col-lg-12 col-sm-12">
                                     <i class="fa fa-arrow-up"></i><br/>
                                     <?php if (isset($detail['img_profile'])) { ?>
                                         <img src="<?php echo $croup . '/uploads/' . $detail['img_profile']; ?>" class="img-rounded" width="100"> 
@@ -266,7 +263,7 @@
         <hr>
 
         <h4 class="text-center">
-            <a href="index.php?r=site" target="ext">&copy; ระบบทะเบียนศิษย์เก่านักศึกษา</a>
+            <a href="index.php?r=site" target="ext">&copy; เว็บไซต์ทำเนียบรุ่น</a>
         </h4>
 
         <hr>

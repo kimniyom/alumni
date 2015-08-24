@@ -56,4 +56,29 @@ class BackofficeController extends Controller {
                 ->update("collegian_etc", $columns, "id = '$id' ");
     }
 
+    public function actionForgot() {
+        $forgot = new Forgot();
+        $data['forgot'] = $forgot->GetAll();
+        $this->render('//forgot/forgot', $data);
+    }
+
+    public function actionSave_forgot() {
+        $columns = array(
+            "question" => $_POST['question']
+        );
+
+        Yii::app()->db->createCommand()
+                ->insert("forgot", $columns);
+    }
+
+    public function actionEdit_forgot() {
+        $id = $_POST['id'];
+        $columns = array(
+            "question" => $_POST['question']
+        );
+
+        Yii::app()->db->createCommand()
+                ->update("forgot", $columns, "id = '$id' ");
+    }
+
 }

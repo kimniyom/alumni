@@ -8,7 +8,7 @@
         <meta name="google-translate-customization" content="52b44b8c4f515a69-ba4de274a0df1b97-gc9e8a9e6c8d94a2e-d"/>
         -->
         <title>
-            ทะเบียน ศิษย์เก่า 
+            ทำเนียบรุ่น
         </title>
         <?php
         $path = Yii::app()->baseUrl . '/themes/bootstrap/';
@@ -146,7 +146,7 @@
             <div class="container">
                 <div class="navbar-header">
                     <a href="#" class="navbar-brand" style=" font-weight: bold;">
-                        <font style="color:#99ff33;">เว็บไซต์ทำเนียบรุ่น </font>
+                        <font style="color:#99ff33;">ทำเนียบรุ่น </font>
                         <font style="color:#ffff33;">Com Sci</font>
                     </a>
                     <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
@@ -160,18 +160,25 @@
                         <?php if (Yii::app()->session['user'] == '') { ?>
                             <li>
                                 <a href="<?php echo Yii::app()->createUrl('frontend/user/register') ?>" id="link">
-                                    <i class="fa fa-group"></i> สมัคสมาชิก</a>
+                                    <i class="fa fa-group"></i> สมัครสมาชิก</a>
                             </li>
+                            <!-- OLD 
                             <li class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="link">
                                     <i class="fa fa-lock"></i>
                                     เข้าสู่ระบบ <span class="caret"></span>
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="download">
-                                    <li><a href="<?php echo Yii::app()->createUrl('frontend/collegian/login') ?>"><i class="fa fa-mortar-board"></i>นักศึกษา / ศิษย์เก่า</a></li>
-                                    <li><a href="<?php echo Yii::app()->createUrl('frontend/user/login') ?>"><i class="fa fa-user"></i> ทั่วไป</a></li>
-                                    <li><a href="<?php echo Yii::app()->createUrl('Main_admin') ?>"><i class="fa fa-gear"></i> ผู้ดูแลระบบ</a></li>
+                                    <li><a href="<?//php echo Yii::app()->createUrl('frontend/collegian/login') ?>"><i class="fa fa-mortar-board"></i>นักศึกษา / ศิษย์เก่า</a></li>
+                                    <li><a href="<?//php echo Yii::app()->createUrl('frontend/user/login') ?>"><i class="fa fa-user"></i> ทั่วไป</a></li>
+                                    <li><a href="<?//php echo Yii::app()->createUrl('Main_admin') ?>"><i class="fa fa-gear"></i> ผู้ดูแลระบบ</a></li>
                                 </ul>
+                            </li>
+                            -->
+                            <li>
+                                <a href="javascript:login()" id="link">
+                                    <i class="fa fa-key"></i> เข้าสู่ระบบ
+                                </a>
                             </li>
                         <?php } else { ?>
                             <li>
@@ -201,92 +208,27 @@
                     <div class="col-md-12">
                         <center>
                             <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                                <div class="carousel-inner" style="height: 300px;">
-
-                                    <div class="item active" style="color:#FFF;">
-                                        <div class="row">
-                                            <div class=" col-md-7 col-sm-7" style=" text-align: left;">
-                                                <h1 style="color:#FFF; text-shadow:2px 1px #000;">วิทยาการคอมพิวเตอร์ จบแล้วทำงานอะไร</h1>
-                                                <br/>
-                                                <div class="alert">
-                                                    <p style=" font-size: 18px;text-indent: 2.5em;">
-                                                        สาขานี้เรียนอะไร
-                                                        สาขาวิทยาการคอมพิวเตอร์ เป็นสาขาที่เรียนเกี่ยวกับทฤษฎีการคำนวณสำหรับคอมพิวเตอร์
-                                                        ทฤษฎีการประมวลผลสารสนเทศ ทั้งด้านซอฟต์แวร์ ฮาร์ดแวร์ และ เครือข่าย 
-                                                        ซึ่งประกอบด้วยหลายหัวข้อที่เกี่ยวข้องกับคอมพิวเตอร์.</dd>
-                                                    </p>
+                                <div class="carousel-inner" style="height: auto;">
+                                    <?php
+                                    $banner = new Banner();
+                                    $r_banner = $banner->findAll();
+                                    $i = 0;
+                                    foreach ($r_banner as $bn):
+                                        $i++;
+                                        if ($i == '1') {
+                                            $active = "item active";
+                                        } else {
+                                            $active = "item";
+                                        }
+                                        ?>
+                                        <div class="<?php echo $active; ?>" style="color:#FFF;">
+                                            <div class="row">
+                                                <div class=" col-md-12 col-sm-12">
+                                                    <img src="<?php echo Yii::app()->baseUrl; ?>/upload_banner/<?php echo $bn['images'] ?>" style="width: 100%;"/>
                                                 </div>
                                             </div>
-                                            <div class=" col-md-5 col-sm-5">
-                                                <img src="<?php echo Yii::app()->baseUrl; ?>/images/devices3.png" height="250" style=" margin-top: 10px;"/>
-                                            </div>
-                                        </div>
-                                    </div> 
-
-                                    <div class="item" style="color:#FFF;">
-                                        <div class="row">
-                                            <div class=" col-md-5 col-sm-5">
-                                                <img src="<?php echo Yii::app()->baseUrl; ?>/images/Science.jpg" height="250" style=" margin-top: 25px;"/>
-                                            </div>
-                                            <div class=" col-md-7 col-sm-7" style=" text-align: left;">
-                                                <h1 style="color:#FFF; text-shadow:2px 1px #000;">สาขาวิทยาการคอม มีชื่อเรียกอีกชื่อว่า ...</h1>
-                                                <br/>
-                                                <div class="alert">
-                                                    <p style=" font-size: 18px;text-indent: 2.5em;">
-                                                        สาขาวิทยาการคอมพิวเตอร์ มีชื่อเรียกอีกชื่อว่า <font style="color:#ffff33;">วิทยาศาสตร์คอมพิวเตอร์(Computer science)</font>
-                                                        ส่วนภาษาฝรั่งเศสจะใช้คำว่า Informatique ซึ่งมาจากคำว่า "information" (สารสนเทศ) รวมกับ "automatique" (อัตโนมัติ) 
-                                                        โดย Philippe Dreyfus  โดยคำนี้ก็ได้ใช้ในภาษาอิตาลีเป็นคำว่า Informatica ส่วนในภาษาสเปนจะเป็น Informatica 
-                                                        และในภาษาเยอรมันคือ Informatik ซึ่งดูรวม ๆ แล้วก็เป็นความหมายในทิศทางเดียวกัน</dd>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> 
-
-                                    <div class="item" style="color:#FFF;">
-                                        <div class="row">
-                                            <div class=" col-md-7 col-sm-7" style=" text-align: left;">
-                                                <h1 style="color:#FFF; text-shadow:2px 1px #000;">สาขานี้เรียนอะไร?</h1>
-                                                <br/>
-                                                <div class="alert">
-                                                    <p style=" font-size: 18px;text-indent: 2.5em;">
-                                                        สาขาวิทยาการคอมพิวเตอร์ เป็นสาขาที่เรียนเกี่ยวกับทฤษฎีการคำนวณสำหรับคอมพิวเตอร์ 
-                                                        ทฤษฎีการประมวลผลสารสนเทศ ทั้งด้านซอฟต์แวร์ ฮาร์ดแวร์ และ เครือข่าย ซึ่งประกอบด้วยหลายหัวข้อที่เกี่ยวข้องกับคอมพิวเตอร์ 
-                                                        เช่น การวิเคราะห์และสังเคราะห์ขั้นตอนวิธี ทฤษฎีภาษาโปรแกรม ทฤษฎีการพัฒนาซอฟต์แวร์ ทฤษฎีฮาร์ดแวร์คอมพิวเตอร์ 
-                                                        และ ทฤษฎีเครือข่าย เป็นต้น</dd>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div class=" col-md-5 col-sm-5">
-                                                <img src="<?php echo Yii::app()->baseUrl; ?>/images/computer-icon.png" height="250" style=" margin-top: 10px;"/>
-                                            </div>
-                                        </div>
-                                    </div> 
-
-                                    <div class="item" style="color:#FFF;">
-                                        <div class="row">
-                                            <div class=" col-md-7 col-sm-7">
-                                                <img src="<?php echo Yii::app()->baseUrl; ?>/images/network.jpg" height="250" style=" margin-top: 25px;"/>
-                                            </div>
-                                            <div class=" col-md-5 col-sm-5" style=" text-align: left;">
-                                                <h1 style="color:#FFF; text-shadow:2px 1px #000;">สาขาที่เกี่ยวข้อง ..</h1>
-                                                <br/>
-                                                <div class="alert">
-                                                    <p style=" font-size: 18px;text-indent: 2.5em;">
-                                                    <ul>
-                                                        <li>วิศวกรรมคอมพิวเตอร์</li>
-                                                        <li>วิศวกรรมซอฟต์แวร์  </li>
-                                                        <li>วิทยาการสารสนเทศ  </li>
-                                                        <li>เทคโนโลยีสารสนเทศ  </li>
-                                                        <li>ระบบสารสนเทศ  </li>
-                                                        <li>ระบบสารสนเทศเพื่อการจัดการ  </li>
-                                                    </ul>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> 
-
+                                        </div> 
+                                    <?php endforeach; ?>
                                 </div>
                                 <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
                                     <span class="glyphicon glyphicon-chevron-left"></span>
@@ -377,7 +319,7 @@
                         <!-- USERS LIST -->
                         <div class="box box-danger">
                             <div class="box-header with-border">
-                                <h3 class="box-title"><i class="fa fa-group"></i> สมาชิกใหม่</h3>
+                                <h3 class="box-title"><i class="fa fa-group"></i> ตัวแทนบริษัท</h3>
                                 <div class="box-tools pull-right">
                                     <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                                 </div>
@@ -393,7 +335,7 @@
                                         ?>
                                         <li>
                                             <img src="<?php echo Yii::app()->baseUrl; ?>/assets/jquery.picture.cut/uploads_images_user/<?php echo $img; ?>" alt="User Image" onclick="nu();"/>
-                                            <a class="users-list-name" href="javascript:void(0);"><?php echo $c['name'] ?></a>
+                                            <a class="users-list-name" href="<?php echo Yii::app()->createUrl('frontend/user/show_agent&agent_id=' . $c['id']) ?>"><?php echo $c['name'] ?></a>
                                         </li>
                                     <?php endforeach; ?>
                                 </ul><!-- /.users-list -->
@@ -409,7 +351,13 @@
 
                             <div class="box-body">
                                 <ul id="tree1">
-                                    <li><a href="#">รุ่นทั้งหมด</a>
+                                    <li>
+                                        <?php
+                                        $col = new Collegian();
+                                        $total = $col->count();
+                                        ?>
+                                        <a href="#">รุ่นทั้งหมด</a>
+                                        <font style=" float: right;">(จำนวน <?php echo $total; ?> คน)</font>
                                         <ul>
                                             <?php
                                             $gen = new GenerationModel();
@@ -477,12 +425,105 @@
                     <div class="col-sm-4"></div>
                     <div class="col-sm-4">
                         <p style=" margin-top: 100px; text-align: right; color: #FFF;">
-                            &COPY; สงวนลิขสิทธิ์<br/>เว็บไซต์ระบบทะเบียน ศิษย์เก่า 
+                            &COPY; สงวนลิขสิทธิ์<br/>เว็บไซต์ทำเนียบรุ่น
                         </p>
                     </div>
                 </div>
             </div>
         </div>
+
+
+        <!-- Dialog login -->
+        <div class="modal fade" id="box-login">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Login ..</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="login-box" style="margin-top: 0px; margin-bottom: 0px;">
+                            <div class="login-logo" style=" margin: 0px;">
+                                <a href="#" style=" color: #000;">
+                                    <img src="<?php echo Yii::app()->baseUrl; ?>/images/img.jpg" class="img-circle" alt="User Image" width="100"/><br/>
+                                    เข้าสู่ระบบ</a>
+                            </div><!-- /.login-logo -->
+                            <div class="login-box-body">
+                                <p class="login-box-msg" id="msg_login">กรอกข้อมูลเพื่อเข้าสู่ระบบ</p>
+
+                                <div class="form-group has-feedback">
+                                    <input type="text" class="form-control" id="usernamelogin" name="usernamelogin" placeholder="Username" required/>
+                                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                                </div>
+                                <div class="form-group has-feedback">
+                                    <input type="password" id="passwordlogin" name="passwordlogin" class="form-control" placeholder="Password" required/>
+                                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <button type="submit" class="btn btn-primary btn-block btn-flat" onclick="sent_form();">
+                                            <i class="fa fa-lock"></i>
+                                            ตกลง
+                                        </button>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <button type="reset" class="btn btn-danger btn-block btn-flat" onclick="Javascript:window.location.reload();">
+                                            <i class="fa fa-remove"></i>
+                                            ยกเลิก
+                                        </button>
+                                    </div><!-- /.col -->
+                                </div>
+                                <hr/>
+                                <center>
+                                    <a href="index.php?r=Forgot/user">? ลืมรหัสผ่าน</a><br>
+                                </center>
+                            </div><!-- /.login-box-body -->
+                        </div><!-- /.login-box -->
+                    </div>
+
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+        <script type="text/javascript">
+            function sent_form() {
+                var url = "index.php?r=frontend/user/do_login";
+                var usernamelogin = $("#usernamelogin").val();
+                var passwordlogin = $("#passwordlogin").val();
+                var data = {username: usernamelogin, password: passwordlogin};
+
+                if (usernamelogin == '' || passwordlogin == '') {
+                    $("#msg_login").html("<center><font style='color:red'>กรอกข้อมูลไม่ครบ ...!</font></center>");
+                    return false;
+                }
+
+                $.post(url, data, function (success) {
+                    if (success == '1') {
+                        window.location = "index.php?r=main_admin";
+                    } else if (success == '2') {
+                        window.location = "index.php?r=site/index";
+                    } else if (success == '3') {
+                        window.location = "index.php?r=frontend/collegian";
+                    } else {
+                        $("#msg_login").html("<center><font style='color:red'>ชื่อผู้ใช้ หรือ รหัสผ่านไม่ถูกต้อง ...!</font></center>");
+                    }
+                });
+            }
+
+            $(document).keypress(function (e) {
+                if (e.which == 13) {
+                    sent_form();
+                }
+            });
+
+            function login() {
+                $("#box-login").modal();
+            }
+
+        </script>
+
+
+
     </body>
 
     <script src="<?php echo Yii::app()->baseUrl; ?>/assets/bootstrap-autohidingnavbar/src/jquery.bootstrap-autohidingnavbar.js"></script>

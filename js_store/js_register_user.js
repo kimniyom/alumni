@@ -11,7 +11,9 @@ function save_user() {
     var email = $('#email').val();
     var company = $('#company').val();
     var address = $('#address').val();
-    
+    var question = $('#question').val();
+    var answer = $('#answer').val();
+
 
     if (name == '') {
         $("#name").focus();
@@ -58,6 +60,18 @@ function save_user() {
         return false;
     }
 
+    if (question == '') {
+        $("#question").focus();
+        return false;
+    }
+
+
+    if (answer == '') {
+        $("#answer").focus();
+        return false;
+    }
+
+
 
     var data = {
         shot_name: shot_name,
@@ -69,11 +83,13 @@ function save_user() {
         mobile: mobile,
         email: email,
         company: company,
-        address: address
+        address: address,
+        question: question,
+        answer: answer
     }
     $.post(url, data, function (success) {
         if (success == '0') {
-            alert("ลงทะเบียนใช้งานระบบ สำเร็จ รอการยืนยันจากผู้ดูแลระบบ ...");
+            //alert("ลงทะเบียนใช้งานระบบ สำเร็จ รอการยืนยันจากผู้ดูแลระบบ ...");
             window.location = "index.php?r=site/index";
         } else {
             alert("ชื่อผู้ใช้งาน และรหัสผ่านนี้มีผู้ใช้งานแล้ว ...");

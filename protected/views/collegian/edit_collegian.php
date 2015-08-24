@@ -54,7 +54,7 @@
 
             <div class="row">
                 <div class="col-sm-3">
-                    <label>ชื่อ *</label>
+                    <label>ชื่อจริง *</label>
                 </div>
                 <div class="col-sm-9">
                     <input type="text" id="collegian_name" name="collegian_name" class="form-control" required="required"
@@ -70,6 +70,17 @@
                 <div class="col-sm-9">
                     <input type="text" id="collegian_lname" name="collegian_lname" class="form-control" required="required"
                            value="<?php echo $detail['collegian_lname']; ?>"/>
+                </div>
+            </div>
+            <br/>
+
+            <div class="row">
+                <div class="col-sm-3">
+                    <label>ชื่อเล่น *</label>
+                </div>
+                <div class="col-sm-9">
+                    <input type="text" id="nickname" name="nickname" class="form-control" required="required"
+                           value="<?php echo $detail['nickname']; ?>"/>
                 </div>
             </div>
             <br/>
@@ -254,6 +265,33 @@
                 </div>
             </div>
             <br/>
+            <hr/>
+            <div class="row">
+                <div class="col-sm-3">
+                    <label>คำถามกรณีลืมรหัสผ่าน *</label>
+                </div>
+                <div class="col-sm-9">
+                    <select id="question" name="question" class="form-control input-sm">
+                        <option value="">กรุณาเลือกคำถาม</option>
+                        <?php foreach ($forgot as $forgots): ?>
+                            <option value="<?php echo $forgots['id'] ?>"><?php echo $forgots['question'] ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+            </div>
+            <br/>
+
+            <div class="row">
+                <div class="col-sm-3">
+                    <label>คำตอบ *</label>
+                </div>
+                <div class="col-sm-9">
+                    <input type="text" id="answer" name="answer" class="form-control input-sm"/>
+                </div>
+            </div>
+            <br/>
+
+
         </div><!-- form -->
     </div>
     <div class="panel-footer" style="text-align: right;">

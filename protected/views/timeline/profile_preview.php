@@ -118,6 +118,7 @@
                     </div>
 
                     <div class="panel-body">
+                        
                         <p class="lead" style="color: #663300;">
                             <i class="fa fa-user"></i>
                             ชื่อ - สกุล <?php echo $detail['collegian_name'] . ' ' . $detail['collegian_lname']; ?>
@@ -125,10 +126,7 @@
                         <p>
                             <i class="fa fa-users"></i>
                             รุ่น <?php echo $detail['GenNumber']; ?> ปี <?php echo $detail['GenYear']; ?></p>
-                        <p>
-                            <i class="fa fa-calendar"></i>
-                            เข้าใช้งานเมื่อ 
-                        </p>
+                       
                     </div>
                 </div>
 

@@ -6,7 +6,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>ระบบทะเบียนศิษย์เก่า</title>
+        <title>ทำเนียบรุ่น</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <!-- Bootstrap 3.3.2 -->
         <?php $link = Yii::app()->baseUrl . "/themes/AdminLTE2/"; ?>
@@ -36,6 +36,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
             CkEditor
         -->
         <script src="<?php echo Yii::app()->baseUrl; ?>/assets/ckeditor/adapter/ckeditor.js"></script>
+
+        <!-- Select Complite -->
+
+        <link href="<?php echo Yii::app()->baseUrl; ?>/assets/bootstrap-select/dist/css/bootstrap-select.css" rel="stylesheet" type="text/css" />
+        <script src="<?php echo Yii::app()->baseUrl; ?>/assets/bootstrap-select/dist/js/bootstrap-select.js" type="text/javascript"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#_collegian_code").selectpicker();
+                $("#_agent_id").selectpicker();
+            });
+        </script>
 
         <script type="text/javascript">
             function CheckNum() {
@@ -75,12 +87,123 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 });
 
             }
+
+
+            function dialog_post_collegian() {
+                $("#dialog_post_collegian").modal();
+            }
+
+            function send_post_collegian() {
+                var url = "index.php?r=frontend/posts/send_post";
+                var msg = CKEDITOR.instances.detail_to_collegian.getData();
+                var receiver_code = $("#_collegian_code").val();
+                var receiver_status = "U";
+                var title = $("#title_to_collegian").val();
+
+                if (receiver_code == '') {
+                    alert("กรุณาเลือกผู้รับ ...");
+                    return false;
+                }
+                if (msg == "") {
+                    alert("กรุณากรอกข้อความ ...");
+                    return false;
+                }
+
+                var data = {
+                    receiver_code: receiver_code,
+                    receiver_status: receiver_status,
+                    title: title,
+                    detail: msg
+                };
+
+                $.post(url, data, function (success) {
+                    alert("ส่งข้อความของท่านแล้ว ...");
+                    window.location.reload();
+                });
+
+            }
+
+            function dialog_post_agent() {
+                $("#dialog_post_agent").modal();
+            }
+
+
+            function send_post_agent() {
+                var url = "index.php?r=frontend/posts/send_post";
+                var msg = CKEDITOR.instances.detail_to_agent.getData();
+                var receiver_code = $("#_agent_id").val();
+                var receiver_status = "M";
+                var title = $("#title_to_agent").val();
+
+                if (receiver_code == '') {
+                    alert("กรุณาเลือกผู้รับ ...");
+                    return false;
+                }
+                if (msg == "") {
+                    alert("กรุณากรอกข้อความ ...");
+                    return false;
+                }
+
+                var data = {
+                    receiver_code: receiver_code,
+                    receiver_status: receiver_status,
+                    title: title,
+                    detail: msg
+                };
+
+                $.post(url, data, function (success) {
+                    alert("ส่งข้อความของท่านแล้ว ...");
+                    window.location.reload();
+                });
+
+            }
         </script>
 
         <script>
             $(document).ready(function () {
                 //CKEDITOR.replace( 'workings_detail' );
                 CKEDITOR.replace('detail_to_admin', {
+                    //removePlugins: 'bidi,div,font,forms,flash,horizontalrule,iframe,justify,table,tabletools,smiley,link',
+                    //removePlugins: 'bidi,forms,flash,iframe,div,table,tabletools',
+                    //removeButtons: 'Anchor,Underline,Strike,Subscript,Superscript,Image'
+                    //format_tags: 'p;h1;h2;h3;pre;address'
+                    toolbarGroups: [
+                        //{name: 'document', groups: ['mode', 'document']}, // Displays document group with its two subgroups.
+                        //{name: 'clipboard', groups: ['clipboard', 'undo']}, // Group's name will be used to create voice label.
+                        '/', // Line break - next group will be placed in new line.
+                        // {name: 'basicstyles', groups: ['basicstyles', 'cleanup']},
+                        {name: 'basicstyles', groups: ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat']},
+                        {name: 'paragraph', groups: ['list', 'indent', 'align']},
+                        {name: 'styles', groups: ['Styles', 'Format', 'Font', 'FontSize']},
+                        {name: 'colors', groups: ['TextColor', 'BGColor']}
+                        //{name: 'links'}
+                    ]
+                });
+
+
+                //CKEDITOR.replace( 'workings_detail' );
+                CKEDITOR.replace('detail_to_collegian', {
+                    //removePlugins: 'bidi,div,font,forms,flash,horizontalrule,iframe,justify,table,tabletools,smiley,link',
+                    //removePlugins: 'bidi,forms,flash,iframe,div,table,tabletools',
+                    //removeButtons: 'Anchor,Underline,Strike,Subscript,Superscript,Image'
+                    //format_tags: 'p;h1;h2;h3;pre;address'
+                    toolbarGroups: [
+                        //{name: 'document', groups: ['mode', 'document']}, // Displays document group with its two subgroups.
+                        //{name: 'clipboard', groups: ['clipboard', 'undo']}, // Group's name will be used to create voice label.
+                        '/', // Line break - next group will be placed in new line.
+                        // {name: 'basicstyles', groups: ['basicstyles', 'cleanup']},
+                        {name: 'basicstyles', groups: ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat']},
+                        {name: 'paragraph', groups: ['list', 'indent', 'align']},
+                        {name: 'styles', groups: ['Styles', 'Format', 'Font', 'FontSize']},
+                        {name: 'colors', groups: ['TextColor', 'BGColor']}
+                        //{name: 'links'}
+                    ]
+                });
+
+
+
+                //CKEDITOR.replace( 'workings_detail' );
+                CKEDITOR.replace('detail_to_agent', {
                     //removePlugins: 'bidi,div,font,forms,flash,horizontalrule,iframe,justify,table,tabletools,smiley,link',
                     //removePlugins: 'bidi,forms,flash,iframe,div,table,tabletools',
                     //removeButtons: 'Anchor,Underline,Strike,Subscript,Superscript,Image'
@@ -149,6 +272,87 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 
+
+    <!-- 
+    Dialog Post Collegian 
+    -->
+    <div class="modal fade" id="dialog_post_collegian">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">
+                        <i class="fa fa-envelope-o"></i> ส่งข้อความถึงนักศึกษา 
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <label>ส่งข้อความถึง</label>
+                    <select id="_collegian_code" class="show-tick form-control" data-live-search="true" data-size="5">
+                        <option value="">== เลือกผู้รับ ==</option>
+                        <?php
+                        $collegian = new Collegian();
+                        $col = $collegian->findAll();
+                        foreach ($col as $r):
+                            if ($r['id'] != Yii::app()->session['id']) {
+                                ?>
+                                <option value="<?php echo $r['id'] ?>"><?php echo $r['collegian_name'] . ' ' . $r['collegian_lname'] ?></option>
+                                <?php
+                            }
+                        endforeach;
+                        ?>
+                    </select>
+                    <label>หัวข้อ</label>
+                    <input type="text" id="title_to_collegian" class="form-control input-sm"/><br/>
+                    <textarea id="detail_to_collegian" rows="3"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
+                    <button type="button" class="btn btn-primary" onclick="send_post_collegian();"><i class="fa fa-send-o"></i> ส่งข้อความ</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
+
+    <!-- 
+    Dialog Post AGENT 
+    -->
+    <div class="modal fade" id="dialog_post_agent">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">
+                        <i class="fa fa-envelope-o"></i> ส่งข้อความถึงตัวแทนบริษัท
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <label>ส่งข้อความถึง</label>
+                    <select id="_agent_id" class="show-tick form-control" data-live-search="true" data-size="5">
+                        <option value="">== เลือกผู้รับ ==</option>
+                        <?php
+                        $agent = new CompanyAgent();
+                        $agentcol = $agent->findAll();
+                        foreach ($agentcol as $ag):
+                            ?>
+                            <option value="<?php echo $ag['id'] ?>"><?php echo $ag['name'] . ' ' . $ag['lname'] . ' ( บริษัท ' . $ag['company'] . ')' ?></option>
+                            <?php
+                        endforeach;
+                        ?>
+                    </select>
+                    <label>หัวข้อ</label>
+                    <input type="text" id="title_to_agent" class="form-control input-sm"/><br/>
+                    <textarea id="detail_to_agent" rows="3"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
+                    <button type="button" class="btn btn-primary" onclick="send_post_agent();"><i class="fa fa-send-o"></i> ส่งข้อความ</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
     <body class="skin-red fixed">
         <div class="wrapper">
 
@@ -174,7 +378,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <!-- The user image in the navbar-->
                                     <i class="fa fa-home"></i>
                                     <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                                    <span class="hidden-xs">หน้าเว็บไซต์</span>
+                                    <span class="hidden-xs">หน้าแรก</span>
                                 </a>
                             </li>
                         </ul>
@@ -256,22 +460,31 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <?php } ?>
                     </ul><!-- /.sidebar-menu -->
 
-                    <?php if (Yii::app()->session['user'] != 'A') { ?>
+                    <?php if (Yii::app()->session['user'] != '') { ?>
                         <!-- Sidebar Menu -->
                         <ul class="sidebar-menu">
                             <li class="header" style="color: #FFFFFF;"><i class="fa fa-arrow-left"></i> ข้อความส่ง</li>
                             <!-- Optionally, you can add icons to the links -->
+                            <?php if (Yii::app()->session['user'] != 'A') { ?>
+                                <li>
+                                    <a href="javascript:dialog_post_admin();">
+                                        <i class="fa fa-envelope"></i>
+                                        <span>ส่งข้อความถึงผูดูแลระบบ</span></a>
+                                </li>
+                            <?php } else { ?>
+                                <li>
+                                    <a href="javascript:dialog_post_agent();">
+                                        <i class="fa fa-envelope"></i>
+                                        <span>ส่งข้อความถึงตัวแทน</span></a>
+                                </li>
+                            <?php } ?>
+
                             <li>
-                                <a href="javascript:dialog_post_admin();">
+                                <a href="javascript:dialog_post_collegian();">
                                     <i class="fa fa-envelope"></i>
-                                    <span>ส่งข้อความถึงผูดูแลระบบ</span></a>
+                                    <span>ส่งข้อความถึงนักศึกษา</span></a>
                             </li>
                             <!--
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-envelope"></i>
-                                    <span>ส่งถึงตัวแทนบริษัท</span></a>
-                            </li>
                             <li>
                                 <a href="#">
                                     <i class="fa fa-envelope"></i>
@@ -297,7 +510,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
             <!-- Main Footer -->
             <footer class="main-footer">
-                <!-- To the right -->
+                <!-- To the right --
                 <div class="pull-right hidden-xs">
                     Assembor Themes.
                 </div>
